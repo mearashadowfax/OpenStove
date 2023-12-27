@@ -15,6 +15,7 @@ export default {
       stone: colors.stone,
       primary: "#f4bf3c",
       secondary: "#f8955b",
+      "secondary-accent": "#FCCE94",
       accent: "#9e9e4d",
     },
   },
