@@ -30,13 +30,13 @@ import heroImage from '../images/hero-image.svg';
       class="bg-orange-50/85 backdrop-blur-md dark:bg-stone-900/85 dark:backdrop-blur-md fixed w-full z-20 top-0 start-0 border-b border-stone-200 dark:border-stone-700 transition-colors duration-300"
     >
       <div
-        class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4"
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 2xl:max-w-screen-2xl"
       >
         <a
           class="hidden items-center space-x-3 rtl:space-x-reverse md:flex"
           href="/"
         >
-          <svg class="h-12 w-36 transition-colors duration-300" viewBox="0 0 318 114">
+          <svg class="h-11 w-36 transition-colors duration-300" viewBox="0 0 318 114">
             <path
               class="fill-current text-dark dark:text-stone-100 transition-colors duration-300"
               d="M206.81 20.36V27.92H212.95V90.97H289.94V27.68H295.14V20.36H206.81ZM284.45 81.58H219.09V39.25C219.09 39.25 247.61 24.9 284.45 39.25V81.58ZM212.8 112.22H217.29L221.78 95.34H212.8V112.22ZM286.25 112.22H290.73V95.34H281.76L286.25 112.22Z"
@@ -66,7 +66,7 @@ import heroImage from '../images/hero-image.svg';
             <button
               aria-controls="navbar-search"
               aria-expanded="false"
-              class="inline-flex items-center justify-center text-gray-500 dark:text-gray-400 focus-visible:outline-none
+              class="inline-flex items-center justify-center focus-visible:outline-none
                     focus-visible:ring-1 focus-visible:ring-ring whitespace-nowrap rounded-md hover:bg-orange-100
                     dark:hover:bg-stone-700 focus:outline-none py-2 h-10 w-10 md:h-9 md:w-9 md:hidden transition-colors duration-300"
               data-collapse-toggle="navbar-search"
@@ -112,7 +112,7 @@ import heroImage from '../images/hero-image.svg';
               >
                 <svg
                   aria-hidden="true"
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400 transition-colors duration-300"
                   fill="none"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,11 +127,11 @@ import heroImage from '../images/hero-image.svg';
                 <span class="sr-only">Search icon</span>
               </div>
               <input
-                class="w-full block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-stone-50
-                        focus:ring-orange-300 focus:border-orange-300 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400
-                        dark:text-white dark:focus:ring-stone-500 dark:focus:border-stone-500 h-10 md:h-9 transition-colors duration-300"
+                class="w-full block p-2 ps-10 text-sm text-dark border border-gray-300 rounded-lg bg-stone-50
+                        focus:ring-orange-300 focus:border-orange-300 focus:bg-orange-100 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400
+                        dark:text-stone-100 dark:focus:ring-stone-500 dark:focus:bg-stone-600 dark:focus:border-stone-500 h-10 md:h-9 transition duration-300"
                 id="search-navbar"
-                placeholder="Search..."
+                placeholder="Search recipes..."
                 type="text"
               />
             </div>
@@ -144,7 +144,7 @@ import heroImage from '../images/hero-image.svg';
               href="https://github.com/mearashadowfax/OpenStove"
               target="_blank"
             >
-              <svg class="h-4 w-4" viewBox="0 0 438.549 438.549">
+              <svg class="h-[1.2rem] w-[1.2]" viewBox="0 0 438.549 438.549">
                 <path
                   class="fill-current text-dark dark:text-stone-100 transition-colors duration-300"
                   d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
@@ -160,7 +160,7 @@ import heroImage from '../images/hero-image.svg';
               type="button"
             >
               <svg
-                class="hidden h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0"
+                class="hidden h-5 w-5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0"
                 fill="none"
                 height="15"
                 id="theme-toggle-dark-icon"
@@ -251,24 +251,24 @@ import heroImage from '../images/hero-image.svg';
 
 
     <!--Hero Section-->
-    <section class="flex flex-col justify-between gap-6 mt-28 lg:mt-16 2xl:mt-28 mx-auto max-w-screen-2xl px-4 sm:gap-10 md:gap-16 lg:flex-row">
+    <section class="flex flex-col justify-between gap-6 mt-32 lg:mt-16 2xl:mt-28 mx-auto max-w-screen-xl px-4 sm:gap-10 md:gap-16 lg:flex-row 2xl:max-w-screen-2xl">
       <!-- content - start -->
       <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
 
-        <h1 class="mb-8 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d46d00] to-[#ff9000] dark:from-[#FFA500] dark:to-orange-200 sm:text-5xl md:mb-12 md:text-6xl transition-colors duration-300">OpenStove — Your Open Source Recipe Library</h1>
+        <h1 class="mb-8 text-balance text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d46d00] to-[#ff9000] dark:from-[#FFA500] dark:to-orange-200 sm:text-5xl md:min-h-32 xl:min-h-48 md:mb-12 md:text-6xl transition duration-300">OpenStove — Your Open Source Recipe Library</h1>
 
-        <p class="mb-8 leading-relaxed text-dark dark:text-stone-200 md:mb-12 lg:w-4/5 xl:text-lg transition-colors duration-300">A community-driven kitchen where discovery and sharing of recipes come free from clutter. Cook, enjoy, and add your own flavors.</p>
+        <p class="mb-8 text-pretty leading-relaxed text-dark dark:text-stone-200 md:mb-12 lg:w-4/5 xl:text-lg transition-colors duration-300">A community-driven kitchen where discovery and sharing of recipes come free from clutter. Cook, enjoy, and add your own flavors.</p>
 
         <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-          <a href="#" class="inline-block rounded-lg bg-secondary-accent px-8 py-3 text-center text-sm text-dark outline-none transition duration-300 hover:-translate-y-1 md:text-base">How to Contribute?</a>
+          <a href="#" class="inline-block rounded-xl bg-secondary-accent px-8 py-3 text-center text-sm text-dark outline-none transition duration-300 hover:-translate-y-1 md:text-base">How to Contribute?</a>
 
-          <a href="#" class="inline-block rounded-lg bg-primary px-8 py-3 text-center text-sm text-dark outline-none ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary font-semibold md:text-base">Explore Recipes</a>
+          <a href="#" class="inline-block rounded-xl bg-primary px-8 py-3 text-center text-sm text-dark outline-none ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary font-semibold md:text-base">Explore Recipes</a>
         </div>
       </div>
       <!-- content - end -->
 
       <!-- image - start -->
-      <div class="overflow-hidden flex items-center justify-center w-full lg:w-2/3 xl:w-5/12">
+      <div class="overflow-hidden flex items-center justify-center w-full lg:w-full xl:w-2/4">
         <Image src={heroImage} alt="A bento box with images and shapes" class="h-auto w-full object-cover object-center" />
         
       </div>
