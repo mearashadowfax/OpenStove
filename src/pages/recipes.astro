@@ -1,0 +1,1174 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<html class="scroll-pt-5 scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content="{Astro.generator}" name="generator" />
+    <title>Astro</title>
+    <script is:inline>
+      if (
+        localStorage.getItem("hs_theme") === "dark" ||
+        (!("hs_theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-orange-50 text-dark dark:bg-dark dark:text-stone-100 [&::-webkit-scrollbar]:w-2
+    2xl:[&::-webkit-scrollbar]:w-3
+    [&::-webkit-scrollbar-track]:rounded-full
+    [&::-webkit-scrollbar-track]:bg-stone-100
+    [&::-webkit-scrollbar-thumb]:rounded-full
+    [&::-webkit-scrollbar-thumb]:bg-secondary
+    dark:[&::-webkit-scrollbar-track]:bg-stone-700
+    dark:[&::-webkit-scrollbar-thumb]:bg-primary">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <!-- Nav Bar -->
+      <header
+        class="fixed start-0 top-0 z-20 w-full border-b border-orange-200/40 bg-orange-50/60 backdrop-blur-md dark:border-stone-700/40 dark:bg-dark/80 dark:backdrop-blur-md"
+      >
+        <nav
+          class="mx-auto flex w-full max-w-screen-2xl basis-full flex-wrap items-center justify-between px-4 py-2.5 md:px-8"
+          aria-label="Global"
+        >
+          <a
+            class="hidden items-center space-x-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:flex rtl:space-x-reverse"
+            href="/"
+          >
+            <svg class="h-auto w-28" viewBox="0 0 318 114">
+              <path
+                class="fill-current text-dark dark:text-stone-100"
+                d="M206.81 20.36V27.92H212.95V90.97H289.94V27.68H295.14V20.36H206.81ZM284.45 81.58H219.09V39.25C219.09 39.25 247.61 24.9 284.45 39.25V81.58ZM212.8 112.22H217.29L221.78 95.34H212.8V112.22ZM286.25 112.22H290.73V95.34H281.76L286.25 112.22Z"
+                fill="currentColor"
+              ></path>
+              <path
+                class="fill-current text-[#f3f3f3] dark:text-stone-800"
+                d="M219.09 39.25V81.58H284.45V39.25C247.61 24.9 219.09 39.25 219.09 39.25ZM264.02 64.9C264.02 64.9 270.93 68.89 274.38 57.82C274.38 57.82 278.54 71.46 271.9 76.86H229.84C229.84 76.86 226.77 69.54 228.31 61.63C228.31 61.63 232.92 66.47 235.28 66.83C235.28 66.83 234.1 56.79 240.12 50.18C240.12 50.18 244.55 59.95 247.82 61.01C251.1 62.07 252.6 43.03 252.6 43.03C252.6 43.03 264.28 49.58 264.02 64.9Z"
+                fill="currentColor"
+              ></path>
+              <path
+                class="fill-current text-primary-accent-light dark:text-primary-accent-dark"
+                d="M247.81 61.01C244.53 59.95 240.11 50.18 240.11 50.18C234.09 56.79 235.27 66.83 235.27 66.83C232.91 66.48 228.3 61.63 228.3 61.63C226.77 69.54 229.83 76.86 229.83 76.86H271.89C278.53 71.46 274.37 57.82 274.37 57.82C270.92 68.89 264.01 64.9 264.01 64.9C264.28 49.58 252.59 43.03 252.59 43.03C252.59 43.03 251.09 62.07 247.81 61.01Z"
+                fill="currentColor"
+              ></path>
+              <path
+                class="fill-current text-dark dark:text-stone-100"
+                d="M253.35 0.740013C263.46 0.740013 273.56 0.740011 283.67 0.730011C284.94 0.730011 286.11 0.810011 286.56 2.32001C286.71 2.83001 287.2 2.57001 287.52 2.57001C296.41 2.58001 305.31 2.58001 314.2 2.59001C314.67 2.59001 315.15 2.61001 315.6 2.71001C316.45 2.89001 317.06 3.70001 317.05 4.53001C317.04 4.96985 316.876 5.3923 316.588 5.72453C316.299 6.05677 315.904 6.27797 315.47 6.35001C315.04 6.42001 314.6 6.42001 314.16 6.42001C305.17 6.42001 296.17 6.43001 287.18 6.40001C286.4 6.40001 286.14 6.64001 285.91 7.38001C284.45 12.06 281.31 15.25 276.9 17.27C276.46 17.47 275.99 17.48 275.51 17.48C260.72 17.48 245.93 17.47 231.14 17.49C229.43 17.49 228.14 16.55 226.86 15.66C222.55 12.66 220.22 8.53001 220.06 3.25001C220 1.47001 220.71 0.740013 222.52 0.740013C227.24 0.730013 231.95 0.740013 236.67 0.740013H253.35Z"
+                fill="currentColor"
+              ></path>
+              <path
+                class="fill-current text-dark dark:text-stone-100"
+                d="M14.97 62.84C11.2 60.84 8.25998 58.1 6.14998 54.62C4.02998 51.14 2.97998 47.23 2.97998 42.88C2.97998 38.54 4.03998 34.63 6.14998 31.14C8.26998 27.66 11.21 24.92 14.97 22.92C18.73 20.92 22.93 19.92 27.57 19.92C32.2 19.92 36.38 20.91 40.1 22.89C43.82 24.87 46.75 27.61 48.89 31.11C51.03 34.61 52.1 38.54 52.1 42.88C52.1 47.22 51.03 51.14 48.89 54.65C46.75 58.15 43.82 60.9 40.1 62.87C36.38 64.85 32.2 65.84 27.57 65.84C22.93 65.83 18.74 64.84 14.97 62.84ZM37.59 59.16C40.57 57.55 42.91 55.31 44.61 52.45C46.3 49.59 47.15 46.4 47.15 42.87C47.15 39.35 46.3 36.15 44.61 33.29C42.92 30.43 40.58 28.2 37.59 26.58C34.6 24.97 31.26 24.16 27.57 24.16C23.87 24.16 20.52 24.97 17.51 26.58C14.5 28.19 12.14 30.43 10.43 33.29C8.70998 36.15 7.85998 39.34 7.85998 42.87C7.85998 46.4 8.71998 49.59 10.43 52.45C12.14 55.31 14.51 57.54 17.51 59.16C20.52 60.77 23.87 61.58 27.57 61.58C31.27 61.58 34.61 60.77 37.59 59.16ZM94.73 24.44C98.11 27.19 99.81 30.97 99.81 35.79C99.81 40.6 98.12 44.38 94.73 47.11C91.34 49.84 86.67 51.2 80.7 51.2H68.14V65.45H63.19V20.31H80.7C86.67 20.31 91.35 21.69 94.73 24.44ZM91.19 44.07C93.64 42.11 94.87 39.35 94.87 35.78C94.87 32.13 93.64 29.32 91.19 27.36C88.74 25.4 85.2 24.43 80.56 24.43H68.13V47H80.56C85.2 47.01 88.74 46.03 91.19 44.07ZM143.58 61.32V65.45H110.5V20.31H142.58V24.44H115.45V40.5H139.64V44.56H115.45V61.32H143.58ZM194.31 20.31V65.45H190.23L160.16 28.82V65.45H155.21V20.31H159.29L189.43 56.94V20.31H194.31ZM7.79998 112.02C4.72998 111.29 2.19998 110.32 0.22998 109.09L4.47998 99.48C6.33998 100.56 8.42998 101.43 10.74 102.08C13.05 102.73 15.27 103.06 17.39 103.06C19.22 103.06 20.52 102.88 21.3 102.53C22.08 102.18 22.47 101.65 22.47 100.94C22.47 100.12 21.96 99.51 20.93 99.1C19.91 98.69 18.22 98.24 15.87 97.76C12.85 97.13 10.34 96.45 8.32998 95.72C6.31998 94.99 4.56998 93.8 3.07998 92.14C1.58998 90.48 0.849979 88.24 0.849979 85.41C0.849979 82.95 1.53998 80.72 2.91998 78.7C4.29998 76.69 6.35998 75.11 9.08998 73.95C11.83 72.8 15.15 72.22 19.06 72.22C21.74 72.22 24.38 72.51 26.97 73.09C29.56 73.67 31.84 74.51 33.81 75.63L29.84 85.18C26 83.24 22.37 82.27 18.94 82.27C15.55 82.27 13.86 83.09 13.86 84.73C13.86 85.51 14.36 86.1 15.37 86.49C16.38 86.88 18.03 87.3 20.34 87.75C23.32 88.31 25.83 88.95 27.88 89.68C29.93 90.41 31.71 91.59 33.22 93.23C34.73 94.87 35.48 97.1 35.48 99.93C35.48 102.39 34.79 104.61 33.41 106.61C32.03 108.6 29.97 110.19 27.24 111.36C24.5 112.53 21.18 113.12 17.27 113.12C14.03 113.11 10.87 112.75 7.79998 112.02ZM47.33 83.34H35.87V73.12H71.96V83.34H60.51V112.22H47.32V83.34H47.33ZM83.98 110.49C80.63 108.74 78 106.31 76.1 103.2C74.2 100.09 73.25 96.58 73.25 92.67C73.25 88.76 74.2 85.25 76.1 82.14C78 79.03 80.63 76.6 83.98 74.85C87.33 73.1 91.11 72.22 95.32 72.22C99.53 72.22 103.31 73.1 106.66 74.85C110.01 76.6 112.64 79.03 114.54 82.14C116.44 85.25 117.39 88.76 117.39 92.67C117.39 96.58 116.44 100.09 114.54 103.2C112.64 106.31 110.01 108.74 106.66 110.49C103.31 112.24 99.53 113.12 95.32 113.12C91.11 113.12 87.33 112.24 83.98 110.49ZM99.76 101.24C101.08 100.44 102.13 99.3 102.92 97.83C103.7 96.36 104.09 94.64 104.09 92.66C104.09 90.69 103.7 88.96 102.92 87.49C102.14 86.02 101.09 84.88 99.76 84.08C98.44 83.28 96.96 82.88 95.32 82.88C93.68 82.88 92.2 83.28 90.88 84.08C89.56 84.88 88.51 86.02 87.72 87.49C86.94 88.96 86.55 90.68 86.55 92.66C86.55 94.63 86.94 96.36 87.72 97.83C88.5 99.3 89.55 100.44 90.88 101.24C92.2 102.04 93.68 102.44 95.32 102.44C96.96 102.44 98.44 102.04 99.76 101.24ZM162.59 73.11L146.05 112.22H133.09L116.55 73.11H130.74L140.07 95.96L149.62 73.11H162.59ZM196.39 102.27V112.22H163.87V73.11H195.66V83.06H176.83V87.64H193.37V97.14H176.83V102.28H196.39V102.27Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </a>
+          <div
+            class="flex w-full items-center justify-between gap-x-2 md:order-3 md:w-auto md:justify-normal"
+          >
+            <div class="flex w-1/3 items-center justify-start md:w-auto">
+              <button
+                type="button"
+                class="hs-collapse-toggle inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-lg py-2 transition-colors duration-300 hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary md:hidden md:h-9 md:w-9 dark:hover:bg-stone-700"
+                data-hs-collapse="#navbar-alignment"
+                aria-controls="navbar-alignment"
+                aria-label="Toggle navigation"
+              >
+                <svg
+                  class="h-5 w-5 hs-collapse-open:hidden"
+                  fill="none"
+                  id="open-menu-icon"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M3 5H11"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M3 12H16"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M3 19H21"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
+                <svg
+                  class="hidden h-6 w-6 hs-collapse-open:block"
+                  fill="none"
+                  id="close-menu-icon"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M6 18 18 6M6 6l12 12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="flex w-full items-center justify-end md:w-auto">
+              <!--    Search Bar-->
+              <div class="group relative mr-2 block">
+                <div
+                  class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
+                >
+                  <svg
+                    class="h-4 w-4 flex-shrink-0 text-gray-500 transition-colors duration-300 group-hover:text-orange-500 dark:text-gray-400 dark:group-hover:text-primary-accent-dark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+
+                  <span class="sr-only">Search icon</span>
+                </div>
+                <input
+                  class="block h-9 w-full rounded-lg border border-gray-300 bg-stone-50 p-2 ps-10 text-sm text-dark transition duration-300 focus:border-orange-200 focus:bg-orange-100 focus:ring-orange-300 dark:border-stone-600 dark:bg-stone-700 dark:text-stone-100 dark:placeholder-stone-400 dark:focus:border-stone-500 dark:focus:bg-stone-600 dark:focus:ring-stone-500"
+                  id="search-navbar"
+                  placeholder="Search recipes..."
+                  type="text"
+                />
+              </div>
+
+              <!-- Github Icon-->
+              <a
+                class="inline-flex h-10 min-w-10 items-center justify-center whitespace-nowrap rounded-lg py-2 transition-colors duration-300 hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary md:h-9 md:w-9 md:min-w-0 dark:hover:bg-stone-700"
+                href="https://github.com/mearashadowfax/OpenStove"
+                target="_blank"
+              >
+                <svg class="h-[1.2rem] w-[1.2]" viewBox="0 0 438.549 438.549">
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <!--Dark Mode Button toggle-->
+
+              <button
+                type="button"
+                class="hs-dark-mode group inline-flex h-10 min-w-10 items-center justify-center whitespace-nowrap rounded-lg py-2 transition-colors duration-300 hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary hs-dark-mode-active:hidden md:h-9 md:w-9 md:min-w-0 dark:hover:bg-stone-700"
+                data-hs-theme-click-value="dark"
+              >
+                <svg
+                  class="mx-auto h-[1.2rem] w-[1.2rem] transition-all duration-300"
+                  fill="none"
+                  height="15"
+                  id="theme-toggle-light-icon"
+                  viewBox="0 0 15 15"
+                  width="15"
+                >
+                  <path
+                    d="M2.89998 0.499976C2.89998 0.279062 2.72089 0.0999756 2.49998 0.0999756C2.27906 0.0999756 2.09998 0.279062 2.09998 0.499976V1.09998H1.49998C1.27906 1.09998 1.09998 1.27906 1.09998 1.49998C1.09998 1.72089 1.27906 1.89998 1.49998 1.89998H2.09998V2.49998C2.09998 2.72089 2.27906 2.89998 2.49998 2.89998C2.72089 2.89998 2.89998 2.72089 2.89998 2.49998V1.89998H3.49998C3.72089 1.89998 3.89998 1.72089 3.89998 1.49998C3.89998 1.27906 3.72089 1.09998 3.49998 1.09998H2.89998V0.499976ZM5.89998 3.49998C5.89998 3.27906 5.72089 3.09998 5.49998 3.09998C5.27906 3.09998 5.09998 3.27906 5.09998 3.49998V4.09998H4.49998C4.27906 4.09998 4.09998 4.27906 4.09998 4.49998C4.09998 4.72089 4.27906 4.89998 4.49998 4.89998H5.09998V5.49998C5.09998 5.72089 5.27906 5.89998 5.49998 5.89998C5.72089 5.89998 5.89998 5.72089 5.89998 5.49998V4.89998H6.49998C6.72089 4.89998 6.89998 4.72089 6.89998 4.49998C6.89998 4.27906 6.72089 4.09998 6.49998 4.09998H5.89998V3.49998ZM1.89998 6.49998C1.89998 6.27906 1.72089 6.09998 1.49998 6.09998C1.27906 6.09998 1.09998 6.27906 1.09998 6.49998V7.09998H0.499976C0.279062 7.09998 0.0999756 7.27906 0.0999756 7.49998C0.0999756 7.72089 0.279062 7.89998 0.499976 7.89998H1.09998V8.49998C1.09998 8.72089 1.27906 8.89997 1.49998 8.89997C1.72089 8.89997 1.89998 8.72089 1.89998 8.49998V7.89998H2.49998C2.72089 7.89998 2.89998 7.72089 2.89998 7.49998C2.89998 7.27906 2.72089 7.09998 2.49998 7.09998H1.89998V6.49998ZM8.54406 0.98184L8.24618 0.941586C8.03275 0.917676 7.90692 1.1655 8.02936 1.34194C8.17013 1.54479 8.29981 1.75592 8.41754 1.97445C8.91878 2.90485 9.20322 3.96932 9.20322 5.10022C9.20322 8.37201 6.82247 11.0878 3.69887 11.6097C3.45736 11.65 3.20988 11.6772 2.96008 11.6906C2.74563 11.702 2.62729 11.9535 2.77721 12.1072C2.84551 12.1773 2.91535 12.2458 2.98667 12.3128L3.05883 12.3795L3.31883 12.6045L3.50684 12.7532L3.62796 12.8433L3.81491 12.9742L3.99079 13.089C4.11175 13.1651 4.23536 13.2375 4.36157 13.3059L4.62496 13.4412L4.88553 13.5607L5.18837 13.6828L5.43169 13.7686C5.56564 13.8128 5.70149 13.8529 5.83857 13.8885C5.94262 13.9155 6.04767 13.9401 6.15405 13.9622C6.27993 13.9883 6.40713 14.0109 6.53544 14.0298L6.85241 14.0685L7.11934 14.0892C7.24637 14.0965 7.37436 14.1002 7.50322 14.1002C11.1483 14.1002 14.1032 11.1453 14.1032 7.50023C14.1032 7.25044 14.0893 7.00389 14.0623 6.76131L14.0255 6.48407C13.991 6.26083 13.9453 6.04129 13.8891 5.82642C13.8213 5.56709 13.7382 5.31398 13.6409 5.06881L13.5279 4.80132L13.4507 4.63542L13.3766 4.48666C13.2178 4.17773 13.0353 3.88295 12.8312 3.60423L12.6782 3.40352L12.4793 3.16432L12.3157 2.98361L12.1961 2.85951L12.0355 2.70246L11.8134 2.50184L11.4925 2.24191L11.2483 2.06498L10.9562 1.87446L10.6346 1.68894L10.3073 1.52378L10.1938 1.47176L9.95488 1.3706L9.67791 1.2669L9.42566 1.1846L9.10075 1.09489L8.83599 1.03486L8.54406 0.98184ZM10.4032 5.30023C10.4032 4.27588 10.2002 3.29829 9.83244 2.40604C11.7623 3.28995 13.1032 5.23862 13.1032 7.50023C13.1032 10.593 10.596 13.1002 7.50322 13.1002C6.63646 13.1002 5.81597 12.9036 5.08355 12.5522C6.5419 12.0941 7.81081 11.2082 8.74322 10.0416C8.87963 10.2284 9.10028 10.3497 9.34928 10.3497C9.76349 10.3497 10.0993 10.0139 10.0993 9.59971C10.0993 9.24256 9.84965 8.94373 9.51535 8.86816C9.57741 8.75165 9.63653 8.63334 9.6926 8.51332C9.88358 8.63163 10.1088 8.69993 10.35 8.69993C11.0403 8.69993 11.6 8.14028 11.6 7.44993C11.6 6.75976 11.0406 6.20024 10.3505 6.19993C10.3853 5.90487 10.4032 5.60464 10.4032 5.30023Z"
+                    fill="#242424"
+                  ></path>
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                class="hs-dark-mode group inline-flex hidden h-10 min-w-10 items-center justify-center whitespace-nowrap rounded-lg py-2 transition-colors duration-300 hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary hs-dark-mode-active:block md:h-9 md:w-9 md:min-w-0 dark:hover:bg-stone-700"
+                data-hs-theme-click-value="light"
+              >
+                <svg
+                  class="mx-auto h-5 w-5 transition-all duration-300"
+                  fill="none"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  width="15"
+                >
+                  <path
+                    d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z"
+                    fill="#f5f5f4"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="navbar-alignment"
+            class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:order-2 md:block md:grow-0 md:basis-auto"
+          >
+            <ul
+              class="mt-4 flex flex-col rounded-xl border border-orange-200 p-4 font-medium transition-colors duration-300 md:mt-0 md:flex-row md:gap-8 md:border-0 md:p-0 2xl:text-lg rtl:space-x-reverse dark:border-stone-700"
+            >
+              <li class="my-3 flex items-center justify-center md:hidden">
+                <svg class="h-auto w-36" viewBox="0 0 318 114">
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M206.81 20.36V27.92H212.95V90.97H289.94V27.68H295.14V20.36H206.81ZM284.45 81.58H219.09V39.25C219.09 39.25 247.61 24.9 284.45 39.25V81.58ZM212.8 112.22H217.29L221.78 95.34H212.8V112.22ZM286.25 112.22H290.73V95.34H281.76L286.25 112.22Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    class="fill-current text-[#f3f3f3] dark:text-stone-800"
+                    d="M219.09 39.25V81.58H284.45V39.25C247.61 24.9 219.09 39.25 219.09 39.25ZM264.02 64.9C264.02 64.9 270.93 68.89 274.38 57.82C274.38 57.82 278.54 71.46 271.9 76.86H229.84C229.84 76.86 226.77 69.54 228.31 61.63C228.31 61.63 232.92 66.47 235.28 66.83C235.28 66.83 234.1 56.79 240.12 50.18C240.12 50.18 244.55 59.95 247.82 61.01C251.1 62.07 252.6 43.03 252.6 43.03C252.6 43.03 264.28 49.58 264.02 64.9Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    class="fill-current text-primary-accent-light dark:text-primary-accent-dark"
+                    d="M247.81 61.01C244.53 59.95 240.11 50.18 240.11 50.18C234.09 56.79 235.27 66.83 235.27 66.83C232.91 66.48 228.3 61.63 228.3 61.63C226.77 69.54 229.83 76.86 229.83 76.86H271.89C278.53 71.46 274.37 57.82 274.37 57.82C270.92 68.89 264.01 64.9 264.01 64.9C264.28 49.58 252.59 43.03 252.59 43.03C252.59 43.03 251.09 62.07 247.81 61.01Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M253.35 0.740013C263.46 0.740013 273.56 0.740011 283.67 0.730011C284.94 0.730011 286.11 0.810011 286.56 2.32001C286.71 2.83001 287.2 2.57001 287.52 2.57001C296.41 2.58001 305.31 2.58001 314.2 2.59001C314.67 2.59001 315.15 2.61001 315.6 2.71001C316.45 2.89001 317.06 3.70001 317.05 4.53001C317.04 4.96985 316.876 5.3923 316.588 5.72453C316.299 6.05677 315.904 6.27797 315.47 6.35001C315.04 6.42001 314.6 6.42001 314.16 6.42001C305.17 6.42001 296.17 6.43001 287.18 6.40001C286.4 6.40001 286.14 6.64001 285.91 7.38001C284.45 12.06 281.31 15.25 276.9 17.27C276.46 17.47 275.99 17.48 275.51 17.48C260.72 17.48 245.93 17.47 231.14 17.49C229.43 17.49 228.14 16.55 226.86 15.66C222.55 12.66 220.22 8.53001 220.06 3.25001C220 1.47001 220.71 0.740013 222.52 0.740013C227.24 0.730013 231.95 0.740013 236.67 0.740013H253.35Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    class="fill-current text-dark dark:text-stone-100"
+                    d="M14.97 62.84C11.2 60.84 8.25998 58.1 6.14998 54.62C4.02998 51.14 2.97998 47.23 2.97998 42.88C2.97998 38.54 4.03998 34.63 6.14998 31.14C8.26998 27.66 11.21 24.92 14.97 22.92C18.73 20.92 22.93 19.92 27.57 19.92C32.2 19.92 36.38 20.91 40.1 22.89C43.82 24.87 46.75 27.61 48.89 31.11C51.03 34.61 52.1 38.54 52.1 42.88C52.1 47.22 51.03 51.14 48.89 54.65C46.75 58.15 43.82 60.9 40.1 62.87C36.38 64.85 32.2 65.84 27.57 65.84C22.93 65.83 18.74 64.84 14.97 62.84ZM37.59 59.16C40.57 57.55 42.91 55.31 44.61 52.45C46.3 49.59 47.15 46.4 47.15 42.87C47.15 39.35 46.3 36.15 44.61 33.29C42.92 30.43 40.58 28.2 37.59 26.58C34.6 24.97 31.26 24.16 27.57 24.16C23.87 24.16 20.52 24.97 17.51 26.58C14.5 28.19 12.14 30.43 10.43 33.29C8.70998 36.15 7.85998 39.34 7.85998 42.87C7.85998 46.4 8.71998 49.59 10.43 52.45C12.14 55.31 14.51 57.54 17.51 59.16C20.52 60.77 23.87 61.58 27.57 61.58C31.27 61.58 34.61 60.77 37.59 59.16ZM94.73 24.44C98.11 27.19 99.81 30.97 99.81 35.79C99.81 40.6 98.12 44.38 94.73 47.11C91.34 49.84 86.67 51.2 80.7 51.2H68.14V65.45H63.19V20.31H80.7C86.67 20.31 91.35 21.69 94.73 24.44ZM91.19 44.07C93.64 42.11 94.87 39.35 94.87 35.78C94.87 32.13 93.64 29.32 91.19 27.36C88.74 25.4 85.2 24.43 80.56 24.43H68.13V47H80.56C85.2 47.01 88.74 46.03 91.19 44.07ZM143.58 61.32V65.45H110.5V20.31H142.58V24.44H115.45V40.5H139.64V44.56H115.45V61.32H143.58ZM194.31 20.31V65.45H190.23L160.16 28.82V65.45H155.21V20.31H159.29L189.43 56.94V20.31H194.31ZM7.79998 112.02C4.72998 111.29 2.19998 110.32 0.22998 109.09L4.47998 99.48C6.33998 100.56 8.42998 101.43 10.74 102.08C13.05 102.73 15.27 103.06 17.39 103.06C19.22 103.06 20.52 102.88 21.3 102.53C22.08 102.18 22.47 101.65 22.47 100.94C22.47 100.12 21.96 99.51 20.93 99.1C19.91 98.69 18.22 98.24 15.87 97.76C12.85 97.13 10.34 96.45 8.32998 95.72C6.31998 94.99 4.56998 93.8 3.07998 92.14C1.58998 90.48 0.849979 88.24 0.849979 85.41C0.849979 82.95 1.53998 80.72 2.91998 78.7C4.29998 76.69 6.35998 75.11 9.08998 73.95C11.83 72.8 15.15 72.22 19.06 72.22C21.74 72.22 24.38 72.51 26.97 73.09C29.56 73.67 31.84 74.51 33.81 75.63L29.84 85.18C26 83.24 22.37 82.27 18.94 82.27C15.55 82.27 13.86 83.09 13.86 84.73C13.86 85.51 14.36 86.1 15.37 86.49C16.38 86.88 18.03 87.3 20.34 87.75C23.32 88.31 25.83 88.95 27.88 89.68C29.93 90.41 31.71 91.59 33.22 93.23C34.73 94.87 35.48 97.1 35.48 99.93C35.48 102.39 34.79 104.61 33.41 106.61C32.03 108.6 29.97 110.19 27.24 111.36C24.5 112.53 21.18 113.12 17.27 113.12C14.03 113.11 10.87 112.75 7.79998 112.02ZM47.33 83.34H35.87V73.12H71.96V83.34H60.51V112.22H47.32V83.34H47.33ZM83.98 110.49C80.63 108.74 78 106.31 76.1 103.2C74.2 100.09 73.25 96.58 73.25 92.67C73.25 88.76 74.2 85.25 76.1 82.14C78 79.03 80.63 76.6 83.98 74.85C87.33 73.1 91.11 72.22 95.32 72.22C99.53 72.22 103.31 73.1 106.66 74.85C110.01 76.6 112.64 79.03 114.54 82.14C116.44 85.25 117.39 88.76 117.39 92.67C117.39 96.58 116.44 100.09 114.54 103.2C112.64 106.31 110.01 108.74 106.66 110.49C103.31 112.24 99.53 113.12 95.32 113.12C91.11 113.12 87.33 112.24 83.98 110.49ZM99.76 101.24C101.08 100.44 102.13 99.3 102.92 97.83C103.7 96.36 104.09 94.64 104.09 92.66C104.09 90.69 103.7 88.96 102.92 87.49C102.14 86.02 101.09 84.88 99.76 84.08C98.44 83.28 96.96 82.88 95.32 82.88C93.68 82.88 92.2 83.28 90.88 84.08C89.56 84.88 88.51 86.02 87.72 87.49C86.94 88.96 86.55 90.68 86.55 92.66C86.55 94.63 86.94 96.36 87.72 97.83C88.5 99.3 89.55 100.44 90.88 101.24C92.2 102.04 93.68 102.44 95.32 102.44C96.96 102.44 98.44 102.04 99.76 101.24ZM162.59 73.11L146.05 112.22H133.09L116.55 73.11H130.74L140.07 95.96L149.62 73.11H162.59ZM196.39 102.27V112.22H163.87V73.11H195.66V83.06H176.83V87.64H193.37V97.14H176.83V102.28H196.39V102.27Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <a
+                  aria-current="page"
+                  class="block rounded bg-primary-accent-dark px-3 py-2 text-dark transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:bg-transparent md:p-0 md:text-orange-500 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark md:dark:bg-transparent"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block rounded px-3 py-2 text-dark transition-colors duration-300 hover:bg-orange-100 hover:text-primary-accent-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:p-0 md:hover:bg-transparent md:hover:text-orange-500 2xl:text-lg dark:border-gray-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark md:dark:hover:bg-transparent md:dark:hover:text-primary-accent-dark"
+                  href="#"
+                  >Recipes</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block rounded px-3 py-2 text-dark transition-colors duration-300 hover:bg-orange-100 hover:text-primary-accent-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:p-0 md:hover:bg-transparent md:hover:text-orange-500 2xl:text-lg dark:border-gray-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark md:dark:hover:bg-transparent md:dark:hover:text-primary-accent-dark"
+                  href="about"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- End  Nav Bar -->
+
+      <!-- Heading Section -->
+      <div class="mt-10 py-6 sm:py-8 lg:py-12">
+        <div
+          class="rounded-xl bg-gradient-to-br from-[#FDC830] to-[#FF8372] px-4 py-6"
+        >
+          <section class="flex items-center justify-center gap-6">
+            <!-- content - start -->
+            <div
+              class="flex w-10/12 justify-center text-center sm:py-4 md:py-12 lg:w-6/12 lg:py-0 lg:text-left"
+            >
+              <h1
+                class="text-balance text-2xl font-bold text-dark md:text-3xl lg:text-4xl xl:text-5xl"
+              >
+                Explore, cook, and cherish recipes co-created by our global
+                community of food enthusiasts.
+              </h1>
+            </div>
+            <!-- content - end -->
+
+            <!-- image - start -->
+            <div class="hidden lg:flex lg:w-3/12">
+              <Icon class="h-full w-full" name="food-bowl" />
+            </div>
+            <!-- image - end -->
+          </section>
+        </div>
+      </div>
+      <!-- End Heading -->
+
+      <!-- Grid -->
+      <div
+        class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-end"
+      >
+        <a
+          class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-primary px-8 py-3 text-center text-sm font-medium text-[#422006] outline-none transition duration-300 hover:bg-secondary hover:text-orange-900  md:text-base 2xl:text-lg"
+          href="#recipeCards"
+        >
+          Saved Recipes
+          <svg
+            class="h-6 w-6 transition duration-300 group-hover:-translate-y-1 group-focus-visible:-translate-y-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Recipe Cards -->
+      <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1617421753170-46511a8d73fc?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+          <!-- Card -->
+          <a
+            class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+            href="#"
+          >
+            <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+              <img
+                class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+            </div>
+            <div class="my-6">
+              <h3
+                class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+              >
+                Japanese Ramen
+              </h3>
+              <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+                Authentic ramen with rich broth, tender pork, and chewy noodles.
+                A taste of Tokyo in your kitchen!
+              </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3">
+              <div>
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Japanese</span
+                >
+                <span
+                  class="mx-2 inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Ramen</span
+                >
+                <span
+                  class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+                  >Noodles</span
+                >
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+        </div>
+        <!-- End Grid -->
+
+        <!-- Pagination -->
+        <nav
+          class="mt-10 flex items-center justify-center gap-x-1 xl:justify-end"
+        >
+          <button
+            type="button"
+            class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+            disabled
+          >
+            <svg
+              class="h-3.5 w-3.5 flex-shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+            <span>Previous</span>
+          </button>
+          <div class="flex items-center gap-x-1">
+            <button
+              type="button"
+              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg bg-orange-200 px-3 py-2 text-sm text-dark focus:bg-orange-200 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500"
+              aria-current="page"
+            >
+              1
+            </button>
+            <button
+              type="button"
+              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+            >
+              2
+            </button>
+            <button
+              type="button"
+              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+            >
+              3
+            </button>
+            <div class="hs-tooltip inline-block">
+              <button
+                type="button"
+                class="hs-tooltip-toggle dark:hover:primary-accent-dark group flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg p-2 text-sm text-gray-400 hover:text-primary-accent-light focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-gray-500 dark:focus:bg-white/10"
+              >
+                <span class="text-xs group-hover:hidden">•••</span>
+                <svg
+                  class="hidden h-5 w-5 flex-shrink-0 group-hover:block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 17 5-5-5-5" />
+                  <path d="m13 17 5-5-5-5" />
+                </svg>
+                <span
+                  class="hs-tooltip-content invisible absolute z-10 inline-block rounded bg-stone-900 px-2 py-1 text-xs font-medium text-stone-100 opacity-0 shadow-sm transition-opacity hs-tooltip-shown:visible hs-tooltip-shown:opacity-100 dark:bg-stone-700"
+                  role="tooltip"
+                >
+                  Next 4 pages
+                </span>
+              </button>
+            </div>
+            <button
+              type="button"
+              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+            >
+              8
+            </button>
+          </div>
+          <button
+            type="button"
+            class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+          >
+            <span>Next</span>
+            <svg
+              class="h-3.5 w-3.5 flex-shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </nav>
+        <!-- End Pagination -->
+      </div>
+      <!-- End Recipe Cards -->
+
+      <!-- Community Card-->
+      <div class="mx-auto mb-12">
+        <div class="py-6 sm:py-8">
+          <!-- Flex -->
+          <div class="mx-auto flex max-w-screen-md flex-col items-center">
+            <div class="flex w-9/12 items-center justify-center 2xl:w-full">
+              <Icon class="h-auto w-full" name="recipe-book" />
+            </div>
+
+            <!-- image - end -->
+            <div class="mx-auto mt-5 sm:mt-10 lg:mt-0">
+              <div class="space-y-6 sm:space-y-8">
+                <!-- Title -->
+                <div
+                  class="mx-auto flex flex-col items-center justify-center px-4 sm:px-6 md:px-0"
+                >
+                  <div class="mx-auto">
+                    <p
+                      class="text-pretty text-center text-lg leading-relaxed text-stone-600 sm:text-xl 2xl:text-2xl dark:text-stone-400"
+                    >
+                      Passionate about your pesto? Fanatical about your pho?
+                      Whatever your specialty, the OpenStove community is hungry
+                      for your recipes.
+                    </p>
+                    <div class="mt-8 text-center">
+                      <a
+                        class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
+                        href="https://github.com/mearashadowfax/OpenStove"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <svg
+                          class="w-4.5 h-4.5"
+                          height="16"
+                          viewBox="0 0 438.549 438.549"
+                          width="16"
+                        >
+                          <path
+                            class="fill-current"
+                            d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        Contribute with GitHub
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End Title -->
+                </div>
+              </div>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Flex -->
+        </div>
+      </div>
+      <!-- End Community Card-->
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="mx-auto mt-16 w-full bg-primary py-10">
+      <!-- Grid -->
+      <div class="mx-auto max-w-screen-2xl px-4 text-center md:px-8">
+        <div class="flex justify-center">
+          <svg class="h-auto w-36" viewBox="0 0 318 114">
+            <path
+              class="fill-current text-dark"
+              d="M206.81 20.36V27.92H212.95V90.97H289.94V27.68H295.14V20.36H206.81ZM284.45 81.58H219.09V39.25C219.09 39.25 247.61 24.9 284.45 39.25V81.58ZM212.8 112.22H217.29L221.78 95.34H212.8V112.22ZM286.25 112.22H290.73V95.34H281.76L286.25 112.22Z"
+              fill="currentColor"
+            ></path>
+            <path
+              class="fill-current text-[#f3f3f3]"
+              d="M219.09 39.25V81.58H284.45V39.25C247.61 24.9 219.09 39.25 219.09 39.25ZM264.02 64.9C264.02 64.9 270.93 68.89 274.38 57.82C274.38 57.82 278.54 71.46 271.9 76.86H229.84C229.84 76.86 226.77 69.54 228.31 61.63C228.31 61.63 232.92 66.47 235.28 66.83C235.28 66.83 234.1 56.79 240.12 50.18C240.12 50.18 244.55 59.95 247.82 61.01C251.1 62.07 252.6 43.03 252.6 43.03C252.6 43.03 264.28 49.58 264.02 64.9Z"
+              fill="currentColor"
+            ></path>
+            <path
+              class="fill-current text-primary-accent-light"
+              d="M247.81 61.01C244.53 59.95 240.11 50.18 240.11 50.18C234.09 56.79 235.27 66.83 235.27 66.83C232.91 66.48 228.3 61.63 228.3 61.63C226.77 69.54 229.83 76.86 229.83 76.86H271.89C278.53 71.46 274.37 57.82 274.37 57.82C270.92 68.89 264.01 64.9 264.01 64.9C264.28 49.58 252.59 43.03 252.59 43.03C252.59 43.03 251.09 62.07 247.81 61.01Z"
+              fill="currentColor"
+            ></path>
+            <path
+              class="fill-current text-dark"
+              d="M253.35 0.740013C263.46 0.740013 273.56 0.740011 283.67 0.730011C284.94 0.730011 286.11 0.810011 286.56 2.32001C286.71 2.83001 287.2 2.57001 287.52 2.57001C296.41 2.58001 305.31 2.58001 314.2 2.59001C314.67 2.59001 315.15 2.61001 315.6 2.71001C316.45 2.89001 317.06 3.70001 317.05 4.53001C317.04 4.96985 316.876 5.3923 316.588 5.72453C316.299 6.05677 315.904 6.27797 315.47 6.35001C315.04 6.42001 314.6 6.42001 314.16 6.42001C305.17 6.42001 296.17 6.43001 287.18 6.40001C286.4 6.40001 286.14 6.64001 285.91 7.38001C284.45 12.06 281.31 15.25 276.9 17.27C276.46 17.47 275.99 17.48 275.51 17.48C260.72 17.48 245.93 17.47 231.14 17.49C229.43 17.49 228.14 16.55 226.86 15.66C222.55 12.66 220.22 8.53001 220.06 3.25001C220 1.47001 220.71 0.740013 222.52 0.740013C227.24 0.730013 231.95 0.740013 236.67 0.740013H253.35Z"
+              fill="currentColor"
+            ></path>
+            <path
+              class="fill-current text-dark"
+              d="M14.97 62.84C11.2 60.84 8.25998 58.1 6.14998 54.62C4.02998 51.14 2.97998 47.23 2.97998 42.88C2.97998 38.54 4.03998 34.63 6.14998 31.14C8.26998 27.66 11.21 24.92 14.97 22.92C18.73 20.92 22.93 19.92 27.57 19.92C32.2 19.92 36.38 20.91 40.1 22.89C43.82 24.87 46.75 27.61 48.89 31.11C51.03 34.61 52.1 38.54 52.1 42.88C52.1 47.22 51.03 51.14 48.89 54.65C46.75 58.15 43.82 60.9 40.1 62.87C36.38 64.85 32.2 65.84 27.57 65.84C22.93 65.83 18.74 64.84 14.97 62.84ZM37.59 59.16C40.57 57.55 42.91 55.31 44.61 52.45C46.3 49.59 47.15 46.4 47.15 42.87C47.15 39.35 46.3 36.15 44.61 33.29C42.92 30.43 40.58 28.2 37.59 26.58C34.6 24.97 31.26 24.16 27.57 24.16C23.87 24.16 20.52 24.97 17.51 26.58C14.5 28.19 12.14 30.43 10.43 33.29C8.70998 36.15 7.85998 39.34 7.85998 42.87C7.85998 46.4 8.71998 49.59 10.43 52.45C12.14 55.31 14.51 57.54 17.51 59.16C20.52 60.77 23.87 61.58 27.57 61.58C31.27 61.58 34.61 60.77 37.59 59.16ZM94.73 24.44C98.11 27.19 99.81 30.97 99.81 35.79C99.81 40.6 98.12 44.38 94.73 47.11C91.34 49.84 86.67 51.2 80.7 51.2H68.14V65.45H63.19V20.31H80.7C86.67 20.31 91.35 21.69 94.73 24.44ZM91.19 44.07C93.64 42.11 94.87 39.35 94.87 35.78C94.87 32.13 93.64 29.32 91.19 27.36C88.74 25.4 85.2 24.43 80.56 24.43H68.13V47H80.56C85.2 47.01 88.74 46.03 91.19 44.07ZM143.58 61.32V65.45H110.5V20.31H142.58V24.44H115.45V40.5H139.64V44.56H115.45V61.32H143.58ZM194.31 20.31V65.45H190.23L160.16 28.82V65.45H155.21V20.31H159.29L189.43 56.94V20.31H194.31ZM7.79998 112.02C4.72998 111.29 2.19998 110.32 0.22998 109.09L4.47998 99.48C6.33998 100.56 8.42998 101.43 10.74 102.08C13.05 102.73 15.27 103.06 17.39 103.06C19.22 103.06 20.52 102.88 21.3 102.53C22.08 102.18 22.47 101.65 22.47 100.94C22.47 100.12 21.96 99.51 20.93 99.1C19.91 98.69 18.22 98.24 15.87 97.76C12.85 97.13 10.34 96.45 8.32998 95.72C6.31998 94.99 4.56998 93.8 3.07998 92.14C1.58998 90.48 0.849979 88.24 0.849979 85.41C0.849979 82.95 1.53998 80.72 2.91998 78.7C4.29998 76.69 6.35998 75.11 9.08998 73.95C11.83 72.8 15.15 72.22 19.06 72.22C21.74 72.22 24.38 72.51 26.97 73.09C29.56 73.67 31.84 74.51 33.81 75.63L29.84 85.18C26 83.24 22.37 82.27 18.94 82.27C15.55 82.27 13.86 83.09 13.86 84.73C13.86 85.51 14.36 86.1 15.37 86.49C16.38 86.88 18.03 87.3 20.34 87.75C23.32 88.31 25.83 88.95 27.88 89.68C29.93 90.41 31.71 91.59 33.22 93.23C34.73 94.87 35.48 97.1 35.48 99.93C35.48 102.39 34.79 104.61 33.41 106.61C32.03 108.6 29.97 110.19 27.24 111.36C24.5 112.53 21.18 113.12 17.27 113.12C14.03 113.11 10.87 112.75 7.79998 112.02ZM47.33 83.34H35.87V73.12H71.96V83.34H60.51V112.22H47.32V83.34H47.33ZM83.98 110.49C80.63 108.74 78 106.31 76.1 103.2C74.2 100.09 73.25 96.58 73.25 92.67C73.25 88.76 74.2 85.25 76.1 82.14C78 79.03 80.63 76.6 83.98 74.85C87.33 73.1 91.11 72.22 95.32 72.22C99.53 72.22 103.31 73.1 106.66 74.85C110.01 76.6 112.64 79.03 114.54 82.14C116.44 85.25 117.39 88.76 117.39 92.67C117.39 96.58 116.44 100.09 114.54 103.2C112.64 106.31 110.01 108.74 106.66 110.49C103.31 112.24 99.53 113.12 95.32 113.12C91.11 113.12 87.33 112.24 83.98 110.49ZM99.76 101.24C101.08 100.44 102.13 99.3 102.92 97.83C103.7 96.36 104.09 94.64 104.09 92.66C104.09 90.69 103.7 88.96 102.92 87.49C102.14 86.02 101.09 84.88 99.76 84.08C98.44 83.28 96.96 82.88 95.32 82.88C93.68 82.88 92.2 83.28 90.88 84.08C89.56 84.88 88.51 86.02 87.72 87.49C86.94 88.96 86.55 90.68 86.55 92.66C86.55 94.63 86.94 96.36 87.72 97.83C88.5 99.3 89.55 100.44 90.88 101.24C92.2 102.04 93.68 102.44 95.32 102.44C96.96 102.44 98.44 102.04 99.76 101.24ZM162.59 73.11L146.05 112.22H133.09L116.55 73.11H130.74L140.07 95.96L149.62 73.11H162.59ZM196.39 102.27V112.22H163.87V73.11H195.66V83.06H176.83V87.64H193.37V97.14H176.83V102.28H196.39V102.27Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        <!-- End Col -->
+
+        <div class="mt-4">
+          <p class="text-footer 2xl:text-lg">Explore. Share. Cook.</p>
+          <p class="text-pretty text-footer 2xl:text-lg">
+            Dive into a community-curated collection of recipes.
+          </p>
+        </div>
+        <hr class="my-4 border border-black/[.05]" />
+        <div
+          class="mt-3 flex flex-col-reverse justify-between gap-2 md:flex-row"
+        >
+          <p class="text-pretty text-sm text-footer-light 2xl:text-base">
+            © 2024 OpenStove. All Rights Reserved.
+          </p>
+          <p class="text-pretty text-sm text-footer-light 2xl:text-base">
+            Crafted by
+            <a
+                class="focus-visible:ring-secondar font-medium text-footer transition duration-300 hover:text-dark underline hover:decoration-dashed focus:outline-none focus-visible:outline-none focus-visible:ring-2"
+                href="https://sobstvennoai.dev"
+              target="_blank"
+              >sobstvennoAI</a
+            >
+            for a wholesome cooking journey online.
+          </p>
+        </div>
+      </div>
+      <!-- End Grid -->
+    </footer>
+    <!-- End Footer-->
+
+    <script is:inline>
+      const HSThemeAppearance = {
+        init() {
+          const defaultTheme = "default";
+          let theme = localStorage.getItem("hs_theme") || defaultTheme;
+
+          if (document.querySelector("html").classList.contains("dark")) return;
+          this.setAppearance(theme);
+        },
+        _resetStylesOnLoad() {
+          const $resetStyles = document.createElement("style");
+          $resetStyles.innerText = `*{transition: unset !important;}`;
+          $resetStyles.setAttribute("data-hs-appearance-onload-styles", "");
+          document.head.appendChild($resetStyles);
+          return $resetStyles;
+        },
+        setAppearance(theme, saveInStore = true, dispatchEvent = true) {
+          const $resetStylesEl = this._resetStylesOnLoad();
+
+          if (saveInStore) {
+            localStorage.setItem("hs_theme", theme);
+          }
+
+          if (theme === "auto") {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "default";
+          }
+
+          document.querySelector("html").classList.remove("dark");
+          document.querySelector("html").classList.remove("default");
+          document.querySelector("html").classList.remove("auto");
+
+          document
+            .querySelector("html")
+            .classList.add(this.getOriginalAppearance());
+
+          setTimeout(() => {
+            $resetStylesEl.remove();
+          });
+
+          if (dispatchEvent) {
+            window.dispatchEvent(
+              new CustomEvent("on-hs-appearance-change", { detail: theme }),
+            );
+          }
+        },
+        getAppearance() {
+          let theme = this.getOriginalAppearance();
+          if (theme === "auto") {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "default";
+          }
+          return theme;
+        },
+        getOriginalAppearance() {
+          const defaultTheme = "default";
+          return localStorage.getItem("hs_theme") || defaultTheme;
+        },
+      };
+      HSThemeAppearance.init();
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          if (HSThemeAppearance.getOriginalAppearance() === "auto") {
+            HSThemeAppearance.setAppearance("auto", false);
+          }
+        });
+
+      window.addEventListener("load", () => {
+        const $clickableThemes = document.querySelectorAll(
+          "[data-hs-theme-click-value]",
+        );
+        const $switchableThemes = document.querySelectorAll(
+          "[data-hs-theme-switch]",
+        );
+
+        $clickableThemes.forEach(($item) => {
+          $item.addEventListener("click", () =>
+            HSThemeAppearance.setAppearance(
+              $item.getAttribute("data-hs-theme-click-value"),
+              true,
+              $item,
+            ),
+          );
+        });
+
+        $switchableThemes.forEach(($item) => {
+          $item.addEventListener("change", (e) => {
+            HSThemeAppearance.setAppearance(
+              e.target.checked ? "dark" : "default",
+            );
+          });
+
+          $item.checked = HSThemeAppearance.getAppearance() === "dark";
+        });
+
+        window.addEventListener("on-hs-appearance-change", (e) => {
+          $switchableThemes.forEach(($item) => {
+            $item.checked = e.detail === "dark";
+          });
+        });
+      });
+    </script>
+    <script is:inline src="./node_modules/preline/dist/accordion.js"></script>
+    <script is:inline src="./node_modules/preline/dist/collapse.js"></script>
+    <script is:inline src="./node_modules/preline/dist/tooltip.js"></script>
+  </body>
+</html>
