@@ -1,6 +1,7 @@
 <div align="center">
   <img src="src/icons/logo-readme.svg" alt="OpenStove Logo"/>
-</div>
+</div>  
+<p>&nbsp;</p>
 
 >Welcome to **OpenStove — A Curated Collection of Community-Crafted Recipes**. OpenStove is a digital gathering space where culinary enthusiasts come together to discover, share, and contribute recipes. No ads, no fees —  just a love for food and community.
 
