@@ -1,0 +1,82 @@
+<div class="inline-flex max-w-xs gap-x-2">
+    <button
+      type="button"
+      class="js-clipboard dark:bg-slate-900 group inline-flex items-center gap-x-2 rounded-lg p-3 text-sm font-medium text-stone-700 hover:bg-orange-100 hover:text-dark disabled:pointer-events-none disabled:opacity-50 dark:text-stone-300 dark:hover:bg-stone-700 dark:hover:text-stone-100"
+      data-clipboard-success-text="Copied"
+    >
+      <svg
+        class="js-clipboard-default h-4 w-4 transition group-hover:rotate-6"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+        <path
+          d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+        ></path>
+      </svg>
+
+      <svg
+        class="js-clipboard-success hidden h-4 w-4 text-primary-accent-light dark:text-primary-accent-dark"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span class="js-clipboard-success-text">Copy link</span>
+    </button>
+  </div>
+
+  <script is:inline src="/node_modules/clipboard/dist/clipboard.min.js"></script>
+  <script is:inline>
+      // Initialization of Clipboard
+      (function() {
+        window.addEventListener('load', () => {
+          const $clipboards = document.querySelectorAll('.js-clipboard');
+          $clipboards.forEach((el) => {
+            const clipboard = new ClipboardJS(el, {
+              text: () => {
+                return window.location.href;
+              }
+            });
+            clipboard.on('success', () => {
+              const $default = el.querySelector('.js-clipboard-default');
+              const $success = el.querySelector('.js-clipboard-success');
+              const $successText = el.querySelector('.js-clipboard-success-text');
+              const successText = el.dataset.clipboardSuccessText || '';
+              let oldSuccessText;
+
+              if ($successText) {
+                oldSuccessText = $successText.textContent
+                $successText.textContent = successText
+              }
+              if ($default && $success) {
+                $default.style.display = 'none'
+                $success.style.display = 'block'
+              }
+
+              setTimeout(function () {
+                if ($successText && oldSuccessText) $successText.textContent = oldSuccessText;
+                if ($default && $success) {
+                  $success.style.display = '';
+                  $default.style.display = '';
+                }
+              }, 800);
+            });
+          });
+        })
+      })()
+  </script>
