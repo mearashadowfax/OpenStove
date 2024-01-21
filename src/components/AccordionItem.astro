@@ -1,0 +1,49 @@
+<div
+        class={Astro.props.isActive ? 'hs-accordion active rounded-xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/[.05]' : 'hs-accordion rounded-xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/[.05]'}
+        id={Astro.props.id}
+
+>
+    <button
+            aria-controls={Astro.props.collapseId}
+            class="hs-accordion-toggle group inline-flex w-full items-center justify-between gap-x-3 rounded-lg pb-3 text-start font-semibold text-dark transition duration-300 hover:text-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:text-lg 2xl:text-xl dark:text-stone-100 dark:hover:text-stone-400 dark:focus:outline-none"
+    >
+        {Astro.props.heading}
+        <svg
+                class="block h-5 w-5 flex-shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-stone-600 hs-accordion-active:hidden dark:text-stone-300 dark:group-hover:text-stone-400"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="m6 9 6 6 6-6"></path>
+        </svg>
+        <svg
+                class="hidden h-5 w-5 flex-shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-stone-600 hs-accordion-active:block dark:text-stone-300 dark:group-hover:text-stone-400"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="m18 15-6-6-6 6"></path>
+        </svg>
+    </button>
+    <div
+            aria-labelledby={Astro.props.id}
+            class={Astro.props.isActive ? "hs-accordion-content w-full overflow-hidden transition-[height] duration-300" : "hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"}
+            id={Astro.props.collapseId}
+    >
+        <p class="text-dark 2xl:text-lg dark:text-stone-200">
+            <slot/>
+        </p>
+    </div>
+</div>
