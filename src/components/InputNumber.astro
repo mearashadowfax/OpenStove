@@ -1,0 +1,69 @@
+    <!-- Serving Size Container -->
+    <div class="flex flex-col py-3 sm:py-6 lg:py-6">
+        <p class="text-base">Serving size</p>
+        <!-- Input Number -->
+        <div
+          class="max-w-40 rounded-lg border border-stone-300 bg-stone-50 dark:border-stone-600 dark:bg-stone-700/60"
+          data-hs-input-number
+        >
+          <div class="flex w-full items-center justify-between gap-x-1">
+            <div class="grow px-3 py-2">
+              <input
+                class="w-full border-0 bg-transparent p-0 text-dark focus:ring-0 dark:text-stone-100"
+                type="text"
+                value="1"
+                data-hs-input-number-input
+              />
+            </div>
+            <div
+              class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700"
+            >
+              <button
+                type="button"
+                class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+                data-hs-input-number-decrement
+              >
+                <svg
+                  class="h-3.5 w-3.5 flex-shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+                data-hs-input-number-increment
+              >
+                <svg
+                  class="h-3.5 w-3.5 flex-shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Input Number -->
+      </div>
+      <!-- End Serving Size Container -->
+      
+      <script is:inline src="/node_modules/preline/dist/input-number.js"></script>      
