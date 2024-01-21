@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+const { recipe } = Astro.props;
+
+interface Props {
+      recipe: CollectionEntry<'recipes'>;
+}
+---
+
+
+<a
+      class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+      href={"/recipes/" + recipe.slug}
+    >
+      <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
+        <Image
+          class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+          src={recipe.data.image}
+          alt={recipe.data.imageAlt}
+        />
+      </div>
+      <div class="my-6">
+        <h3
+          class="text-2xl font-semibold text-dark transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
+        >
+          {recipe.data.title}
+        </h3>
+        <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+          {recipe.data.description}
+        </p>
+      </div>
+      <div class="mt-auto flex items-center gap-x-3">
+        <div class="space-x-2.5">
+          {recipe.data.tags.map((tag:string) => (
+          <span
+            class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600"
+            >{tag}</span>
+          ))}
+        </div>
+      </div>
+</a>
+
