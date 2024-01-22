@@ -41,12 +41,12 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
       </div>
       <!-- End Heading -->
 
-      <!-- Grid -->
+      <!-- Buttons Container -->
       <div
         class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-end"
       >
       <a
-                  class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-secondary-accent px-8 py-3 text-center font-medium text-orange-900 outline-none transition duration-300 hover:bg-secondary text-base 2xl:text-lg"
+                  class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-secondary-accent px-8 py-3 text-center font-medium text-orange-900 outline-none transition duration-300 hover:bg-secondary focus-visible:-translate-y-1 text-base 2xl:text-lg"
                   href="https://github.com/mearashadowfax/OpenStove"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,8 +65,8 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
                   </svg>
                 </a>
         <a
-          class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-primary px-8 py-3 text-center  font-medium text-[#422006] outline-none transition duration-300 hover:shadow-2xl hover:shadow-primary text-base 2xl:text-lg"
-          href="#recipeCards"
+          class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-primary px-8 py-3 text-center  font-medium text-[#422006] outline-none transition duration-300 hover:shadow-2xl hover:shadow-primary  focus-visible:-translate-y-1 text-base 2xl:text-lg"
+          href="/recipes/saved"
         >
           Saved Recipes
           <svg
@@ -95,107 +95,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
         </div>
 
         <!-- Pagination -->
-        <nav
-          class="mt-10 flex items-center justify-center gap-x-1 xl:justify-end"
-        >
-          <button
-            type="button"
-            class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
-            disabled
-          >
-            <svg
-              class="h-3.5 w-3.5 flex-shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            <span>Previous</span>
-          </button>
-          <div class="flex items-center gap-x-1">
-            <button
-              type="button"
-              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg bg-orange-200 px-3 py-2 text-sm text-dark focus:bg-orange-200 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500"
-              aria-current="page"
-            >
-              1
-            </button>
-            <button
-              type="button"
-              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
-            >
-              2
-            </button>
-            <button
-              type="button"
-              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
-            >
-              3
-            </button>
-            <div class="hs-tooltip inline-block">
-              <button
-                type="button"
-                class="hs-tooltip-toggle dark:hover:primary-accent-dark group flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg p-2 text-sm text-gray-400 hover:text-primary-accent-light focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-gray-500 dark:focus:bg-white/10"
-              >
-                <span class="text-xs group-hover:hidden">•••</span>
-                <svg
-                  class="hidden h-5 w-5 flex-shrink-0 group-hover:block"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m6 17 5-5-5-5" />
-                  <path d="m13 17 5-5-5-5" />
-                </svg>
-                <span
-                  class="hs-tooltip-content invisible absolute z-10 inline-block rounded bg-stone-900 px-2 py-1 text-xs font-medium text-stone-100 opacity-0 shadow-sm transition-opacity hs-tooltip-shown:visible hs-tooltip-shown:opacity-100 dark:bg-stone-700"
-                  role="tooltip"
-                >
-                  Next 4 pages
-                </span>
-              </button>
-            </div>
-            <button
-              type="button"
-              class="flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
-            >
-              8
-            </button>
-          </div>
-          <button
-            type="button"
-            class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
-          >
-            <span>Next</span>
-            <svg
-              class="h-3.5 w-3.5 flex-shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </button>
-        </nav>
+        
         <!-- End Pagination -->
       </div>
       <!-- End Recipe Cards -->
@@ -257,4 +157,5 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
         </div>
       </div>
       <!-- End Community Card-->
+
     </MainLayout>

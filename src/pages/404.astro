@@ -1,34 +1,31 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="404 – Page Not Found">
-    <section class="mt-20">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-          <div class="mx-auto max-w-screen-sm text-center">
-            <h1
-              class="mb-4 text-7xl font-extrabold text-dark lg:text-9xl dark:text-stone-100"
-            >
-              404
-            </h1>
-            <p
-              class="mb-4 text-balance text-3xl font-bold tracking-tight text-stone-700 md:text-4xl dark:text-stone-300"
-            >
-              Oh no, we've hit a snag!
-            </p>
-            <p
-              class="mb-4 text-pretty text-lg text-stone-600 dark:text-stone-400"
-            >
-              Sorry, we couldn't find the page you were looking for. Not to worry
-              — a feast of possibilities awaits! Dive back into our Recipes page
-              to find your next kitchen adventure.
-            </p>
-            <a
-              class="inline-block rounded-xl bg-primary px-8 py-3 text-center text-sm font-semibold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
-              href="/recipes"
-              >Back to Recipes</a
-            >
-          </div>
-        </div>
-      </section>
+  <section class="grid h-svh place-content-center">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h1
+          class="mb-4 text-7xl font-extrabold text-dark lg:text-9xl dark:text-stone-100"
+        >
+          404
+        </h1>
+        <p
+          class="mb-4 text-balance text-3xl font-bold tracking-tight text-stone-700 md:text-4xl dark:text-stone-300"
+        >
+          Oh no, we've hit a snag!
+        </p>
+        <p class="mb-4 text-pretty text-lg text-stone-600 dark:text-stone-400">
+          Sorry, we couldn't find the page you were looking for. Not to worry —
+          a feast of possibilities awaits! Dive back into our Recipes page to
+          find your next kitchen adventure.
+        </p>
+        <a
+          class="inline-block rounded-xl bg-primary px-8 py-3 text-center text-sm font-semibold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
+          href="/recipes">Back to Recipes</a
+        >
+      </div>
+    </div>
+  </section>
 </MainLayout>

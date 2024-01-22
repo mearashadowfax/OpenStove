@@ -1,111 +1,102 @@
 ---
-
-import AccordionItem from './AccordionItem.astro'
-
+import AccordionItem from "./AccordionItem.astro";
 ---
 
 <!-- FAQ -->
-<div
-        class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
-        id="faq"
->
-    <!-- Title -->
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-        <h2
-                class="text-3xl font-bold text-dark md:text-4xl md:leading-tight 2xl:text-5xl dark:text-stone-100"
+<div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14" id="faq">
+  <!-- Title -->
+  <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+    <h2
+      class="text-3xl font-bold text-dark md:text-4xl md:leading-tight 2xl:text-5xl dark:text-stone-100"
+    >
+      Got Questions? Get Answers
+    </h2>
+    <p class="mt-1 text-stone-600 2xl:text-lg dark:text-stone-400">
+      Answers to the most frequently asked questions.
+    </p>
+  </div>
+  <!-- End Title -->
+
+  <div class="mx-auto max-w-2xl">
+    <!-- Accordion -->
+    <div class="hs-accordion-group">
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-one"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-one"
+        heading="How do I find a recipe on OpenStove?"
+        isActive={true}
+      >
+        Just head over to the 'Recipes' page. You can browse through the curated
+        collection or use our search functionality to find something specific.
+        Whether you're after a comfort food classic or a daring new dish, our
+        library is at your fingertips.
+      </AccordionItem>
+
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-two"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-two"
+        heading="How can I contribute a recipe to OpenStove?"
+      >
+        If you're passionate about your culinary creations and wish to share
+        them with the community, simply submit a pull request through our
+        <a
+          class="whitespace-nowrap rounded-md font-medium underline decoration-2 underline-offset-2 hover:text-stone-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:hover:text-stone-400"
+          href="https://github.com/mearashadowfax/OpenStove"
+          target="_blank"
         >
-            Got Questions? Get Answers
-        </h2>
-        <p class="mt-1 text-stone-600 2xl:text-lg dark:text-stone-400">
-            Answers to the most frequently asked questions.
-        </p>
+          GitHub repository
+        </a>. Make sure to follow the recipe format guidelines with Astro's
+        collections and markdown files. Once reviewed, your recipe will be added
+        to OpenStove for everyone to savor.
+      </AccordionItem>
+
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-three"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-three"
+        heading="Is coding knowledge required for contributing?"
+      >
+        Basic knowledge of Git and Markdown formatting is helpful for submitting
+        recipes. However, we've made our guidelines clear and accessible to
+        guide you through the process. If you need help, our community is always
+        here to assist!
+      </AccordionItem>
+
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-four"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-four"
+        heading="Can I save my favorite recipes?"
+      >
+        Absolutely! You can bookmark your favorite recipes for quick access
+        during your future visits. Just click the bookmark icon on any recipe
+        page to save it. All your bookmarked recipes will be available under the
+        'Saved Recipes' section, which you can view anytime. Your favorites are
+        saved locally in your browser, so there's no need for an account or
+        sign-up.
+      </AccordionItem>
+
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-five"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-five"
+        heading="What makes OpenStove different from other recipe websites?"
+      >
+        OpenStove is a no-nonsense, zero-ad recipe database that's powered by
+        the culinary community. It's all about the content — crisp, clear, and
+        straight to the plate. Plus, our open-source approach means anyone can
+        contribute and access recipes without any commercial gatekeeping.
+      </AccordionItem>
+
+      <AccordionItem
+        id="hs-basic-with-title-and-arrow-stretched-heading-six"
+        collapseId="hs-basic-with-title-and-arrow-stretched-collapse-six"
+        heading="Is OpenStove free to use?"
+      >
+        Yes, OpenStove is completely free and accessible to everybody. There are
+        no hidden fees or premium content — our goal is to make cooking
+        knowledge universally available.
+      </AccordionItem>
     </div>
-    <!-- End Title -->
-
-    <div class="mx-auto max-w-2xl">
-        <!-- Accordion -->
-        <div class="hs-accordion-group">
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-one"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                    heading="How do I find a recipe on OpenStove?"
-                    isActive={true}
-            >
-                Just head over to the 'Recipes' page. You can browse through the
-                curated collection or use our search functionality to find
-                something specific. Whether you're after a comfort food classic
-                or a daring new dish, our library is at your fingertips.
-            </AccordionItem>
-
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-two"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                    heading="How can I contribute a recipe to OpenStove?"
-            >
-                If you're passionate about your culinary creations and wish to share them with the community, simply
-                submit a pull request through our
-                <a
-                        class="whitespace-nowrap rounded-md font-medium underline underline-offset-2 decoration-2 hover:text-stone-600 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:hover:text-stone-400"
-                        href="https://github.com/mearashadowfax/OpenStove"
-                        target="_blank"
-                >
-                    GitHub repository
-                </a>. Make sure to follow the recipe format guidelines with Astro's collections and markdown files. Once
-                reviewed, your recipe will be added to OpenStove for everyone to savor.
-            </AccordionItem>
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-three"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                    heading="Is coding knowledge required for contributing?"
-            >
-                Basic knowledge of Git and Markdown formatting is helpful for
-                submitting recipes. However, we've made our guidelines clear and
-                accessible to guide you through the process. If you need help,
-                our community is always here to assist!
-            </AccordionItem>
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-four"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-four"
-                    heading="Can I save my favorite recipes?"
-            >
-                Absolutely! You can bookmark your favorite recipes for quick
-                access during your future visits. Just click the bookmark icon
-                on any recipe page to save it. All your bookmarked recipes will
-                be available under the 'Saved Recipes' section, which you can
-                view anytime. Your favorites are saved locally in your browser,
-                so there's no need for an account or sign-up.
-            </AccordionItem>
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-five"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-five"
-                    heading="What makes OpenStove different from other recipe websites?"
-            >
-                OpenStove is a no-nonsense, zero-ad recipe database that's
-                powered by the culinary community. It's all about the
-                content — crisp, clear, and straight to the plate. Plus, our
-                open-source approach means anyone can contribute and access
-                recipes without any commercial gatekeeping.
-            </AccordionItem>
-
-            <AccordionItem
-                    id="hs-basic-with-title-and-arrow-stretched-heading-six"
-                    collapseId="hs-basic-with-title-and-arrow-stretched-collapse-six"
-                    heading="Is OpenStove free to use?"
-            >
-                Yes, OpenStove is completely free and accessible to everybody.
-                There are no hidden fees or premium content — our goal is to
-                make cooking knowledge universally available.
-            </AccordionItem>
-
-
-        </div>
-    </div>
-    <!-- End Accordion -->
+  </div>
+  <!-- End Accordion -->
 </div>
 <!-- End FAQ-->
 
