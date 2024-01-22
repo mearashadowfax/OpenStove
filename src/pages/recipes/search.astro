@@ -1,0 +1,65 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import RecipeCard from "../../components/RecipeCard.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const query: string | null = Astro.url.searchParams.get("query");
+
+const allRecipes: CollectionEntry<"recipes">[] = await getCollection("recipes");
+
+const searchResults = allRecipes.filter((recipe) => {
+  const titleMatch: boolean = recipe.data.title
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+  const descriptionMatch: boolean = recipe.data.description
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+  const authorMatch: boolean = recipe.data.author
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+  const slugMatch: boolean = recipe.slug
+    .toLowerCase()
+    .includes(query!.toLowerCase());
+
+  const notesMatch: boolean =
+    (recipe.data.recipeNotes &&
+      recipe.data.recipeNotes.some((note) =>
+        note.toLowerCase().includes(query!.toLowerCase()),
+      )) ||
+    false;
+
+  return (
+    titleMatch || descriptionMatch || authorMatch || slugMatch || notesMatch
+  );
+});
+---
+
+<MainLayout title="Search Results | OpenStove">
+  <section class="min-h-screen">
+    <!--Tag Title Section-->
+    <div class="mt-10 py-6 sm:py-8 lg:py-12">
+      <div
+        class="rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-6 md:py-8 lg:py-12"
+      >
+        <h2
+          class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-dark sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+        >
+          Results For: {query}
+        </h2>
+      </div>
+    </div>
+    <!-- End Tag Title -->
+
+    <!-- Recipe Cards -->
+    <div id="recipeCards" class="mx-auto max-w-screen-2xl">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {searchResults.map((recipe) => <RecipeCard recipe={recipe} />)}
+      </div>
+    </div>
+    <!-- End Recipe Cards -->
+  </section>
+</MainLayout>
