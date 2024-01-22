@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
 import Tabs from "../../components/Tabs.astro";
+import Tags from "../../components/Tags.astro";
 import InputNumber from "../../components/InputNumber.astro";
 import Bookmark from "../../components/Bookmark.astro";
 import Clipboard from "../../components/Clipboard.astro";
@@ -60,7 +61,7 @@ if (entry ===  undefined) {
             </ul>
           </div>
           <!-- Author/Date -->
-    
+
           <!-- Time/Bookmark -->
           <div class="flex items-center justify-end gap-x-1.5">
             <div class="inline-flex max-w-xs gap-x-2">
@@ -84,11 +85,11 @@ if (entry ===  undefined) {
                 {entry.data.cookingTime} min
               </span>
             </div>
-    
+
             <div
               class="mx-3 block h-4 border-e border-stone-400 dark:border-stone-500"
             ></div>
-    
+
             <div class="inline-flex">
               <Bookmark />
             </div>
@@ -97,7 +98,7 @@ if (entry ===  undefined) {
         </div>
         <!-- End Top Bar Container -->
       </section>
-    
+
       <div class="mx-auto max-w-screen-lg">
         <div class="grid gap-y-8 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-0">
           <div class="lg:col-span-2">
@@ -458,7 +459,7 @@ if (entry ===  undefined) {
                         >
                           <button
                             type="button"
-                            class="group inline-flex items-center gap-x-1 rounded-lg border border-orange-200 bg-orange-100 px-3 py-2 text-sm font-medium text-orange-900 shadow-sm transition duration-300 hover:bg-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700"
+                            class="group inline-flex items-center gap-x-1 rounded-lg border border-orange-200 bg-orange-100 px-3 py-2 text-sm font-medium text-orange-900 shadow-sm transition duration-300 hover:bg-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
                             data-hs-stepper-back-btn
                           >
                             <svg
@@ -479,7 +480,7 @@ if (entry ===  undefined) {
                           </button>
                           <button
                             type="button"
-                            class="group inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+                            class="group inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
                             data-hs-stepper-next-btn
                           >
                             Next
@@ -500,7 +501,7 @@ if (entry ===  undefined) {
                           </button>
                           <button
                             type="button"
-                            class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+                            class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
                             data-hs-stepper-finish-btn
                             style="display: none"
                           >
@@ -508,7 +509,7 @@ if (entry ===  undefined) {
                           </button>
                           <button
                             type="reset"
-                            class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+                            class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
                             data-hs-stepper-reset-btn
                             style="display: none"
                           >
@@ -600,20 +601,17 @@ if (entry ===  undefined) {
                     <li
                       class="text-balance text-lg font-semibold text-dark 2xl:text-xl dark:text-stone-200"
                     >
-                      Assemble the Bowls
+                      Assemble the Bowl
                       <ul
                         role="list"
                         class="dark:marker-primary mt-1 list-disc space-y-2 text-pretty ps-5 font-normal text-stone-600 marker:text-secondary 2xl:text-lg dark:text-stone-400"
                       >
-                        <li>Divide the cooked ramen noodles among four bowls.</li>
+                        <li>Place cooked noodles in a bowl.</li>
                         <li>
-                          Carefully ladle the hot miso soup over the noodles in
-                          each bowl.
+                          Carefully ladle the hot miso soup over the noodles.
                         </li>
                         <li>
-                          Top each bowl with chashu or chicken, a soft-boiled egg
-                          sliced in half, bean sprouts, nori strips, bamboo
-                          shoots, and chopped green onions.
+                          Top with chashu or chicken, a sliced soft-boiled egg, bean sprouts, nori strips, bamboo shoots, and chopped green onions.
                         </li>
                         <li>
                           If desired, add a small pat of butter and a few drops of
@@ -631,8 +629,7 @@ if (entry ===  undefined) {
                         class="dark:marker-primary mt-1 list-disc space-y-2 text-pretty ps-5 font-normal text-stone-600 marker:text-secondary 2xl:text-lg dark:text-stone-400"
                       >
                         <li>
-                          Serve your miso ramen bowls hot, stir everything
-                          together and enjoy!
+                          Enjoy your hot bowl of miso ramen, stirring everything together.
                         </li>
                       </ul>
                     </li>
@@ -642,49 +639,25 @@ if (entry ===  undefined) {
               </div>
             </section>
             <!-- End Instructions Section -->
-    
+
+
             <!-- Recipe Notes Section -->
             <section class="py-6 sm:py-8 lg:py-12">
-              <div class="mx-auto max-w-screen-lg">
-                <h2
-                  class="text-3xl font-bold text-dark lg:text-4xl 2xl:text-5xl dark:text-stone-100"
-                >
-                  Recipe Notes:
-                </h2>
-                <ul
-                  role="list"
-                  class="mt-4 max-w-prose list-disc space-y-2 text-pretty ps-5 text-stone-600 marker:text-secondary 2xl:text-xl dark:text-stone-400 dark:marker:text-primary"
-                >
-                  <li>
-                    Dashi Stock Variation: For a more authentic base, you can use
-                    dashi stock combined with the broth for deeper flavor.
-                  </li>
-                  <li>
-                    Cooking Eggs: For soft-boiled eggs, cook them for 6-7 minutes
-                    in boiling water, then place them in ice water. For
-                    hard-boiled eggs, cook them for 9-12 minutes.
-                  </li>
-                  <li>
-                    Vegetarian Option: Substitute the chashu or chicken with tofu
-                    and use vegetable broth to make this dish vegetarian.
-                  </li>
-                  <li>
-                    Gluten-Free Option: Use gluten-free tamari instead of soy
-                    sauce, and purchase gluten-free ramen noodles.
-                  </li>
-                  <li>
-                    Toppings: Feel free to customize your ramen with various
-                    toppings like corn, buttered mushrooms, or spinach.
-                  </li>
-                  <li>
-                    Miso Paste: The ratio of red to white miso can be adjusted to
-                    taste; white miso is milder and sweeter, while red miso is
-                    stronger and saltier.
-                  </li>
-                </ul>
-              </div>
+              {entry.data.recipeNotes && entry.data.recipeNotes?.length > 0 ? (
+                  <div class="mx-auto max-w-screen-lg">
+                    <h2 class="text-3xl font-bold text-dark lg:text-4xl 2xl:text-5xl dark:text-stone-100">
+                      Recipe Notes:
+                    </h2>
+                    <ul role="list" class="mt-4 max-w-prose list-disc space-y-2 text-pretty ps-5 text-stone-600 marker:text-secondary 2xl:text-xl dark:text-stone-400 dark:marker:text-primary">
+                      {entry.data.recipeNotes?.map((note: string) => (
+                          <li>{note}</li>
+                      ))}
+                    </ul>
+                  </div>
+              ) : ""}
             </section>
             <!-- End Recipe Notes Section -->
+
           </div>
     
           <!-- Sidebar -->
@@ -840,43 +813,32 @@ if (entry ===  undefined) {
             <!-- End Ingredients Section -->
           </div>
         </div>
-      </div>
-    
-      <!-- Bottom Bar Container -->
-      <div
+        <!-- Bottom Bar Container -->
+        <div
         class="mx-auto grid max-w-screen-lg gap-y-5 lg:flex lg:items-center lg:justify-between lg:gap-y-0"
-      >
-        <!-- Badges/Tags -->
-        <div>
-          <a
-            class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600" href="#"
-            >Noodles</a
-          >
-          <a
-            class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600" href="#"
-            >Noodles</a
-          >
-          <a
-            class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 group-hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600" href="#"
-            >Noodles</a
-          >
-        </div>
-        <!-- End Badges/Tags -->
-    
-        <!-- Copy/Bookmark -->
-        <div class="flex items-center justify-end gap-x-1.5">
-          <Clipboard />
-    
-          <div
-            class="mx-3 block h-4 border-e border-stone-400 dark:border-stone-500"
-          ></div>
-    
-          <div class="inline-flex">
-            <Bookmark />
-            </button>
-          </div>
-          <!-- Copy/Bookmark -->
-        </div>
-        <!-- End Bottom Bar Container -->
+    >
+      <!-- Badges/Tags -->
+      <div class="space-x-2.5">
+        <Tags tags={entry.data.tags}/>
       </div>
+      <!-- End Badges/Tags -->
+
+      <!-- Copy/Bookmark -->
+      <div class="flex items-center justify-end gap-x-1.5">
+        <Clipboard />
+
+        <div
+            class="mx-3 block h-4 border-e border-stone-400 dark:border-stone-500"
+        ></div>
+
+        <div class="inline-flex">
+          <Bookmark />
+        </div>
+        <!-- End Copy/Bookmark -->
+      </div>
+      <!-- End Bottom Bar Container -->
+    </div>
+      </div>
+    
+
 </MainLayout>

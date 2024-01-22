@@ -5,13 +5,13 @@ const recipesCollection = defineCollection({
     schema: ({ image }) => z.object ({
     title: z.string(),
     description: z.string(),
-    recipeNotes: z.string().optional(),
+    recipeNotes: z.array(z.string()).optional(),
     pubDate: z.date(),
     cookingTime: z.number(),
     image: image(),
     imageAlt: z.string(),
-    author: z.string().default('Anonymous'),
-    tags: z.array(z.string()),
+    author: z.string().default('anonymous'),
+    tags: z.array(z.string()).optional(),
     })
 });
 
