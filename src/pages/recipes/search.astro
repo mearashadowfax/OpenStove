@@ -24,16 +24,19 @@ const searchResults = allRecipes.filter((recipe) => {
   const slugMatch: boolean = recipe.slug
     .toLowerCase()
     .includes(query!.toLowerCase());
-
-  const notesMatch: boolean =
-    (recipe.data.recipeNotes &&
-      recipe.data.recipeNotes.some((note) =>
-        note.toLowerCase().includes(query!.toLowerCase()),
-      )) ||
-    false;
+  
+  const notesMatch: boolean = recipe.data.recipeNotes
+  ? recipe.data.recipeNotes.some((note) =>
+      note.toLowerCase().includes(query!.toLowerCase())
+    )
+  : false;  
+ 
+  const instructionsMatch: boolean = recipe.data.steps.some((step) =>
+    step.actions.some((action) => action.toLowerCase().includes(query!.toLowerCase()))
+  );
 
   return (
-    titleMatch || descriptionMatch || authorMatch || slugMatch || notesMatch
+    titleMatch || descriptionMatch || authorMatch || slugMatch || notesMatch || instructionsMatch
   );
 });
 ---
