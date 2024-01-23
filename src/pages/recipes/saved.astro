@@ -5,45 +5,31 @@ import { capitalize } from "../../utils";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-function getCookie(cname: string) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-
-const cookie: string[] = getCookie("bookmarks") ? JSON.parse(getCookie("bookmarks")) : [];
+let savedRecipes: any = [];
+const cookieObject = Astro.cookies.get("bookmarks");
 
 const allRecipes: CollectionEntry<"recipes">[] = await getCollection("recipes");
 
-const savedRecipes = allRecipes.filter((recipe) => {
+if (cookieObject) {
+  let storedBookmarks = cookieObject.json();
 
-  const slugMatch: boolean = recipe.slug.includes(cookie);
-
-  return slugMatch;
-});
+  savedRecipes = allRecipes.filter((recipe) => {
+    return storedBookmarks.includes(recipe.slug);
+  });
+}
 ---
 
-<MainLayout title={capitalize(slug) + " | OpenStove"}>
+<MainLayout title="Saved Recipes | OpenStove">
+  <section class="min-h-screen">
   <!--Tag Title Section-->
   <div class="mt-10 py-6 sm:py-8 lg:py-12">
     <div
-      class="rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-6 md:py-8 lg:py-12"
+      class="rounded-xl bg-gradient-to-r from-[#FDC830] to-[#F37335] px-4 py-6 md:py-8 lg:py-12"
     >
       <h2
-        class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-dark sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+        class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-stone-800 sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
       >
-        {slug}
-      </h2>
+      Saved Recipes
     </div>
   </div>
   <!-- End Tag Title -->
@@ -51,8 +37,9 @@ const savedRecipes = allRecipes.filter((recipe) => {
   <!-- Recipe Cards -->
   <div id="recipeCards" class="mx-auto max-w-screen-2xl">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {savedRecipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+      {savedRecipes.map((recipe: any) => <RecipeCard recipe={recipe} />)}
     </div>
   </div>
   <!-- End Recipe Cards -->
+</section>
 </MainLayout>
