@@ -1,0 +1,147 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+const { recipe } = Astro.props;
+
+interface Props {
+  recipe: CollectionEntry<"recipes">;
+}
+---
+
+<div data-hs-stepper>
+  <!-- Stepper Nav -->
+
+  <ul class="relative flex flex-row gap-x-2">
+    {
+      recipe.data.steps?.slice(0, -1)?.map((step, index) => (
+        <li
+          class="group flex flex-1 shrink basis-0 items-center gap-x-2"
+          data-hs-stepper-nav-item={`{"index": ${index + 1}}`}
+        >
+          <span class="group inline-flex min-h-[28px] min-w-[28px] items-center align-middle text-xs">
+            <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-orange-100 font-medium text-dark transition duration-300 group-focus:bg-stone-200 hs-stepper-active:bg-secondary hs-stepper-active:text-stone-50 hs-stepper-success:bg-secondary hs-stepper-success:text-stone-50 hs-stepper-completed:bg-secondary-accent hs-stepper-completed:group-focus:bg-secondary-accent dark:bg-stone-700 dark:text-stone-100 dark:group-focus:bg-stone-600 dark:hs-stepper-active:bg-primary dark:hs-stepper-active:text-dark dark:hs-stepper-success:bg-primary dark:hs-stepper-success:text-dark dark:hs-stepper-completed:bg-primary-accent-dark dark:hs-stepper-completed:group-focus:bg-primary-accent-dark">
+              <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
+                {index + 1}
+              </span>
+              <svg
+                class="hidden h-3 w-3 flex-shrink-0 hs-stepper-success:block"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="ms-2 text-sm font-medium text-dark 2xl:text-base dark:text-stone-100">
+              Step
+            </span>
+          </span>
+          <div class="h-px w-full flex-1 bg-stone-200 transition duration-300 group-last:hidden hs-stepper-success:bg-secondary hs-stepper-completed:bg-secondary-accent dark:hs-stepper-success:bg-primary dark:hs-stepper-completed:bg-primary-accent-dark" />
+        </li>
+      ))
+    }
+  </ul>
+  <!-- End Stepper Nav -->
+
+  <!-- Stepper Content -->
+  <div class="mt-5 sm:mt-8">
+    {
+      recipe.data.steps?.map((step, index) => (
+        <div
+          data-hs-stepper-content-item={`${
+            index === recipe.data.steps.length - 1
+              ? '{"isFinal": true}'
+              : `{"index": ${index + 1}}`
+          }`}
+          style={index === 0 ? "" : "display: none"}
+        >
+          <div class="flex h-max flex-col items-center justify-center rounded-xl border border-dashed border-orange-200 p-4 dark:border-stone-600">
+            <p class="text-balance text-lg font-semibold text-dark 2xl:text-xl dark:text-stone-200">
+              {step.title}
+            </p>
+            <ul
+              role="list"
+              class="dark:marker-primary mt-1 list-disc space-y-2 text-pretty ps-5 text-lg font-normal text-stone-600 marker:text-secondary 2xl:text-xl dark:text-stone-400"
+            >
+              {step.actions.map((action) => (
+                <li>{action}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+
+    <!-- Button Group -->
+    <div class="mt-5 flex items-center justify-between gap-x-2">
+      <button
+        type="button"
+        class="group inline-flex items-center gap-x-1 rounded-lg border border-orange-200 bg-orange-100 px-3 py-2 text-sm font-medium text-orange-900 shadow-sm transition duration-300 hover:bg-orange-200 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700"
+        data-hs-stepper-back-btn
+      >
+        <svg
+          class="h-4 w-4 flex-shrink-0 transition ease-in-out group-hover:-translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+        Back
+      </button>
+      <button
+        type="button"
+        class="group inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+        data-hs-stepper-next-btn
+      >
+        Next
+        <svg
+          class="h-4 w-4 flex-shrink-0 transition ease-in-out group-hover:translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+        data-hs-stepper-finish-btn
+        style="display: none"
+      >
+        Finish
+      </button>
+      <button
+        type="reset"
+        class="inline-flex items-center gap-x-1 rounded-lg border border-transparent bg-secondary-accent px-3 py-2 text-sm font-semibold text-orange-900 transition duration-300 hover:bg-secondary focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:bg-primary dark:text-[#422006] dark:hover:bg-primary/95"
+        data-hs-stepper-reset-btn
+        style="display: none"
+      >
+        Reset
+      </button>
+    </div>
+    <!-- End Button Group -->
+  </div>
+  <!-- End Stepper Content -->
+</div>
+
+<script is:inline src="/node_modules/preline/dist/stepper.js"></script>
