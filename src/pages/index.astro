@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro"
 import FAQ from "../components/FAQ.astro"
 import RecipeCard from "../components/RecipeCard.astro";
 import { Image } from "astro:assets";
-import heroImage from "../icons/hero-image.svg";
+import heroImage from "../images/hero-image.svg";
 import { Icon } from "astro-icon/components";
 import { HOMEPAGE_ARTICLE_LIMIT } from "../constants";
 import { getCollection } from "astro:content";
@@ -62,7 +62,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
         <div
           class="flex w-full items-center justify-center"
         >
-          <Image src={heroImage} alt="" loading={"eager"} class="h-auto w-full"/>
+          <Image src={heroImage} alt="Illustration of a couple in a kitchen cooking eggs on a stove" loading={"eager"} class="h-auto w-full"/>
         </div>
         <!-- End Image -->
       </section>
@@ -142,7 +142,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
         </div>
       </div>
       <!-- End Heading -->
-
+   
       <!-- Recipe Cards Blog -->
       <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
         <!-- Grid -->

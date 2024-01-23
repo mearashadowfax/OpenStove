@@ -2,8 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
-
-const { title = 'OpenStove' } = Astro.props;
+const { title = "OpenStove" } = Astro.props;
 
 interface Props {
   title?: string;
@@ -17,7 +16,8 @@ interface Props {
     <meta content="width=device-width" name="viewport" />
     <meta content="{Astro.generator}" name="generator" />
     <title>{title}</title>
-  
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <script is:inline>
       if (
         localStorage.getItem("hs_theme") === "dark" ||
@@ -30,57 +30,48 @@ interface Props {
       }
     </script>
     <style>
-        body {
-          overflow-y: scroll;
-        }
+      body {
+        overflow-y: scroll;
+      }
 
+      body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      @media (min-width: 1536px) {
         body::-webkit-scrollbar {
-          width: 0.5rem;
+          width: 0.75rem;
         }
+      }
 
-        @media (min-width: 1536px) {
-          body::-webkit-scrollbar {
-            width: 0.75rem;
-          }
-        }
+      body::-webkit-scrollbar-track {
+        background: #f5f5f4;
+        border-radius: 9999px;
+      }
 
-        body::-webkit-scrollbar-track {
-          background: #f5f5f4; 
-          border-radius: 9999px;
-        }
+      body::-webkit-scrollbar-thumb {
+        background: #ff9a6c;
+        border-radius: 9999px;
+      }
 
-        body::-webkit-scrollbar-thumb {
-          background: #FF9A6C; 
-          border-radius: 9999px; 
-        }
+      .dark body::-webkit-scrollbar-track {
+        background: #44403c;
+      }
 
-
-        .dark body::-webkit-scrollbar-track {
-          background: #44403c; 
-        }
-
-        .dark body::-webkit-scrollbar-thumb {
-          background: #f4bf3c; 
-        }
+      .dark body::-webkit-scrollbar-thumb {
+        background: #f4bf3c;
+      }
     </style>
-
   </head>
   <body
-    class=" bg-orange-50 text-dark dark:bg-dark dark:text-stone-100 selection:bg-secondary selection:text-stone-700 dark:selection:bg-primary dark:selection:text-stone-700"
+    class="bg-orange-50 text-dark selection:bg-secondary selection:text-stone-700 dark:bg-dark dark:text-stone-100 dark:selection:bg-primary dark:selection:text-stone-700"
   >
     <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-      
       <Navbar />
 
       <slot />
-
     </div>
-   
+
     <Footer />
-
-
-  <script is:inline src="/node_modules/preline/dist/tooltip.js"></script>
-  <script is:inline src="/node_modules/preline/dist/stepper.js"></script>
-  
-</body>
+  </body>
 </html>
