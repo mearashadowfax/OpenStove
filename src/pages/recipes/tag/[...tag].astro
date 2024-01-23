@@ -24,13 +24,14 @@ const tagRecipes = allRecipes.filter((recipe: any) =>
 ---
 
 <MainLayout title={capitalize(tag) + " | OpenStove"}>
+  <section class="min-h-screen">
   <!--Tag Title Section-->
   <div class="mt-10 py-6 sm:py-8 lg:py-12">
     <div
-      class="rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-6 md:py-8 lg:py-12"
+      class="rounded-xl bg-gradient-to-r from-[#f46b45] to-[#eea849]  px-4 py-6 md:py-8 lg:py-12"
     >
       <h2
-        class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-dark sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+        class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-stone-800 sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
       >
         {capitalize(tag)}
       </h2>
@@ -45,4 +46,5 @@ const tagRecipes = allRecipes.filter((recipe: any) =>
     </div>
   </div>
   <!-- End Recipe Cards -->
+</section>
 </MainLayout>
