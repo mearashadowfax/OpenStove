@@ -1,94 +1,124 @@
-
-    <button
-            type="button"
-            class="group inline-flex items-center rounded-lg p-2.5 text-dark hover:bg-orange-100 dark:text-stone-100 dark:hover:bg-stone-700"
-            data-bookmark-button="bookmark-button"
-
-    >
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-6 w-6 fill-none"
-        >
-            <path
-                    class="fill-current text-dark group-hover:text-secondary dark:text-stone-100 group-hover:dark:text-primary"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
-            ></path>
-        </svg>
-    </button>
+<button
+  type="button"
+  class="group inline-flex items-center rounded-lg p-2.5 text-dark hover:bg-orange-100 dark:text-stone-100 dark:hover:bg-stone-700 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
+  data-bookmark-button="bookmark-button"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="h-6 w-6 fill-none"
+  >
+    <path
+      class="fill-current text-dark group-hover:text-secondary dark:text-stone-100 group-hover:dark:text-primary"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+    ></path>
+  </svg>
+</button>
 
 <script>
-    class Bookmark {
-        bookMarkId: string;
-        bookmarkButtons: NodeListOf<Element>;
-
-        constructor(dataAttrValue: string) {
-            this.bookMarkId = window.location.pathname.slice(1);
-            this.bookmarkButtons = document.querySelectorAll(`[data-bookmark-button="${dataAttrValue}"]`);
-        }
-
-        init(): void {
-            if(this.isStored()){
-                this.markAsStored();
-            }
-            this.bookmarkButtons.forEach((button: Element) => {
-                button.addEventListener("click", () => this.toggleBookmark());
-            });
-        }
-
-        isStored(): boolean {
-            let storedBookmarks: string[] = JSON.parse(localStorage.getItem("bookmarks") || "[]");
-            return storedBookmarks.includes(this.bookMarkId);
-        }
-
-        markAsStored(): void {
-            this.bookmarkButtons.forEach((button: Element) => {
-                button.classList.add('bookmarked');
-                let svgElement = button.querySelector('svg');
-                if (svgElement) {
-                    svgElement.setAttribute('class', 'h-6 w-6 fill-secondary dark:fill-primary');
-                }
-                let pathElement = svgElement?.querySelector('path');
-                if (pathElement) {
-                    pathElement.setAttribute('class', 'fill-current text-secondary dark:text-primary');
-                }
-            });
-        }
-
-        unmarkAsStored(): void {
-            this.bookmarkButtons.forEach((button: Element) => {
-                button.classList.remove('bookmarked');
-                let svgElement = button.querySelector('svg');
-                if (svgElement) {
-                    svgElement.setAttribute('class', 'h-6 w-6 fill-none');
-                }
-                let pathElement = svgElement?.querySelector('path');
-                if (pathElement) {
-                    pathElement.setAttribute('class', 'fill-current text-dark group-hover:text-secondary dark:text-stone-100 group-hover:dark:text-primary');
-                }
-            });
-        }
-
-        toggleBookmark(): void {
-            let storedBookmarks: string[] = JSON.parse(localStorage.getItem("bookmarks") || "[]");
-            const index = storedBookmarks.indexOf(this.bookMarkId);
-
-            if (index !== -1) {
-                storedBookmarks.splice(index, 1);
-                this.unmarkAsStored();
-            } else {
-                storedBookmarks.push(this.bookMarkId);
-                this.markAsStored();
-            }
-
-            localStorage.setItem("bookmarks", JSON.stringify(storedBookmarks));
-        }
+  class Bookmark {
+    bookMarkId: string;
+    bookmarkButtons: NodeListOf<Element>;
+    constructor(dataAttrValue: string) {
+      this.bookMarkId = window.location.pathname.slice(9);
+      this.bookmarkButtons = document.querySelectorAll(
+          `[data-bookmark-button="${dataAttrValue}"]`,
+      );
     }
+    init(): void {
+      if (this.isStored()) {
+        this.markAsStored();
+      }
+      this.bookmarkButtons.forEach((button: Element) => {
+        button.addEventListener("click", () => this.toggleBookmark());
+      });
+    }
+    isStored(): boolean {
+      let storedBookmarks: string[] = getCookie("bookmarks") ? JSON.parse(getCookie("bookmarks")) : [];
+      return storedBookmarks.includes(this.bookMarkId);
+    }
+    markAsStored(): void {
+      this.bookmarkButtons.forEach((button: Element) => {
+        button.classList.add("bookmarked");
+        let svgElement = button.querySelector("svg");
+        if (svgElement) {
+          svgElement.setAttribute(
+              "class",
+              "h-6 w-6 fill-secondary dark:fill-primary",
+          );
+        }
+        let pathElement = svgElement?.querySelector("path");
+        if (pathElement) {
+          pathElement.setAttribute(
+              "class",
+              "fill-current text-secondary dark:text-primary",
+          );
+        }
+      });
+    }
+    unmarkAsStored(): void {
+      this.bookmarkButtons.forEach((button: Element) => {
+        button.classList.remove("bookmarked");
+        let svgElement = button.querySelector("svg");
+        if (svgElement) {
+          svgElement.setAttribute("class", "h-6 w-6 fill-none");
+        }
+        let pathElement = svgElement?.querySelector("path");
+        if (pathElement) {
+          pathElement.setAttribute(
+              "class",
+              "fill-current text-dark group-hover:text-secondary dark:text-stone-100 group-hover:dark:text-primary",
+          );
+        }
+      });
+    }
+    toggleBookmark(): void {
+      let storedBookmarks: string[] = getCookie("bookmarks") ? JSON.parse(getCookie("bookmarks")) : [];
+      const index = storedBookmarks.indexOf(this.bookMarkId);
+      if (index !== -1) {
+        storedBookmarks.splice(index, 1);
+        this.unmarkAsStored();
+      } else {
+        storedBookmarks.push(this.bookMarkId);
+        this.markAsStored();
+      }
+      setCookie("bookmarks", JSON.stringify(storedBookmarks), 180);
+    }
+  }
 
-    let bookmark = new Bookmark("bookmark-button");
-    bookmark.init();
-</script>
+  let bookmark = new Bookmark("bookmark-button");
+  bookmark.init();
+
+  // Cookie handling methods
+
+  function setCookie(cname: string, cvalue: string, exdays: number = 180) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  const expires = "expires=" + d.toUTCString();
+  const secureFlag = "Secure";
+  // const httpOnlyFlag = "HttpOnly";
+  const sameSitePolicy = "SameSite=Lax";
+  document.cookie = `${cname}=${cvalue};${expires};path=/;${secureFlag};${sameSitePolicy}`;
+}
+
+
+  function getCookie(cname: string) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  </script>
