@@ -11,7 +11,8 @@ interface Props {
 
 {tags?.map((tag:string) => (
 <a
-      class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs font-medium text-orange-800 transition-colors duration-300 hover:bg-orange-500/30 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-600 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
+      class="inline-flex items-center gap-x-1.5 rounded-lg bg-orange-400/30 px-3 py-1.5 text-xs xl:text-sm font-medium text-orange-800 transition-colors duration-300 hover:bg-orange-500/30 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-600 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
+      data-astro-prefetch
       href={'/recipes/tag/' + tag}
       >{capitalize(tag)}</a>
 ))}
