@@ -2,6 +2,8 @@
 import MainLayout from "../layouts/MainLayout.astro"
 import FAQ from "../components/FAQ.astro"
 import RecipeCard from "../components/RecipeCard.astro";
+import { Image } from "astro:assets";
+import heroImage from "../icons/hero-image.svg";
 import { Icon } from "astro-icon/components";
 import { HOMEPAGE_ARTICLE_LIMIT } from "../constants";
 import { getCollection } from "astro:content";
@@ -41,12 +43,14 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
             <a
               class="inline-block rounded-xl bg-secondary border-2 border-secondary px-8 py-3 text-center text-sm font-medium text-orange-900 outline-none transition duration-300 dark:hover:text-secondary hover:bg-transparent hover:-translate-y-1 focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
               href="about/#contribution"
+              data-astro-prefetch
               >How to Contribute?</a
             >
 
             <a
               class="inline-block rounded-xl bg-primary border-2 border-primary px-8 py-3 text-center text-sm font-semibold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
               href="#recipeCards"
+              data-astro-prefetch
               >Explore Recipes</a
             >
           </div>
@@ -58,7 +62,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
         <div
           class="flex w-full items-center justify-center"
         >
-          <Icon class="h-auto w-full" name="hero-image" />
+          <Image src={heroImage} alt="" loading={"eager"} class="h-auto w-full"/>
         </div>
         <!-- End Image -->
       </section>
@@ -154,6 +158,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
           <a
             class="text-md group inline-flex min-w-64 items-center justify-center gap-x-1 rounded-xl bg-secondary-accent px-4 py-3 font-medium text-orange-800 transition-colors duration-300 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-none"
             href="/recipes"
+            data-astro-prefetch
           >
             Explore more
             <svg
