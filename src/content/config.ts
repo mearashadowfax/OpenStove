@@ -12,7 +12,13 @@ const recipesCollection = defineCollection({
     imageAlt: z.string(),
     author: z.string().default('anonymous'),
     tags: z.array(z.string()).optional(),
-    })
+    steps: z.array(
+        z.object({
+          title: z.string().optional(),
+          actions: z.array(z.string()),
+        })
+      ),
+    }),
 });
 
 export const collections = {

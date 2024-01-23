@@ -9,9 +9,39 @@ tags: ["rice", "egg", "asian"]
 recipeNotes: [
   "Rice Tip: Day-old rice is best for making fried rice as it's less sticky and easier to work with compared to fresh rice.",
   "Customization: Feel free to experiment with additional vegetables or protein sources like diced ham, shrimp, or tofu to suit your taste.",
-  "Serving Suggestion: Garnish with extra green onions, sesame seeds, or a drizzle of sesame oil for an authentic touch.",
+  "Serving Suggestion: Garnish with extra green onions, bell peppers, mushrooms, bean sprouts, sesame seeds, or a drizzle of sesame oil for an authentic touch.",
   "Leftovers: Store leftovers in an airtight container and refrigerate for up to 3 days. Reheat thoroughly before serving again."
 ]
+steps:
+  - title: "Scramble the Eggs"
+    actions:
+      - "Heat 1 tablespoon of oil in a large pan or wok over medium-high heat."
+      - "Pour in the beaten eggs and scramble until fully cooked."
+      - "Remove the scrambled eggs from the pan and set aside."
+  - title: "Sauté the Onion"
+    actions:
+      - "Add the remaining tablespoon of oil to the pan."
+      - "Sauté the onion until translucent and just beginning to brown."
+  - title: "Fry the Rice"
+    actions:
+      - "Increase the heat to high and add the cooked rice."
+      - "Stir-fry for a few minutes to heat through."
+  - title: "Add Vegetables"
+    actions:
+      - "Stir in the peas and carrots."
+      - "Continue stir-frying for another 2 minutes."
+  - title: "Season the Rice"
+    actions:
+      - "Drizzle soy sauce over the rice and mix well."
+      - "Add the scrambled eggs back into the pan."
+      - "Mix until the eggs are evenly distributed."
+      - "Season with salt and pepper to taste."
+  - title: "Garnish and Serve"
+    actions:
+      - "Garnish with sliced green onions before serving."
+  - title: "Voilà!"
+    actions:
+      - "Indulge in your creation and savor the moment. Bon appétit!"
 slug: fried-rice-with-egg
 ---
 
@@ -28,22 +58,3 @@ slug: fried-rice-with-egg
 - Salt and pepper, to taste
 - 1 green onion, thinly sliced (for garnish)
 - Optional: 1/2 cup cooked chicken, beef, shrimp, or tofu, diced
-
-## Instructions
-
-1. Heat 1 tablespoon of oil in a large pan or wok over medium-high heat.
-2. Pour in the beaten eggs and scramble until fully cooked. Remove them from the pan and set aside.
-3. Add the remaining tablespoon of oil to the pan.
-4. Sauté the onion until translucent and just beginning to brown.
-5. Increase the heat to high and add the cooked rice. Stir-fry for a few minutes to heat through.
-6. Stir in the peas and carrots, and continue stir-frying for another 2 minutes.
-7. Drizzle soy sauce over the rice and mix well.
-8. Add the scrambled eggs back into the pan. Mix until the eggs are evenly distributed.
-9. Season with salt and pepper to taste.
-10. Garnish with sliced green onions before serving.
-
-## Recipe Notes
-
-- For the best results, use day-old rice as it's drier and less sticky, which is ideal for fried rice.
-- Feel free to add your choice of protein – cooked chicken, beef, shrimp, or tofu can all be diced and added with the vegetables.
-- Customize your fried rice with additional vegetables like bell peppers, mushrooms, or bean sprouts if desired.

@@ -6,7 +6,7 @@ author: "mearashadowfax"
 cookingTime: 55
 image: "../../images/miso-ramen.avif"
 imageAlt: "A bowl of miso ramen"
-tags: ["japanese", "ramen", "noodles"]
+tags: [ "japanese", "ramen", "noodles" ]
 recipeNotes: [
   "Dashi Stock Variation: For a more authentic base, you can use dashi stock combined with the broth for deeper flavor.",
   "Cooking Eggs: For soft-boiled eggs, cook them for 6-7 minutes in boiling water, then place them in ice water. For hard-boiled eggs, cook them for 9-12 minutes.",
@@ -15,38 +15,28 @@ recipeNotes: [
   "Toppings: Feel free to customize your ramen with various toppings like corn, buttered mushrooms, or spinach.",
   "Miso Paste: The ratio of red to white miso can be adjusted to taste; white miso is milder and sweeter, while red miso is stronger and saltier."
 ]
+steps:
+  - title: "Make the Miso Tare"
+    actions:
+      - "In a bowl, combine the red and white miso paste, soy sauce, sesame oil, grated garlic, grated ginger, sake, and mirin. Mix thoroughly until it forms a smooth paste. Set aside."
+  - title: "Prepare the Soup"
+    actions:
+      - "In a large pot, heat vegetable oil over medium heat. Add the sliced green onions and chopped onions and sauté until translucent."
+      - "If using, add the sliced shiitake mushrooms and sauté for an additional minute."
+      - "Pour in the chicken or vegetable broth and water. Bring the mixture to a simmer and let it cook for about 20-25 minutes on low heat."
+      - "After the broth has simmered, add the miso tare to the soup base. Stir until completely dissolved. Adjust the seasonings to taste. Keep the soup warm on low heat."
+  - title: "Cook the Ramen Noodles"
+    actions:
+      - "In a separate pot, bring water to a boil. Cook the ramen noodles according to the package instructions, usually for 2-3 minutes, or until al dente."
+      - "Once cooked, drain the noodles and rinse them quickly under cold water to stop the cooking process. Set aside."
+  - title: "Assemble the Bowl"
+    actions:
+      - "Place cooked noodles in a bowl."
+      - "Carefully ladle the hot miso soup over the noodles."
+      - "Top with chashu or chicken, a sliced soft-boiled egg, bean sprouts, nori strips, bamboo shoots, and chopped green onions."
+      - "If desired, add a small pat of butter and a few drops of chili oil for added richness and spice."
+  - title: "Voilà!"
+    actions:
+      - "Indulge in your creation and savor the moment. Bon appétit!"
 slug: japanese-ramen
 ---
-
-
-In the ever-evolving landscape of technology, developers require laptops that can keep up with their demands for coding, debugging, and testing. As we step into 2024, the search for the perfect laptop for developers continues. Let's explore some of the top contenders for the title of "Best Laptops for Developers" this year.
-
-## 1. MacBook Pro (M2X Chip)
-
-Apple has consistently delivered high-performance laptops for developers, and the MacBook Pro with the M2X chip is no exception. With its blazing-fast processor, ample RAM, and stunning Retina display, it's a dream machine for coding. The improved battery life ensures you can code for hours without interruption. Plus, macOS offers a Unix-based environment, perfect for software development.
-
-## 2. Dell XPS 17
-
-The Dell XPS 17 combines power and portability. Its large, high-resolution display makes multitasking a breeze, and the latest Intel or AMD processors ensure smooth development work. With a premium build quality, comfortable keyboard, and a variety of connectivity options, it's a solid choice for developers.
-
-## 3. Lenovo ThinkPad X1 Carbon
-
-Lenovo's ThinkPad series is renowned for its durability and performance. The ThinkPad X1 Carbon is no different. With a sleek design, a fantastic keyboard, and a long-lasting battery, it's an excellent choice for developers who need a reliable companion. It's available with both Intel and AMD processors to suit your preference.
-
-## 4. Razer Blade 15
-
-For developers who are also gamers or multimedia enthusiasts, the Razer Blade 15 is a top pick. It boasts powerful Nvidia graphics, a fast refresh rate display, and robust performance for coding and gaming alike. Its RGB keyboard adds a touch of style to your workspace.
-
-## 5. System76 Oryx Pro
-
-System76 specializes in Linux laptops, and the Oryx Pro is tailored for developers. Running on Pop!\_OS, it offers a Linux-based environment with great compatibility for software development tools. The laptop is customizable, allowing you to choose the CPU, RAM, and storage options that suit your needs.
-
-## 6. ASUS ROG Zephyrus G14
-
-If you're a developer who dabbles in game development or graphics-intensive tasks, the ASUS ROG Zephyrus G14 is worth considering. It packs a powerful AMD Ryzen processor and an Nvidia RTX GPU into a compact form factor. It's portable, yet it can handle demanding development tasks and gaming with ease.
-
-## 7. HP Spectre x360
-
-The HP Spectre x360 combines style and substance. It's a 2-in-1 laptop with a sleek design, a vivid touchscreen, and robust internals. It's perfect for developers who need flexibility in their work setup. With its long battery life and comfortable keyboard, you can code on the go or in tablet mode.
-
-In conclusion, the best laptop for developers in 2024 depends on your specific needs and preferences. Whether you prioritize power, portability, or a Linux-based environment, there's a laptop on this list to cater to your requirements. Take the time to assess your needs and budget, and you'll find the perfect coding companion to kickstart your productive year as a developer.
