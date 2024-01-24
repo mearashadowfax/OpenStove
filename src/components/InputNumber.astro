@@ -1,69 +1,176 @@
-    <!-- Serving Size Container -->
-    <div class="flex flex-col py-3 sm:py-6 lg:py-6">
-        <p class="text-base">Serving size</p>
-        <!-- Input Number -->
-        <div
-          class="max-w-40 rounded-lg border border-stone-300 bg-stone-50 dark:border-stone-600 dark:bg-stone-700/60"
-          data-hs-input-number
-        >
-          <div class="flex w-full items-center justify-between gap-x-1">
+---
+import type {CollectionEntry} from "astro:content";
+
+const {recipe} = Astro.props;
+
+interface Props {
+    recipe: CollectionEntry<"recipes">;
+}
+---
+
+<!-- Serving Size Container -->
+<div class="flex flex-col py-3 sm:py-6 lg:py-6">
+    <p class="mb-1 text-base">Serving size</p>
+    <!-- Input Number -->
+    <div
+            class="max-w-40 rounded-lg border border-stone-300 bg-stone-50 dark:border-stone-600 dark:bg-stone-700/60"
+            data-hs-input-number
+    >
+        <div class="flex w-full items-center justify-between gap-x-1">
             <div class="grow px-3 py-2">
-              <input
-                class="w-full border-0 bg-transparent p-0 text-dark focus:ring-0 dark:text-stone-100"
-                type="text"
-                value="1"
-                data-hs-input-number-input
-              />
+                <input
+                        class="w-full border-0 bg-transparent p-0 text-dark focus:ring-0 dark:text-stone-100 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        type="number"
+                        value="1"
+                        data-hs-input-number-input
+                        readonly
+                />
             </div>
             <div
-              class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700"
+                    class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700"
             >
-              <button
-                type="button"
-                class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
-                data-hs-input-number-decrement
-              >
-                <svg
-                  class="h-3.5 w-3.5 flex-shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                <button
+                        type="button"
+                        class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+                        data-hs-input-number-decrement
                 >
-                  <path d="M5 12h14"></path>
-                </svg>
-              </button>
-              <button
-                type="button"
-                class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
-                data-hs-input-number-increment
-              >
-                <svg
-                  class="h-3.5 w-3.5 flex-shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                    <svg
+                            class="h-3.5 w-3.5 flex-shrink-0"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    >
+                        <path d="M5 12h14"></path>
+                    </svg>
+                </button>
+                <button
+                        type="button"
+                        class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-lg hover:bg-orange-100 focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+                        data-hs-input-number-increment
                 >
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5v14"></path>
-                </svg>
-              </button>
+                    <svg
+                            class="h-3.5 w-3.5 flex-shrink-0"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    >
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                    </svg>
+                </button>
             </div>
-          </div>
         </div>
-        <!-- End Input Number -->
-      </div>
-      <!-- End Serving Size Container -->
-      
-      <script is:inline src="/node_modules/preline/dist/input-number.js"></script>      
+    </div>
+    <!-- End Input Number -->
+</div>
+<!-- End Serving Size Container -->
+
+<!-- Ingredients List Container -->
+<div
+        class="flex flex-wrap justify-between gap-6 lg:flex-col lg:flex-nowrap lg:justify-normal lg:gap-0 lg:space-y-4"
+>
+    {recipe.data.ingredients?.map((ingredient) => (
+            <div>
+                <p class="text-balance text-lg font-semibold text-dark 2xl:text-xl dark:text-stone-300">
+                    {ingredient.title}
+                </p>
+                <ul class="flex max-w-xs flex-col divide-y divide-gray-200 dark:divide-gray-700">
+                    {ingredient.items.map((item) => (
+                            <li
+                                    data-quantity={item.quantity}
+                                    data-name={item.name}
+                                    class="count inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
+                            >
+                                {item.quantity} {item.name}
+                            </li>))}
+                </ul>
+            </div>))}
+</div>
+<script>
+    const portionSizeInput = document.querySelector<HTMLInputElement>("[data-hs-input-number-input]",);
+
+    let portionSize = 1;
+
+    function parseFraction(fraction: any) {
+        if (!fraction.includes("/")) {
+            return parseFloat(fraction);
+        }
+        const parts = fraction.split("/");
+        const numerator = Number(parts[0]);
+        const denominator = Number(parts[1]);
+        if (denominator > 0) {
+            return numerator / denominator;
+        } else {
+            return NaN;
+        }
+    }
+
+    function adjustQuantity(quantity: any, portionSize: any) {
+        if (!quantity) {
+            return "";
+        }
+        const parsedQuantity = parseFraction(quantity);
+        const adjustedQuantity = parsedQuantity * portionSize;
+        return parseFloat(adjustedQuantity.toFixed(2)).toString();
+    }
+
+    function updateIngredientQuantities() {
+        const ingredientCounts = document.querySelectorAll(".count");
+        ingredientCounts.forEach((countElement) => {
+            const element = countElement as HTMLElement;
+            const quantity = element.dataset.quantity;
+            const name = element.dataset.name;
+            element.textContent = `${adjustQuantity(quantity || "", portionSize,)} ${name}`;
+        });
+    }
+
+    updateIngredientQuantities();
+
+    function updatePortionSize(newSize: number) {
+        portionSize = newSize;
+        if (portionSizeInput) {
+            portionSizeInput.value = portionSize.toString();
+
+            updateIngredientQuantities();
+
+
+            if (portionSize >= 6) {
+                increment?.setAttribute('disabled', 'disabled');
+            } else {
+                increment?.removeAttribute('disabled');
+            }
+
+            if (portionSize == 0) {
+                decrement?.setAttribute('disabled', 'disabled');
+            } else {
+                decrement?.removeAttribute('disabled');
+            }
+        }
+    }
+
+
+    const increment = document.querySelector("[data-hs-input-number-increment]",);
+    const decrement = document.querySelector("[data-hs-input-number-decrement]",);
+
+    increment?.addEventListener("click", () => {
+        updatePortionSize(Math.min(portionSize + 1));
+    });
+
+    decrement?.addEventListener("click", () => {
+        updatePortionSize(Math.max(portionSize - 1));
+    });
+</script>
+
+
