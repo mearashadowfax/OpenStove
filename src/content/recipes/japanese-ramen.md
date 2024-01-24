@@ -1,20 +1,15 @@
 ---
 title: "Japanese Ramen"
 description: "Authentic ramen with rich broth, tender pork, and chewy noodles. A taste of Tokyo in your kitchen!"
-pubDate: 2024-01-17
+
 author: "mearashadowfax"
-cookingTime: 55
+pubDate: 2024-01-25
+
 image: "../../images/miso-ramen.avif"
 imageAlt: "A bowl of miso ramen"
-tags: [ "japanese", "ramen", "noodles" ]
-recipeNotes: [
-  "Dashi Stock Variation: For a more authentic base, you can use dashi stock combined with the broth for deeper flavor.",
-  "Cooking Eggs: For soft-boiled eggs, cook them for 6-7 minutes in boiling water, then place them in ice water. For hard-boiled eggs, cook them for 9-12 minutes.",
-  "Vegetarian Option: Substitute the chashu or chicken with tofu and use vegetable broth to make this dish vegetarian.",
-  "Gluten-Free Option: Use gluten-free tamari instead of soy sauce, and purchase gluten-free ramen noodles.",
-  "Toppings: Feel free to customize your ramen with various toppings like corn, buttered mushrooms, or spinach.",
-  "Miso Paste: The ratio of red to white miso can be adjusted to taste; white miso is milder and sweeter, while red miso is stronger and saltier."
-]
+
+cookingTime: 55
+
 steps:
   - title: "Make the Miso Tare"
     actions:
@@ -38,5 +33,65 @@ steps:
   - title: "Voilà!"
     actions:
       - "Indulge in your creation and savor the moment. Bon appétit!"
+
+ingredients:
+  - title: "For the Miso Tare (Sauce):"
+    items:
+      - quantity: "2"
+        name: "teaspoons red miso paste"
+      - quantity: "1"
+        name: "teaspoon white miso paste"
+      - quantity: "1"
+        name: "teaspoon soy sauce"
+      - quantity: "1/4"
+        name: "teaspoon sesame oil"
+      - quantity: "1/4"
+        name: "teaspoon grated garlic"
+      - quantity: "1/4"
+        name: "teaspoon grated ginger"
+      - quantity: "1"
+        name: "teaspoon sake (optional)"
+      - quantity: "1"
+        name: "teaspoon mirin (optional)"
+  - title: "For the Soup:"
+    items:
+      - quantity: "1"
+        name: "cup chicken or vegetable broth"
+      - quantity: "1/2"
+        name: "cup water"
+      - quantity: "1/4"
+        name: "tablespoon vegetable oil"
+      - quantity: "2"
+        name: "tablespoons sliced green onions"
+      - quantity: "1/2"
+        name: "tablespoon chopped onions"
+      - quantity: "1"
+        name: "ounce shiitake mushrooms, sliced (optional)"
+  - title: "For the Ramen:"
+    items:
+      - quantity: "1"
+        name: "cup chicken or vegetable broth"
+      - quantity: "1/2"
+        name: "cup water"
+      - quantity: "1/4"
+        name: "tablespoon vegetable oil"
+      - quantity: "2"
+        name: "tablespoons sliced green onions"
+      - quantity: "1/2"
+        name: "tablespoon chopped onions"
+      - quantity: "1"
+        name: "ounce shiitake mushrooms, sliced (optional)"                                
+
+recipeNotes: [
+  "Dashi Stock Variation: For a more authentic base, you can use dashi stock combined with the broth for deeper flavor.",
+  "Cooking Eggs: For soft-boiled eggs, cook them for 6-7 minutes in boiling water, then place them in ice water. For hard-boiled eggs, cook them for 9-12 minutes.",
+  "Vegetarian Option: Substitute the chashu or chicken with tofu and use vegetable broth to make this dish vegetarian.",
+  "Gluten-Free Option: Use gluten-free tamari instead of soy sauce, and purchase gluten-free ramen noodles.",
+  "Toppings: Feel free to customize your ramen with various toppings like corn, buttered mushrooms, or spinach.",
+  "Miso Paste: The ratio of red to white miso can be adjusted to taste; white miso is milder and sweeter, while red miso is stronger and saltier."
+]
+
+tags: [ "japanese", "ramen", "noodles" ]
+
 slug: japanese-ramen
 ---

@@ -1,19 +1,14 @@
 ---
 title: "Chicken Tagine"
 description: "Experience the rich flavors of Moroccan cuisine with this aromatic Chicken Tagine. Infused with the tartness of preserved lemons and the distinct taste of olives, this dish is a feast for the senses."
+
 pubDate: 2024-01-08
-cookingTime: 60
+
 image: "../../images/chicken-tagine.avif"
 imageAlt: "Colorful and fragrant Chicken Tagine with Kalamata olives, cracked green olives, and slices of preserved lemons"
-tags: ["main", "chicken", "moroccan"]
-recipeNotes: [
-  "Marinating Time: For deeper flavors, marinate the chicken overnight in the refrigerator with the spices, garlic, and a bit of olive oil.",
-  "If you have a traditional tagine pot, use it to cook the dish. Otherwise, a heavy-bottomed pot or Dutch oven will work just fine.",
-  "This dish is traditionally served with couscous, but it can also be enjoyed with bread or rice.",
-  "Preserved Lemons: If you can’t find preserved lemons, use fresh lemon zest and a little extra salt as a substitute.",
-  "Be careful with salt as olives and preserved lemons are already salty.",
-  "Chicken tagine can be made ahead of time; in fact, it tastes even better the next day as the flavors meld."
-]
+
+cookingTime: 60
+
 steps:
   - title: "Marinate the Chicken"
     actions:
@@ -43,25 +38,51 @@ steps:
   - title: "Voilà!"
     actions:
       - "Indulge in your creation and savor the moment. Bon appétit!"
+
+ingredients:
+  - title: ""
+    items:
+      - quantity: "4"
+        name: "chicken thighs, bone-in and skin-on"
+      - quantity: "2"
+        name: "teaspoons ground cumin"
+      - quantity: "2"
+        name: "teaspoons ground coriander"
+      - quantity: "2"
+        name: "teaspoons paprika"
+      - quantity: "1"
+        name: "teaspoon ground ginger"
+      - quantity: "1"
+        name: "teaspoon turmeric"
+      - quantity: ""
+        name: "Salt and freshly ground black pepper to taste"
+      - quantity: "3"
+        name: "tablespoons olive oil, divided"
+      - quantity: "1"
+        name: "large onion, finely chopped" 
+      - quantity: "3"
+        name: "garlic cloves, minced" 
+      - quantity: "1"
+        name: "cup chicken stock" 
+      - quantity: "1/2"
+        name: "cup Kalamata olives, pitted"
+      - quantity: "1/2"
+        name: "cup cracked green olives, pitted" 
+      - quantity: "1/4"
+        name: "cup preserved lemon peel, thinly sliced" 
+      - quantity: ""
+        name: "Fresh cilantro or parsley, chopped (for garnish)"  
+        
+recipeNotes: [
+  "Marinating Time: For deeper flavors, marinate the chicken overnight in the refrigerator with the spices, garlic, and a bit of olive oil.",
+  "If you have a traditional tagine pot, use it to cook the dish. Otherwise, a heavy-bottomed pot or Dutch oven will work just fine.",
+  "This dish is traditionally served with couscous, but it can also be enjoyed with bread or rice.",
+  "Preserved Lemons: If you can’t find preserved lemons, use fresh lemon zest and a little extra salt as a substitute.",
+  "Be careful with salt as olives and preserved lemons are already salty.",
+  "Chicken tagine can be made ahead of time; in fact, it tastes even better the next day as the flavors meld."
+]
+
+tags: ["main", "chicken", "moroccan"]
+
 slug: chicken-tagine
 ---
-
-# Chicken Tagine with Kalamata Olives, Cracked Green Olives, and Preserved Lemons
-
-## Ingredients
-
-- 4 chicken thighs, bone-in and skin-on
-- 2 teaspoons ground cumin
-- 2 teaspoons ground coriander
-- 2 teaspoons paprika
-- 1 teaspoon ground ginger
-- 1 teaspoon turmeric
-- Salt and freshly ground black pepper to taste
-- 3 tablespoons olive oil, divided
-- 1 large onion, finely chopped
-- 3 garlic cloves, minced
-- 1 cup chicken stock
-- 1/2 cup Kalamata olives, pitted
-- 1/2 cup cracked green olives, pitted
-- 1/4 cup preserved lemon peel, thinly sliced
-- Fresh cilantro or parsley, chopped (for garnish)
