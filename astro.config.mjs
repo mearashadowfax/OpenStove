@@ -2,8 +2,9 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
-
 import icon from "astro-icon";
+
+import metaTags from "astro-meta-tags";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,7 +31,7 @@ export default defineConfig({
       allow: '',
       disallow: '/'
     }]
-  }), sitemap(), icon()],
+  }), sitemap(), icon(), metaTags()],
   output: 'server',
   experimental: {
     clientPrerender: true

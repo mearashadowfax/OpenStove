@@ -18,6 +18,15 @@ const recipesCollection = defineCollection({
           actions: z.array(z.string()),
         })
       ),
+    ingredients: z.array(
+      z.object({
+        title: z.string().optional(),
+        items: z.array(
+          z.object({
+            quantity: z.string().optional(),
+            name: z.string()
+          })
+        )})).optional(), 
     }),
 });
 
