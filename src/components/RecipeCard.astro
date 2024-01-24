@@ -19,8 +19,10 @@ interface Props {
       <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
         <Image
           class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
-          src ={recipe.data.image}
-          alt ={recipe.data.imageAlt}
+          src={recipe.data.image}
+          alt={recipe.data.imageAlt}
+          draggable={"false"}
+
         />
       </div>
       <div class="my-6">
