@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Meta from "../components/Meta.astro";
 
 const { title = "OpenStove" } = Astro.props;
 
@@ -12,12 +13,8 @@ interface Props {
 <html class="scroll-pt-16 scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-    <meta content="width=device-width" name="viewport" />
-    <meta content="{Astro.generator}" name="generator" />
     <title>{title}</title>
-
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Meta />
     <script is:inline>
       if (
         localStorage.getItem("hs_theme") === "dark" ||
