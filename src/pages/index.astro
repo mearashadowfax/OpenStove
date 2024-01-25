@@ -1,218 +1,223 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
-import FAQ from "../components/FAQ.astro"
+import MainLayout from "../layouts/MainLayout.astro";
+import FAQ from "../components/FAQ.astro";
 import RecipeCard from "../components/RecipeCard.astro";
 import { Image } from "astro:assets";
 import heroImage from "../images/hero-image.svg";
 import { Icon } from "astro-icon/components";
-import { HOMEPAGE_ARTICLE_LIMIT } from "../constants";
+import { HOMEPAGE_RECIPES_LIMIT } from "../constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes'))
-  .sort((a:CollectionEntry<'recipes'>, b:CollectionEntry<'recipes'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allRecipes: CollectionEntry<"recipes">[] = (
+  await getCollection("recipes")
+).sort(
+  (a: CollectionEntry<"recipes">, b: CollectionEntry<"recipes">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <MainLayout>
-      
-      <!--Hero Section-->
-      <section
-        class="flex flex-col justify-between gap-6 pt-28 sm:gap-10 sm:pt-40 md:gap-16 xl:gap-0 lg:flex-row lg:pt-16 xl:pt-12 2xl:pt-10 "
+  <!--Hero Section-->
+  <section
+    class="flex flex-col justify-between gap-6 pt-28 sm:gap-10 sm:pt-40 md:gap-16 lg:flex-row lg:pt-16 xl:gap-0 xl:pt-12 2xl:pt-10"
+  >
+    <!-- Content Start -->
+    <div
+      class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-24"
+    >
+      <h1
+        class="mb-3 text-balance bg-gradient-to-r from-[#F37335] to-[#F0B429] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl/[1.1] md:mb-6 md:text-6xl/[1.1] dark:from-[#F7971E] dark:to-primary"
       >
-        <!-- Content Start -->
-        <div
-          class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-24"
-        >
-          <h1
-            class="mb-3 text-balance bg-gradient-to-r from-[#F37335] to-[#F0B429] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl/[1.1] md:mb-6 md:text-6xl/[1.1] dark:from-[#F7971E] dark:to-primary"
-          >
-            OpenStove — Your Open Source Recipe Library
-          </h1>
+        OpenStove — Your Open Source Recipe Library
+      </h1>
 
+      <p
+        class="mb-8 text-pretty leading-relaxed text-stone-600 md:mb-12 md:text-lg lg:w-4/5 2xl:text-xl dark:text-stone-400"
+      >
+        A community-driven kitchen where discovery and sharing of recipes come
+        free from clutter. Cook, enjoy, and add your own flavors.
+      </p>
+
+      <!-- Buttons Container Start -->
+      <div
+        class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start"
+      >
+        <a
+          class="inline-block rounded-xl border-2 border-secondary bg-secondary px-8 py-3 text-center text-sm font-medium text-orange-900 outline-none transition duration-300 hover:-translate-y-1 hover:bg-transparent focus-visible:-translate-y-1 md:text-base 2xl:text-lg dark:hover:text-secondary"
+          href="about/#contribution"
+          data-astro-prefetch>How to Contribute?</a
+        >
+
+        <a
+          class="inline-block rounded-xl border-2 border-primary bg-primary px-8 py-3 text-center text-sm font-semibold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
+          href="#recipeCards"
+          data-astro-prefetch>Explore Recipes</a
+        >
+      </div>
+      <!--  End Buttons Container -->
+    </div>
+    <!-- End Content -->
+
+    <!-- Image Start -->
+    <div class="flex w-full items-center justify-center">
+      <Image
+        src={heroImage}
+        alt="Illustration of a couple in a kitchen cooking eggs on a stove"
+        loading={"eager"}
+        class="h-auto w-full"
+      />
+    </div>
+    <!-- End Image -->
+  </section>
+  <!-- End Hero -->
+
+  <!-- Heading Section -->
+  <div class="relative my-10 overflow-hidden rounded-xl">
+    <!-- Gradients -->
+    <div
+      aria-hidden="true"
+      class="absolute -top-96 start-1/2 flex -translate-x-1/2 transform"
+    >
+      <div
+        class="h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-gradient-to-r from-[#F37335] to-[#F0B429] blur-3xl dark:from-[#F7971E] dark:to-primary"
+      >
+      </div>
+      <div
+        class="rounded-fulls h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 bg-gradient-to-tl from-[#ffa751] via-[#F2C94C] to-[#ffa751] blur-3xl dark:from-primary dark:via-[#FF725E] dark:to-secondary"
+      >
+      </div>
+    </div>
+    <!-- End Gradients -->
+
+    <div class="relative z-10">
+      <div class="mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+        <div class="mx-auto max-w-screen-md text-center">
           <p
-            class="mb-8 text-pretty leading-relaxed text-stone-600  dark:text-stone-400 md:mb-12 md:text-lg lg:w-4/5 2xl:text-xl"
+            class="inline-block bg-gradient-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-sm font-medium text-transparent lg:text-base dark:from-[#ffd38c] dark:to-[#fda263]"
           >
-            A community-driven kitchen where discovery and sharing of recipes
-            come free from clutter. Cook, enjoy, and add your own flavors.
+            Discover, Cook, Cherish — Together
           </p>
 
-          <!-- Buttons Container Start -->
-          <div
-            class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start"
-          >
-            <a
-              class="inline-block rounded-xl bg-secondary border-2 border-secondary px-8 py-3 text-center text-sm font-medium text-orange-900 outline-none transition duration-300 dark:hover:text-secondary hover:bg-transparent hover:-translate-y-1 focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
-              href="about/#contribution"
-              data-astro-prefetch
-              >How to Contribute?</a
+          <!-- Title -->
+          <div class="mx-auto mt-5 max-w-screen-md">
+            <h2
+              class="block text-balance text-4xl font-semibold text-dark md:text-5xl dark:text-stone-100"
             >
-
-            <a
-              class="inline-block rounded-xl bg-primary border-2 border-primary px-8 py-3 text-center text-sm font-semibold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
-              href="#recipeCards"
-              data-astro-prefetch
-              >Explore Recipes</a
-            >
+              Harvest the Best of Global Kitchens
+            </h2>
           </div>
-          <!--  End Buttons Container -->
-        </div>
-        <!-- End Content -->
+          <!-- End Title -->
 
-        <!-- Image Start -->
-        <div
-          class="flex w-full items-center justify-center"
+          <div class="mx-auto mt-5 max-w-screen-md">
+            <p
+              class="mx-auto max-w-screen-md text-pretty text-lg text-stone-600 2xl:text-xl dark:text-stone-200"
+            >
+              OpenStove is a home of culinary exploration and shared passion for
+              cooking. Browse, enjoy, and become part of our flavor-filled
+              community by contributing your culinary art. No frills; just the
+              essence of cooking.
+            </p>
+          </div>
+          <!-- Button Start-->
+          <div class="mt-8 flex justify-center gap-3">
+            <a
+              class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
+              href="https://github.com/mearashadowfax/OpenStove"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="github-body" class="h-4 w-4" />
+              Contribute with GitHub
+            </a>
+          </div>
+          <!-- End Button -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Heading -->
+
+  <!-- Recipe Cards Blog -->
+  <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
+    <!-- Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        allRecipes
+          .slice(0, HOMEPAGE_RECIPES_LIMIT)
+          .map((recipe) => <RecipeCard recipe={recipe} />)
+      }
+    </div>
+    <!-- End Grid -->
+
+    <!-- Explore More Button -->
+    <div class="mt-12 text-center">
+      <a
+        class="text-md group inline-flex min-w-64 items-center justify-center gap-x-1 rounded-xl bg-secondary-accent px-4 py-3 font-medium text-orange-800 transition-colors duration-300 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-none"
+        href="/recipes"
+        data-astro-prefetch
+      >
+        Explore more
+        <svg
+          class="h-5 w-5 transition ease-in-out group-hover:translate-x-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <Image src={heroImage} alt="Illustration of a couple in a kitchen cooking eggs on a stove" loading={"eager"} class="h-auto w-full"/>
+          <path
+            clip-rule="evenodd"
+            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+            fill-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
+    <!-- End Explore More Button -->
+  </div>
+  <!-- End Cards Blog -->
+
+  <!-- Community Card-->
+  <div class="mx-auto max-w-screen-lg">
+    <div class="py-6 sm:py-8 lg:py-14">
+      <!-- Grid -->
+      <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
+        <div class="flex flex-col items-center justify-center">
+          <Icon class="h-auto w-full max-w-[27rem]" name="female-chef" />
         </div>
-        <!-- End Image -->
-      </section>
-      <!-- End Hero -->
 
-      <!-- Heading Section -->
-      <div class="relative my-10 overflow-hidden rounded-xl">
-        <!-- Gradients -->
-        <div
-          aria-hidden="true"
-          class="absolute -top-96 start-1/2 flex -translate-x-1/2 transform"
-        >
-          <div
-            class="h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-gradient-to-r from-[#F37335] to-[#F0B429] blur-3xl dark:from-[#F7971E] dark:to-primary"
-          ></div>
-          <div
-            class="rounded-fulls h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 bg-gradient-to-tl from-[#ffa751] via-[#F2C94C] to-[#ffa751] blur-3xl dark:from-primary dark:via-[#FF725E] dark:to-secondary"
-          ></div>
-        </div>
-        <!-- End Gradients -->
-
-        <div class="relative z-10">
-          <div class="mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-            <div class="mx-auto max-w-screen-md text-center">
-              <p
-                class="inline-block bg-gradient-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-sm lg:text-base font-medium text-transparent dark:from-[#ffd38c] dark:to-[#fda263]"
-              >
-                Discover, Cook, Cherish — Together
-              </p>
-
-              <!-- Title -->
-              <div class="mx-auto mt-5 max-w-screen-md">
+        <!-- image - end -->
+        <div class="mt-5 sm:mt-10 lg:mt-0">
+          <div class="space-y-6 sm:space-y-8">
+            <!-- Title -->
+            <div
+              class="mx-auto flex flex-col items-center justify-center px-4 sm:items-start sm:px-6 md:px-0 md:py-24 lg:py-32"
+            >
+              <div class="space-y-2 md:space-y-4">
                 <h2
-                  class="block text-balance text-4xl font-semibold text-dark md:text-5xl dark:text-stone-100"
+                  class="mx-auto mb-4 text-balance text-center text-2xl font-bold text-dark md:mx-0 md:mb-6 md:text-left md:text-3xl 2xl:text-4xl dark:text-stone-100"
                 >
-                  Harvest the Best of Global Kitchens
+                  Join Our Cooking Collective
                 </h2>
-              </div>
-              <!-- End Title -->
 
-              <div class="mx-auto mt-5 max-w-screen-md">
                 <p
-                  class="mx-auto max-w-screen-md text-pretty text-lg text-stone-600 2xl:text-xl dark:text-stone-200"
+                  class="text-pretty text-center leading-relaxed text-stone-600 sm:text-lg md:text-left 2xl:text-xl dark:text-stone-400"
                 >
-                  OpenStove is a home of culinary exploration and shared passion
-                  for cooking. Browse, enjoy, and become part of our
-                  flavor-filled community by contributing your culinary art. No
-                  frills; just the essence of cooking.
+                  OpenStove is more than just a recipe site — it's an
+                  open-source collaboration where every dish you find here is a
+                  gift from fellow food lovers. Have a favorite recipe you'd
+                  like to share? We welcome you to add your special touch to our
+                  growing collection.
                 </p>
               </div>
-              <!-- Button Start-->
-              <div class="mt-8 flex justify-center gap-3">
-                <a
-                  class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
-                  href="https://github.com/mearashadowfax/OpenStove"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name="github-body" class="w-4 h-4" />
-                  Contribute with GitHub
-                </a>
-              </div>
-              <!-- End Button -->
+              <!-- End Title -->
             </div>
           </div>
         </div>
+        <!-- End Col -->
       </div>
-      <!-- End Heading -->
-   
-      <!-- Recipe Cards Blog -->
-      <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
-        <!-- Grid -->
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {allRecipes.slice(0, HOMEPAGE_ARTICLE_LIMIT).map(recipe => (
-            <RecipeCard recipe={recipe} />
-           ))}
-        </div>
-        <!-- End Grid -->
+      <!-- End Grid -->
+    </div>
+  </div>
+  <!-- End Community Card-->
 
-        <!-- Explore More Button -->
-        <div class="mt-12 text-center">
-          <a
-            class="text-md group inline-flex min-w-64 items-center justify-center gap-x-1 rounded-xl bg-secondary-accent px-4 py-3 font-medium text-orange-800 transition-colors duration-300 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-none"
-            href="/recipes"
-            data-astro-prefetch
-          >
-            Explore more
-            <svg
-              class="h-5 w-5 transition ease-in-out group-hover:translate-x-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
-          </a>
-        </div>
-        <!-- End Explore More Button -->
-      </div>
-      <!-- End Cards Blog -->
-
-      <!-- Community Card-->
-      <div class="mx-auto max-w-screen-lg">
-        <div class="py-6 sm:py-8 lg:py-14">
-          <!-- Grid -->
-          <div
-            class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32"
-          >
-            <div class="flex flex-col items-center justify-center">
-              <Icon class="h-auto w-full max-w-[27rem]" name="female-chef" />
-            </div>
-
-            <!-- image - end -->
-            <div class="mt-5 sm:mt-10 lg:mt-0">
-              <div class="space-y-6 sm:space-y-8">
-                <!-- Title -->
-                <div
-                  class="mx-auto flex flex-col items-center justify-center px-4 sm:items-start sm:px-6 md:px-0 md:py-24 lg:py-32"
-                >
-                  <div class="space-y-2 md:space-y-4">
-                    <h2
-                      class="mx-auto mb-4 text-balance text-center text-2xl font-bold text-dark md:mx-0 md:mb-6 md:text-left md:text-3xl 2xl:text-4xl dark:text-stone-100"
-                    >
-                      Join Our Cooking Collective
-                    </h2>
-
-                    <p
-                      class="text-pretty text-center leading-relaxed text-stone-600 sm:text-lg md:text-left 2xl:text-xl dark:text-stone-400"
-                    >
-                      OpenStove is more than just a recipe site — it's an
-                      open-source collaboration where every dish you find here
-                      is a gift from fellow food lovers. Have a favorite recipe
-                      you'd like to share? We welcome you to add your special
-                      touch to our growing collection.
-                    </p>
-                  </div>
-                  <!-- End Title -->
-                </div>
-              </div>
-            </div>
-            <!-- End Col -->
-          </div>
-          <!-- End Grid -->
-        </div>
-      </div>
-      <!-- End Community Card-->
-
-      <FAQ />
-   </MainLayout>
+  <FAQ />
+</MainLayout>

@@ -24,19 +24,26 @@ const searchResults = allRecipes.filter((recipe) => {
   const slugMatch: boolean = recipe.slug
     .toLowerCase()
     .includes(query!.toLowerCase());
-  
+
   const notesMatch: boolean = recipe.data.recipeNotes
-  ? recipe.data.recipeNotes.some((note) =>
-      note.toLowerCase().includes(query!.toLowerCase())
-    )
-  : false;  
- 
+    ? recipe.data.recipeNotes.some((note) =>
+        note.toLowerCase().includes(query!.toLowerCase()),
+      )
+    : false;
+
   const instructionsMatch: boolean = recipe.data.steps.some((step) =>
-    step.actions.some((action) => action.toLowerCase().includes(query!.toLowerCase()))
+    step.actions.some((action) =>
+      action.toLowerCase().includes(query!.toLowerCase()),
+    ),
   );
 
   return (
-    titleMatch || descriptionMatch || authorMatch || slugMatch || notesMatch || instructionsMatch
+    titleMatch ||
+    descriptionMatch ||
+    authorMatch ||
+    slugMatch ||
+    notesMatch ||
+    instructionsMatch
   );
 });
 ---
@@ -55,7 +62,6 @@ const searchResults = allRecipes.filter((recipe) => {
         </h2>
       </div>
     </div>
-    <!-- End Tag Title -->
 
     <!-- Recipe Cards -->
     <div id="recipeCards" class="mx-auto max-w-screen-2xl">
@@ -63,6 +69,5 @@ const searchResults = allRecipes.filter((recipe) => {
         {searchResults.map((recipe) => <RecipeCard recipe={recipe} />)}
       </div>
     </div>
-    <!-- End Recipe Cards -->
   </section>
 </MainLayout>

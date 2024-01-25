@@ -15,7 +15,7 @@ interface Props {
     <meta charset="utf-8" />
     <title>{title}</title>
     <Meta />
-    <script is:inline>
+    <script is:inline async>
       if (
         localStorage.getItem("hs_theme") === "dark" ||
         (!("hs_theme" in localStorage) &&

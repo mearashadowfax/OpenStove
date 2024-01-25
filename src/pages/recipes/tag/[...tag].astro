@@ -25,26 +25,24 @@ const tagRecipes = allRecipes.filter((recipe: any) =>
 
 <MainLayout title={capitalize(tag) + " | OpenStove"}>
   <section class="min-h-screen">
-  <!--Tag Title Section-->
-  <div class="mt-10 py-6 sm:py-8 lg:py-12">
-    <div
-      class="rounded-xl bg-gradient-to-r from-[#f46b45] to-[#eea849]  px-4 py-6 md:py-8 lg:py-12"
-    >
-      <h2
-        class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-stone-800 sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+    <!--Tag Title Section-->
+    <div class="mt-10 py-6 sm:py-8 lg:py-12">
+      <div
+        class="rounded-xl bg-gradient-to-r from-[#f46b45] to-[#eea849] px-4 py-6 md:py-8 lg:py-12"
       >
-        {capitalize(tag)}
-      </h2>
+        <h2
+          class="mx-auto max-w-3xl text-balance text-center text-3xl font-bold text-stone-800 sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+        >
+          {capitalize(tag)}
+        </h2>
+      </div>
     </div>
-  </div>
-  <!-- End Tag Title -->
 
-  <!-- Recipe Cards -->
-  <div id="recipeCards" class="mx-auto max-w-screen-2xl">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {tagRecipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+    <!-- Recipe Cards -->
+    <div id="recipeCards" class="mx-auto max-w-screen-2xl">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {tagRecipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+      </div>
     </div>
-  </div>
-  <!-- End Recipe Cards -->
-</section>
+  </section>
 </MainLayout>

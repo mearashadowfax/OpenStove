@@ -1,18 +1,26 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro"
 import RecipeCard from "../../components/RecipeCard.astro";
+import Pagination from "../../components/Pagination.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { RECIPES_PER_PAGE } from "../../constants";
+
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
 
 const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes'))
   .sort((a:CollectionEntry<'recipes'>, b:CollectionEntry<'recipes'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+const totalPages: number = Math.ceil(allRecipes.length / RECIPES_PER_PAGE);
+
+const recipesPerPage: CollectionEntry<'recipes'>[] = allRecipes.slice(
+  (currentPage - 1) * RECIPES_PER_PAGE, currentPage * RECIPES_PER_PAGE);
 ---
 
 <MainLayout title="Recipes | OpenStove">
-
       <!-- Heading Section -->
+    {currentPage === 1 && (
       <div class="mt-10 py-6 sm:py-8 lg:py-12">
         <div
           class="rounded-xl bg-gradient-to-br from-[#FDC830] to-[#FF8372] px-4 py-6"
@@ -39,11 +47,11 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
           </section>
         </div>
       </div>
-      <!-- End Heading -->
-
+    )}
+   
       <!-- Buttons Container -->
       <div
-        class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-end"
+        class={`flex flex-col ${currentPage === 1 ? "" : "mt-20"} gap-2.5 sm:flex-row sm:justify-center lg:justify-end`}
       >
       <a
                   class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-secondary-accent px-8 py-3 text-center font-medium text-orange-900 outline-none transition duration-300 hover:bg-secondary focus-visible:-translate-y-1 text-base 2xl:text-lg"
@@ -78,18 +86,20 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
       <!-- Recipe Cards -->
       <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-         {allRecipes.map(recipe => (
+         {recipesPerPage.map(recipe => (
           <RecipeCard recipe={recipe} />
          ))}
         </div>
-
-        <!-- Pagination -->
-        
-        <!-- End Pagination -->
+        <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                disablePrevious={currentPage === 1}
+                disableNext={currentPage === totalPages}
+        />
       </div>
-      <!-- End Recipe Cards -->
 
-      <!-- Community Card-->
+    <!-- Community Card-->
+    {currentPage % 2 === 0 && (
       <div class="mx-auto mb-12">
         <div class="py-6 sm:py-8">
           <!-- Flex -->
@@ -97,7 +107,6 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
             <div class="flex w-9/12 items-center justify-center 2xl:w-full">
               <Icon class="h-auto w-full" name="recipe-book" />
             </div>
-
             <!-- image - end -->
             <div class="mx-auto mt-5 sm:mt-10 lg:mt-0">
               <div class="space-y-6 sm:space-y-8">
@@ -134,6 +143,5 @@ const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes')
           <!-- End Flex -->
         </div>
       </div>
-      <!-- End Community Card-->
-
+    )}
     </MainLayout>
