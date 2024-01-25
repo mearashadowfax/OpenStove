@@ -100,9 +100,9 @@
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   const expires = "expires=" + d.toUTCString();
   const secureFlag = "Secure";
-  // const httpOnlyFlag = "HttpOnly";
+  const httpOnlyFlag = "HttpOnly";
   const sameSitePolicy = "SameSite=Lax";
-  document.cookie = `${cname}=${cvalue};${expires};path=/;${secureFlag};${sameSitePolicy}`;
+  document.cookie = `${cname}=${cvalue};${expires};path=/;${secureFlag};${httpOnlyFlag};${sameSitePolicy}`;
 }
 
 

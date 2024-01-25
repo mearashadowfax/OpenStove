@@ -37,8 +37,8 @@ import { Icon } from "astro-icon/components";
 </footer>
 <!-- End Footer-->
 
-<script>
+<script async>
   const year = new Date().getFullYear();
   const element = document.getElementById("current-year");
-  element!.innerText = year.toString();
+  element.innerText = year.toString();
 </script>
