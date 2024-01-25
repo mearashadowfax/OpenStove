@@ -48,7 +48,7 @@ recipeNotes: [
   "Gluten-Free: For a gluten-free version, make sure you are using gluten-free dumpling wrappers and soy sauce."
 ]
 
-tags: ["dim-sum", "Chinese", "steamed"]
+tags: ["dim-sum", "chinese", "steamed"]
 
 slug: savory-dim-sum
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Lamb Meatballs with Potatoes, Cranberries, Yogurt, and Mint"
-description: "Tender and flavorful lamb meatballs served with roasted potatoes and cranberries, topped with a tangy yogurt sauce and refreshing mint. A satisfying and savory dish, sure to please all palates."
+description: "Tender and flavorful lamb meatballs served with roasted potatoes and cranberries, topped with a tangy yogurt sauce and refreshing mint."
 
 pubDate: 2024-01-06
 

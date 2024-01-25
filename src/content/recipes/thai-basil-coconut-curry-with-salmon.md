@@ -1,6 +1,6 @@
 ---
 title: "Thai Basil Coconut Curry with Salmon"
-description: "Creamy coconut milk, fragrant basil, and spicy Thai curry paste pair beautifully with pieces of tender salmon in this Thai Basil Coconut Curry—a rich and flavorful dish that's sure to impress."
+description: "Creamy coconut milk, fragrant basil, and spicy Thai curry paste pair beautifully with pieces of tender salmon."
 
 pubDate: 2024-01-23
 
@@ -54,7 +54,7 @@ recipeNotes: [
   "This dish tastes even better the next day after the flavors have had time to meld together! Store leftovers in the fridge for up to 2-3 days, and reheat gently on the stovetop or in the microwave."
 ]
 
-tags: ["curry", "Thai", "salmon"]
+tags: ["curry", "thai", "salmon"]
 
 slug: thai-basil-coconut-curry-with-salmon
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Greek Grilled Chicken With Green Beans"
-description: "Marinated in flavorful Greek seasonings, this grilled chicken is served with a side of crisp, tender green beans for a healthy and balanced meal. It's a simple yet delightful representation of Greek cuisine."
+description: "Marinated in flavorful Greek seasonings, this grilled chicken is served with a side of crisp, tender green beans for a healthy and balanced meal."
 
 pubDate: 2024-01-08
 
@@ -50,7 +50,7 @@ recipeNotes:
     "This dish works perfectly with a side of Greek salad or a slice of fresh bread.",
   ]
 
-tags: ["Greek", "chicken", "beans"]
+tags: ["greek", "chicken", "beans"]
 
 slug: greek-grilled-chicken
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Salmon and Quinoa with Cherry Tomatoes and Green Lentils"
-description: "This protein-packed dish comprises seared salmon, fluffy quinoa, fresh cherry tomatoes, and hearty green lentils—a delectable meal that's as nutritious as it is satisfying."
+description: "This protein-packed dish comprises seared salmon, fluffy quinoa, fresh cherry tomatoes, and hearty green lentils."
 
 pubDate: 2024-01-11
 

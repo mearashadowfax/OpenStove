@@ -1,6 +1,6 @@
 ---
-title: "Penne Pasta with Pesto & Sun-Dried Tomato Sauce, Cauliflower, and Carrots"
-description: "Enjoy a bowl of penne pasta tossed in a savory pesto and sun-dried tomato sauce, served with roasted cauliflower and colorful carrots—a satisfying and nutrient-rich meal."
+title: "Pasta with Pesto & Sun-Dried Tomato Sauce, Cauliflower, and Carrots"
+description: "Enjoy a bowl of your favorite pasta tossed in a savory pesto and sun-dried tomato sauce, served with roasted cauliflower and colorful carrots — a satisfying and nutrient-rich meal."
 
 pubDate: 2024-01-11
 
@@ -39,7 +39,7 @@ ingredients:
       - quantity: "1"
         name: "tablespoon olive oil, plus more for roasting"
       - quantity: "8"
-        name: "ounces penne pasta"
+        name: "ounces of your chosen pasta"
       - quantity: "1"
         name: "small cauliflower, cut into florets"
       - quantity: "2"
@@ -53,12 +53,12 @@ ingredients:
 
 recipeNotes:
   [
-    "You can replace the penne with any pasta of your choice, like spaghetti, fusilli, or farfalle.",
+    "You can use any pasta of your choice, like spaghetti, fusilli, or farfalle. Note that cooking times may vary with different pasta shapes; please adjust accordingly.",
     "Pesto: If you have fresh basil, you can make your own homemade pesto.",
     "Sun-Dried Tomatoes: If using sun-dried tomatoes not packed in oil, rehydrate them in warm water for about 20 minutes before using.",
   ]
 
 tags: ["pasta", "pesto", "cauliflower"]
 
-slug: penne-pasta-with-pesto
+slug: pasta-with-pesto
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Garlic Aioli Chicken Wings with Glazed Yams"
-description: "Savor the rich, tangy flavors of chicken wings marinated in garlic aioli, served with sweet and tender glazed yams—a hearty and comforting meal that satisfies."
+description: "Savor the rich, tangy flavors of chicken wings marinated in garlic aioli, served with sweet and tender glazed yams."
 
 pubDate: 2024-01-11
 

@@ -1,6 +1,6 @@
 ---
 title: "Hasselback Potatoes"
-description: "A classic Swedish side dish, Hasselback potatoes are sliced into thin wedges but left joined at the bottom, drizzled with melted butter, and roasted to golden crispy perfection. Simple yet delectably crispy and buttery."
+description: "A classic Swedish side dish, Hasselback potatoes are sliced into thin wedges but left joined at the bottom, drizzled with melted butter, and roasted to golden crispy perfection."
 
 pubDate: 2024-01-05
 

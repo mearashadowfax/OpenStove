@@ -1,6 +1,6 @@
 ---
 title: "Quinoa and Pinto Bean Bowl with Fresh Asparagus"
-description: "A nourishing bowl of fluffy quinoa and hearty pinto beans served with fresh, crisp asparagus—a wholesome and balanced meal perfect for any time of the day."
+description: "A nourishing bowl of fluffy quinoa and hearty pinto beans served with fresh, crisp asparagus — a wholesome and balanced meal perfect for any time of the day."
 
 pubDate: 2024-01-02
 
