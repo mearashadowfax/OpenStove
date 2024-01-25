@@ -20,11 +20,15 @@ When you create your recipe, please use the following markdown template, replica
 ---
 title: "Name of Your Dish"
 description: "A short description of the dish. Aim for one or two sentences that evoke taste and appeal."
-author: "Your Name, GitHub Username or Alias" # Optional, if not provided will be set to default "anonymous".
+
+author: "Your Name, GitHub Username or Alias" # Optional, if not provided, remove the block, will be set to default "anonymous".
 pubDate: YYYY-MM-DD  # Publication date when you are writing the recipe.
+
 image: ""  # Optional: URL of an image or relative path to an image within the repository.
 imageAlt: ""  # Optional: A brief description of the image for accessibility.
+
 cookingTime:  # Cooking time in minutes.
+
 steps:
   - title: "Step Name" # Optional, can be left blank
     actions:
@@ -50,6 +54,7 @@ recipeNotes: [
   # Optional, if none, remove the recipeNotes block
 
 tags: ["tag1", "tag2", "tag3"]  # Describe the dish with appropriate tags, max 3 tags
+
 slug: name-of-your-dish  # A URL-friendly version of your recipe's title.
 
 ---
@@ -82,7 +87,7 @@ Our maintainers will review your recipe, provide feedback, and merge it into the
 Take a look at our example recipes to get an idea of the format and style that we look for:
 
 - [Traditional French Lemon Tart](https://github.com/mearashadowfax/OpenStove/blob/main/src/content/recipes/traditional-french-lemon-tart.md?plain=1)
-- [Fried Rice with Egg](https://github.com/mearashadowfax/OpenStove/blob/main/src/content/recipes/fried-rice-with-egg.md?plain=1)
+- [Creamy Tomato Soup](https://github.com/mearashadowfax/OpenStove/blob/main/src/content/recipes/creamy-tomato-soup.md?plain=1)
 
 ## Community Guidelines
 
