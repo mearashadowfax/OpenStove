@@ -2,6 +2,7 @@
 title: ""
 description: ""
 
+author: ""
 pubDate: 
 
 image: ""

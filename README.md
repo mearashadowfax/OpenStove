@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/icons/logo-readme.svg" alt="OpenStove Logo"/>
+  <a href="https://openstove.org" target="_blank"><img src="src/icons/logo-readme.svg" alt="OpenStove Logo"/></a>
 </div>  
 <p>&nbsp;</p>
 

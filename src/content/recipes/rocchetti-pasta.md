@@ -61,7 +61,7 @@ recipeNotes:
     "For a vegan version, omit the Parmesan cheese or use a vegan cheese alternative.",
   ]
 
-tags: ["pasta", "vegetarian", "rocchetti", "brussels-sprouts"]
+tags: ["pasta", "vegetarian", "rocchetti"]
 
 slug: rocchetti-pasta
 ---
