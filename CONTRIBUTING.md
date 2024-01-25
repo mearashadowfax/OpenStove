@@ -57,7 +57,7 @@ slug: name-of-your-dish  # A URL-friendly version of your recipe's title.
 
 Be sure to adhere to the placeholder structure, replacing the fields with the relevant details of your recipe. If an image is not provided, leave the image field empty. We will find an appropriate image for your recipe.
 
-Please note that if you want to keep the field blank, keep the `""`. Also, please check the ready-to-go template with no placeholders: [Link](#Ready-to-go-Template-Link)
+Please note that if you want to keep the field blank, keep the `""`. Also, please check the [ready-to-go template](https://github.com/mearashadowfax/OpenStove/blob/main/Ready-to-go-Template.md?plain=1) with no placeholders.
 
 ## Contribution Process
 
