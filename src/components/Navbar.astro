@@ -176,7 +176,7 @@ const currentPage = pathname.slice(1);
           <a
             href="/about"
             data-astro-prefetch
-            class={currentPage === "about"
+            class={currentPage.startsWith("about")
               ? "block rounded bg-primary-accent-dark px-3 py-2 text-dark transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:bg-transparent md:p-0 md:text-orange-500 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark md:dark:bg-transparent"
               : "block rounded px-3 py-2 text-dark transition-colors duration-300 hover:bg-orange-100 hover:text-primary-accent-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:p-0 md:hover:bg-transparent md:hover:text-orange-500 2xl:text-lg dark:border-gray-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark md:dark:hover:bg-transparent md:dark:hover:text-primary-accent-dark"}
           >
@@ -293,4 +293,3 @@ const currentPage = pathname.slice(1);
     });
   });
 </script>
-<script is:inline async src="/node_modules/preline/dist/collapse.js"></script>
