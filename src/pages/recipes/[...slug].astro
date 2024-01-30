@@ -136,7 +136,6 @@ if (entry === undefined) {
                     <li class="text-balance text-lg font-bold text-dark 2xl:text-xl dark:text-stone-200">
                       {step.title}
                       <ul
-                        role="list"
                         class="dark:marker-primary mt-1 list-disc space-y-2 text-pretty ps-5 font-normal leading-normal text-stone-600 marker:text-secondary 2xl:text-xl dark:text-stone-400"
                       >
                         {step.actions.map((action) => (
@@ -160,7 +159,6 @@ if (entry === undefined) {
                   Recipe Notes:
                 </h2>
                 <ul
-                  role="list"
                   class="mt-4 max-w-prose list-disc space-y-2 text-pretty ps-5 text-lg leading-normal text-stone-600 marker:text-secondary 2xl:text-xl dark:text-stone-400 dark:marker:text-primary"
                 >
                   {entry.data.recipeNotes?.map((note: string) => (
