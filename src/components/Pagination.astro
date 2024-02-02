@@ -1,5 +1,10 @@
 ---
-const { currentPage, totalPages, disablePrevious, disableNext } = Astro.props;
+const {
+  currentPage,
+  totalPages,
+  disablePrevious,
+  disableNext
+} = Astro.props;
 
 interface Props {
   currentPage: number;
@@ -7,13 +12,29 @@ interface Props {
   disablePrevious: boolean;
   disableNext: boolean;
 }
+
+function createWindow(currentPage: number, totalPages: number, windowSize: number) {
+  const minPage = Math.max(2, currentPage - windowSize);
+  const maxPage = Math.min(totalPages - 1, currentPage + windowSize);
+  return Array.from({ length: maxPage - minPage + 1 }, (_, i) => minPage + i);
+}
+
+const windowSize = 1;
+const baseStyle =
+  "flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark focus:outline-none disabled:pointer-events-none disabled:opacity-50";
 ---
 
-<nav role="navigation" aria-label="Pagination" class="mt-10 flex items-center justify-center gap-x-1 xl:justify-end">
+<nav
+  role="navigation"
+  aria-label="Pagination"
+  class="mt-10 flex items-center justify-center gap-x-1 xl:justify-end"
+>
   <a
-    href={'/recipes?page=' + (currentPage - 1)}
+    href={"/recipes?page=" + (currentPage - 1)}
     aria-label="Go to previous page"
-    class={disablePrevious ? "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05] pointer-events-none opacity-50" : "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}
+    class={disablePrevious
+      ? "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05] pointer-events-none opacity-50"
+      : "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}
   >
     <svg
       class="h-3.5 w-3.5 flex-shrink-0 transition ease-in-out group-hover:translate-x-1"
@@ -32,22 +53,111 @@ interface Props {
     <span class="hidden sm:inline-block">Previous</span>
   </a>
   <div class="flex items-center gap-x-1">
+    <a
+      href={"/recipes?page=1"}
+      class={`${baseStyle} ${currentPage === 1 ? "bg-orange-200 focus:bg-orange-200 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500" : "hover:bg-orange-100 focus:bg-orange-100 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}`}
+      aria-current="page"
+    >
+      1
+    </a>
     {
-      Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+      currentPage - windowSize > 2 && (
+        <div class="hs-tooltip inline-block">
           <a
-              href={'/recipes?page=' + page}
-              class={`flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${currentPage === page ? "bg-orange-200 focus:bg-orange-200 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500" : "hover:bg-orange-100 focus:bg-orange-100 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}`}
-              aria-current="page"
+            href={`/recipes?page=${currentPage - 4 > 1 ? currentPage - 4 : 1}`}
+            class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-stone-400 hover:text-primary-accent-light p-2 text-sm rounded-lg focus:outline-none hover:bg-orange-100 focus:bg-orange-100 disabled:opacity-50 disabled:pointer-events-none dark:hover-text-primary-accent-dark dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
           >
-            {page}
+            <span class="group-hover:hidden text-xs">•••</span>
+            <svg
+              class="group-hover:block hidden flex-shrink-0 w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path d="m18 7 -5 5 5 5" />
+                <path d="m11 7 -5 5 5 5" />
+              </>
+            </svg>
+            <span
+              class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-stone-900 text-xs font-medium text-stone-100 rounded shadow-sm dark:bg-stone-700"
+              role="tooltip"
+            >
+              {`Previous ${currentPage - 1 > 2 ? 2 : currentPage - 1} pages`}
+            </span>
           </a>
+        </div>
+      )
+    }
+
+    {
+      createWindow(currentPage, totalPages, windowSize).map((page) => (
+        <a
+          href={"/recipes?page=" + page}
+          class={`${baseStyle} ${currentPage === page ? "bg-orange-200 focus:bg-orange-200 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500" : "hover:bg-orange-100 focus:bg-orange-100 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}`}
+          aria-current="page"
+        >
+          {page}
+        </a>
       ))
     }
+
+    {
+      currentPage + windowSize < totalPages - 1 && (
+        <div class="hs-tooltip inline-block">
+          <a
+            href={`/recipes?page=${currentPage + windowSize + 1}`}
+            class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-stone-400 hover:text-primary-accent-light p-2 text-sm rounded-lg focus:outline-none hover:bg-orange-100 focus:bg-orange-100 disabled:opacity-50 disabled:pointer-events-none dark:hover-text-primary-accent-dark dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
+          >
+            <span class="group-hover:hidden text-xs">•••</span>
+            <svg
+              class="group-hover:block hidden flex-shrink-0 w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path d="m6 17 5-5-5-5" />
+                <path d="m13 17 5-5-5-5" />
+              </>
+            </svg>
+            <span
+              class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-stone-900 text-xs font-medium text-stone-100 rounded shadow-sm dark:bg-stone-700"
+              role="tooltip"
+            >
+              {`Next ${totalPages - currentPage > 4 ? 4 : totalPages - currentPage} pages`}
+            </span>
+          </a>
+        </div>
+      )
+    }
+
+    <a
+      href={"/recipes?page=" + totalPages}
+      class={`${baseStyle} ${currentPage === totalPages ? "bg-orange-200 focus:bg-orange-200 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-gray-500" : "hover:bg-orange-100 focus:bg-orange-100 dark:text-white dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}`}
+      aria-current="page"
+    >
+      {totalPages}
+    </a>
   </div>
   <a
-    href={'/recipes?page=' + (currentPage + 1)}
+    href={"/recipes?page=" + (currentPage + 1)}
     aria-label="Go to next page"
-    class={disableNext ? "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05] pointer-events-none opacity-50" : "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}
+    class={disableNext
+      ? "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05] pointer-events-none opacity-50"
+      : "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}
   >
     <span class="hidden sm:inline-block">Next</span>
     <svg
