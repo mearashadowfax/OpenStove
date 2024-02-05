@@ -35,9 +35,9 @@ steps:
 ingredients:
   - title: "For the Tomato Mozzarella Caprese Salad:"
     items:
-      - quantity: "2"
+      - quantity: "1"
         name: "ripe tomatoes"
-      - quantity: "225"
+      - quantity: "115"
         name: "grams fresh mozzarella"
       - quantity: ""
         name: "Handful of fresh basil leaves"
@@ -49,11 +49,11 @@ ingredients:
         name: "Balsamic glaze, for drizzling"
   - title: "For the Lettuce Salad:"
     items:
-      - quantity: "1"
+      - quantity: "1/2"
         name: "head lettuce (mixed greens or romaine)"
-      - quantity: "1"
+      - quantity: "1/2"
         name: "cucumber, sliced (optional)"
-      - quantity: "1"
+      - quantity: "1/2"
         name: "cup cherry tomatoes, halved (optional)"
       - quantity: ""
         name: "Balsamic vinaigrette or preferred dressing, for drizzling"

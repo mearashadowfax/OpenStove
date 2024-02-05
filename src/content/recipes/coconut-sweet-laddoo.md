@@ -18,7 +18,7 @@ steps:
   - title: "Shape the Laddoos"
     actions:
       - "Take small portions of the coconut mixture and roll them between your palms to form round laddoos."
-      - "Repeat this process until all the mixture is used, making approximately 6 laddoos."
+      - "Repeat this process until all the mixture is used, making approximately 6 laddoos per serving."
       - "Optional: Roll the laddoos in additional shredded coconut or chopped nuts for added flavor and texture."
   - title: "Chill and Serve"
     actions:

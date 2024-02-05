@@ -37,7 +37,7 @@ const baseStyle =
       : "inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-none dark:text-stone-100 dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"}
   >
     <svg
-      class="h-3.5 w-3.5 flex-shrink-0 transition ease-in-out group-hover:translate-x-1"
+      class="h-3.5 w-3.5 flex-shrink-0 transition ease-in-out group-hover:-translate-x-1"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -64,7 +64,7 @@ const baseStyle =
       currentPage - windowSize > 2 && (
         <div class="hs-tooltip inline-block">
           <a
-            href={`/recipes?page=${currentPage - 4 > 1 ? currentPage - 4 : 1}`}
+            href={`/recipes?page=${currentPage - 2 > 1 ? currentPage - 2 : 1}`}
             class="hs-tooltip-toggle group min-h-[38px] min-w-[38px] flex justify-center items-center text-stone-400 hover:text-primary-accent-light p-2 text-sm rounded-lg focus:outline-none hover:bg-orange-100 focus:bg-orange-100 disabled:opacity-50 disabled:pointer-events-none dark:hover-text-primary-accent-dark dark:hover:bg-stone-100/[.05] dark:focus:bg-stone-100/[.05]"
           >
             <span class="group-hover:hidden text-xs">•••</span>
@@ -89,7 +89,7 @@ const baseStyle =
               class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-stone-900 text-xs font-medium text-stone-100 rounded shadow-sm dark:bg-stone-700"
               role="tooltip"
             >
-              {`Previous ${currentPage - 1 > 2 ? 2 : currentPage - 1} pages`}
+             {`Previous ${currentPage -1 > 3 ? 2 : currentPage - 3 > 1 ? currentPage - 3 : 1} pages`}
             </span>
           </a>
         </div>
@@ -137,7 +137,7 @@ const baseStyle =
               class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-stone-900 text-xs font-medium text-stone-100 rounded shadow-sm dark:bg-stone-700"
               role="tooltip"
             >
-              {`Next ${totalPages - currentPage > 4 ? 4 : totalPages - currentPage} pages`}
+              {`Next ${totalPages - currentPage > 3 ? 3 : totalPages - currentPage} pages`}
             </span>
           </a>
         </div>
@@ -176,3 +176,5 @@ const baseStyle =
     </svg>
   </a>
 </nav>
+
+<script is:inline src="/scripts/@preline/tooltip/index.js"></script>
