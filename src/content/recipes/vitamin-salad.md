@@ -2,7 +2,6 @@
 title: "Vitamin Salad with Fresh Tomatoes, Arugula, Feta Cheese, and Peppers"
 description: "A vibrant and nutritious salad packed with vitamins and flavor, featuring fresh tomatoes, peppery arugula, tangy feta cheese, and sweet peppers."
 
-author: ""
 pubDate: 2024-02-25
 
 image: "../../images/vitamin-salad.avif"
