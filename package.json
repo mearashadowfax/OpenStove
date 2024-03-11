@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.5.7",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.4.15",
+    "astro": "^4.5.0",
     "astro-icon": "^1.0.2",
     "astro-meta-tags": "^0.2.1",
     "astro-robots-txt": "^1.0.0",
