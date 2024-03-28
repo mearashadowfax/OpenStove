@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.5.10",
+    "astro": "^4.5.9",
     "astro-icon": "^1.0.2",
     "astro-meta-tags": "^0.2.2",
     "astro-robots-txt": "^1.0.0",
@@ -21,7 +21,7 @@
     "flowbite": "^2.3.0",
     "preline": "^2.0.3",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "prettier": "^3.1.1",
