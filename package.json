@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.6.1",
+    "astro": "^4.6.3",
     "astro-icon": "^1.0.2",
     "astro-meta-tags": "^0.2.2",
     "astro-robots-txt": "^1.0.0",
@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.13"
+    "prettier-plugin-tailwindcss": "^0.5.14"
   }
 }
