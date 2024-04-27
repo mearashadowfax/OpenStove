@@ -93,8 +93,8 @@ ingredients:
 recipeNotes:
   [
     "Khmeli suneli is a Georgian spice blend that typically includes coriander, fenugreek, marigold petals, blue fenugreek, cloves, cinnamon, and sometimes chilies. If unavailable, you can substitute with a mixture of ground coriander, turmeric, and paprika.",
-    "For a richer flavored soup, use bone-in beef chuck roast instead of stew meat. However, increase the cooking time until the beef is very tender, falling off the bone."
-    "Adjust the amount of red pepper flakes to your desired spice level. You can also add a chopped fresh chili pepper for an extra kick."
+    "For a richer flavored soup, use bone-in beef chuck roast instead of stew meat. However, increase the cooking time until the beef is very tender, falling off the bone.",
+    "Adjust the amount of red pepper flakes to your desired spice level. You can also add a chopped fresh chili pepper for an extra kick.",
     "Chopped fresh tarragon can be used in place of, or in addition to, cilantro and parsley for a different flavor profile."
   ]
 

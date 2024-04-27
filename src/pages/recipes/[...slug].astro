@@ -8,6 +8,7 @@ import Bookmark from "../../components/Bookmark.astro";
 import Clipboard from "../../components/Clipboard.astro";
 import { formatDate } from "../../utils";
 import { Image } from "astro:assets";
+import placeholder from "../../images/placeholder.png";
 import { getEntry } from "astro:content";
 
 const { slug } = Astro.params;
@@ -28,9 +29,9 @@ if (entry === undefined) {
     <!-- Image Start -->
     <div class="mx-auto min-w-full rounded-xl bg-cover">
       <Image
-        src={entry.data.image}
+        src={placeholder}
         class="h-80 w-full rounded-xl object-cover"
-        alt={entry.data.imageAlt}
+        alt="Image Description"
         draggable={"false"}
         loading={"eager"}
       />

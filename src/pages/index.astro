@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import FAQ from "../components/FAQ.astro";
 import RecipeCard from "../components/RecipeCard.astro";
 import { Image } from "astro:assets";
-import heroImage from "../images/hero-image.svg";
+import heroImage from "../images/placeholder.png";
 import { Icon } from "astro-icon/components";
 import { HOMEPAGE_RECIPES_LIMIT } from "../constants";
 import { getCollection } from "astro:content";
@@ -181,7 +181,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
       <!-- Grid -->
       <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
         <div class="flex flex-col items-center justify-center">
-          <Icon class="h-auto w-full max-w-[27rem]" name="female-chef" />
+          <Icon class="h-auto w-full max-w-[27rem]" name="placeholder" />
         </div>
 
         <!-- image - end -->
