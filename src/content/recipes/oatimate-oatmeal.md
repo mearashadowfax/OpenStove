@@ -1,5 +1,5 @@
 ---
-title: "Oat-imate Oatmeal"
+title: "Ben's Oat-imate Oatmeal"
 description: "The ultimate oatmeal meal prep recipe."
 
 author: "BHolmesDev" # Optional, if not provided, remove the block, will be set to default "anonymous".
@@ -51,7 +51,7 @@ ingredients:
         name: "Unsweetened vanilla almond yogurt to taste. Silk Rich and Creamy preferred."
 
 recipeNotes: [
-  "This recipe serves 4, making it perfect breakfast meal prep."
+  "This recipe is best for breakfast meal prep. Try up to 4 servings and keep in the fridge for your week ahead."
 ]
       
 tags: ["breakfast", "meal-prep"]  # Describe the dish with appropriate tags, max 3 tags
