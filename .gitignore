@@ -1,7 +1,3 @@
-# Image formats
-*.avif
-*.png
-
 # Module scripts
 *.mjs
 
