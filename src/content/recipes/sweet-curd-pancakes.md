@@ -4,7 +4,7 @@ description: "Delicious and fluffy sweet curd pancakes, known as Syrniki, served
 
 pubDate: 2024-06-16
 
-image: "/images/sweet-curd-pancakes.avif"
+image: "../../images/sweet-curd-pancakes.avif"
 imageAlt: "Sweet curd pancakes with cottage cheese and mint topping"
 
 cookingTime: 45
