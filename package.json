@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.10.1",
+    "astro": "^4.11.0",
     "astro-icon": "^1.0.2",
     "astro-meta-tags": "^0.3.0",
     "astro-robots-txt": "^1.0.0",
@@ -21,10 +21,10 @@
     "flowbite": "^2.3.0",
     "preline": "^2.3.0",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "devDependencies": {
-    "prettier": "^3.3.1",
-    "prettier-plugin-tailwindcss": "^0.6.2"
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5"
   }
 }
