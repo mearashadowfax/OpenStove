@@ -79,14 +79,15 @@ ingredients:
       - quantity: ""
         name: "Lemon wedges, for serving"
 
-recipeNotes: [
-  "For a richer flavor, you can substitute cream for coconut milk.",
-  "Adjust the amount of chili powder to your preferred level of spiciness.",
-  "For a smokier flavor, you can char the bell peppers before adding them to the sauce.",
-  "If using wooden skewers for grilling, soak them in water for at least 30 minutes before threading the chicken onto them to prevent burning.",
-  "This dish pairs well with steamed rice, naan bread, or even roasted vegetables.",
-  "Feel free to customize the recipe by adding other vegetables like peas, carrots, or potatoes."
-]
+recipeNotes:
+  [
+    "For a richer flavor, you can substitute cream for coconut milk.",
+    "Adjust the amount of chili powder to your preferred level of spiciness.",
+    "For a smokier flavor, you can char the bell peppers before adding them to the sauce.",
+    "If using wooden skewers for grilling, soak them in water for at least 30 minutes before threading the chicken onto them to prevent burning.",
+    "This dish pairs well with steamed rice, naan bread, or even roasted vegetables.",
+    "Feel free to customize the recipe by adding other vegetables like peas, carrots, or potatoes.",
+  ]
 
 tags: ["chicken", "curry", "indian"]
 

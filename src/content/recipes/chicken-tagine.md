@@ -59,28 +59,29 @@ ingredients:
       - quantity: "3"
         name: "tablespoons olive oil, divided"
       - quantity: "1"
-        name: "large onion, finely chopped" 
+        name: "large onion, finely chopped"
       - quantity: "3"
-        name: "garlic cloves, minced" 
+        name: "garlic cloves, minced"
       - quantity: "1"
-        name: "cup chicken stock" 
+        name: "cup chicken stock"
       - quantity: "1/2"
         name: "cup Kalamata olives, pitted"
       - quantity: "1/2"
-        name: "cup cracked green olives, pitted" 
+        name: "cup cracked green olives, pitted"
       - quantity: "1/4"
-        name: "cup preserved lemon peel, thinly sliced" 
+        name: "cup preserved lemon peel, thinly sliced"
       - quantity: ""
-        name: "Fresh cilantro or parsley, chopped (for garnish)"  
-        
-recipeNotes: [
-  "Marinating Time: For deeper flavors, marinate the chicken overnight in the refrigerator with the spices, garlic, and a bit of olive oil.",
-  "If you have a traditional tagine pot, use it to cook the dish. Otherwise, a heavy-bottomed pot or Dutch oven will work just fine.",
-  "This dish is traditionally served with couscous, but it can also be enjoyed with bread or rice.",
-  "Preserved Lemons: If you can’t find preserved lemons, use fresh lemon zest and a little extra salt as a substitute.",
-  "Be careful with salt as olives and preserved lemons are already salty.",
-  "Chicken tagine can be made ahead of time; in fact, it tastes even better the next day as the flavors meld."
-]
+        name: "Fresh cilantro or parsley, chopped (for garnish)"
+
+recipeNotes:
+  [
+    "Marinating Time: For deeper flavors, marinate the chicken overnight in the refrigerator with the spices, garlic, and a bit of olive oil.",
+    "If you have a traditional tagine pot, use it to cook the dish. Otherwise, a heavy-bottomed pot or Dutch oven will work just fine.",
+    "This dish is traditionally served with couscous, but it can also be enjoyed with bread or rice.",
+    "Preserved Lemons: If you can’t find preserved lemons, use fresh lemon zest and a little extra salt as a substitute.",
+    "Be careful with salt as olives and preserved lemons are already salty.",
+    "Chicken tagine can be made ahead of time; in fact, it tastes even better the next day as the flavors meld.",
+  ]
 
 tags: ["main", "chicken", "moroccan"]
 

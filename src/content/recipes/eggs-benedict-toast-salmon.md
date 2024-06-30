@@ -58,14 +58,15 @@ ingredients:
       - quantity: ""
         name: "Fresh chives or dill, chopped (for garnish)"
 
-recipeNotes: [
-  "Use fresh eggs for poaching, as they hold their shape better in the water.",
-  "Hollandaise Tips: Ensure the water in the double boiler is barely simmering to prevent the eggs from scrambling. If the sauce gets too thick, you can thin it out with a little warm water.",
-  "Salmon Substitution: If preferred, you can use cooked bacon, ham, or spinach as a substitute for the smoked salmon.",
-  "English Muffin Variation: Feel free to use other types of bread such as brioche or sourdough for a different flavor profile.",
-  "The hollandaise sauce can be made ahead of time and gently reheated before serving. Poach the eggs just before assembling.",
-  "Add sliced avocado or tomato for extra flavor and texture, or sprinkle with capers for a briny kick."
-]
+recipeNotes:
+  [
+    "Use fresh eggs for poaching, as they hold their shape better in the water.",
+    "Hollandaise Tips: Ensure the water in the double boiler is barely simmering to prevent the eggs from scrambling. If the sauce gets too thick, you can thin it out with a little warm water.",
+    "Salmon Substitution: If preferred, you can use cooked bacon, ham, or spinach as a substitute for the smoked salmon.",
+    "English Muffin Variation: Feel free to use other types of bread such as brioche or sourdough for a different flavor profile.",
+    "The hollandaise sauce can be made ahead of time and gently reheated before serving. Poach the eggs just before assembling.",
+    "Add sliced avocado or tomato for extra flavor and texture, or sprinkle with capers for a briny kick.",
+  ]
 
 tags: ["eggs benedict", "salmon", "breakfast"]
 

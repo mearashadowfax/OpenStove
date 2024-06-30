@@ -37,13 +37,14 @@ ingredients:
       - quantity: ""
         name: "Salt, to taste"
 
-recipeNotes: [
-  "New potatoes work best for this recipe due to their thin skins and creamy texture. You can use baby red or baby Yukon gold potatoes.",
-  "Feel free to use salted butter if you prefer, adjusting the added salt accordingly. You can also use olive oil for a different flavor profile.",
-  "Using fresh dill enhances the flavor of the dish. If unavailable, you can use dried dill, but reduce the quantity as dried herbs are more concentrated.",
-  "Add minced garlic or a squeeze of lemon juice for additional flavor variations.",
-  "Leftovers can be refrigerated and reheated, but the texture may change slightly. Enjoy them fresh for the best taste and texture."
-]
+recipeNotes:
+  [
+    "New potatoes work best for this recipe due to their thin skins and creamy texture. You can use baby red or baby Yukon gold potatoes.",
+    "Feel free to use salted butter if you prefer, adjusting the added salt accordingly. You can also use olive oil for a different flavor profile.",
+    "Using fresh dill enhances the flavor of the dish. If unavailable, you can use dried dill, but reduce the quantity as dried herbs are more concentrated.",
+    "Add minced garlic or a squeeze of lemon juice for additional flavor variations.",
+    "Leftovers can be refrigerated and reheated, but the texture may change slightly. Enjoy them fresh for the best taste and texture.",
+  ]
 
 tags: ["potatoes", "side dish", "dill"]
 

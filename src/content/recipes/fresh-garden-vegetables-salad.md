@@ -52,13 +52,14 @@ ingredients:
       - quantity: "1/2"
         name: "teaspoon honey or maple syrup (optional)"
 
-recipeNotes: [
-  "Freshness Tip: Choose the freshest vegetables available for the best flavor and texture.",
-  "Customization: Feel free to add other fresh garden vegetables such as lettuce, radishes, or carrots according to your preference.",
-  "Dressing Variation: You can swap the balsamic vinaigrette with a lemon vinaigrette or a creamy ranch dressing for different flavor profiles.",
-  "Make Ahead: You can prepare the vegetables ahead of time and store them in the refrigerator, but dress the salad just before serving to keep it crisp and fresh.",
-  "Garnish with additional fresh herbs like parsley or basil for an extra burst of flavor."
-]
+recipeNotes:
+  [
+    "Freshness Tip: Choose the freshest vegetables available for the best flavor and texture.",
+    "Customization: Feel free to add other fresh garden vegetables such as lettuce, radishes, or carrots according to your preference.",
+    "Dressing Variation: You can swap the balsamic vinaigrette with a lemon vinaigrette or a creamy ranch dressing for different flavor profiles.",
+    "Make Ahead: You can prepare the vegetables ahead of time and store them in the refrigerator, but dress the salad just before serving to keep it crisp and fresh.",
+    "Garnish with additional fresh herbs like parsley or basil for an extra burst of flavor.",
+  ]
 
 tags: ["salad", "vegetables", "fresh"]
 

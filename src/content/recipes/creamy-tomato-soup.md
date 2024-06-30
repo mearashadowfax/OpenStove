@@ -53,24 +53,25 @@ ingredients:
       - quantity: "1/2"
         name: "teaspoon dried oregano"
       - quantity: "1/2"
-        name: "teaspoon dried basil" 
+        name: "teaspoon dried basil"
       - quantity: "1/4"
-        name: "cup heavy cream (or alternative)" 
+        name: "cup heavy cream (or alternative)"
       - quantity: ""
-        name: "Salt and pepper to taste" 
+        name: "Salt and pepper to taste"
       - quantity: ""
-        name: "Fresh basil leaves for garnish (optional)"       
+        name: "Fresh basil leaves for garnish (optional)"
 
-recipeNotes: [
-  "Tomato Choice: For the richest flavor, use ripe, in-season tomatoes. If out of season, canned San Marzano tomatoes are a good substitute.",
-  "Cream Alternatives: For a vegan version, use coconut milk or cashew cream instead of dairy cream.",
-  "For a smoother soup, blend thoroughly. For a chunkier texture, blend only half or use a potato masher.",
-  "Garnish with fresh basil or croutons for extra flavor and crunch.",
-  "Storing: This soup can be stored in an airtight container in the fridge for up to 3 days, or freeze for longer storage.",
-  "The soup's consistency can be adjusted according to your preference by adding more broth or cream.",
-  "This creamy tomato soup pairs wonderfully with a grilled cheese sandwich or a side salad for a complete meal.",
-  "For an extra touch of richness, a dollop of crème fraîche or a sprinkle of grated Parmesan cheese can also be added upon serving."
-]
+recipeNotes:
+  [
+    "Tomato Choice: For the richest flavor, use ripe, in-season tomatoes. If out of season, canned San Marzano tomatoes are a good substitute.",
+    "Cream Alternatives: For a vegan version, use coconut milk or cashew cream instead of dairy cream.",
+    "For a smoother soup, blend thoroughly. For a chunkier texture, blend only half or use a potato masher.",
+    "Garnish with fresh basil or croutons for extra flavor and crunch.",
+    "Storing: This soup can be stored in an airtight container in the fridge for up to 3 days, or freeze for longer storage.",
+    "The soup's consistency can be adjusted according to your preference by adding more broth or cream.",
+    "This creamy tomato soup pairs wonderfully with a grilled cheese sandwich or a side salad for a complete meal.",
+    "For an extra touch of richness, a dollop of crème fraîche or a sprinkle of grated Parmesan cheese can also be added upon serving.",
+  ]
 
 tags: ["soup", "tomato", "vegetarian"]
 

@@ -48,13 +48,14 @@ ingredients:
       - quantity: ""
         name: "Shredded coconut for decoration (optional)"
 
-recipeNotes: [
-  "For a richer chocolate flavor, use dark chocolate chips instead of milk chocolate.",
-  "If the coconut mixture is too dry, add more condensed milk, a little at a time, until it reaches the desired consistency.",
-  "To prevent the chocolate from seizing when melting, ensure that all utensils and bowls are completely dry before use.",
-  "Store the coconut chocolate balls in an airtight container in the refrigerator for up to one week.",
-  "These delicious treats are perfect for parties, potlucks, or as edible gifts for friends and family."
-]
+recipeNotes:
+  [
+    "For a richer chocolate flavor, use dark chocolate chips instead of milk chocolate.",
+    "If the coconut mixture is too dry, add more condensed milk, a little at a time, until it reaches the desired consistency.",
+    "To prevent the chocolate from seizing when melting, ensure that all utensils and bowls are completely dry before use.",
+    "Store the coconut chocolate balls in an airtight container in the refrigerator for up to one week.",
+    "These delicious treats are perfect for parties, potlucks, or as edible gifts for friends and family.",
+  ]
 
 tags: ["dessert", "coconut", "chocolate"]
 

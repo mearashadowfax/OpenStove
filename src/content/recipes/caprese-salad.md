@@ -2,7 +2,6 @@
 title: "Caprese Salad with Lettuce"
 description: "A gourmet twist on the classic Caprese salad featuring ripe tomatoes, fresh mozzarella, basil, and a drizzle of balsamic glaze, served alongside a crisp lettuce salad."
 
-
 pubDate: 2024-02-04
 
 image: "../../images/caprese-salad.avif"
@@ -58,14 +57,15 @@ ingredients:
       - quantity: ""
         name: "Balsamic vinaigrette or preferred dressing, for drizzling"
 
-recipeNotes: [
-  "Quality Ingredients: Use ripe, flavorful tomatoes and high-quality fresh mozzarella for the best taste.",
-  "Balsamic Glaze: You can make your own balsamic glaze by simmering balsamic vinegar until it reduces and thickens, or purchase it pre-made for convenience.",
-  "Arrange the Tomato Mozzarella Caprese Salad on a platter in a circular pattern for an elegant presentation.",
-  "Feel free to add other ingredients to the lettuce salad, such as sliced red onions, avocado, or toasted nuts.",
-  "Make-Ahead Tip: You can prepare the Tomato Mozzarella Caprese Salad ahead of time, but dress it with olive oil, salt, pepper, and balsamic glaze just before serving to prevent the tomatoes from becoming too watery.",
-  "Store any leftover salad components separately in airtight containers in the refrigerator. Assemble just before serving to maintain freshness."
-]
+recipeNotes:
+  [
+    "Quality Ingredients: Use ripe, flavorful tomatoes and high-quality fresh mozzarella for the best taste.",
+    "Balsamic Glaze: You can make your own balsamic glaze by simmering balsamic vinegar until it reduces and thickens, or purchase it pre-made for convenience.",
+    "Arrange the Tomato Mozzarella Caprese Salad on a platter in a circular pattern for an elegant presentation.",
+    "Feel free to add other ingredients to the lettuce salad, such as sliced red onions, avocado, or toasted nuts.",
+    "Make-Ahead Tip: You can prepare the Tomato Mozzarella Caprese Salad ahead of time, but dress it with olive oil, salt, pepper, and balsamic glaze just before serving to prevent the tomatoes from becoming too watery.",
+    "Store any leftover salad components separately in airtight containers in the refrigerator. Assemble just before serving to maintain freshness.",
+  ]
 
 tags: ["caprese", "salad", "lettuce"]
 

@@ -74,14 +74,15 @@ ingredients:
       - quantity: "1"
         name: "tablespoon lemon juice"
 
-recipeNotes: [
-  "Feel free to customize the spices and herbs used in both the fried chicken and the ragout according to your taste preferences.",
-  "You can add other vegetables to the ragout, such as carrots, mushrooms, or zucchini, for extra flavor and nutrition.",
-  "If you prefer boneless chicken thighs, they can be used instead of chicken drumsticks for frying.",
-  "For a thicker sauce in the ragout, you can mix a tablespoon of cornstarch with a bit of water and add it to the simmering sauce to thicken.",
-  "This dish pairs well with crusty bread or fluffy rice to soak up the flavorful sauce.",
-  "Leftovers can be stored in an airtight container in the refrigerator for up to 3 days."
-]
+recipeNotes:
+  [
+    "Feel free to customize the spices and herbs used in both the fried chicken and the ragout according to your taste preferences.",
+    "You can add other vegetables to the ragout, such as carrots, mushrooms, or zucchini, for extra flavor and nutrition.",
+    "If you prefer boneless chicken thighs, they can be used instead of chicken drumsticks for frying.",
+    "For a thicker sauce in the ragout, you can mix a tablespoon of cornstarch with a bit of water and add it to the simmering sauce to thicken.",
+    "This dish pairs well with crusty bread or fluffy rice to soak up the flavorful sauce.",
+    "Leftovers can be stored in an airtight container in the refrigerator for up to 3 days.",
+  ]
 
 tags: ["chicken", "ragout", "vegetables"]
 

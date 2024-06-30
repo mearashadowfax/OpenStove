@@ -33,7 +33,7 @@ ingredients:
     items:
       - quantity: "1"
         name: "cup of fresh arugula leaves"
-      - quantity: "1"  
+      - quantity: "1"
         name: "ripe orange"
       - quantity: "1"
         name: "ball of fresh mozzarella cheese"
@@ -49,7 +49,7 @@ recipeNotes:
     "Try substituting mozzarella with fresh goat cheese or feta for a tangy twist.",
     "Dressing Options: Experiment with different dressings like lemon vinaigrette or honey mustard for added variety.",
     "Make-Ahead Tip: Prepare the ingredients ahead of time and assemble the salad just before serving to keep it fresh.",
-    "This salad pairs well with grilled chicken or fish for a light and satisfying meal."
+    "This salad pairs well with grilled chicken or fish for a light and satisfying meal.",
   ]
 
 tags: ["salad", "orange", "mozzarella"]

@@ -69,14 +69,15 @@ ingredients:
       - quantity: ""
         name: "Chopped fresh cilantro for garnish (optional)"
 
-recipeNotes: [
-  "Quail eggs can be found in many Asian markets or specialty grocery stores.",
-  "Belly pork adds richness and flavor to the stew, but you can also use other cuts of pork like shoulder or loin.",
-  "Adjust the amount of soy sauce and sugar according to your taste preferences.",
-  "Garnish with fresh cilantro for a burst of freshness.",
-  "Leftovers can be refrigerated in an airtight container for up to 3 days.",
-  "This stew pairs well with steamed rice or crusty bread for soaking up the delicious broth."
-]
+recipeNotes:
+  [
+    "Quail eggs can be found in many Asian markets or specialty grocery stores.",
+    "Belly pork adds richness and flavor to the stew, but you can also use other cuts of pork like shoulder or loin.",
+    "Adjust the amount of soy sauce and sugar according to your taste preferences.",
+    "Garnish with fresh cilantro for a burst of freshness.",
+    "Leftovers can be refrigerated in an airtight container for up to 3 days.",
+    "This stew pairs well with steamed rice or crusty bread for soaking up the delicious broth.",
+  ]
 
 tags: ["chinese", "stew", "belly pork"]
 

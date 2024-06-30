@@ -68,14 +68,15 @@ ingredients:
       - quantity: ""
         name: "Yogurt or tzatziki sauce, for serving (optional)"
 
-recipeNotes: [
-  "Grape Leaves: If using jarred grape leaves, rinse them well to remove excess brine. If using fresh grape leaves, blanch them briefly in boiling water to soften before using.",
-  "Ground lamb or beef is traditional for dolma, but you can use a combination of both for added flavor.",
-  "Use cooked rice in the filling mixture. You can use long-grain white rice or short-grain rice, such as Arborio.",
-  "Cooking Liquid: Water or broth can be used to cook the dolma. The liquid should cover the dolma completely in the pot.",
-  "Leftover dolma can be refrigerated in an airtight container for up to 3 days. Reheat gently before serving.",
-  "Variations: Dolma can be made vegetarian by omitting the meat and doubling the amount of rice. You can also add pine nuts or currants to the filling for extra texture and flavor."
-]
+recipeNotes:
+  [
+    "Grape Leaves: If using jarred grape leaves, rinse them well to remove excess brine. If using fresh grape leaves, blanch them briefly in boiling water to soften before using.",
+    "Ground lamb or beef is traditional for dolma, but you can use a combination of both for added flavor.",
+    "Use cooked rice in the filling mixture. You can use long-grain white rice or short-grain rice, such as Arborio.",
+    "Cooking Liquid: Water or broth can be used to cook the dolma. The liquid should cover the dolma completely in the pot.",
+    "Leftover dolma can be refrigerated in an airtight container for up to 3 days. Reheat gently before serving.",
+    "Variations: Dolma can be made vegetarian by omitting the meat and doubling the amount of rice. You can also add pine nuts or currants to the filling for extra texture and flavor.",
+  ]
 
 tags: ["dolma", "stuffed", "middle-eastern"]
 

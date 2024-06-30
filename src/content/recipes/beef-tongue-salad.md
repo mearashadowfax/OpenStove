@@ -62,16 +62,17 @@ ingredients:
     items:
       - quantity: ""
         name: "Fresh herbs like parsley or chives"
-      - quantity: ""  
+      - quantity: ""
         name: "Your favorite dressing or vinaigrette"
 
-recipeNotes: [
-  "Beef Tongue: Cooking times may vary depending on the size and thickness of the beef tongue. It should be tender and easily pierced with a fork when done.",
-  "Potatoes and Mushrooms: You can cook the potatoes and mushrooms simultaneously to save time.",
-  "Spinach: Blanching the spinach helps retain its vibrant green color and removes any bitterness.",
-  "Dressing: Choose a dressing that complements the flavors of the salad, such as a simple vinaigrette or a creamy dressing with mustard and herbs.",
-  "Variations: Feel free to add other ingredients like roasted bell peppers, cherry tomatoes, or avocado for additional flavor and texture."
-]
+recipeNotes:
+  [
+    "Beef Tongue: Cooking times may vary depending on the size and thickness of the beef tongue. It should be tender and easily pierced with a fork when done.",
+    "Potatoes and Mushrooms: You can cook the potatoes and mushrooms simultaneously to save time.",
+    "Spinach: Blanching the spinach helps retain its vibrant green color and removes any bitterness.",
+    "Dressing: Choose a dressing that complements the flavors of the salad, such as a simple vinaigrette or a creamy dressing with mustard and herbs.",
+    "Variations: Feel free to add other ingredients like roasted bell peppers, cherry tomatoes, or avocado for additional flavor and texture.",
+  ]
 
 tags: ["salad", "beef", "potato"]
 

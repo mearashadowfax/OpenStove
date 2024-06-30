@@ -68,13 +68,14 @@ ingredients:
       - quantity: ""
         name: "Fresh parsley, chopped (for garnish)"
 
-recipeNotes: [
-  "Mushroom Varieties: You can use a variety of mushrooms such as button mushrooms, shiitake, or portobello for different flavor profiles.",
-  "Creamy Texture: For an even creamier texture, you can blend in some cooked potatoes or add a dollop of sour cream before serving.",
-  "Store any leftovers in an airtight container in the refrigerator for up to 3 days. Reheat gently on the stovetop, adding a splash of broth or cream if needed to thin the soup.",
-  "Feel free to add other herbs like rosemary or parsley for added flavor, or a pinch of nutmeg for a hint of warmth.",
-  "Vegetarian/Vegan Option: Substitute the butter with olive oil and use coconut cream instead of heavy cream for a vegan-friendly version."
-]
+recipeNotes:
+  [
+    "Mushroom Varieties: You can use a variety of mushrooms such as button mushrooms, shiitake, or portobello for different flavor profiles.",
+    "Creamy Texture: For an even creamier texture, you can blend in some cooked potatoes or add a dollop of sour cream before serving.",
+    "Store any leftovers in an airtight container in the refrigerator for up to 3 days. Reheat gently on the stovetop, adding a splash of broth or cream if needed to thin the soup.",
+    "Feel free to add other herbs like rosemary or parsley for added flavor, or a pinch of nutmeg for a hint of warmth.",
+    "Vegetarian/Vegan Option: Substitute the butter with olive oil and use coconut cream instead of heavy cream for a vegan-friendly version.",
+  ]
 
 tags: ["soup", "mushroom", "spinach"]
 

@@ -70,13 +70,14 @@ ingredients:
       - quantity: ""
         name: "Salt and pepper"
 
-recipeNotes: [
-  "Choose firm, unblemished potatoes for the best results.",
-  "Feel free to customize the herbs in the garlic herb butter according to your preference.",
-  "If chanterelle mushrooms are not available, you can use other types of mushrooms such as cremini or shiitake.",
-  "For added richness, sprinkle grated cheese over the assembled potatoes before serving.",
-  "These baked potatoes make a delicious side dish or a satisfying vegetarian main course."
-]
+recipeNotes:
+  [
+    "Choose firm, unblemished potatoes for the best results.",
+    "Feel free to customize the herbs in the garlic herb butter according to your preference.",
+    "If chanterelle mushrooms are not available, you can use other types of mushrooms such as cremini or shiitake.",
+    "For added richness, sprinkle grated cheese over the assembled potatoes before serving.",
+    "These baked potatoes make a delicious side dish or a satisfying vegetarian main course.",
+  ]
 
 tags: ["potatoes", "chanterelles", "baked"]
 

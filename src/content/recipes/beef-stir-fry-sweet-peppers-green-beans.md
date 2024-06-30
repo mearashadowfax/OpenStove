@@ -76,14 +76,15 @@ ingredients:
       - quantity: ""
         name: "Sesame seeds"
 
-recipeNotes: [
-  "Choose tender cuts of beef like sirloin or flank steak for the best results.",
-  "For added heat, include sliced chili peppers or a dash of chili flakes in the stir-fry.",
-  "Feel free to add other vegetables like broccoli, carrots, or snap peas for variety.",
-  "Serve the stir-fry immediately to enjoy the crisp texture of the vegetables.",
-  "Leftovers can be refrigerated and reheated, but note that the vegetables may soften upon reheating.",
-  "Adjust the seasoning and soy sauce according to your taste preference."
-]
+recipeNotes:
+  [
+    "Choose tender cuts of beef like sirloin or flank steak for the best results.",
+    "For added heat, include sliced chili peppers or a dash of chili flakes in the stir-fry.",
+    "Feel free to add other vegetables like broccoli, carrots, or snap peas for variety.",
+    "Serve the stir-fry immediately to enjoy the crisp texture of the vegetables.",
+    "Leftovers can be refrigerated and reheated, but note that the vegetables may soften upon reheating.",
+    "Adjust the seasoning and soy sauce according to your taste preference.",
+  ]
 
 tags: ["stir-fry", "beef", "vegetables"]
 

@@ -67,15 +67,15 @@ ingredients:
       - quantity: ""
         name: "Plain yogurt, for serving (optional)"
 
-
-recipeNotes: [
-  "You can use red lentils or yellow lentils for this recipe. Red lentils tend to cook faster and break down more, creating a thicker consistency.",
-  "Adjust the amount of cayenne pepper to control the spiciness of the curry according to your preference.",
-  "If using fresh tomatoes, you can chop them finely and use instead of canned diced tomatoes.",
-  "In addition to cilantro leaves, you can garnish the curry with chopped green onions, sliced chilies, or a squeeze of fresh lemon juice.",
-  "This curry makes excellent leftovers and can be stored in an airtight container in the refrigerator for up to 3 days. Reheat gently before serving.",
-  "For added protein, you can stir in cooked chickpeas or diced tofu along with the lentils."
-]
+recipeNotes:
+  [
+    "You can use red lentils or yellow lentils for this recipe. Red lentils tend to cook faster and break down more, creating a thicker consistency.",
+    "Adjust the amount of cayenne pepper to control the spiciness of the curry according to your preference.",
+    "If using fresh tomatoes, you can chop them finely and use instead of canned diced tomatoes.",
+    "In addition to cilantro leaves, you can garnish the curry with chopped green onions, sliced chilies, or a squeeze of fresh lemon juice.",
+    "This curry makes excellent leftovers and can be stored in an airtight container in the refrigerator for up to 3 days. Reheat gently before serving.",
+    "For added protein, you can stir in cooked chickpeas or diced tofu along with the lentils.",
+  ]
 
 tags: ["indian", "curry", "dal"]
 

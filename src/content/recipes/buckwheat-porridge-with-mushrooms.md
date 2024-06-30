@@ -52,7 +52,7 @@ ingredients:
 recipeNotes:
   [
     "Variations: Feel free to add other vegetables such as spinach or kale to the porridge for added nutrition and flavor.",
-    "Protein Boost: You can also add cooked chicken, tofu, or a poached egg on top of the porridge for extra protein."
+    "Protein Boost: You can also add cooked chicken, tofu, or a poached egg on top of the porridge for extra protein.",
   ]
 
 tags: ["buckwheat", "porridge", "mushrooms"]

@@ -22,12 +22,11 @@ steps:
       - "Optional: Roll the laddoos in additional shredded coconut or chopped nuts for added flavor and texture."
   - title: "Chill and Serve"
     actions:
-     - "Place the laddoos on a plate or tray lined with parchment paper and refrigerate for about 15-20 minutes to firm up."
-     - "Once chilled, the laddoos are ready to be served. Enjoy the homemade goodness!"
+      - "Place the laddoos on a plate or tray lined with parchment paper and refrigerate for about 15-20 minutes to firm up."
+      - "Once chilled, the laddoos are ready to be served. Enjoy the homemade goodness!"
   - title: "Voilà!"
     actions:
       - "Indulge in your creation and savor the moment. Bon appétit!"
-    
 
 ingredients:
   - title: ""
@@ -40,14 +39,15 @@ ingredients:
         name: "tablespoons sugar"
       - quantity: ""
         name: "Additional shredded coconut or chopped nuts for rolling (optional)"
-        
-recipeNotes: [
+
+recipeNotes:
+  [
     "For a richer flavor, you can toast the shredded coconut in a dry skillet until golden brown before mixing with the condensed milk and sugar.",
     "Adjust the amount of sugar according to your taste preferences. You can also use powdered sugar for a smoother texture in the laddoos.",
     "To make the laddoos more festive, you can add a pinch of cardamom powder or a few saffron strands to the coconut mixture.",
     "Store the laddoos in an airtight container in the refrigerator for up to one week. Bring them to room temperature before serving for the best taste and texture.",
-    "These laddoos make for a delightful gift during festivals or special occasions. Simply pack them in decorative boxes or jars."
-]
+    "These laddoos make for a delightful gift during festivals or special occasions. Simply pack them in decorative boxes or jars.",
+  ]
 
 tags: ["dessert", "laddoo", "indian"]
 ---

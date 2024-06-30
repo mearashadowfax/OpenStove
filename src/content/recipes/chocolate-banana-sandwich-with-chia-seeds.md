@@ -38,13 +38,14 @@ ingredients:
       - quantity: "1"
         name: "tablespoon chia seeds"
 
-recipeNotes: [
-  "Choose whole grain or whole wheat bread for added fiber and nutrients.",
-  "For extra sweetness, you can drizzle honey or sprinkle a bit of cinnamon over the banana slices before adding chia seeds.",
-  "Feel free to customize your sandwich by adding other toppings such as sliced strawberries, nut butter, or shredded coconut.",
-  "To make it a more substantial meal, pair the sandwich with a glass of milk or a serving of Greek yogurt.",
-  "This sandwich is not only delicious but also packed with energy-boosting carbohydrates, healthy fats, and fiber."
-]
+recipeNotes:
+  [
+    "Choose whole grain or whole wheat bread for added fiber and nutrients.",
+    "For extra sweetness, you can drizzle honey or sprinkle a bit of cinnamon over the banana slices before adding chia seeds.",
+    "Feel free to customize your sandwich by adding other toppings such as sliced strawberries, nut butter, or shredded coconut.",
+    "To make it a more substantial meal, pair the sandwich with a glass of milk or a serving of Greek yogurt.",
+    "This sandwich is not only delicious but also packed with energy-boosting carbohydrates, healthy fats, and fiber.",
+  ]
 
 tags: ["sandwich", "chocolate", "snack"]
 
