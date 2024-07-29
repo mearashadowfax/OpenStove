@@ -21,7 +21,7 @@
     "flowbite": "^2.4.1",
     "preline": "^2.4.1",
     "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
