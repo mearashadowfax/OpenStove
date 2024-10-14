@@ -39,43 +39,47 @@
       <span class="js-clipboard-success-text">Copy link</span>
     </button>
   </div>
-
-  <script is:inline>
-      // Initialization of Clipboard
-      (function() {
-        window.addEventListener('load', () => {
-          const $clipboards = document.querySelectorAll('.js-clipboard');
-          $clipboards.forEach((el) => {
-            const clipboard = new ClipboardJS(el, {
-              text: () => {
-                return window.location.href;
-              }
-            });
-            clipboard.on('success', () => {
-              const $default = el.querySelector('.js-clipboard-default');
-              const $success = el.querySelector('.js-clipboard-success');
-              const $successText = el.querySelector('.js-clipboard-success-text');
-              const successText = el.dataset.clipboardSuccessText || '';
-              let oldSuccessText;
-
-              if ($successText) {
-                oldSuccessText = $successText.textContent
-                $successText.textContent = successText
-              }
-              if ($default && $success) {
-                $default.style.display = 'none'
-                $success.style.display = 'block'
-              }
-
-              setTimeout(function () {
-                if ($successText && oldSuccessText) $successText.textContent = oldSuccessText;
-                if ($default && $success) {
-                  $success.style.display = '';
-                  $default.style.display = '';
-                }
-              }, 800);
-            });
-          });
-        })
-      })()
+  <script>
+    import ClipboardJS from "clipboard";
+  
+    (function () {
+    window.addEventListener("load", () => {
+      const $clipboards = document.querySelectorAll<HTMLElement>(".js-clipboard");
+  
+      $clipboards.forEach((el) => {
+        const clipboard = new ClipboardJS(el, {
+          text: (): string => {
+            return window.location.href;
+          },
+        });
+  
+        clipboard.on("success", () => {
+          const $default = el.querySelector<HTMLElement>(".js-clipboard-default");
+          const $success = el.querySelector<HTMLElement>(".js-clipboard-success");
+          const $successText = el.querySelector<HTMLElement>(".js-clipboard-success-text");
+          const successText = el.getAttribute("data-clipboard-success-text") || "";
+          let oldSuccessText: string | undefined;
+  
+          if ($successText) {
+            oldSuccessText = $successText.textContent;
+            $successText.textContent = successText;
+          }
+          if ($default && $success) {
+            $default.style.display = "none";
+            $success.style.display = "block";
+          }
+  
+          setTimeout(() => {
+            if ($successText && oldSuccessText) {
+              $successText.textContent = oldSuccessText;
+            }
+            if ($default && $success) {
+              $success.style.display = "";
+              $default.style.display = "";
+            }
+          }, 800);
+        });
+      });
+    });
+  })();
   </script>
