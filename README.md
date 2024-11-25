@@ -9,6 +9,11 @@
 
 OpenStove is built on the belief that the best cooking experiences come from shared knowledge. We provide a platform free from distracting ads where you have direct access to a diverse collection of dishes curated and cherished by food lovers from all over the world.
 
+### Features
+* A diverse and growing recipe database.
+* A user-friendly platform free from distracting ads.
+* Community-driven curation and contribution.
+
 ## Tailored for Food Lovers
 
 Discover new recipes from our ever-growing database, curated by food lovers worldwide. OpenStove is more than just a recipe site — it's a collective archive of culinary delights, where each contribution enriches our cooking experience.

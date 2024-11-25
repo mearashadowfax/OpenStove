@@ -19,18 +19,18 @@
     "@preline/stepper": "^2.5.1",
     "@preline/tooltip": "^2.5.0",
     "@preline/tabs": "^2.5.0",
-    "astro": "^4.16.7",
-    "astro-icon": "^1.1.1",
+    "astro": "^4.16.14",
+    "astro-icon": "^1.1.4",
     "astro-meta-tags": "^0.3.1",
     "astro-robots-txt": "^1.0.0",
     "clipboard": "^2.0.11",
     "flowbite": "^2.5.2",
     "preline": "^2.5.1",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8"
+    "prettier-plugin-tailwindcss": "^0.6.9"
   }
 }
