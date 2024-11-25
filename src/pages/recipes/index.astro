@@ -7,15 +7,22 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { RECIPES_PER_PAGE } from "../../constants";
 
-const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const pageParam = Astro.url.searchParams.get('page');
+const currentPage = pageParam && !isNaN(+pageParam) ? Math.max(1, +pageParam) : 1;
 
 const allRecipes: CollectionEntry<'recipes'>[] = (await getCollection('recipes'))
   .sort((a:CollectionEntry<'recipes'>, b:CollectionEntry<'recipes'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const totalPages: number = Math.ceil(allRecipes.length / RECIPES_PER_PAGE);
+  const totalPages = Math.ceil(allRecipes.length / RECIPES_PER_PAGE);
 
-const recipesPerPage: CollectionEntry<'recipes'>[] = allRecipes.slice(
-  (currentPage - 1) * RECIPES_PER_PAGE, currentPage * RECIPES_PER_PAGE);
+if (currentPage > totalPages) {
+  Astro.redirect(`/recipes?page=${totalPages}`);
+}
+
+const recipesPerPage = allRecipes.slice(
+  (currentPage - 1) * RECIPES_PER_PAGE,
+  currentPage * RECIPES_PER_PAGE
+);
 ---
 
 <MainLayout title="Recipes | OpenStove">
