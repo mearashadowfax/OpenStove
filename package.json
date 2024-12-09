@@ -14,7 +14,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vercel": "^7.8.2",
-    "@preline/accordion": "^2.5.0",
+    "@preline/accordion": "^2.6.0",
     "@preline/collapse": "^2.5.0",
     "@preline/stepper": "^2.5.1",
     "@preline/tooltip": "^2.5.0",
