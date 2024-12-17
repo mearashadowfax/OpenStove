@@ -9,6 +9,9 @@ import metaTags from "astro-meta-tags";
 export default defineConfig({
   site: "https://openstove.org",
   prefetch: true,
+  legacy: {
+    collections: true
+  },
   integrations: [tailwind(), robotsTxt({
     policy: [{
       userAgent: 'Googlebot',
