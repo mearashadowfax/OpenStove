@@ -18,7 +18,7 @@
     "@preline/collapse": "^2.5.0",
     "@preline/stepper": "^2.6.0",
     "@preline/tooltip": "^2.6.0",
-    "@preline/tabs": "^2.5.0",
+    "@preline/tabs": "^2.6.0",
     "astro": "^5.1.0",
     "astro-icon": "^1.1.4",
     "astro-meta-tags": "^0.3.1",
