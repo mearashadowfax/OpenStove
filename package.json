@@ -15,7 +15,7 @@
     "@astrojs/tailwind": "^5.1.3",
     "@astrojs/vercel": "^8.0.1",
     "@preline/accordion": "^2.6.0",
-    "@preline/collapse": "^2.5.0",
+    "@preline/collapse": "^2.6.0",
     "@preline/stepper": "^2.6.0",
     "@preline/tooltip": "^2.6.0",
     "@preline/tabs": "^2.5.0",
