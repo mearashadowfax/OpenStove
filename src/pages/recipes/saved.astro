@@ -13,7 +13,7 @@ if (cookieObject) {
   let storedBookmarks = cookieObject.json();
 
   savedRecipes = allRecipes.filter((recipe) => {
-    return storedBookmarks.includes(recipe.slug);
+    return storedBookmarks.includes(recipe.id);
   });
 }
 ---

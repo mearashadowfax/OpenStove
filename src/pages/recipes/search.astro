@@ -21,7 +21,7 @@ const searchResults = allRecipes.filter((recipe) => {
     .toLowerCase()
     .includes(query!.toLowerCase());
 
-  const slugMatch: boolean = recipe.slug
+  const idMatch: boolean = recipe.id
     .toLowerCase()
     .includes(query!.toLowerCase());
 
@@ -41,7 +41,7 @@ const searchResults = allRecipes.filter((recipe) => {
     titleMatch ||
     descriptionMatch ||
     authorMatch ||
-    slugMatch ||
+    idMatch ||
     notesMatch ||
     instructionsMatch
   );
