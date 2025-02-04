@@ -11,9 +11,8 @@ export default {
   theme: {
     extend: {},
     colors: {
+      ...colors,
       dark: "#242424",
-      stone: colors.stone,
-      neutral: colors.neutral,
       primary: "#FFC53D",
       "primary-accent-light": "#ff9000",
       "primary-accent-dark": "#FFA500",
@@ -25,7 +24,6 @@ export default {
   },
   plugins: [
       require("preline/plugin"),
-      require("flowbite/plugin"),
       require('tailwindcss/plugin')(({ addVariant }) => {
         addVariant('search-cancel', '&::-webkit-search-cancel-button');
       }),
