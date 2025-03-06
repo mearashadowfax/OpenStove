@@ -1,11 +1,11 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro"
-import RecipeCard from "../../components/RecipeCard.astro";
-import Pagination from "../../components/Pagination.astro";
+import MainLayout from "@layouts/MainLayout.astro"
+import RecipeCard from "@components/RecipeCard.astro";
+import Pagination from "@components/Pagination.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { RECIPES_PER_PAGE } from "../../constants";
+import { RECIPES_PER_PAGE } from "@constants";
 
 const pageParam = Astro.url.searchParams.get('page');
 const currentPage = pageParam && !isNaN(+pageParam) ? Math.max(1, +pageParam) : 1;

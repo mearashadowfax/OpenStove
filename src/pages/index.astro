@@ -1,11 +1,11 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import FAQ from "../components/FAQ.astro";
-import RecipeCard from "../components/RecipeCard.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import FAQ from "@components/FAQ.astro";
+import RecipeCard from "@components/RecipeCard.astro";
 import { Image } from "astro:assets";
-import heroImage from "../images/placeholder.png";
+import heroImage from "@images/placeholder.png";
 import { Icon } from "astro-icon/components";
-import { HOMEPAGE_RECIPES_LIMIT } from "../constants";
+import { HOMEPAGE_RECIPES_LIMIT } from "@constants";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 

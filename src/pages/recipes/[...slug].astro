@@ -1,14 +1,14 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import Stepper from "../../components/Stepper.astro";
-import Tabs from "../../components/Tabs.astro";
-import Tags from "../../components/Tags.astro";
-import InputNumber from "../../components/InputNumber.astro";
-import Bookmark from "../../components/Bookmark.astro";
-import Clipboard from "../../components/Clipboard.astro";
-import { formatDate } from "../../utils";
+import MainLayout from "@layouts/MainLayout.astro";
+import Stepper from "@components/Stepper.astro";
+import Tabs from "@components/Tabs.astro";
+import Tags from "@components/Tags.astro";
+import InputNumber from "@components/InputNumber.astro";
+import Bookmark from "@components/Bookmark.astro";
+import Clipboard from "@components/Clipboard.astro";
+import { formatDate } from "@utils";
 import { Image } from "astro:assets";
-import placeholder from "../../images/placeholder.png";
+import placeholder from "@images/placeholder.png";
 import { getEntry } from "astro:content";
 
 const { slug } = Astro.params;
