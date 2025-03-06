@@ -27,7 +27,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
       class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-16 2xl:py-24"
     >
       <h1
-        class="mb-3 text-balance bg-gradient-to-r from-[#F37335] to-[#F0B429] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl/[1.1] md:mb-6 md:text-6xl/[1.1] dark:from-[#F7971E] dark:to-primary"
+        class="mb-3 text-balance bg-linear-to-r from-[#F37335] to-[#F0B429] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl/[1.1] md:mb-6 md:text-6xl/[1.1] dark:from-[#F7971E] dark:to-primary"
       >
         OpenStove — Your Open Source Recipe Library
       </h1>
@@ -44,13 +44,13 @@ const allRecipes: CollectionEntry<"recipes">[] = (
         class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start"
       >
         <a
-          class="inline-block rounded-xl border-2 border-secondary bg-secondary px-8 py-3 text-center text-sm font-medium text-orange-900 outline-none transition duration-300 hover:-translate-y-1 hover:bg-transparent focus-visible:-translate-y-1 md:text-base 2xl:text-lg dark:hover:text-secondary"
+          class="inline-block rounded-xl border-2 border-secondary bg-secondary px-8 py-3 text-center text-sm font-medium text-orange-900 outline-hidden transition duration-300 hover:-translate-y-1 hover:bg-transparent focus-visible:-translate-y-1 md:text-base 2xl:text-lg dark:hover:text-secondary"
           href="about/#contribution"
           data-astro-prefetch>How to Contribute?</a
         >
 
         <a
-          class="inline-block rounded-xl border-2 border-primary bg-primary px-8 py-3 text-center text-sm font-bold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
+          class="inline-block rounded-xl border-2 border-primary bg-primary px-8 py-3 text-center text-sm font-bold text-[#422006] outline-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
           href="#recipeCards"
           data-astro-prefetch>Explore Recipes</a
         >
@@ -80,11 +80,11 @@ const allRecipes: CollectionEntry<"recipes">[] = (
       class="absolute -top-96 start-1/2 flex -translate-x-1/2 transform"
     >
       <div
-        class="h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-gradient-to-r from-[#F37335] to-[#F0B429] blur-3xl dark:from-[#F7971E] dark:to-primary"
+        class="h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-linear-to-r from-[#F37335] to-[#F0B429] blur-3xl dark:from-[#F7971E] dark:to-primary"
       >
       </div>
       <div
-        class="rounded-fulls h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 bg-gradient-to-tl from-[#ffa751] via-[#F2C94C] to-[#ffa751] blur-3xl dark:from-primary dark:via-[#FF725E] dark:to-secondary"
+        class="rounded-fulls h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 bg-linear-to-tl from-[#ffa751] via-[#F2C94C] to-[#ffa751] blur-3xl dark:from-primary dark:via-[#FF725E] dark:to-secondary"
       >
       </div>
     </div>
@@ -92,15 +92,15 @@ const allRecipes: CollectionEntry<"recipes">[] = (
 
     <div class="relative z-10">
       <div class="mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-        <div class="mx-auto max-w-screen-md text-center">
+        <div class="mx-auto max-w-(--breakpoint-md) text-center">
           <p
-            class="inline-block bg-gradient-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-sm font-medium text-transparent lg:text-base dark:from-[#ffd38c] dark:to-[#fda263]"
+            class="inline-block bg-linear-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-sm font-medium text-transparent lg:text-base dark:from-[#ffd38c] dark:to-[#fda263]"
           >
             Discover, Cook, Cherish — Together
           </p>
 
           <!-- Title -->
-          <div class="mx-auto mt-5 max-w-screen-md">
+          <div class="mx-auto mt-5 max-w-(--breakpoint-md)">
             <h2
               class="block text-balance text-4xl font-bold text-dark md:text-5xl dark:text-stone-100"
             >
@@ -109,9 +109,9 @@ const allRecipes: CollectionEntry<"recipes">[] = (
           </div>
           <!-- End Title -->
 
-          <div class="mx-auto mt-5 max-w-screen-md">
+          <div class="mx-auto mt-5 max-w-(--breakpoint-md)">
             <p
-              class="mx-auto max-w-screen-md text-pretty text-lg text-stone-600 2xl:text-xl dark:text-stone-200"
+              class="mx-auto max-w-(--breakpoint-md) text-pretty text-lg text-stone-600 2xl:text-xl dark:text-stone-200"
             >
               OpenStove is a home of culinary exploration and shared passion for
               cooking. Browse, enjoy, and become part of our flavor-filled
@@ -122,7 +122,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
           <!-- Button Start-->
           <div class="mt-8 flex justify-center gap-3">
             <a
-              class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
+              class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-hidden focus-visible:-translate-y-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
               href="https://github.com/mearashadowfax/OpenStove"
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +139,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
   <!-- End Heading -->
 
   <!-- Recipe Cards Blog -->
-  <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
+  <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl) py-10 lg:py-14">
     <!-- Grid -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
@@ -153,7 +153,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
     <!-- Explore More Button -->
     <div class="mt-12 text-center">
       <a
-        class="text-md group inline-flex min-w-64 items-center justify-center gap-x-1 rounded-xl bg-secondary-accent px-4 py-3 font-medium text-orange-800 transition-colors duration-300 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-none"
+        class="text-md group inline-flex min-w-64 items-center justify-center gap-x-1 rounded-xl bg-secondary-accent px-4 py-3 font-medium text-orange-800 transition-colors duration-300 hover:bg-secondary focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-hidden"
         href="/recipes"
         data-astro-prefetch
       >
@@ -176,7 +176,7 @@ const allRecipes: CollectionEntry<"recipes">[] = (
   <!-- End Cards Blog -->
 
   <!-- Community Card-->
-  <div class="mx-auto max-w-screen-lg">
+  <div class="mx-auto max-w-(--breakpoint-lg)">
     <div class="py-6 sm:py-8 lg:py-14">
       <!-- Grid -->
       <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">

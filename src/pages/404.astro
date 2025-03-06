@@ -4,8 +4,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="404 – Page Not Found">
   <section class="grid h-svh place-content-center">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-      <div class="mx-auto max-w-screen-sm text-center">
+    <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-8 lg:px-6 lg:py-16">
+      <div class="mx-auto max-w-(--breakpoint-sm) text-center">
         <h1
           class="mb-4 text-7xl font-extrabold text-dark lg:text-9xl dark:text-stone-100"
         >
@@ -22,7 +22,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           find your next kitchen adventure.
         </p>
         <a
-          class="inline-block rounded-xl bg-primary px-8 py-3 text-center text-sm font-bold text-[#422006] outline-none transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
+          class="inline-block rounded-xl bg-primary px-8 py-3 text-center text-sm font-bold text-[#422006] outline-hidden transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
           href="/recipes">Back to Recipes</a
         >
       </div>

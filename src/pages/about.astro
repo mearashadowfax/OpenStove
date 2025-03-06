@@ -9,10 +9,10 @@ export const prerender = true;
   <!--Hero Section-->
   <div class="mt-10 py-6 sm:py-8 lg:py-12">
     <div
-      class="rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-6 md:py-8 lg:py-12"
+      class="rounded-xl bg-linear-to-r from-primary to-secondary px-4 py-6 md:py-8 lg:py-12"
     >
       <p
-        class="mb-2 bg-gradient-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-center text-sm font-medium text-transparent md:mb-3 lg:text-base"
+        class="mb-2 bg-linear-to-l from-[#FF512F] to-[#F09819] bg-clip-text text-center text-sm font-medium text-transparent md:mb-3 lg:text-base"
       >
         Introducing OpenStove:
       </p>
@@ -23,7 +23,7 @@ export const prerender = true;
       </h2>
 
       <p
-        class="mx-auto max-w-screen-md text-pretty text-center text-stone-600 md:text-lg"
+        class="mx-auto max-w-(--breakpoint-md) text-pretty text-center text-stone-600 md:text-lg"
       >
         Explore a growing repository of culinary delights, meticulously
         organized and shared through GitHub contributions.
@@ -78,7 +78,7 @@ export const prerender = true;
 
   <!-- Features Section-->
   <div class="py-12 sm:py-16 lg:py-24">
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="mx-auto max-w-(--breakpoint-2xl) px-4 md:px-8">
       <h2
         class="mb-4 text-balance text-center text-2xl font-bold text-dark md:mb-6 md:text-3xl 2xl:text-4xl dark:text-stone-100"
       >
@@ -86,7 +86,7 @@ export const prerender = true;
       </h2>
 
       <p
-        class="mx-auto max-w-screen-md text-pretty text-center text-stone-600 md:text-lg 2xl:text-xl dark:text-stone-400"
+        class="mx-auto max-w-(--breakpoint-md) text-pretty text-center text-stone-600 md:text-lg 2xl:text-xl dark:text-stone-400"
       >
         At OpenStove, we're committed to enhancing and sharing the joy of home
         cooking. Discover and contribute recipes in a community that celebrates
@@ -96,13 +96,13 @@ export const prerender = true;
 
     <!-- Feature Cards -->
     <div
-      class="mx-auto max-w-screen-2xl px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-12"
+      class="mx-auto max-w-(--breakpoint-2xl) px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-12"
     >
       <!-- Grid -->
       <div class="grid gap-6 text-center lg:grid-cols-2">
         <!-- Card -->
         <div
-          class="block rounded-xl bg-secondary dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          class="block rounded-xl bg-secondary dark:focus:outline-hidden dark:focus:ring-1 dark:focus:ring-gray-600"
         >
           <div class="flex h-full flex-col p-4 sm:p-6">
             <h3
@@ -122,7 +122,7 @@ export const prerender = true;
 
         <!-- Card -->
         <div
-          class="block rounded-xl bg-primary dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          class="block rounded-xl bg-primary dark:focus:outline-hidden dark:focus:ring-1 dark:focus:ring-gray-600"
         >
           <div class="flex h-full flex-col p-4 sm:p-6">
             <h3
@@ -165,7 +165,7 @@ export const prerender = true;
         </p>
         <div class="mt-4 md:mt-8">
           <a
-            class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
+            class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-hidden focus-visible:-translate-y-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
             href="https://github.com/mearashadowfax/OpenStove"
             target="_blank"
             rel="noopener noreferrer"
@@ -184,10 +184,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-aut inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-aut inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"
@@ -211,10 +211,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-auto inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-auto inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"
@@ -238,10 +238,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-auto inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-auto inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"
@@ -265,10 +265,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-auto inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-auto inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"
@@ -291,10 +291,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-auto inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-auto inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"
@@ -318,10 +318,10 @@ export const prerender = true;
         <div class="flex">
           <!-- Icon -->
           <span
-            class="mx-auto inline-flex flex-shrink-0 items-center justify-center"
+            class="mx-auto inline-flex shrink-0 items-center justify-center"
           >
             <svg
-              class="h-8 w-8 flex-shrink-0 fill-stone-400 dark:fill-stone-600"
+              class="h-8 w-8 shrink-0 fill-stone-400 dark:fill-stone-600"
               height="24"
               viewBox="0 -960 960 960"
               width="24"

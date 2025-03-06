@@ -11,13 +11,13 @@ interface Props {
 }
 ---
 <a
-      class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
+      class="group flex h-full flex-col rounded-xl border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-lg focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/[.05] dark:hover:shadow-black/[.4]"
       href={"/recipes/" + recipe.id}
       data-astro-prefetch
     >
       <div class="aspect-w-16 aspect-h-11 overflow-clip rounded-xl">
         <Image
-          class="aspect-[3/2] w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
+          class="aspect-3/2 w-full rounded-xl object-cover transition duration-500 group-hover:scale-110"
           src={placeholder}
           alt="Image Description"
           draggable={"false"}

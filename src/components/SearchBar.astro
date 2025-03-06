@@ -3,7 +3,7 @@
     class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
   >
     <svg
-      class="h-4 w-4 flex-shrink-0 text-stone-500 transition-colors duration-300 group-hover:text-orange-500 dark:text-stone-400 dark:group-hover:text-primary-accent-dark"
+      class="h-4 w-4 shrink-0 text-stone-500 transition-colors duration-300 group-hover:text-orange-500 dark:text-stone-400 dark:group-hover:text-primary-accent-dark"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -20,8 +20,9 @@
 
     <span class="sr-only">Search icon</span>
   </div>
+  <label for="search-navbar" class="sr-only">Search recipes</label>
   <input
-    class="block h-9 w-full rounded-lg border border-gray-300 bg-orange-50/50 p-2 ps-10 text-sm text-stone-700 transition duration-300 focus:border-orange-200 focus:bg-orange-100 focus:ring-orange-300 search-cancel:h-4 search-cancel:w-4 search-cancel:appearance-none search-cancel:bg-[url(/src/icons/x-mark.svg)] dark:border-stone-600 dark:bg-stone-700 dark:text-stone-300 dark:placeholder-stone-400 dark:focus:border-stone-500 dark:focus:bg-stone-600 dark:focus:ring-stone-500 outline-none"
+    class="block h-9 w-full rounded-lg border border-gray-300 bg-orange-50/50 p-2 ps-10 text-sm text-stone-700 transition duration-300 focus:border-orange-200 focus:bg-orange-100 focus:ring-orange-300 search-cancel:h-4 search-cancel:w-4 search-cancel:appearance-none search-cancel:bg-[url(/src/icons/x-mark.svg)] dark:border-stone-600 dark:bg-stone-700 dark:text-stone-300 dark:placeholder-stone-400 dark:focus:border-stone-500 dark:focus:bg-stone-600 dark:focus:ring-stone-500 outline-hidden"
     id="search-navbar"
     placeholder="Search recipes..."
     type="search"

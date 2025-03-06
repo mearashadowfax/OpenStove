@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite'
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
@@ -9,7 +9,7 @@ import metaTags from "astro-meta-tags";
 export default defineConfig({
   site: "https://openstove.org",
   prefetch: true,
-  integrations: [tailwind(), robotsTxt({
+  integrations: [robotsTxt({
     policy: [{
       userAgent: 'Googlebot',
       allow: '/',
@@ -31,6 +31,9 @@ export default defineConfig({
       disallow: '/'
     }]
   }), sitemap(), icon(), metaTags()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   output: 'server',
   experimental: {
     clientPrerender: true

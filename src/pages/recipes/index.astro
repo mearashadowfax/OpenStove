@@ -30,7 +30,7 @@ const recipesPerPage = allRecipes.slice(
     {currentPage === 1 && (
       <div class="mt-10 py-6 sm:py-8 lg:py-12">
         <div
-          class="rounded-xl bg-gradient-to-br from-[#FDC830] to-[#FF8372] px-4 py-6"
+          class="rounded-xl bg-linear-to-br from-[#FDC830] to-[#FF8372] px-4 py-6"
         >
           <section class="flex items-center justify-center gap-6">
             <!-- content - start -->
@@ -61,7 +61,7 @@ const recipesPerPage = allRecipes.slice(
         class={`flex flex-col ${currentPage === 1 ? "" : "mt-20"} gap-2.5 sm:flex-row sm:justify-center lg:justify-end`}
       >
       <a
-                  class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-secondary-accent px-8 py-3 text-center font-medium text-orange-900 outline-none transition duration-300 hover:bg-secondary focus-visible:-translate-y-1 text-base 2xl:text-lg"
+                  class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-secondary-accent px-8 py-3 text-center font-medium text-orange-900 outline-hidden transition duration-300 hover:bg-secondary focus-visible:-translate-y-1 text-base 2xl:text-lg"
                   href="https://github.com/mearashadowfax/OpenStove"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -69,7 +69,7 @@ const recipesPerPage = allRecipes.slice(
                 <Icon name="github-body" class="h-5 w-5 transition duration-300 group-hover:-translate-y-1 group-focus-visible:-translate-y-1" />  
                 </a>
         <a
-          class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-primary px-8 py-3 text-center  font-medium text-[#422006] outline-none transition duration-300 hover:shadow-2xl hover:shadow-primary  focus-visible:-translate-y-1 text-base 2xl:text-lg"
+          class="group inline-flex items-center justify-center gap-x-3 rounded-xl bg-primary px-8 py-3 text-center  font-medium text-[#422006] outline-hidden transition duration-300 hover:shadow-2xl hover:shadow-primary  focus-visible:-translate-y-1 text-base 2xl:text-lg"
           href="/recipes/saved"
         >
           Saved Recipes
@@ -91,7 +91,7 @@ const recipesPerPage = allRecipes.slice(
       </div>
 
       <!-- Recipe Cards -->
-      <div id="recipeCards" class="mx-auto max-w-screen-2xl py-10 lg:py-14">
+      <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl) py-10 lg:py-14">
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
          {recipesPerPage.map(recipe => (
           <RecipeCard recipe={recipe} />
@@ -110,7 +110,7 @@ const recipesPerPage = allRecipes.slice(
       <div class="mx-auto mb-12">
         <div class="py-6 sm:py-8">
           <!-- Flex -->
-          <div class="mx-auto flex max-w-screen-md flex-col items-center">
+          <div class="mx-auto flex max-w-(--breakpoint-md) flex-col items-center">
             <div class="flex w-9/12 items-center justify-center 2xl:w-full">
               <Icon class="h-auto w-full" name="placeholder" />
             </div>
@@ -131,7 +131,7 @@ const recipesPerPage = allRecipes.slice(
                     </p>
                     <div class="mt-8 text-center">
                       <a
-                        class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-none focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
+                        class="inline-flex items-center justify-center gap-x-3 rounded-xl border border-transparent bg-secondary-accent px-4 py-3 text-center text-sm font-medium text-orange-800 transition duration-300 hover:bg-secondary hover:shadow-2xl hover:shadow-secondary focus:outline-hidden focus-visible:-translate-y-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary 2xl:text-base"
                         href="https://github.com/mearashadowfax/OpenStove"
                         target="_blank"
                         rel="noopener noreferrer"

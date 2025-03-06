@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+@import "preline/variants.css";
+@plugin 'tailwindcss/plugin';
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-inherit: inherit;
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-dark: oklch(26.03% 0 0);
+  --color-primary: oklch(85.37% 0.1572 84.13);
+  --color-primary-accent-light: oklch(75.7% 0.1772 60.16);
+  --color-primary-accent-dark: oklch(79.27% 0.171 70.67);
+  --color-secondary: oklch(78.14% 0.1357 44.77);
+  --color-secondary-accent: oklch(80.68% 0.117 44.56);
+  --color-footer: oklch(37.15% 0 0);
+  --color-footer-light: oklch(44.23% 0 0);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@custom-variant search-cancel (&::-webkit-search-cancel-button);
