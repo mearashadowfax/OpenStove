@@ -14,7 +14,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vercel": "^8.0.5",
     "@tailwindcss/vite": "^4.0.11",
-    "astro": "^5.2.3",
+    "astro": "^5.4.1",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.3.1",
     "astro-robots-txt": "^1.0.0",
@@ -24,7 +24,7 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }
