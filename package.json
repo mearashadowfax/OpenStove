@@ -12,9 +12,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vercel": "^8.0.5",
+    "@astrojs/vercel": "^8.1.1",
     "@tailwindcss/vite": "^4.0.11",
-    "astro": "^5.4.1",
+    "astro": "^5.4.2",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.3.1",
     "astro-robots-txt": "^1.0.0",
