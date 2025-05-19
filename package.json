@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.3.1",
     "@astrojs/vercel": "^8.1.4",
-    "@tailwindcss/vite": "^4.1.6",
+    "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.7.12",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.3.2",
