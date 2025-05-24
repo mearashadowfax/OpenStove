@@ -8,6 +8,8 @@ image: "../../images/damper-1280x720.jpg"
 imageAlt: "Rustic round loaf of Australian damper bread with golden crust, sitting on a wooden board"
 
 cookingTime: 45
+servings: 6
+scalable: false
 
 steps:
   - title: "Prepare the Dough"
@@ -48,7 +50,7 @@ recipeNotes:
     "Traditionally cooked in the coals of a campfire, but oven baking works perfectly.",
     "The dough should be soft but not sticky - adjust water as needed.",
     "Best eaten fresh and warm from the oven.",
-    "Can be cooked in a camp oven or cast iron pot for authentic bush cooking."
+    "Can be cooked in a camp oven or cast iron pot for authentic bush cooking.",
   ]
 
 tags: ["australian", "bread", "traditional", "camping"]

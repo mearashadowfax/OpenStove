@@ -8,6 +8,8 @@ image: "../../images/persimmon-pie.avif"
 imageAlt: "Slice of sweet persimmon pie"
 
 cookingTime: 60
+servings: 8
+scalable: false
 
 steps:
   - title: "Prepare the Crust"

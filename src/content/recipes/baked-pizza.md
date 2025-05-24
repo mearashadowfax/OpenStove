@@ -8,6 +8,8 @@ image: "../../images/baked-pizza.avif"
 imageAlt: "Baked pizza with tomatoes, cheese, olives, salami, and a fried egg"
 
 cookingTime: 60
+servings: 4
+scalable: false
 
 steps:
   - title: "Prepare the Pizza Dough"

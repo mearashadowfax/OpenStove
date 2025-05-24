@@ -9,6 +9,8 @@ image: "/images/almond-pound-cake.avif"
 imageAlt: "A close-up of a slice of pound cake with almonds on a plate"
 
 cookingTime: 75
+servings: 8
+scalable: false
 
 steps:
   - title: "Prepare and Mix Ingredients"

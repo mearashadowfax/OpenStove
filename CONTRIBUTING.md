@@ -22,12 +22,18 @@ title: "Name of Your Dish"
 description: "A short description of the dish. Aim for one or two sentences that evoke taste and appeal."
 
 author: "Your Name, GitHub Username or Alias" # Optional, if not provided, remove the block, will be set to default "anonymous".
-pubDate: YYYY-MM-DD  # Publication date when you are writing the recipe.
+pubDate: YYYY-MM-DD # Publication date when you are writing the recipe.
 
-image: ""  # Optional: URL of an image or relative path to an image within the repository.
-imageAlt: ""  # Optional: A brief description of the image for accessibility.
+image: "" # Optional: URL of an image or relative path to an image within the repository.
+imageAlt: "" # Optional: A brief description of the image for accessibility.
 
-cookingTime:  # Cooking time in minutes.
+cookingTime: # Cooking time in minutes.
+
+# For recipes that make a whole dish (cakes, pies, bread loaves, pizzas) - add both fields:
+servings: 8 # How many people the whole recipe serves
+scalable: false # Cannot be scaled per serving
+
+# For individual portions, salads, soups, stir-fries - omit both fields above (they default to scalable: true)
 
 steps:
   - title: "Step Name" # Optional, can be left blank
@@ -47,18 +53,32 @@ ingredients:
 
   # If the recipe has separate parts, like crust and filling, repeat the entire title and items block for each part.
 
-recipeNotes: [
-  "Any notable tips, tricks, or warnings about the recipe, separated by comma",
-  # Include additional notes as list items.
-] 
+recipeNotes:
+  [
+    "Any notable tips, tricks, or warnings about the recipe, separated by comma",
+    # Include additional notes as list items.
+  ]
   # Optional, if none, remove the recipeNotes block
 
-tags: ["tag1", "tag2", "tag3"]  # Describe the dish with appropriate tags, max 3 tags
+tags: ["tag1", "tag2", "tag3"] # Describe the dish with appropriate tags, max 3 tags
 
-slug: name-of-your-dish  # A URL-friendly version of your recipe's title.
-
+slug: name-of-your-dish # A URL-friendly version of your recipe's title.
 ---
 ```
+
+### Important Notes About Recipe Scaling
+
+**For scalable recipes** (salads, soups, stir-fries, individual portions):
+
+- **Do not include** `servings:` or `scalable:` fields
+- Write ingredients for **1 serving**
+- Users can scale up (1 serving → 2 servings → 3 servings, etc.)
+
+**For non-scalable recipes** (whole cakes, pies, pizzas, bread loaves):
+
+- **Include both** `servings: X` and `scalable: false` fields
+- Write ingredients for the **entire recipe**
+- Users see "Serves X people" instead of scaling controls
 
 Be sure to adhere to the placeholder structure, replacing the fields with the relevant details of your recipe. If an image is not provided, leave the image field empty. We will find an appropriate image for your recipe.
 

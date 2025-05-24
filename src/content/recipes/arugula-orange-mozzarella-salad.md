@@ -1,6 +1,6 @@
 ---
-title: "Green salad with oranges and mozzarella cheese"
-description: "Enjoy a refreshing and vibrant salad featuring peppery arugula, sweet oranges, and creamy mozzarella cheese."
+title: "Arugula Orange Mozzarella Salad"
+description: "A refreshing salad combining peppery arugula, sweet orange segments, and creamy mozzarella with a light citrus dressing."
 
 author: "mearashadowfax"
 pubDate: 2024-03-05

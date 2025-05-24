@@ -9,6 +9,8 @@ image: "../../images/homemade-plum-cake-pie.avif"
 imageAlt: "A homemade plum pie topped with sliced plums and dusted with powdered sugar"
 
 cookingTime: 60
+servings: 8
+scalable: false
 
 steps:
   - title: "Prepare the Crust"

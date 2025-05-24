@@ -8,6 +8,8 @@ image: "../../images/lamingtons-1280x720.jpg"
 imageAlt: "Square pieces of lamington cake covered in chocolate icing and coconut on a white plate"
 
 cookingTime: 90
+servings: 16
+scalable: false
 
 steps:
   - title: "Make the Sponge Cake"

@@ -8,6 +8,8 @@ image: "../../images/pavlova-1280x720.jpg"
 imageAlt: "Round pavlova with white meringue base topped with whipped cream, strawberries, kiwi, and passion fruit"
 
 cookingTime: 90
+servings: 8
+scalable: false
 
 steps:
   - title: "Prepare the Meringue"

@@ -1,6 +1,6 @@
 ---
 title: "Homemade Almond Cookies"
-description: "Delight your taste buds with these homemade almond cookies, packed with the rich flavor of almonds and a hint of sweetness."
+description: "Crispy, buttery almond cookies with a delicate nutty flavor — perfect for tea time or as a sweet snack."
 
 pubDate: 2024-02-13
 
@@ -8,6 +8,8 @@ image: "../../images/homemade-almond-cookies.avif"
 imageAlt: "A plate of homemade almond cookies with almonds in the background"
 
 cookingTime: 20
+servings: 12
+scalable: false
 
 steps:
   - title: "Preheat Oven and Prepare Baking Sheet"

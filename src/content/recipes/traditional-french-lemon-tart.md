@@ -1,6 +1,6 @@
 ---
 title: "Traditional French Lemon Tart"
-description: "Indulge in the bright flavors of France with this zesty, creamy lemon tart with a buttery pastry crust."
+description: "A classic French dessert featuring a crisp pastry shell filled with silky smooth, tangy lemon curd."
 
 pubDate: 2024-01-22
 
@@ -8,6 +8,8 @@ image: "../../images/traditional-french-lemon-tart.avif"
 imageAlt: "A classic French lemon tart garnished with lemon zest and mint"
 
 cookingTime: 90
+servings: 8
+scalable: false
 
 steps:
   - title: "Prepare the Pastry Crust"

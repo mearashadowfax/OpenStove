@@ -9,6 +9,8 @@ image: "../../images/coconut-chocolate-balls.avif"
 imageAlt: "A plate of coconut chocolate balls coated in chocolate and shredded coconut"
 
 cookingTime: 45
+servings: 12
+scalable: false
 
 steps:
   - title: "Prepare the Coconut Chocolate Mixture"
