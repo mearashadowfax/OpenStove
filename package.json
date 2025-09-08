@@ -20,7 +20,7 @@
     "astro-robots-txt": "^1.0.0",
     "clipboard": "^2.0.11",
     "preline": "^3.2.3",
-    "tailwindcss": "^4.1.12",
+    "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
