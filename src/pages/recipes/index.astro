@@ -23,9 +23,19 @@ const recipesPerPage = allRecipes.slice(
   (currentPage - 1) * RECIPES_PER_PAGE,
   currentPage * RECIPES_PER_PAGE
 );
+
+// Canonical URL: use /recipes for page 1, /recipes?page=X for other pages
+const canonicalUrl = currentPage === 1 
+  ? "/recipes" 
+  : `/recipes?page=${currentPage}`;
+const pageDescription = `Explore our collection of ${allRecipes.length} community-crafted recipes. Browse page ${currentPage} of ${totalPages}.`;
 ---
 
-<MainLayout title="Recipes | OpenStove">
+<MainLayout 
+  title="Recipes | OpenStove"
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
       <!-- Heading Section -->
     {currentPage === 1 && (
       <div class="mt-10 py-6 sm:py-8 lg:py-12">

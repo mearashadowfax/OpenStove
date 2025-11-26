@@ -21,9 +21,17 @@ const allRecipes: CollectionEntry<"recipes">[] = (
 const tagRecipes = allRecipes.filter((recipe: any) =>
   recipe.data.tags.includes(tag),
 );
+
+const canonicalUrl = `/recipes/tag/${tag}`;
+const pageTitle = `${capitalize(tag)} | OpenStove`;
+const pageDescription = `Browse ${tagRecipes.length} ${tag} recipes on OpenStove. Discover community-crafted recipes for ${tag} dishes.`;
 ---
 
-<MainLayout title={capitalize(tag) + " | OpenStove"}>
+<MainLayout 
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
   <section class="min-h-screen">
     <!--Tag Title Section-->
     <div class="mt-10 py-6 sm:py-8 lg:py-12">

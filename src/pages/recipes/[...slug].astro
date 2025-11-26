@@ -22,9 +22,24 @@ const entry = await getEntry("recipes", slug);
 if (entry === undefined) {
   return Astro.redirect("/404");
 }
+
+// Construct canonical URL for this recipe
+const canonicalUrl = `/recipes/${slug}`;
+const pageTitle = `${entry.data.title} | OpenStove`;
+const pageDescription = entry.data.description || `Learn how to make ${entry.data.title}. ${entry.data.cookingTime} minutes cooking time.`;
+// Use recipe image if available, otherwise fallback to default
+const ogImage = entry.data.image 
+  ? `${Astro.site}${entry.data.image.startsWith('/') ? entry.data.image : `/${entry.data.image}`}`
+  : `${Astro.site}/social-image.png`;
 ---
 
-<MainLayout title={entry.data.title + " | OpenStove"}>
+<MainLayout 
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImage}
+  ogType="article"
+>
   <section class="mt-10 pt-6 sm:pt-8 lg:pt-12">
     <!-- Image Start -->
     <div class="mx-auto min-w-full rounded-xl bg-cover">

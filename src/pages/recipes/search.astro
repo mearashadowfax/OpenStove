@@ -46,9 +46,19 @@ const searchResults = allRecipes.filter((recipe) => {
     instructionsMatch
   );
 });
+
+// Canonical URL for search - use base path without query params for SEO
+const canonicalUrl = "/recipes/search";
+const pageDescription = query 
+  ? `Search results for "${query}" on OpenStove. Found ${searchResults.length} recipes.`
+  : "Search recipes on OpenStove. Find your favorite dishes from our community-crafted collection.";
 ---
 
-<MainLayout title="Search Results | OpenStove">
+<MainLayout 
+  title={query ? `Search Results for "${query}" | OpenStove` : "Search | OpenStove"}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
   <section class="min-h-screen">
     <!--Tag Title Section-->
     <div class="mt-10 py-6 sm:py-8 lg:py-12">

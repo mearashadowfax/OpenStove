@@ -3,18 +3,37 @@ import Navbar from "@components/Navbar.astro";
 import Footer from "@components/Footer.astro";
 import Meta from "@components/Meta.astro";
 import "@styles/global.css";
-const { title = "OpenStove" } = Astro.props;
+const { 
+  title = "OpenStove",
+  description,
+  canonicalUrl,
+  ogImage,
+  ogType,
+} = Astro.props;
 
 interface Props {
   title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: string;
 }
+
+// Default canonical URL to current page URL
+const defaultCanonical = Astro.url.pathname;
 ---
 
 <html class="scroll-pt-16 scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <Meta />
+    <Meta 
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl || defaultCanonical}
+      ogImage={ogImage}
+      ogType={ogType}
+    />
     <script is:inline>
       if (
         localStorage.getItem("hs_theme") === "dark" ||
