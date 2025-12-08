@@ -14,7 +14,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^9.0.2",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.3",
+    "astro": "^5.16.4",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.4.0",
     "astro-robots-txt": "^1.0.0",
