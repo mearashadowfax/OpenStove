@@ -20,11 +20,18 @@
     "astro-robots-txt": "^1.0.0",
     "clipboard": "^2.0.11",
     "preline": "^3.2.3",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
