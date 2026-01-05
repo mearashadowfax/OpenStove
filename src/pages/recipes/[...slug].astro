@@ -6,9 +6,9 @@ import Tags from "@components/Tags.astro";
 import InputNumber from "@components/InputNumber.astro";
 import Bookmark from "@components/Bookmark.astro";
 import Clipboard from "@components/Clipboard.astro";
-import { formatDate } from "@utils";
 import { Image } from "astro:assets";
 import placeholder from "@images/placeholder.png";
+import { formatDate } from "@utils";
 import { getEntry } from "astro:content";
 
 const { slug } = Astro.params;
@@ -23,22 +23,30 @@ if (entry === undefined) {
   return Astro.redirect("/404");
 }
 
-// Construct canonical URL for this recipe
-const canonicalUrl = `/recipes/${slug}`;
-const pageTitle = `${entry.data.title} | OpenStove`;
-const pageDescription = entry.data.description || `Learn how to make ${entry.data.title}. ${entry.data.cookingTime} minutes cooking time.`;
-// Use recipe image if available, otherwise fallback to default
-const ogImage = entry.data.image 
-  ? `${Astro.site}${entry.data.image.startsWith('/') ? entry.data.image : `/${entry.data.image}`}`
-  : `${Astro.site}/social-image.png`;
+const recipeUrl = Astro.url.href;
+const recipeTitle = entry.data.title + " | OpenStove";
+const recipeDescription = entry.data.description || `Learn how to make ${entry.data.title} with this delicious recipe from OpenStove.`;
+const recipeImage = entry.data.image?.startsWith('http') 
+  ? entry.data.image 
+  : entry.data.image?.startsWith('/')
+  ? `${Astro.site}${entry.data.image}`
+  : `${Astro.site}/${entry.data.image}`;
 ---
 
 <MainLayout 
-  title={pageTitle}
-  description={pageDescription}
-  canonicalUrl={canonicalUrl}
-  ogImage={ogImage}
-  ogType="article"
+  title={recipeTitle}
+  description={recipeDescription}
+  image={recipeImage}
+  type="article"
+  url={recipeUrl}
+  recipeData={{
+    author: entry.data.author,
+    pubDate: entry.data.pubDate,
+    cookingTime: entry.data.cookingTime,
+    servings: entry.data.servings,
+    ingredients: entry.data.ingredients,
+    steps: entry.data.steps,
+  }}
 >
   <section class="mt-10 pt-6 sm:pt-8 lg:pt-12">
     <!-- Image Start -->

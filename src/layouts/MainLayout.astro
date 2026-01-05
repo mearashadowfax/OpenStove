@@ -3,77 +3,72 @@ import Navbar from "@components/Navbar.astro";
 import Footer from "@components/Footer.astro";
 import Meta from "@components/Meta.astro";
 import "@styles/global.css";
-const { 
-  title = "OpenStove",
-  description,
-  canonicalUrl,
-  ogImage,
-  ogType,
-} = Astro.props;
+
+const { title = "OpenStove", description, image, type, url, recipeData } = Astro.props;
 
 interface Props {
   title?: string;
   description?: string;
-  canonicalUrl?: string;
-  ogImage?: string;
-  ogType?: string;
+  image?: string;
+  type?: "website" | "article";
+  url?: string;
+  recipeData?: {
+    author?: string;
+    pubDate?: Date;
+    cookingTime?: number;
+    servings?: number;
+    ingredients?: Array<{
+      title?: string;
+      items: Array<{
+        quantity?: string;
+        name: string;
+      }>;
+    }>;
+    steps?: Array<{
+      title?: string;
+      actions: string[];
+    }>;
+  };
 }
 
-// Default canonical URL to current page URL
-const defaultCanonical = Astro.url.pathname;
+const currentUrl = url || Astro.url.href;
 ---
 
 <html class="scroll-pt-16 scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <Meta 
-      title={title}
-      description={description}
-      canonicalUrl={canonicalUrl || defaultCanonical}
-      ogImage={ogImage}
-      ogType={ogType}
-    />
+    <Meta url={currentUrl} title={title} description={description} image={image} type={type} recipeData={recipeData} />
     <script is:inline>
-      if (
-        localStorage.getItem("hs_theme") === "dark" ||
-        (!("hs_theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      "dark" === localStorage.getItem("hs_theme") ||
+      (!("hs_theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
     </script>
     <style>
       body {
         overflow-y: scroll;
       }
-
       body::-webkit-scrollbar {
         width: 0.5rem;
       }
-
       @media (min-width: 1536px) {
         body::-webkit-scrollbar {
           width: 0.75rem;
         }
       }
-
       body::-webkit-scrollbar-track {
         background: #f5f5f4;
         border-radius: 9999px;
       }
-
       body::-webkit-scrollbar-thumb {
         background: #ff9a6c;
         border-radius: 9999px;
       }
-
       .dark body::-webkit-scrollbar-track {
         background: #44403c;
       }
-
       .dark body::-webkit-scrollbar-thumb {
         background: #ffc53d;
       }
@@ -84,10 +79,8 @@ const defaultCanonical = Astro.url.pathname;
   >
     <div class="mx-auto max-w-(--breakpoint-2xl) px-4 md:px-8">
       <Navbar />
-
       <slot />
     </div>
-
     <Footer />
     <script>
       import "preline/preline.js";

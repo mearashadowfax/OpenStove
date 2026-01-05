@@ -1,55 +1,152 @@
 ---
 interface Props {
+  url?: string;
   title?: string;
   description?: string;
-  canonicalUrl?: string;
-  ogImage?: string;
-  ogType?: string;
+  image?: string;
+  type?: "website" | "article";
+  robots?: string;
+  recipeData?: {
+    author?: string;
+    pubDate?: Date;
+    cookingTime?: number;
+    servings?: number;
+    ingredients?: Array<{
+      title?: string;
+      items: Array<{
+        quantity?: string;
+        name: string;
+      }>;
+    }>;
+    steps?: Array<{
+      title?: string;
+      actions: string[];
+    }>;
+  };
 }
 
 const {
+  url = Astro.url.href,
   title = "OpenStove",
   description = "Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository. No fees, just the joy of cooking and sharing.",
-  canonicalUrl = Astro.url.pathname + Astro.url.search,
-  ogImage = `${Astro.site}/social-image.png`,
-  ogType = "website",
+  image = `${Astro.site}/social-image.png`,
+  type = "website",
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  recipeData,
 } = Astro.props;
 
-// Ensure canonical URL is absolute
-const canonical = canonicalUrl.startsWith("http")
-  ? canonicalUrl
-  : `${Astro.site}${canonicalUrl.startsWith("/") ? canonicalUrl : `/${canonicalUrl}`}`;
-
-// Ensure og:url is absolute
-const ogUrl = canonical;
+const canonicalUrl = url;
+const pageTitle = title;
+const pageDescription = description;
+const pageImage = image;
+const pageType = type;
 ---
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "OpenStove",
-    "alternateName": "OpenStove — A Curated Collection of Community-Crafted Recipes",
-    "url": "https://openstove.org",
-    "description": "Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository. No fees, just the joy of cooking and sharing."
-  }
-</script>
-
 <!-- Canonical URL -->
-<link rel="canonical" href={canonical} />
+<link rel="canonical" href={canonicalUrl} />
 
-<meta content={description} name="description" />
+<!-- Robots Meta Tag -->
+<meta name="robots" content={robots} />
+<meta name="googlebot" content={robots} />
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(
+    (() => {
+      if (recipeData && type === "article") {
+        const recipeSchema: Record<string, any> = {
+          "@context": "https://schema.org",
+          "@type": "Recipe",
+          name: pageTitle.replace(" | OpenStove", ""),
+          description: pageDescription,
+          image: pageImage,
+          url: canonicalUrl,
+          author: {
+            "@type": "Person",
+            name: recipeData.author || "Anonymous",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "OpenStove",
+            url: "https://openstove.org",
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": canonicalUrl,
+          },
+        };
+
+        if (recipeData.pubDate) {
+          recipeSchema.datePublished = recipeData.pubDate.toISOString();
+        }
+        if (recipeData.cookingTime) {
+          recipeSchema.prepTime = `PT${recipeData.cookingTime}M`;
+        }
+        if (recipeData.servings) {
+          recipeSchema.recipeYield = `${recipeData.servings} servings`;
+        }
+        if (recipeData.ingredients && recipeData.ingredients.length > 0) {
+          recipeSchema.recipeIngredient = recipeData.ingredients.flatMap(
+            (group) =>
+              group.items.map(
+                (item) =>
+                  `${item.quantity ? item.quantity + " " : ""}${item.name}`,
+              ),
+          );
+        }
+        if (recipeData.steps && recipeData.steps.length > 0) {
+          recipeSchema.recipeInstructions = recipeData.steps.map(
+            (step, index) => ({
+              "@type": "HowToStep",
+              position: index + 1,
+              name: step.title || `Step ${index + 1}`,
+              text: step.actions.join(" "),
+            }),
+          );
+        }
+
+        return recipeSchema;
+      }
+
+      return {
+        "@context": "https://schema.org",
+        "@type": pageType === "article" ? "Article" : "WebPage",
+        url: canonicalUrl,
+        name: pageTitle,
+        headline: pageTitle,
+        alternateName:
+          "OpenStove — A Curated Collection of Community-Crafted Recipes",
+        description: pageDescription,
+        image: pageImage,
+        isPartOf: {
+          "@type": "WebSite",
+          url: "https://openstove.org",
+          name: "OpenStove",
+          description:
+            "Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository.",
+        },
+        inLanguage: "en-US",
+      };
+    })(),
+  )}
+/>
+
+<meta content={pageDescription} name="description" />
 <meta content="Emil Gulamov" name="web_author" />
-<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 <!-- Facebook Meta Tags -->
 <meta content="en_US" property="og:locale" />
-<meta property="og:url" content={ogUrl} />
-<meta property="og:type" content={ogType} />
-<meta property="og:title" content={title} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:type" content={pageType} />
+<meta property="og:title" content={pageTitle} />
 <meta content="OpenStove" property="og:site_name" />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:image" content={pageImage} />
 <meta content="1200" property="og:image:width" />
 <meta content="600" property="og:image:height" />
 <meta content="image/png" property="og:image:type" />
@@ -57,10 +154,10 @@ const ogUrl = canonical;
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="openstove.org" />
-<meta property="twitter:url" content={ogUrl} />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImage} />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<meta name="twitter:image" content={pageImage} />
 
 <link href="/manifest.webmanifest" rel="manifest" />
 <link rel="sitemap" href="/sitemap-index.xml" />
