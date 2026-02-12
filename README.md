@@ -3,7 +3,7 @@
 </div>  
 <p>&nbsp;</p>
 
->Welcome to **OpenStove — A Curated Collection of Community-Crafted Recipes**. OpenStove is a digital gathering space where culinary enthusiasts come together to discover, share, and contribute recipes. No ads, no fees —  just a love for food and community.
+>Welcome to **OpenStove — a curated collection of community-crafted recipes**. OpenStove is a digital gathering space where culinary enthusiasts come together to discover, share, and contribute recipes. No ads, no fees —  just a love for food and community.
 
 ## What is OpenStove?
 
