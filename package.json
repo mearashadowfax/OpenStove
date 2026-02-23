@@ -21,7 +21,7 @@
     "clipboard": "^2.0.11",
     "preline": "^4.0.1",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
