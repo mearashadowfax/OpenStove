@@ -1,5 +1,8 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
+import FormField from '@components/form/FormField.astro';
+import FormInput from '@components/form/FormInput.astro';
+import FormTextarea from '@components/form/FormTextarea.astro';
 
 export const prerender = false;
 
@@ -50,161 +53,113 @@ const formConfigured = Boolean(
       method="POST"
       action="/api/contribute"
     >
-      <div>
-        <label
-          for="title"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Dish title *</label
-        >
-        <input
+      <FormField label="Dish title" for="title" required>
+        <FormInput
           id="title"
           name="title"
           type="text"
           required
           maxlength="120"
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
         />
-      </div>
+      </FormField>
 
-      <div>
-        <label
-          for="description"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Short description *</label
-        >
-        <textarea
+      <FormField label="Short description" for="description" required>
+        <FormTextarea
           id="description"
           name="description"
           required
-          rows="3"
-          maxlength="500"
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
-        ></textarea>
-      </div>
+          rows={3}
+          maxlength={500}
+        />
+      </FormField>
 
       <div class="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label
-            for="author"
-            class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-            >Your name or alias</label
-          >
-          <input
+        <FormField label="Your name or alias" for="author">
+          <FormInput
             id="author"
             name="author"
             type="text"
-            maxlength="80"
+            maxlength={80}
             placeholder="anonymous"
-            class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
           />
-        </div>
-        <div>
-          <label
-            for="cookingTime"
-            class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-            >Cooking time (minutes) *</label
-          >
-          <input
+        </FormField>
+        <FormField label="Cooking time (minutes)" for="cookingTime" required>
+          <FormInput
             id="cookingTime"
             name="cookingTime"
             type="number"
             required
-            min="1"
-            max="999"
-            class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
+            min={1}
+            max={999}
           />
-        </div>
+        </FormField>
       </div>
 
-      <div>
-        <label
-          for="ingredients"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Ingredients *</label
-        >
-        <p class="mb-1.5 text-xs text-stone-500 dark:text-stone-400">
-          One ingredient per line. Optional format: quantity | unit | name
-        </p>
-        <textarea
+      <FormField
+        label="Ingredients"
+        for="ingredients"
+        required
+        description="One ingredient per line. Optional format: quantity | unit | name"
+      >
+        <FormTextarea
           id="ingredients"
           name="ingredients"
           required
-          rows="8"
+          rows={8}
           placeholder={'1/2 | cup | flour\nSalt and pepper to taste'}
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 font-mono text-sm dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
-        ></textarea>
-      </div>
+          class="font-mono text-sm"
+        />
+      </FormField>
 
-      <div>
-        <label
-          for="steps"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Steps *</label
-        >
-        <p class="mb-1.5 text-xs text-stone-500 dark:text-stone-400">
-          One action per line. Start a new section with ## Section title
-        </p>
-        <textarea
+      <FormField
+        label="Steps"
+        for="steps"
+        required
+        description="One action per line. Start a new section with ## Section title"
+      >
+        <FormTextarea
           id="steps"
           name="steps"
           required
-          rows="10"
+          rows={10}
           placeholder={'## Prep\nChop the onions.\n## Cook\nSauté until soft.'}
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 font-mono text-sm dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
-        ></textarea>
-      </div>
+          class="font-mono text-sm"
+        />
+      </FormField>
 
-      <div>
-        <label
-          for="notes"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Recipe notes</label
-        >
-        <textarea
+      <FormField label="Recipe notes" for="notes">
+        <FormTextarea
           id="notes"
           name="notes"
-          rows="3"
-          maxlength="1000"
+          rows={3}
+          maxlength={1000}
           placeholder="Tips, substitutions, warnings…"
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
-        ></textarea>
-      </div>
+        />
+      </FormField>
 
-      <div>
-        <label
-          for="tags"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Tags</label
-        >
-        <input
+      <FormField label="Tags" for="tags">
+        <FormInput
           id="tags"
           name="tags"
           type="text"
-          maxlength="120"
+          maxlength={120}
           placeholder="soup, vegetarian, quick (max 3)"
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
         />
-      </div>
+      </FormField>
 
-      <div>
-        <label
-          for="imageUrl"
-          class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
-          >Image URL (optional)</label
-        >
-        <p class="mb-1.5 text-xs text-stone-500 dark:text-stone-400">
-          Link to a photo you own or have rights to use. Do not upload binaries
-          via PR – maintainers host licensed photos separately.
-        </p>
-        <input
+      <FormField
+        label="Image URL (optional)"
+        for="imageUrl"
+        description="Link to a photo you own or have rights to use. Do not upload binaries via PR – maintainers host licensed photos separately."
+      >
+        <FormInput
           id="imageUrl"
           name="imageUrl"
           type="url"
-          maxlength="500"
+          maxlength={500}
           placeholder="https://"
-          class="text-dark focus:border-secondary focus:ring-secondary corner-squircle w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100"
         />
-      </div>
+      </FormField>
 
       {/* Honeypot */}
       <div class="hidden" aria-hidden="true">

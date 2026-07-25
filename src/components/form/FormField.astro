@@ -1,0 +1,27 @@
+---
+interface Props {
+  label: string;
+  for: string;
+  description?: string;
+  required?: boolean;
+}
+
+const { label, for: htmlFor, description, required = false } = Astro.props;
+---
+
+<div>
+  <label
+    for={htmlFor}
+    class="text-dark mb-1.5 block text-sm font-medium dark:text-stone-200"
+  >
+    {label}{required && ' *'}
+  </label>
+  {
+    description && (
+      <p class="mb-1.5 text-xs text-stone-500 dark:text-stone-400">
+        {description}
+      </p>
+    )
+  }
+  <slot />
+</div>

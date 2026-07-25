@@ -1,0 +1,12 @@
+---
+import { formControlClass } from './form-control';
+
+interface Props {
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<input class:list={[formControlClass, className]} {...rest} />
