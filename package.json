@@ -26,7 +26,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
     "@vercel/blob": "^2.6.1",
-    "astro": "^7.1.5",
+    "astro": "^7.2.0",
     "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.4.1",
     "astro-robots-txt": "^1.0.0",
