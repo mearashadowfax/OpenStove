@@ -50,5 +50,9 @@ export default defineConfig({
     clientPrerender: true,
   },
 
-  adapter: vercel(),
+  adapter: vercel({
+    // Use Vercel Image Optimization in production instead of bundling Sharp
+    // into the serverless function (avoids pnpm/@img native binary NFT issues).
+    imageService: true,
+  }),
 });
