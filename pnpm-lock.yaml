@@ -19,10 +19,10 @@ importers:
         version: 3.7.3
       '@astrojs/vercel':
         specifier: ^11.0.4
-        version: 11.0.4(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react@19.2.8)(rollup@4.62.2)
+        version: 11.0.4(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react@19.2.8)(rollup@4.62.2)
       '@keystatic/astro':
         specifier: ^5.2.0
-        version: 5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@keystatic/core':
         specifier: ^0.6.3
         version: 0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
@@ -33,17 +33,17 @@ importers:
         specifier: 0.0.8-3
         version: 0.0.8-3
       '@vercel/blob':
-        specifier: ^2.6.1
-        version: 2.6.1
+        specifier: ^2.7.0
+        version: 2.7.0
       astro:
         specifier: ^7.1.5
-        version: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
+        version: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
       astro-meta-tags:
         specifier: ^0.4.1
-        version: 0.4.1(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))
+        version: 0.4.1(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))
       astro-robots-txt:
         specifier: ^1.0.0
         version: 1.0.0
@@ -2244,19 +2244,15 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/blob@2.6.1':
-    resolution: {integrity: sha512-KTJytw85j1XQBxjN5d6UXI7fIWNQe1jotn4nWN+0hePqLs+Qi1B3jHdQcSKFGF0m2rsy9uhPT6GOXMtHe3qNzg==}
+  '@vercel/blob@2.7.0':
+    resolution: {integrity: sha512-cWo8XeRI+eq+pTAQOGZEljSeARw/PZfvNCez9xioGcz/KFvwTR5ESGuKd4wPkGnhbPXyxJJMEgP4oOkwQ4uNGQ==}
     engines: {node: '>=20.0.0'}
-
-  '@vercel/cli-config@0.2.1':
-    resolution: {integrity: sha512-RhfyXmRLHdbnry8RJqHDc+5rGxMZ0bu+fpysZjtv3bE+BubpuwxTancHOKiH5zKQREsdwFVr3mOI2kOvxlOyxA==}
 
   '@vercel/cli-config@0.2.2':
     resolution: {integrity: sha512-kAy35eymNzRBfmcqEViVQge0KJ59FYEKsPqGNCSJQ7M9HTuFGWd3qPcZos1A5cZpAWRBdiYe82Bcz9P7pIZvUQ==}
 
-  '@vercel/cli-exec@1.0.0':
-    resolution: {integrity: sha512-kQF8LGie/Hbdq9/psJxLE7owRTcqMQMhgybU04gCeR7cbQAr5t8OrjefDNColJv1QSSucFt4pLwRiARVmlOnug==}
-    engines: {node: '>= 18'}
+  '@vercel/cli-config@0.2.3':
+    resolution: {integrity: sha512-Ggh0Wmi92TUkUexmSUPkkDtvJmbjUr7IvF5T3FkSsWrXXs3GFzOujfxFpECdJZpux1JG4SWDv9BT4w++TDgD6A==}
 
   '@vercel/cli-exec@1.0.1':
     resolution: {integrity: sha512-g9XerViJ/paZujufXYcu5XYI2vU2rtB4sgdpjUHde5RnOkdmpu0ngH46LCFGHoPXO/C+qDPSczIHIRN+8Q2YKQ==}
@@ -2279,12 +2275,12 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@vercel/oidc@3.8.1':
-    resolution: {integrity: sha512-ufdalm2MWOYksyj8KVpWjoOFPJO6zoYpuyvIggIQ2bB0CFCjTCiTkGXHqAKwG77GVRjOaN3/8S5ITlZpXWmqOw==}
-    engines: {node: '>= 20'}
-
   '@vercel/oidc@3.8.2':
     resolution: {integrity: sha512-nmVSeQ7tewCkqYBNB/MNL8aPB9sTvtjvqIE6+U17U4IuTyehuWVERDlWrSn0DVfiFAstRlRkGLHBlKHB2FyzbQ==}
+    engines: {node: '>= 20'}
+
+  '@vercel/oidc@3.8.4':
+    resolution: {integrity: sha512-FGNvVZ5pgX9FaBqkPt6VkYFZ6bWAMDzYi7nxW+1Xt+Z4fn5PuTULVwsxjKc+0uKhysyWBQmvsmM50Oh6C2/oMA==}
     engines: {node: '>= 20'}
 
   '@vercel/routing-utils@5.3.3':
@@ -4888,14 +4884,14 @@ snapshots:
       is-docker: 4.0.0
       package-manager-detector: 1.8.0
 
-  '@astrojs/vercel@11.0.4(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react@19.2.8)(rollup@4.62.2)':
+  '@astrojs/vercel@11.0.4(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react@19.2.8)(rollup@4.62.2)':
     dependencies:
       '@astrojs/internal-helpers': 0.10.2
       '@vercel/analytics': 1.6.1(react@19.2.8)
       '@vercel/functions': 3.7.7
       '@vercel/nft': 1.10.2(rollup@4.62.2)
       '@vercel/routing-utils': 5.3.3
-      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
+      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
       esbuild: 0.28.1
       tinyglobby: 0.2.17
     transitivePeerDependencies:
@@ -5602,12 +5598,12 @@ snapshots:
       - '@react-spectrum/provider'
       - supports-color
 
-  '@keystatic/astro@5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@keystatic/astro@5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@keystatic/core': 0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
       '@types/react': 19.2.18
-      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
+      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       set-cookie-parser: 2.7.2
@@ -6995,28 +6991,24 @@ snapshots:
     optionalDependencies:
       react: 19.2.8
 
-  '@vercel/blob@2.6.1':
+  '@vercel/blob@2.7.0':
     dependencies:
-      '@vercel/oidc': 3.8.1
+      '@vercel/oidc': 3.8.4
       async-retry: 1.3.3
       is-buffer: 2.0.5
       is-node-process: 1.2.0
       throttleit: 2.1.0
       undici: 6.28.0
 
-  '@vercel/cli-config@0.2.1':
-    dependencies:
-      xdg-app-paths: 5.5.1
-      zod: 4.1.11
-
   '@vercel/cli-config@0.2.2':
     dependencies:
       xdg-app-paths: 5.5.1
       zod: 4.1.11
 
-  '@vercel/cli-exec@1.0.0':
+  '@vercel/cli-config@0.2.3':
     dependencies:
-      execa: 5.1.1
+      xdg-app-paths: 5.5.1
+      zod: 4.1.11
 
   '@vercel/cli-exec@1.0.1':
     dependencies:
@@ -7045,15 +7037,15 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/oidc@3.8.1':
-    dependencies:
-      '@vercel/cli-config': 0.2.1
-      '@vercel/cli-exec': 1.0.0
-      jose: 5.10.0
-
   '@vercel/oidc@3.8.2':
     dependencies:
       '@vercel/cli-config': 0.2.2
+      '@vercel/cli-exec': 1.0.1
+      jose: 5.10.0
+
+  '@vercel/oidc@3.8.4':
+    dependencies:
+      '@vercel/cli-config': 0.2.3
       '@vercel/cli-exec': 1.0.1
       jose: 5.10.0
 
@@ -7248,16 +7240,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-meta-tags@0.4.1(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)):
+  astro-meta-tags@0.4.1(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)):
     dependencies:
-      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
+      astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
 
   astro-robots-txt@1.0.0:
     dependencies:
       valid-filename: 4.0.0
       zod: 3.25.76
 
-  astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0):
+  astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler-rs': 0.3.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)
       '@astrojs/internal-helpers': 0.10.2
@@ -7306,7 +7298,7 @@ snapshots:
       tinyglobby: 0.2.17
       ultrahtml: 1.7.0
       unifont: 0.7.4
-      unstorage: 1.17.5(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)
+      unstorage: 1.17.5(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)
       vite: 8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)
       vitefu: 1.1.3(vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
@@ -9349,7 +9341,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unstorage@1.17.5(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0):
+  unstorage@1.17.5(@vercel/blob@2.7.0)(@vercel/functions@3.7.7)(idb-keyval@6.3.0):
     dependencies:
       anymatch: 3.1.3
       chokidar: 5.0.0
@@ -9360,7 +9352,7 @@ snapshots:
       ofetch: 1.5.1
       ufo: 1.6.4
     optionalDependencies:
-      '@vercel/blob': 2.6.1
+      '@vercel/blob': 2.7.0
       '@vercel/functions': 3.7.7
       idb-keyval: 6.3.0
 
