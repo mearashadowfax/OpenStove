@@ -38,6 +38,11 @@
   --color-eyebrow-to-dark: oklch(92.33% 0.044 50.42);
 }
 
+@theme inline {
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-fraunces);
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -58,6 +63,12 @@
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
   }
 }
 
