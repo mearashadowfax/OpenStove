@@ -22,10 +22,10 @@ importers:
         version: 11.0.4(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react@19.2.8)(rollup@4.62.2)
       '@keystatic/astro':
         specifier: ^5.2.0
-        version: 5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 5.2.0(@keystatic/core@0.6.4(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@keystatic/core':
-        specifier: ^0.6.3
-        version: 0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
+        specifier: ^0.6.4
+        version: 0.6.4(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.2.0(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
@@ -836,9 +836,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@internationalized/date@3.12.2':
-    resolution: {integrity: sha512-FY1Y+H64NDs+HAF6omlnWxm3mEpfgaCSWtL5l551ZZfImA+kGjPFgrnJrGjH6lfmLL0g8Z/mBu1R3kufeCp6Jw==}
-
   '@internationalized/date@3.12.3':
     resolution: {integrity: sha512-fuLX+3ZKLsxI73y8b01EG/WjHb6gE6weCqlfawPO27kBWGMh9G1yH6Csv1uU7/cac9H2GHmOMt6CjmuQ1aia4Q==}
 
@@ -850,9 +847,6 @@ packages:
 
   '@internationalized/string@3.2.10':
     resolution: {integrity: sha512-PDx6//vHSpRnHfxqMqto11zQvhsaU74O3mKv2F/0eicGZcl9NLjQmGlbHz/LsJh5tLKp4A4L7ZVTzN1/MmMTvA==}
-
-  '@internationalized/string@3.2.9':
-    resolution: {integrity: sha512-kzP/M/mbQxODlmOt4bIQZ2SBVUWUSqMLXooXixnX7noche8WHaQcA+nwFN1K2KCF/cp+LDUhcJsCicwkvhD1pg==}
 
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
@@ -895,8 +889,8 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@keystatic/core@0.6.3':
-    resolution: {integrity: sha512-cgALkpAvikI+FVC/Hn4y2iSlCEWmUy08GFlmHziSn247ssyY/CUzbJTNWYBnnJnRNpdvesZa1qF1AZf7xs84oA==}
+  '@keystatic/core@0.6.4':
+    resolution: {integrity: sha512-YXGqDf3xEChh74ox/qxZrLvn/O7GPyX1wAcbEZk4YTuRY/ca6MQi1jR6HDr0uTRWwDLRZqvo8sUDUsRblkKYQg==}
     peerDependencies:
       '@keystar/ui': '*'
       react: ^18.2.0 || ^19.0.0
@@ -1513,11 +1507,6 @@ packages:
       '@react-spectrum/provider': ^3.0.0
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-
-  '@react-types/shared@3.36.0':
-    resolution: {integrity: sha512-DkP/H0C2YjjS7gZWKNqOmU8a16qHPjQNdzMwmTq9SzplM6Iw0kVMTZ0OIoe6FOgGqa+FwMsE2QbPjh/n3g/jXQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   '@react-types/shared@3.36.1':
     resolution: {integrity: sha512-AzsuD9OfxTOZMMvTRhlN3oHBwOmFN7tDh27LzqmHt4+uOgPhJT7ZM7/kVs/8/o0WxayMUIk3hBmCFRHv1FUoag==}
@@ -2147,8 +2136,8 @@ packages:
   '@types/linkify-it@5.0.0':
     resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==}
 
-  '@types/lodash@4.17.24':
-    resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
+  '@types/lodash@4.17.25':
+    resolution: {integrity: sha512-+K1NIO8I+F9/wNulfVvu23QYd0Pe9/OCqRrim4NoYIf1VoEDL90Ve4ClzpyqBLc7NpGGWRvYNCKZ1BE/Jpf8dQ==}
 
   '@types/markdown-it@12.2.3':
     resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
@@ -2489,8 +2478,8 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  brace-expansion@2.1.3:
-    resolution: {integrity: sha512-DRdx5neNsG/QXbniLFWi2YmC/68oeOOmKz6zOjVk6ZS1ZLXgLIKqVEc6hWsmkjBbgii0SwaBTcJ5XKj5gzY/4A==}
+  brace-expansion@2.1.4:
+    resolution: {integrity: sha512-hGfVzPxthbf3+2yjg/RBs60cB0FhqBS/zvdV/4wn4/BmN0bNMMHPc4V/BbFieqf1TKAGGAHnY4eSjajCl0f2Xg==}
 
   brace-expansion@5.0.9:
     resolution: {integrity: sha512-ScQ4IuvIEF1TMlP7Zt+vjJ//9zlPb2SDcxWxM3bk8s6t6GGdJ7KO1dCcTidOPJKePW30LE/2cT7wCyPho9/Wxg==}
@@ -3508,13 +3497,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  nanoid@3.3.16:
-    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@3.3.17:
-    resolution: {integrity: sha512-xQLf0A3HOMlgHq0n247/LRuAOYmB7dXJ/DvAxGvsSBij45XtBSmQycu+F8ODbHwns/XyFZagyL1+J0Offw1E0g==}
+  nanoid@3.3.18:
+    resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -3784,8 +3768,8 @@ packages:
   property-information@7.2.0:
     resolution: {integrity: sha512-IAtzIB6sUiWaJYrX9smp3V46pBGbBeLFRGdh25kg1334VcBlD8HzhPeNIWQH9zhGmo2itIe25EHt9dQP7G5hmg==}
 
-  prosemirror-commands@1.7.1:
-    resolution: {integrity: sha512-rT7qZnQtx5c0/y/KlYaGvtG411S97UaL6gdp6RIZ23DLHanMYLyfGBV5DtSnZdthQql7W+lEVbpSfwtO8T+L2w==}
+  prosemirror-commands@1.7.2:
+    resolution: {integrity: sha512-q6Q6szxqdu9Xd6EcdKsqXghu5nQdZTpB4Q9yd04WRc7/jt763e/rT60Owh0L1GYY+T46o5rD+9lEN36dZS43tw==}
 
   prosemirror-history@1.5.0:
     resolution: {integrity: sha512-zlzTiH01eKA55UAf1MEjtssJeHnGxO0j4K4Dpx+gnmX9n+SHNlDqI2oO1Kv1iPN5B1dm5fsljCfqKF9nFL6HRg==}
@@ -4673,8 +4657,8 @@ packages:
   yauzl@2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
 
-  yjs@13.6.31:
-    resolution: {integrity: sha512-Eq+5BRfbeGyqGVrTJL3bEcr8gKkxPuyuoHmAwpk52fDb8kOVMrfVSTRPd6yiGgX5Fskb96qCRjzjbRjrL4YEnw==}
+  yjs@13.6.32:
+    resolution: {integrity: sha512-lfiJIIC4Xayt5ItynE407ehlE03pCjeOc4hkR4yxxvvNJ4kuiN25B0g+Qp8XagYz361LLL7DCzR5bvFJ81QKtQ==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   yocto-queue@1.2.2:
@@ -5456,10 +5440,6 @@ snapshots:
   '@img/sharp-win32-x64@0.35.3':
     optional: true
 
-  '@internationalized/date@3.12.2':
-    dependencies:
-      '@swc/helpers': 0.5.23
-
   '@internationalized/date@3.12.3':
     dependencies:
       '@swc/helpers': 0.5.23
@@ -5474,10 +5454,6 @@ snapshots:
       '@swc/helpers': 0.5.23
 
   '@internationalized/string@3.2.10':
-    dependencies:
-      '@swc/helpers': 0.5.23
-
-  '@internationalized/string@3.2.9':
     dependencies:
       '@swc/helpers': 0.5.23
 
@@ -5602,30 +5578,30 @@ snapshots:
       - '@react-spectrum/provider'
       - supports-color
 
-  '@keystatic/astro@5.2.0(@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@keystatic/astro@5.2.0(@keystatic/core@0.6.4(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8))(astro@7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@babel/runtime': 7.29.7
-      '@keystatic/core': 0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
+      '@keystatic/core': 0.6.4(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)
       '@types/react': 19.2.18
       astro: 7.1.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.1)(@vercel/blob@2.6.1)(@vercel/functions@3.7.7)(idb-keyval@6.3.0)(jiti@2.7.0)(rollup@4.62.2)(yaml@2.9.0)
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       set-cookie-parser: 2.7.2
 
-  '@keystatic/core@0.6.3(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)':
+  '@keystatic/core@0.6.4(@keystar/ui@0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@braintree/sanitize-url': 6.0.4
       '@emotion/weak-memoize': 0.3.1
       '@floating-ui/react': 0.24.8(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@internationalized/date': 3.12.2
+      '@internationalized/date': 3.12.3
       '@internationalized/number': 3.6.7
-      '@internationalized/string': 3.2.9
+      '@internationalized/string': 3.2.10
       '@keystar/ui': 0.7.22(@react-spectrum/provider@3.11.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@markdoc/markdoc': 0.4.0(@types/react@19.2.18)(react@19.2.8)
-      '@react-types/shared': 3.36.0(react@19.2.8)
+      '@react-types/shared': 3.36.1(react@19.2.8)
       '@sindresorhus/slugify': 1.1.2
-      '@toeverything/y-indexeddb': 0.10.0-canary.9(yjs@13.6.31)
+      '@toeverything/y-indexeddb': 0.10.0-canary.9(yjs@13.6.32)
       '@ts-gql/tag': 0.7.3(graphql@16.14.2)
       '@types/react': 19.2.18
       '@urql/core': 5.2.0(graphql@16.14.2)
@@ -5640,7 +5616,7 @@ snapshots:
       idb-keyval: 6.3.0
       ignore: 5.3.2
       is-hotkey: 0.2.0
-      js-yaml: 4.3.0
+      js-yaml: 4.3.1
       lib0: 0.2.117
       lru-cache: 10.4.3
       match-sorter: 6.3.4
@@ -5656,7 +5632,7 @@ snapshots:
       micromark-extension-mdxjs: 3.0.0
       minimatch: 9.0.9
       partysocket: 0.0.22
-      prosemirror-commands: 1.7.1
+      prosemirror-commands: 1.7.2
       prosemirror-history: 1.5.0
       prosemirror-keymap: 1.2.3
       prosemirror-model: 1.25.11
@@ -5675,9 +5651,9 @@ snapshots:
       superstruct: 1.0.4
       unist-util-visit: 5.1.0
       urql: 4.2.2(@urql/core@5.2.0(graphql@16.14.2))(react@19.2.8)
-      y-prosemirror: 1.3.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.2)(y-protocols@1.0.7(yjs@13.6.31))(yjs@13.6.31)
-      y-protocols: 1.0.7(yjs@13.6.31)
-      yjs: 13.6.31
+      y-prosemirror: 1.3.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.2)(y-protocols@1.0.7(yjs@13.6.32))(yjs@13.6.32)
+      y-protocols: 1.0.7(yjs@13.6.32)
+      yjs: 13.6.32
     transitivePeerDependencies:
       - supports-color
 
@@ -6424,10 +6400,6 @@ snapshots:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
-  '@react-types/shared@3.36.0(react@19.2.8)':
-    dependencies:
-      react: 19.2.8
-
   '@react-types/shared@3.36.1(react@19.2.8)':
     dependencies:
       react: 19.2.8
@@ -6836,12 +6808,12 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.2.0(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)
 
-  '@toeverything/y-indexeddb@0.10.0-canary.9(yjs@13.6.31)':
+  '@toeverything/y-indexeddb@0.10.0-canary.9(yjs@13.6.32)':
     dependencies:
       idb: 7.1.1
       nanoid: 5.1.16
-      y-provider: 0.10.0-canary.9(yjs@13.6.31)
-      yjs: 13.6.31
+      y-provider: 0.10.0-canary.9(yjs@13.6.32)
+      yjs: 13.6.32
 
   '@toolwind/corner-shape@0.0.8-3':
     dependencies:
@@ -6907,7 +6879,7 @@ snapshots:
   '@types/linkify-it@5.0.0':
     optional: true
 
-  '@types/lodash@4.17.24': {}
+  '@types/lodash@4.17.25': {}
 
   '@types/markdown-it@12.2.3':
     dependencies:
@@ -7377,7 +7349,7 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  brace-expansion@2.1.3:
+  brace-expansion@2.1.4:
     dependencies:
       balanced-match: 1.0.2
 
@@ -8535,7 +8507,7 @@ snapshots:
 
   minimatch@9.0.9:
     dependencies:
-      brace-expansion: 2.1.3
+      brace-expansion: 2.1.4
 
   minipass@7.1.3: {}
 
@@ -8556,9 +8528,7 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  nanoid@3.3.16: {}
-
-  nanoid@3.3.17: {}
+  nanoid@3.3.18: {}
 
   nanoid@5.1.16: {}
 
@@ -8722,13 +8692,13 @@ snapshots:
 
   postcss@8.5.24:
     dependencies:
-      nanoid: 3.3.16
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
   postcss@8.5.25:
     dependencies:
-      nanoid: 3.3.17
+      nanoid: 3.3.18
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -8769,7 +8739,7 @@ snapshots:
 
   property-information@7.2.0: {}
 
-  prosemirror-commands@1.7.1:
+  prosemirror-commands@1.7.2:
     dependencies:
       prosemirror-model: 1.25.11
       prosemirror-state: 1.4.4
@@ -9153,7 +9123,7 @@ snapshots:
     dependencies:
       '@juggle/resize-observer': 3.4.0
       '@types/is-hotkey': 0.1.10
-      '@types/lodash': 4.17.24
+      '@types/lodash': 4.17.25
       direction: 1.0.4
       is-hotkey: 0.1.8
       is-plain-object: 5.0.0
@@ -9618,23 +9588,23 @@ snapshots:
 
   xxhash-wasm@1.1.0: {}
 
-  y-prosemirror@1.3.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.2)(y-protocols@1.0.7(yjs@13.6.31))(yjs@13.6.31):
+  y-prosemirror@1.3.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.2)(y-protocols@1.0.7(yjs@13.6.32))(yjs@13.6.32):
     dependencies:
       lib0: 0.2.117
       prosemirror-model: 1.25.11
       prosemirror-state: 1.4.4
       prosemirror-view: 1.42.2
-      y-protocols: 1.0.7(yjs@13.6.31)
-      yjs: 13.6.31
+      y-protocols: 1.0.7(yjs@13.6.32)
+      yjs: 13.6.32
 
-  y-protocols@1.0.7(yjs@13.6.31):
+  y-protocols@1.0.7(yjs@13.6.32):
     dependencies:
       lib0: 0.2.117
-      yjs: 13.6.31
+      yjs: 13.6.32
 
-  y-provider@0.10.0-canary.9(yjs@13.6.31):
+  y-provider@0.10.0-canary.9(yjs@13.6.32):
     dependencies:
-      yjs: 13.6.31
+      yjs: 13.6.32
 
   y18n@5.0.8: {}
 
@@ -9679,7 +9649,7 @@ snapshots:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
 
-  yjs@13.6.31:
+  yjs@13.6.32:
     dependencies:
       lib0: 0.2.117
 
