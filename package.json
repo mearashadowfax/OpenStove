@@ -22,7 +22,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^11.0.5",
     "@keystatic/astro": "^6.0.0",
-    "@keystatic/core": "^0.6.5",
+    "@keystatic/core": "^0.6.8",
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
     "@vercel/blob": "^2.8.0",
