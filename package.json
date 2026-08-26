@@ -21,7 +21,7 @@
     "@astrojs/react": "^6.0.2",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^11.0.5",
-    "@keystatic/astro": "^5.2.0",
+    "@keystatic/astro": "^6.0.0",
     "@keystatic/core": "^0.6.5",
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
