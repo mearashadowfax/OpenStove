@@ -22,7 +22,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^11.0.5",
     "@keystatic/astro": "^6.0.0",
-    "@keystatic/core": "^0.6.8",
+    "@keystatic/core": "^0.6.9",
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
     "@vercel/blob": "^2.8.0",
@@ -35,7 +35,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },
