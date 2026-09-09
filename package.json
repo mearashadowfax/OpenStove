@@ -19,14 +19,14 @@
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/react": "^6.0.5",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/vercel": "^11.0.10",
     "@keystatic/astro": "^6.0.0",
     "@keystatic/core": "^0.6.9",
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
     "@vercel/blob": "^2.8.0",
-    "astro": "^7.3.1",
+    "astro": "^7.3.2",
     "astro-icon": "^1.2.0",
     "astro-meta-tags": "^0.4.1",
     "astro-robots-txt": "^1.0.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/react-dom": "^19.2.7",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "vitest": "^5.0.0"
