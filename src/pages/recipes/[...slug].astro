@@ -38,7 +38,7 @@ const recipeTitle = entry.data.title + ' | OpenStove';
 const recipeDescription =
   entry.data.description ||
   `Learn how to make ${entry.data.title} with this delicious recipe from OpenStove.`;
-const recipeImage = resolveRecipeImage(entry.data.image);
+const recipeImage = resolveRecipeImage(entry.data.image).src;
 const recipePath = Astro.url.pathname;
 const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
   year: 'numeric',

@@ -23,7 +23,7 @@ const {
   sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px',
 } = Astro.props;
 
-const src = resolveRecipeImage(image);
+const { src, fallbackSrc } = resolveRecipeImage(image);
 ---
 
 <img
@@ -36,7 +36,7 @@ const src = resolveRecipeImage(image);
   loading={loading}
   decoding="async"
   draggable={draggable}
-  data-fallback="/placeholder-recipe.png"
+  data-fallback={fallbackSrc}
 />
 
 <script>

@@ -35,7 +35,7 @@ Application code and recipe text live in this public repository. Recipes are Mar
 src/
 ├── components/          Reusable Astro components
 ├── content/recipes/     Markdown recipe collection
-├── images/              Public UI illustrations and fallback image
+├── images/              UI illustrations
 ├── layouts/             Shared page layouts
 ├── lib/                 Image and contribution utilities
 ├── pages/               Pages and server API routes
