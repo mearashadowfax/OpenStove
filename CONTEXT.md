@@ -34,3 +34,11 @@ _Avoid_: category, label
 **Bookmark**:
 A reader's saved recipe, remembered in this browser only. The set of bookmarks is what the saved page shows.
 _Avoid_: favourite, like, saved item
+
+**Contribution**:
+A recipe submitted through the site's form, on its way to becoming a Recipe. It is reviewed by maintainers as a GitHub issue containing the generated frontmatter.
+_Avoid_: submission (fine in prose, but the concept is a contribution), request
+
+**Human check**:
+The proof that a contribution came from a person (Cloudflare Turnstile in production, waived locally).
+_Avoid_: captcha, spam check

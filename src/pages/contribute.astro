@@ -4,10 +4,22 @@ import FormField from '@components/form/FormField.astro';
 
 export const prerender = false;
 
+import {
+  CONTRIBUTE_FIELDS,
+  HONEYPOT_FIELD,
+  isContributionConfigured,
+} from '@/lib/contribution';
+
+const numberButtonClass =
+  'focus-visible:ring-secondary last:corner-squircle text-dark inline-flex h-10 w-10 touch-manipulation items-center justify-center bg-transparent text-sm font-medium transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:text-stone-200 dark:hover:bg-stone-800';
+
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
-const formConfigured = Boolean(
-  import.meta.env.GITHUB_TOKEN && import.meta.env.GITHUB_REPO
-);
+const formConfigured = isContributionConfigured({
+  GITHUB_TOKEN: import.meta.env.GITHUB_TOKEN,
+  GITHUB_REPO: import.meta.env.GITHUB_REPO,
+  TURNSTILE_SECRET_KEY: import.meta.env.TURNSTILE_SECRET_KEY,
+  PROD: import.meta.env.PROD,
+});
 ---
 
 <MainLayout
@@ -39,7 +51,8 @@ const formConfigured = Boolean(
           role="status"
         >
           Form submission is not configured on this environment yet
-          (GITHUB_TOKEN / GITHUB_REPO). You can still use the GitHub PR flow.
+          (GITHUB_TOKEN / GITHUB_REPO, plus TURNSTILE_SECRET_KEY in production).
+          You can still use the GitHub PR flow.
         </p>
       )
     }
@@ -50,125 +63,139 @@ const formConfigured = Boolean(
       method="POST"
       action="/api/contribute"
     >
-      <FormField label="Dish title" for="title" required>
-        <input
-          class="form-control"
-          id="title"
-          name="title"
-          type="text"
-          required
-          maxlength="120"
-        />
-      </FormField>
-
-      <FormField label="Short description" for="description" required>
-        <textarea
-          class="form-control"
-          id="description"
-          name="description"
-          required
-          rows={3}
-          maxlength={500}></textarea>
-      </FormField>
-
       <div class="grid gap-6 sm:grid-cols-2">
-        <FormField label="Your name or alias" for="author">
-          <input
-            class="form-control"
-            id="author"
-            name="author"
-            type="text"
-            maxlength={80}
-            placeholder="anonymous"
-          />
-        </FormField>
-        <FormField label="Cooking time (minutes)" for="cookingTime" required>
-          <input
-            class="form-control"
-            id="cookingTime"
-            name="cookingTime"
-            type="number"
-            required
-            min={1}
-            max={999}
-          />
-        </FormField>
+        {
+          CONTRIBUTE_FIELDS.map(field => (
+            <div class:list={[field.width === 'half' ? '' : 'sm:col-span-2']}>
+              {field.kind === 'checkbox' ? (
+                <div class="sm:pt-7">
+                  <label class="text-dark flex items-center gap-3 text-sm font-medium dark:text-stone-200">
+                    <input
+                      id={field.name}
+                      name={field.name}
+                      type="checkbox"
+                      class="accent-secondary h-4 w-4"
+                    />
+                    {field.label}
+                  </label>
+                  {field.description && (
+                    <p class="mt-1.5 text-xs text-stone-500 dark:text-stone-400">
+                      {field.description}
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <FormField
+                  label={field.label}
+                  for={field.name}
+                  required={field.required}
+                  description={field.description}
+                >
+                  {field.kind === 'textarea' ? (
+                    <textarea
+                      class:list={[
+                        'form-control',
+                        field.mono && 'font-mono text-sm',
+                      ]}
+                      id={field.name}
+                      name={field.name}
+                      required={field.required}
+                      rows={field.rows}
+                      maxlength={field.max}
+                      placeholder={field.placeholder}
+                    />
+                  ) : field.kind === 'number' ? (
+                    <div
+                      class="corner-squircle max-w-48 rounded-4xl border border-orange-200 bg-white dark:border-stone-600 dark:bg-stone-900"
+                      data-hs-input-number={JSON.stringify({
+                        min: field.min,
+                        max: field.max,
+                      })}
+                    >
+                      <div class="flex w-full items-center justify-between gap-x-1">
+                        <div class="grow px-3 py-2">
+                          <input
+                            class="text-dark w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 disabled:opacity-50 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                            id={field.name}
+                            name={field.name}
+                            type="number"
+                            value={field.defaultValue}
+                            min={field.min}
+                            max={field.max}
+                            required={field.required}
+                            aria-roledescription="Number field"
+                            data-hs-input-number-input
+                          />
+                        </div>
+                        <div class="flex items-center divide-x divide-orange-200 border-s border-orange-200 dark:divide-stone-600 dark:border-stone-600">
+                          <button
+                            type="button"
+                            class={numberButtonClass}
+                            aria-label="Decrease"
+                            data-hs-input-number-decrement
+                          >
+                            <svg
+                              class="h-3.5 w-3.5 shrink-0"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14" />
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            class={numberButtonClass}
+                            aria-label="Increase"
+                            data-hs-input-number-increment
+                          >
+                            <svg
+                              class="h-3.5 w-3.5 shrink-0"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5v14" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <input
+                      class="form-control"
+                      id={field.name}
+                      name={field.name}
+                      type={field.kind}
+                      required={field.required}
+                      maxlength={field.max}
+                      placeholder={field.placeholder}
+                    />
+                  )}
+                </FormField>
+              )}
+            </div>
+          ))
+        }
       </div>
-
-      <FormField
-        label="Ingredients"
-        for="ingredients"
-        required
-        description="One ingredient per line. Optional format: quantity | unit | name"
-      >
-        <textarea
-          class="form-control"
-          id="ingredients"
-          name="ingredients"
-          required
-          rows={8}
-          placeholder={'1/2 | cup | flour\nSalt and pepper to taste'}
-          class="font-mono text-sm"></textarea>
-      </FormField>
-
-      <FormField
-        label="Steps"
-        for="steps"
-        required
-        description="One action per line. Start a new section with ## Section title"
-      >
-        <textarea
-          class="form-control"
-          id="steps"
-          name="steps"
-          required
-          rows={10}
-          placeholder={'## Prep\nChop the onions.\n## Cook\nSauté until soft.'}
-          class="font-mono text-sm"></textarea>
-      </FormField>
-
-      <FormField label="Recipe notes" for="notes">
-        <textarea
-          class="form-control"
-          id="notes"
-          name="notes"
-          rows={3}
-          maxlength={1000}
-          placeholder="Tips, substitutions, warnings…"></textarea>
-      </FormField>
-
-      <FormField label="Tags" for="tags">
-        <input
-          class="form-control"
-          id="tags"
-          name="tags"
-          type="text"
-          maxlength={120}
-          placeholder="soup, vegetarian, quick (max 3)"
-        />
-      </FormField>
-
-      <FormField
-        label="Image URL (optional)"
-        for="imageUrl"
-        description="Link to a photo you own or have rights to use. Do not upload binaries via PR – maintainers host licensed photos separately."
-      >
-        <input
-          class="form-control"
-          id="imageUrl"
-          name="imageUrl"
-          type="url"
-          maxlength={500}
-          placeholder="https://"
-        />
-      </FormField>
 
       {/* Honeypot */}
       <div class="hidden" aria-hidden="true">
-        <label for="website">Website</label>
+        <label for={HONEYPOT_FIELD}>Website</label>
         <input
-          id="website"
-          name="website"
+          id={HONEYPOT_FIELD}
+          name={HONEYPOT_FIELD}
           type="text"
           tabindex="-1"
           autocomplete="off"
@@ -255,11 +282,12 @@ const formConfigured = Boolean(
         method: 'POST',
         body: new FormData(form),
       });
-      const data = (await response.json()) as {
-        ok?: boolean;
-        error?: string;
-        url?: string;
-      };
+      let data: { ok?: boolean; error?: string; url?: string } = {};
+      try {
+        data = await response.json();
+      } catch {
+        // A proxy error page (e.g. a 413 from the host) is not JSON.
+      }
 
       if (!response.ok || !data.ok) {
         throw new Error(data.error || 'Submission failed. Please try again.');
