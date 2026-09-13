@@ -1,4 +1,6 @@
 ---
+import { formatIngredientLine } from '@/lib/quantity';
+
 interface Props {
   url?: string;
   title?: string;
@@ -98,12 +100,7 @@ const ogImageType = imageLower.endsWith('.avif')
         }
         if (recipeData.ingredients && recipeData.ingredients.length > 0) {
           recipeSchema.recipeIngredient = recipeData.ingredients.flatMap(
-            group =>
-              group.items.map(item =>
-                [item.quantity, item.unit, item.name]
-                  .filter(part => Boolean(part && part.trim()))
-                  .join(' ')
-              )
+            group => group.items.map(item => formatIngredientLine(item))
           );
         }
         if (recipeData.steps && recipeData.steps.length > 0) {

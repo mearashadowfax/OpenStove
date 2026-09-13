@@ -277,7 +277,7 @@
     max-width: none !important;
   }
 
-  .recipe-print-ingredients li.count {
+  .recipe-print-ingredients li[data-ingredient] {
     display: block !important;
     padding: 1.5mm 0 !important;
     border-bottom: 0.5pt solid var(--color-stone-200, #e7e5e4) !important;

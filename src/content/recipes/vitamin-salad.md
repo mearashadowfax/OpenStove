@@ -53,7 +53,7 @@ ingredients:
       - quantity: '3'
         unit: 'tablespoon'
         name: 'extra virgin olive oil'
-      - quantity: '1 tablespoon'
+      - quantity: '1'
         unit: 'tablespoon'
         name: 'balsamic vinegar'
       - quantity: '1/2'

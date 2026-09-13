@@ -49,7 +49,7 @@ steps:
 ingredients:
   - title: 'Ingredient List Title' # Example: "For the Pastry Crust:", "For the Lemon Filling:" (Optional, can be left blank if there's no separate list title)
     items:
-      - quantity: '1/2' # Use fractional numbers like 1/2 or decimal numbers like 0.5.
+      - quantity: '1/2' # A number (2), decimal (1.5), fraction (1/2), mixed number (1 1/2) or range (3-4). Put units in `unit`, never here: '125g' is rejected.
         unit: 'tablespoon' # Optional unit of measurement. Examples: cup, tablespoon, teaspoon, gram.
         name: 'vegetable oil' # Ingredient name only, without the measurement unit.
       - quantity: '' # If an ingredient does not require a specific quantity, such as "Salt and pepper to taste", leave the quantity blank.

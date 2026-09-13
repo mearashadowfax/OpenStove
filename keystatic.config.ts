@@ -1,4 +1,5 @@
 import { config, fields, collection } from '@keystatic/core';
+import { QUANTITY_PATTERN, QUANTITY_PATTERN_MESSAGE } from './src/lib/quantity';
 
 const useGithub = import.meta.env.PROD;
 
@@ -59,7 +60,15 @@ export default config({
             title: fields.text({ label: 'Group title' }),
             items: fields.array(
               fields.object({
-                quantity: fields.text({ label: 'Quantity' }),
+                quantity: fields.text({
+                  label: 'Quantity',
+                  validation: {
+                    pattern: {
+                      regex: QUANTITY_PATTERN,
+                      message: QUANTITY_PATTERN_MESSAGE,
+                    },
+                  },
+                }),
                 unit: fields.text({ label: 'Unit' }),
                 name: fields.text({ label: 'Name' }),
               }),
