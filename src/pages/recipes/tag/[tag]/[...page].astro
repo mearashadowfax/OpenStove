@@ -1,0 +1,74 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import RecipeGrid from '@components/RecipeGrid.astro';
+import EmptyState from '@components/EmptyState.astro';
+import { tagHref, tagLabel } from '@/lib/tag';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import {
+  allTags,
+  byTag,
+  listRecipes,
+  parsePage,
+  segmentPaging,
+} from '@/lib/catalogue';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  const recipes = await getCollection('recipes');
+
+  return allTags(recipes).flatMap(tag => {
+    const { totalPages } = listRecipes(byTag(recipes, tag));
+    return Array.from({ length: totalPages }, (_, index) => ({
+      params: { tag, page: index === 0 ? undefined : String(index + 1) },
+    }));
+  });
+}) satisfies GetStaticPaths;
+
+const { tag: tagParam, page: pageParam } = Astro.params;
+
+if (tagParam === undefined) {
+  throw new Error('Tag is required');
+}
+
+const tag = decodeURIComponent(tagParam);
+const tagRecipes = listRecipes(byTag(await getCollection('recipes'), tag), {
+  page: parsePage(pageParam),
+  pathFor: segmentPaging(tagHref(tag)),
+});
+
+const canonicalUrl = tagRecipes.pathFor(tagRecipes.page);
+const pageTitle = `${tagLabel(tag)} | OpenStove`;
+const pageDescription = `Browse ${tagRecipes.totalItems} ${tag} recipes on OpenStove. Discover community-crafted recipes for ${tag} dishes.`;
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <section class="min-h-screen">
+    <div class="mt-10 py-6 sm:py-8 lg:py-12">
+      <div
+        class="corner-squircle from-brand-warm to-brand-gold rounded-[100px] bg-linear-to-r px-4 py-6 md:py-8 lg:py-12"
+      >
+        <h1
+          class="text-dark mx-auto max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
+        >
+          {tagLabel(tag)}
+        </h1>
+      </div>
+    </div>
+
+    <RecipeGrid page={tagRecipes}>
+      <EmptyState
+        slot="empty"
+        title={`No recipes tagged “${tagLabel(tag)}”`}
+        description="This tag does not have any recipes yet. Explore the full collection instead."
+        primaryHref="/recipes"
+        primaryLabel="Browse recipes"
+      />
+    </RecipeGrid>
+  </section>
+</MainLayout>

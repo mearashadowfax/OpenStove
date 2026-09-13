@@ -1,56 +1,58 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
-import RecipeCard from '@components/RecipeCard.astro';
+import RecipeGrid from '@components/RecipeGrid.astro';
 import EmptyState from '@components/EmptyState.astro';
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import {
+  MIN_QUERY_LENGTH,
+  listRecipes,
+  parsePage,
+  queryPaging,
+  searchRecipes,
+} from '@/lib/catalogue';
 
 export const prerender = false;
 
-const rawQuery = Astro.url.searchParams.get('query');
-const query = rawQuery?.trim() ?? '';
+const query = Astro.url.searchParams.get('query')?.trim() ?? '';
+const hasQuery = query.length >= MIN_QUERY_LENGTH;
 
-const allRecipes: CollectionEntry<'recipes'>[] = await getCollection('recipes');
-
-const searchResults =
-  query.length > 0
-    ? allRecipes.filter(recipe => {
-        const q = query.toLowerCase();
-
-        const titleMatch = recipe.data.title.toLowerCase().includes(q);
-        const descriptionMatch = recipe.data.description
-          .toLowerCase()
-          .includes(q);
-        const authorMatch = recipe.data.author.toLowerCase().includes(q);
-        const idMatch = recipe.id.toLowerCase().includes(q);
-        const notesMatch = recipe.data.recipeNotes
-          ? recipe.data.recipeNotes.some(note => note.toLowerCase().includes(q))
-          : false;
-        const instructionsMatch = recipe.data.steps.some(step =>
-          step.actions.some(action => action.toLowerCase().includes(q))
-        );
-
-        return (
-          titleMatch ||
-          descriptionMatch ||
-          authorMatch ||
-          idMatch ||
-          notesMatch ||
-          instructionsMatch
-        );
-      })
-    : [];
+const results = listRecipes(
+  searchRecipes(await getCollection('recipes'), query),
+  {
+    order: 'given',
+    page: parsePage(Astro.url.searchParams.get('page')),
+    pathFor: queryPaging('/recipes/search', { query }),
+  }
+);
 
 const canonicalUrl = '/recipes/search';
-const pageDescription = query
-  ? `Search results for "${query}" on OpenStove. Found ${searchResults.length} recipes.`
+const pageDescription = hasQuery
+  ? `Search results for "${query}" on OpenStove. Found ${results.totalItems} recipes.`
   : 'Search recipes on OpenStove. Find your favorite dishes from our community-crafted collection.';
 
-const heading = query ? `Results for “${query}”` : 'Search recipes';
+const heading = hasQuery ? `Results for “${query}”` : 'Search recipes';
+
+const emptyState = hasQuery
+  ? {
+      title: `No recipes match “${query}”`,
+      description:
+        'Try a shorter phrase, a different dish name, or browse the full collection.',
+      primaryHref: '/recipes',
+      primaryLabel: 'Browse recipes',
+      secondaryHref: '/',
+      secondaryLabel: 'Back to home',
+    }
+  : {
+      title: 'Search the recipe library',
+      description:
+        'Type at least two characters in the search bar above to find recipes by title, ingredients, tags, or instructions.',
+      primaryHref: '/recipes',
+      primaryLabel: 'Browse all recipes',
+    };
 ---
 
 <MainLayout
-  title={query
+  title={hasQuery
     ? `Search Results for "${query}" | OpenStove`
     : 'Search | OpenStove'}
   description={pageDescription}
@@ -70,32 +72,8 @@ const heading = query ? `Results for “${query}”` : 'Search recipes';
       </div>
     </div>
 
-    <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl)">
-      {
-        !query ? (
-          <EmptyState
-            title="Search the recipe library"
-            description="Type at least two characters in the search bar above to find recipes by title, ingredients, or instructions."
-            primaryHref="/recipes"
-            primaryLabel="Browse all recipes"
-          />
-        ) : searchResults.length === 0 ? (
-          <EmptyState
-            title={`No recipes match “${query}”`}
-            description="Try a shorter phrase, a different dish name, or browse the full collection."
-            primaryHref="/recipes"
-            primaryLabel="Browse recipes"
-            secondaryHref="/"
-            secondaryLabel="Back to home"
-          />
-        ) : (
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {searchResults.map(recipe => (
-              <RecipeCard recipe={recipe} />
-            ))}
-          </div>
-        )
-      }
-    </div>
+    <RecipeGrid page={results}>
+      <EmptyState slot="empty" {...emptyState} />
+    </RecipeGrid>
   </section>
 </MainLayout>

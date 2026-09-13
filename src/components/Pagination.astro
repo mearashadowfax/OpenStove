@@ -1,12 +1,12 @@
 ---
+import type { RecipePage } from '@/lib/catalogue';
+
 interface Props {
-  currentPage: number;
-  totalPages: number;
-  /** Base path for page links, e.g. `/recipes` */
-  basePath?: string;
+  page: RecipePage;
 }
 
-const { currentPage, totalPages, basePath = '/recipes' } = Astro.props;
+const { page } = Astro.props;
+const { page: currentPage, totalPages, pathFor: pageHref } = page;
 
 const windowSize = 1;
 const disablePrevious = currentPage <= 1;
@@ -26,10 +26,6 @@ function createWindow(
   const maxPage = Math.min(totalPages - 1, currentPage + windowSize);
   if (maxPage < minPage) return [];
   return Array.from({ length: maxPage - minPage + 1 }, (_, i) => minPage + i);
-}
-
-function pageHref(page: number) {
-  return page <= 1 ? basePath : `${basePath}?page=${page}`;
 }
 
 function pageClass(page: number) {
