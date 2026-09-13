@@ -24,7 +24,3 @@ export function resolveRecipeImage(image: string | undefined | null): string {
   const filename = value.replace(/^\/images\//, '').replace(/^\//, '');
   return `${base}/${filename}`;
 }
-
-export function isPlaceholderImage(src: string): boolean {
-  return src === placeholderUrl || src.includes('placeholder');
-}

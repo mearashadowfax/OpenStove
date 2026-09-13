@@ -115,9 +115,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     return Response.json({ ok: true, url: undefined });
   }
 
-  const turnstileToken = String(
-    form.get('cf-turnstile-response') || form.get('turnstile') || ''
-  );
+  const turnstileToken = String(form.get('cf-turnstile-response') || '');
   const turnstileOk = await verifyTurnstile(
     turnstileToken,
     clientAddress ?? null

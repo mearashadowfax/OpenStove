@@ -2,7 +2,7 @@
 import MainLayout from '@layouts/MainLayout.astro';
 import RecipeCard from '@components/RecipeCard.astro';
 import EmptyState from '@components/EmptyState.astro';
-import { capitalize } from '@utils';
+import { tagHref, tagLabel } from '@/lib/tag';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
@@ -43,8 +43,8 @@ const tagRecipes = allRecipes.filter(recipe =>
   (recipe.data.tags ?? []).includes(tag)
 );
 
-const canonicalUrl = `/recipes/tag/${encodeURIComponent(tag)}`;
-const pageTitle = `${capitalize(tag)} | OpenStove`;
+const canonicalUrl = tagHref(tag);
+const pageTitle = `${tagLabel(tag)} | OpenStove`;
 const pageDescription = `Browse ${tagRecipes.length} ${tag} recipes on OpenStove. Discover community-crafted recipes for ${tag} dishes.`;
 ---
 
@@ -61,7 +61,7 @@ const pageDescription = `Browse ${tagRecipes.length} ${tag} recipes on OpenStove
         <h1
           class="text-dark mx-auto max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:text-5xl 2xl:max-w-4xl 2xl:text-6xl"
         >
-          {capitalize(tag)}
+          {tagLabel(tag)}
         </h1>
       </div>
     </div>
@@ -70,7 +70,7 @@ const pageDescription = `Browse ${tagRecipes.length} ${tag} recipes on OpenStove
       {
         tagRecipes.length === 0 ? (
           <EmptyState
-            title={`No recipes tagged “${capitalize(tag)}”`}
+            title={`No recipes tagged “${tagLabel(tag)}”`}
             description="This tag does not have any recipes yet. Explore the full collection instead."
             primaryHref="/recipes"
             primaryLabel="Browse recipes"

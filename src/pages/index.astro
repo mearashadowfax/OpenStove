@@ -6,7 +6,6 @@ import RecipeCard from '@components/RecipeCard.astro';
 import { Image } from 'astro:assets';
 import heroImage from '@images/hero-image.svg';
 import { Icon } from 'astro-icon/components';
-import { HOMEPAGE_RECIPES_LIMIT } from '@constants';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
@@ -143,11 +142,7 @@ const allRecipes: CollectionEntry<'recipes'>[] = (
   <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl) py-10 lg:py-14">
     {/* Grid */}
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        allRecipes
-          .slice(0, HOMEPAGE_RECIPES_LIMIT)
-          .map(recipe => <RecipeCard recipe={recipe} />)
-      }
+      {allRecipes.slice(0, 6).map(recipe => <RecipeCard recipe={recipe} />)}
     </div>
     {/* End Grid */}
 

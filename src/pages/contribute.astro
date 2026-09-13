@@ -1,8 +1,6 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
 import FormField from '@components/form/FormField.astro';
-import FormInput from '@components/form/FormInput.astro';
-import FormTextarea from '@components/form/FormTextarea.astro';
 
 export const prerender = false;
 
@@ -54,7 +52,8 @@ const formConfigured = Boolean(
       action="/api/contribute"
     >
       <FormField label="Dish title" for="title" required>
-        <FormInput
+        <input
+          class="form-control"
           id="title"
           name="title"
           type="text"
@@ -64,18 +63,19 @@ const formConfigured = Boolean(
       </FormField>
 
       <FormField label="Short description" for="description" required>
-        <FormTextarea
+        <textarea
+          class="form-control"
           id="description"
           name="description"
           required
           rows={3}
-          maxlength={500}
-        />
+          maxlength={500}></textarea>
       </FormField>
 
       <div class="grid gap-6 sm:grid-cols-2">
         <FormField label="Your name or alias" for="author">
-          <FormInput
+          <input
+            class="form-control"
             id="author"
             name="author"
             type="text"
@@ -84,7 +84,8 @@ const formConfigured = Boolean(
           />
         </FormField>
         <FormField label="Cooking time (minutes)" for="cookingTime" required>
-          <FormInput
+          <input
+            class="form-control"
             id="cookingTime"
             name="cookingTime"
             type="number"
@@ -101,14 +102,14 @@ const formConfigured = Boolean(
         required
         description="One ingredient per line. Optional format: quantity | unit | name"
       >
-        <FormTextarea
+        <textarea
+          class="form-control"
           id="ingredients"
           name="ingredients"
           required
           rows={8}
           placeholder={'1/2 | cup | flour\nSalt and pepper to taste'}
-          class="font-mono text-sm"
-        />
+          class="font-mono text-sm"></textarea>
       </FormField>
 
       <FormField
@@ -117,28 +118,29 @@ const formConfigured = Boolean(
         required
         description="One action per line. Start a new section with ## Section title"
       >
-        <FormTextarea
+        <textarea
+          class="form-control"
           id="steps"
           name="steps"
           required
           rows={10}
           placeholder={'## Prep\nChop the onions.\n## Cook\nSauté until soft.'}
-          class="font-mono text-sm"
-        />
+          class="font-mono text-sm"></textarea>
       </FormField>
 
       <FormField label="Recipe notes" for="notes">
-        <FormTextarea
+        <textarea
+          class="form-control"
           id="notes"
           name="notes"
           rows={3}
           maxlength={1000}
-          placeholder="Tips, substitutions, warnings…"
-        />
+          placeholder="Tips, substitutions, warnings…"></textarea>
       </FormField>
 
       <FormField label="Tags" for="tags">
-        <FormInput
+        <input
+          class="form-control"
           id="tags"
           name="tags"
           type="text"
@@ -152,7 +154,8 @@ const formConfigured = Boolean(
         for="imageUrl"
         description="Link to a photo you own or have rights to use. Do not upload binaries via PR – maintainers host licensed photos separately."
       >
-        <FormInput
+        <input
+          class="form-control"
           id="imageUrl"
           name="imageUrl"
           type="url"

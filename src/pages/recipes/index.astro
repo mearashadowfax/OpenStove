@@ -5,9 +5,10 @@ import Pagination from '@components/Pagination.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { RECIPES_PER_PAGE } from '@constants';
 
 export const prerender = false;
+
+const RECIPES_PER_PAGE = 9;
 
 const pageParam = Astro.url.searchParams.get('page');
 const currentPage =

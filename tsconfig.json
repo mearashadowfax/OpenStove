@@ -7,11 +7,9 @@
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@constants": ["src/constants.ts"],
       "@images/*": ["src/images/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils": ["src/utils.ts"]
+      "@styles/*": ["src/styles/*"]
     }
   }
 }

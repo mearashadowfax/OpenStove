@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { capitalize } from '../utils';
+import { tagLabel } from '@/lib/tag';
 import RecipeImage from './RecipeImage.astro';
 
 const { recipe } = Astro.props;
@@ -40,7 +40,7 @@ interface Props {
       {
         recipe.data.tags?.map((tag: string) => (
           <span class="text-on-brand corner-squircle bg-secondary/30 group-hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
-            {capitalize(tag)}
+            {tagLabel(tag)}
           </span>
         ))
       }
