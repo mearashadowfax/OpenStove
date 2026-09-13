@@ -8,7 +8,6 @@ import Bookmark from '@components/Bookmark.astro';
 import Clipboard from '@components/Clipboard.astro';
 import RecipeImage from '@components/RecipeImage.astro';
 import PrintRecipe from '@components/PrintRecipe.astro';
-import { resolveRecipeImage } from '@/lib/recipeImage';
 import { getCollection, getEntry } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 
@@ -38,7 +37,6 @@ const recipeTitle = entry.data.title + ' | OpenStove';
 const recipeDescription =
   entry.data.description ||
   `Learn how to make ${entry.data.title} with this delicious recipe from OpenStove.`;
-const recipeImage = resolveRecipeImage(entry.data.image).src;
 const recipePath = Astro.url.pathname;
 const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
   year: 'numeric',
@@ -50,17 +48,8 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
 <MainLayout
   title={recipeTitle}
   description={recipeDescription}
-  image={recipeImage}
-  type="article"
   url={recipeUrl}
-  recipeData={{
-    author: entry.data.author,
-    pubDate: entry.data.pubDate,
-    cookingTime: entry.data.cookingTime,
-    servings: entry.data.servings,
-    ingredients: entry.data.ingredients,
-    steps: entry.data.steps,
-  }}
+  recipe={entry}
 >
   <section class="recipe-print-root mt-10 pt-6 sm:pt-8 lg:pt-12">
     <div class="recipe-print-brand" aria-hidden="true">

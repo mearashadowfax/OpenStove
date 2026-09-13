@@ -1,57 +1,57 @@
 ---
-import { formatIngredientLine } from '@/lib/quantity';
+import type { CollectionEntry } from 'astro:content';
+import { resolveRecipeImage } from '@/lib/recipeImage';
+import { recipeJsonLd } from '@/lib/recipeJsonLd';
 
 interface Props {
   url?: string;
   title?: string;
   description?: string;
-  image?: string;
-  type?: 'website' | 'article';
   robots?: string;
-  recipeData?: {
-    author?: string;
-    pubDate?: Date;
-    cookingTime?: number;
-    servings?: number;
-    ingredients?: Array<{
-      title?: string;
-      items: Array<{
-        quantity?: string;
-        unit?: string;
-        name: string;
-      }>;
-    }>;
-    steps?: Array<{
-      title?: string;
-      actions: string[];
-    }>;
-  };
+  /** When present, the page is a recipe: article type, recipe image, Recipe JSON-LD. */
+  recipe?: CollectionEntry<'recipes'>;
 }
 
 const {
   url = Astro.url.href,
   title = 'OpenStove',
   description = 'Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository. No fees, just the joy of cooking and sharing.',
-  image = `${Astro.site}/social-image.png`,
-  type = 'website',
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-  recipeData,
+  recipe,
 } = Astro.props;
 
 const canonicalUrl = url;
 const pageTitle = title;
 const pageDescription = description;
-const pageImage = image;
-const pageType = type;
+const pageType = recipe ? 'article' : 'website';
 
-const imageLower = pageImage.toLowerCase();
-const ogImageType = imageLower.endsWith('.avif')
-  ? 'image/avif'
-  : imageLower.endsWith('.webp')
-    ? 'image/webp'
-    : imageLower.endsWith('.jpg') || imageLower.endsWith('.jpeg')
-      ? 'image/jpeg'
-      : 'image/png';
+const image = recipe
+  ? resolveRecipeImage(recipe.data.image)
+  : { src: '/social-image.png', mimeType: 'image/png' };
+const pageImage = new URL(image.src, Astro.site).href;
+const ogImageType = image.mimeType;
+
+const jsonLd = recipe
+  ? recipeJsonLd(recipe.data, { url: canonicalUrl, imageUrl: pageImage })
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      url: canonicalUrl,
+      name: pageTitle,
+      headline: pageTitle,
+      alternateName:
+        'OpenStove – A Curated Collection of Community-Crafted Recipes',
+      description: pageDescription,
+      image: pageImage,
+      isPartOf: {
+        '@type': 'WebSite',
+        url: 'https://openstove.org',
+        name: 'OpenStove',
+        description:
+          'Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository.',
+      },
+      inLanguage: 'en-US',
+    };
 ---
 
 <!-- Canonical URL -->
@@ -61,84 +61,7 @@ const ogImageType = imageLower.endsWith('.avif')
 <meta name="robots" content={robots} />
 <meta name="googlebot" content={robots} />
 
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify(
-    (() => {
-      if (recipeData && type === 'article') {
-        const recipeSchema: Record<string, unknown> = {
-          '@context': 'https://schema.org',
-          '@type': 'Recipe',
-          name: pageTitle.replace(' | OpenStove', ''),
-          description: pageDescription,
-          image: pageImage,
-          url: canonicalUrl,
-          author: {
-            '@type': 'Person',
-            name: recipeData.author || 'Anonymous',
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'OpenStove',
-            url: 'https://openstove.org',
-          },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': canonicalUrl,
-          },
-        };
-
-        if (recipeData.pubDate) {
-          recipeSchema.datePublished = recipeData.pubDate.toISOString();
-        }
-        if (recipeData.cookingTime) {
-          recipeSchema.cookTime = `PT${recipeData.cookingTime}M`;
-          recipeSchema.totalTime = `PT${recipeData.cookingTime}M`;
-        }
-        if (recipeData.servings) {
-          recipeSchema.recipeYield = `${recipeData.servings} servings`;
-        }
-        if (recipeData.ingredients && recipeData.ingredients.length > 0) {
-          recipeSchema.recipeIngredient = recipeData.ingredients.flatMap(
-            group => group.items.map(item => formatIngredientLine(item))
-          );
-        }
-        if (recipeData.steps && recipeData.steps.length > 0) {
-          recipeSchema.recipeInstructions = recipeData.steps.map(
-            (step, index) => ({
-              '@type': 'HowToStep',
-              position: index + 1,
-              name: step.title || `Step ${index + 1}`,
-              text: step.actions.join(' '),
-            })
-          );
-        }
-
-        return recipeSchema;
-      }
-
-      return {
-        '@context': 'https://schema.org',
-        '@type': pageType === 'article' ? 'Article' : 'WebPage',
-        url: canonicalUrl,
-        name: pageTitle,
-        headline: pageTitle,
-        alternateName:
-          'OpenStove – A Curated Collection of Community-Crafted Recipes',
-        description: pageDescription,
-        image: pageImage,
-        isPartOf: {
-          '@type': 'WebSite',
-          url: 'https://openstove.org',
-          name: 'OpenStove',
-          description:
-            'Explore OpenStove, a curated collection of ad-free, community-shared recipes. Connect with cooking enthusiasts and contribute to our GitHub-hosted culinary repository.',
-        },
-        inLanguage: 'en-US',
-      };
-    })()
-  )}
-/>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 <meta content={pageDescription} name="description" />
 <meta content="Emil Gulamov" name="web_author" />
