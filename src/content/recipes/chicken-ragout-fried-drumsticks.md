@@ -72,7 +72,8 @@ ingredients:
         name: 'oil, for sautéing'
   - title: 'For the Sautéed Greens:'
     items:
-      - quantity: '2 cups'
+      - quantity: '2'
+        unit: 'cups'
         name: 'greens (spinach, kale, Swiss chard, etc.), washed and chopped'
       - quantity: '1'
         unit: 'tablespoon'

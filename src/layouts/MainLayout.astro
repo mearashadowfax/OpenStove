@@ -1,48 +1,28 @@
 ---
 import { Font } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import Meta from '@components/Meta.astro';
 import '@styles/global.css';
 
-const {
-  title = 'OpenStove',
-  description,
-  image,
-  type,
-  url,
-  canonicalUrl,
-  recipeData,
-  robots,
-} = Astro.props;
-
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
-  type?: 'website' | 'article';
   url?: string;
   canonicalUrl?: string;
   robots?: string;
-  recipeData?: {
-    author?: string;
-    pubDate?: Date;
-    cookingTime?: number;
-    servings?: number;
-    ingredients?: Array<{
-      title?: string;
-      items: Array<{
-        quantity?: string;
-        unit?: string;
-        name: string;
-      }>;
-    }>;
-    steps?: Array<{
-      title?: string;
-      actions: string[];
-    }>;
-  };
+  recipe?: CollectionEntry<'recipes'>;
 }
+
+const {
+  title = 'OpenStove',
+  description,
+  url,
+  canonicalUrl,
+  robots,
+  recipe,
+} = Astro.props;
 
 const currentUrl =
   url ||
@@ -63,10 +43,8 @@ const currentUrl =
       url={currentUrl}
       title={title}
       description={description}
-      image={image}
-      type={type}
       robots={robots}
-      recipeData={recipeData}
+      recipe={recipe}
     />
     <script is:inline>
       'dark' === localStorage.getItem('hs_theme') ||

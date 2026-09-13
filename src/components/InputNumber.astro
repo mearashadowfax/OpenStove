@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { formatIngredientLine } from '@/lib/quantity';
 
 const { recipe } = Astro.props;
 
@@ -123,12 +124,13 @@ const maxServings = Math.max(baseServings * 6, 12);
         <ul class="flex max-w-xs flex-col divide-y divide-stone-200 dark:divide-stone-700">
           {ingredient.items.map(item => (
             <li
+              data-ingredient
               data-quantity={item.quantity}
               data-unit={item.unit}
               data-name={item.name}
-              class="count inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
+              class="inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
             >
-              {[item.quantity, item.unit, item.name].filter(Boolean).join(' ')}
+              {formatIngredientLine(item)}
             </li>
           ))}
         </ul>
@@ -136,134 +138,43 @@ const maxServings = Math.max(baseServings * 6, 12);
     ))
   }
 </div>
-<script define:vars={{ isScalable }}>
-  if (isScalable) {
-    const control = document.querySelector('[data-serving-control]');
-    const servingsInput = control?.querySelector('[data-serving-input]');
-    const increment = control?.querySelector('[data-serving-increment]');
-    const decrement = control?.querySelector('[data-serving-decrement]');
-    const hint = document.querySelector('[data-serving-hint]');
+<script>
+  import { formatIngredientLine } from '@/lib/quantity';
 
-    const baseServings = Number(control?.dataset.baseServings) || 1;
-    const maxServings = Number(control?.dataset.maxServings) || 12;
+  const control = document.querySelector<HTMLElement>('[data-serving-control]');
+
+  // Non-scalable recipes render no control; nothing to wire up.
+  if (control) {
+    const servingsInput = control.querySelector<HTMLInputElement>(
+      '[data-serving-input]'
+    );
+    const increment = control.querySelector<HTMLButtonElement>(
+      '[data-serving-increment]'
+    );
+    const decrement = control.querySelector<HTMLButtonElement>(
+      '[data-serving-decrement]'
+    );
+    const hint = document.querySelector<HTMLElement>('[data-serving-hint]');
+    const lines = document.querySelectorAll<HTMLElement>('[data-ingredient]');
+
+    const baseServings = Number(control.dataset.baseServings) || 1;
+    const maxServings = Number(control.dataset.maxServings) || 12;
     const minServings = 1;
 
     let currentServings = baseServings;
 
-    const UNICODE_FRACTIONS = {
-      '1/2': '½',
-      '1/3': '⅓',
-      '2/3': '⅔',
-      '1/4': '¼',
-      '3/4': '¾',
-      '1/5': '⅕',
-      '2/5': '⅖',
-      '3/5': '⅗',
-      '4/5': '⅘',
-      '1/6': '⅙',
-      '5/6': '⅚',
-      '1/8': '⅛',
-      '3/8': '⅜',
-      '5/8': '⅝',
-      '7/8': '⅞',
-    };
-
-    const FRACTION_CANDIDATES = [
-      [1, 8],
-      [1, 6],
-      [1, 5],
-      [1, 4],
-      [1, 3],
-      [2, 5],
-      [1, 2],
-      [3, 5],
-      [2, 3],
-      [3, 4],
-      [4, 5],
-      [5, 6],
-      [3, 8],
-      [5, 8],
-      [7, 8],
-    ];
-
-    function parseFraction(fraction) {
-      const value = String(fraction).trim();
-      if (!value) return NaN;
-
-      const mixed = value.match(/^(\d+)\s+(\d+)\/(\d+)$/);
-      if (mixed) {
-        return Number(mixed[1]) + Number(mixed[2]) / Number(mixed[3]);
-      }
-
-      if (value.includes('/')) {
-        const [numerator, denominator] = value.split('/').map(Number);
-        return denominator > 0 ? numerator / denominator : NaN;
-      }
-
-      return parseFloat(value);
-    }
-
-    function formatQuantity(value) {
-      if (!Number.isFinite(value)) return '';
-
-      const rounded = Math.round(value * 1000) / 1000;
-      if (Math.abs(rounded) < 0.001) return '';
-
-      const whole = Math.floor(rounded + 1e-9);
-      const fractionPart = rounded - whole;
-
-      if (fractionPart < 0.001) {
-        return String(whole);
-      }
-
-      let best = null;
-      let bestError = Infinity;
-      for (const [numerator, denominator] of FRACTION_CANDIDATES) {
-        const error = Math.abs(fractionPart - numerator / denominator);
-        if (error < bestError) {
-          bestError = error;
-          best = [numerator, denominator];
-        }
-      }
-
-      if (best && bestError < 0.04) {
-        const key = `${best[0]}/${best[1]}`;
-        const unicode = UNICODE_FRACTIONS[key];
-        const fractionText = unicode || key;
-        if (whole === 0) return fractionText;
-        return unicode ? `${whole}${unicode}` : `${whole} ${key}`;
-      }
-
-      return parseFloat(rounded.toFixed(2)).toString();
-    }
-
-    function adjustQuantity(quantity, scale) {
-      if (!quantity) return '';
-      const parsedQuantity = parseFraction(quantity);
-      if (Number.isNaN(parsedQuantity)) return quantity;
-      return formatQuantity(parsedQuantity * scale);
-    }
-
-    function formatIngredient(quantity, unit, name) {
-      return [quantity, unit, name]
-        .map(part => (part || '').trim())
-        .filter(Boolean)
-        .join(' ');
-    }
-
-    function updateIngredientQuantities() {
-      const scale = currentServings / baseServings;
-      document.querySelectorAll('.count').forEach(countElement => {
-        const { quantity, unit, name } = countElement.dataset;
-        countElement.textContent = formatIngredient(
-          adjustQuantity(quantity || '', scale),
-          unit || '',
-          name || ''
+    function updateIngredientLines() {
+      const factor = currentServings / baseServings;
+      lines.forEach(line => {
+        const { quantity, unit, name = '' } = line.dataset;
+        line.textContent = formatIngredientLine(
+          { quantity, unit, name },
+          factor
         );
       });
     }
 
-    function updateServings(nextServings) {
+    function updateServings(nextServings: number) {
       currentServings = Math.min(
         maxServings,
         Math.max(minServings, nextServings)
@@ -280,10 +191,8 @@ const maxServings = Math.max(baseServings * 6, 12);
       increment?.toggleAttribute('disabled', currentServings >= maxServings);
       decrement?.toggleAttribute('disabled', currentServings <= minServings);
 
-      updateIngredientQuantities();
+      updateIngredientLines();
     }
-
-    updateServings(baseServings);
 
     increment?.addEventListener('click', () => {
       updateServings(currentServings + 1);

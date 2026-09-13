@@ -6,6 +6,8 @@ Thank you for your interest in contributing to OpenStove! We value your contribu
 
 No Git required – use the [Contribute form](https://openstove.org/contribute) on the site. Submissions open a GitHub issue with generated Markdown for maintainers to review.
 
+In the form, ingredients are one per line as `quantity | unit | name` (or `quantity | name`, or just a name), and steps are one action per line. Start an ingredient group or a step section with a `## Title` line. Give the servings the quantities make, and tick "Readers can't scale this recipe" for whole cakes, pies and loaves.
+
 ## GitHub pull request path
 
 To contribute via Git, please make sure you have:
@@ -49,7 +51,7 @@ steps:
 ingredients:
   - title: 'Ingredient List Title' # Example: "For the Pastry Crust:", "For the Lemon Filling:" (Optional, can be left blank if there's no separate list title)
     items:
-      - quantity: '1/2' # Use fractional numbers like 1/2 or decimal numbers like 0.5.
+      - quantity: '1/2' # A number (2), decimal (1.5), fraction (1/2), mixed number (1 1/2) or range (3-4). Put units in `unit`, never here: '125g' is rejected.
         unit: 'tablespoon' # Optional unit of measurement. Examples: cup, tablespoon, teaspoon, gram.
         name: 'vegetable oil' # Ingredient name only, without the measurement unit.
       - quantity: '' # If an ingredient does not require a specific quantity, such as "Salt and pepper to taste", leave the quantity blank.
@@ -70,19 +72,11 @@ tags: ['tag1', 'tag2', 'tag3'] # Describe the dish with appropriate tags, max 3 
 ---
 ```
 
-### Important Notes About Recipe Scaling
+### Servings and scaling
 
-**For scalable recipes** (salads, soups, stir-fries, individual portions):
-
-- **Do not include** `servings:` or `scalable:` fields
-- Write ingredients for **1 serving**
-- Users can scale up (1 serving → 2 servings → 3 servings, etc.)
-
-**For non-scalable recipes** (whole cakes, pies, pizzas, bread loaves):
-
-- **Include both** `servings: X` and `scalable: false` fields
-- Write ingredients for the **entire recipe**
-- Users see "Serves X people" instead of scaling controls
+- `servings: X` is how many servings your ingredient quantities make. Leave it out for a single serving.
+- Readers get a servings stepper that multiplies the quantities from that starting point, so write quantities that scale cleanly (per-serving amounts work best for salads, soups and stir-fries).
+- For recipes that cannot be multiplied (whole cakes, pies, pizzas, bread loaves) add `scalable: false`; readers then see "Serves X people" instead of the stepper.
 
 Be sure to adhere to the placeholder structure, replacing the fields with the relevant details of your recipe. If an image is not provided, leave the image field empty. Maintainers host licensed photos on a private CDN (not in this repository) and set the filename after review.
 

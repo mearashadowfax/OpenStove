@@ -1,40 +1,25 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
-import RecipeCard from '@components/RecipeCard.astro';
-import Pagination from '@components/Pagination.astro';
+import RecipeGrid from '@components/RecipeGrid.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import { RECIPES_PER_PAGE } from '@constants';
+import { listRecipes, parsePage, queryPaging } from '@/lib/catalogue';
 
 export const prerender = false;
 
-const pageParam = Astro.url.searchParams.get('page');
-const currentPage =
-  pageParam && !isNaN(+pageParam) ? Math.max(1, +pageParam) : 1;
+const requestedPage = parsePage(Astro.url.searchParams.get('page'));
+const recipes = listRecipes(await getCollection('recipes'), {
+  page: requestedPage,
+  pathFor: queryPaging('/recipes'),
+});
 
-const allRecipes: CollectionEntry<'recipes'>[] = (
-  await getCollection('recipes')
-).sort(
-  (a: CollectionEntry<'recipes'>, b: CollectionEntry<'recipes'>) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const totalPages = Math.ceil(allRecipes.length / RECIPES_PER_PAGE);
-
-if (totalPages > 0 && currentPage > totalPages) {
-  return Astro.redirect(`/recipes?page=${totalPages}`);
+if (recipes.page !== requestedPage) {
+  return Astro.redirect(recipes.pathFor(recipes.page));
 }
 
-const recipesPerPage = allRecipes.slice(
-  (currentPage - 1) * RECIPES_PER_PAGE,
-  currentPage * RECIPES_PER_PAGE
-);
-
-// Canonical URL: use /recipes for page 1, /recipes?page=X for other pages
-const canonicalUrl =
-  currentPage === 1 ? '/recipes' : `/recipes?page=${currentPage}`;
-const pageDescription = `Explore our collection of ${allRecipes.length} community-crafted recipes. Browse page ${currentPage} of ${totalPages}.`;
+const currentPage = recipes.page;
+const canonicalUrl = recipes.pathFor(currentPage);
+const pageDescription = `Explore our collection of ${recipes.totalItems} community-crafted recipes. Browse page ${currentPage} of ${recipes.totalPages}.`;
 ---
 
 <MainLayout
@@ -111,15 +96,8 @@ const pageDescription = `Explore our collection of ${allRecipes.length} communit
   </div>
 
   {/* Recipe Cards */}
-  <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl) py-10 lg:py-14">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {recipesPerPage.map(recipe => <RecipeCard recipe={recipe} />)}
-    </div>
-    <Pagination
-      currentPage={currentPage}
-      totalPages={totalPages}
-      basePath="/recipes"
-    />
+  <div class="py-10 lg:py-14">
+    <RecipeGrid page={recipes} />
   </div>
 
   {/* Community Card*/}

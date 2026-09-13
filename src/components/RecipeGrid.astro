@@ -1,0 +1,26 @@
+---
+import type { RecipePage } from '@/lib/catalogue';
+import RecipeCard from './RecipeCard.astro';
+import Pagination from './Pagination.astro';
+
+interface Props {
+  page: RecipePage;
+}
+
+const { page } = Astro.props;
+---
+
+<div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl)">
+  {
+    page.items.length === 0 ? (
+      <slot name="empty" />
+    ) : (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {page.items.map(recipe => (
+          <RecipeCard recipe={recipe} />
+        ))}
+      </div>
+    )
+  }
+  {page.totalPages > 1 && <Pagination page={page} />}
+</div>

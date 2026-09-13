@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+import { QUANTITY_PATTERN, QUANTITY_PATTERN_MESSAGE } from './lib/quantity';
 
 const recipes = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/recipes' }),
@@ -32,7 +33,10 @@ const recipes = defineCollection({
           title: z.string().optional(),
           items: z.array(
             z.object({
-              quantity: z.string().optional(),
+              quantity: z
+                .string()
+                .regex(QUANTITY_PATTERN, QUANTITY_PATTERN_MESSAGE)
+                .optional(),
               unit: z.string().optional(),
               name: z.string(),
             })

@@ -1,30 +1,18 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
-import RecipeCard from '@components/RecipeCard.astro';
+import RecipeGrid from '@components/RecipeGrid.astro';
 import EmptyState from '@components/EmptyState.astro';
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { byIds, listRecipes } from '@/lib/catalogue';
+import { BOOKMARKS_COOKIE, parseBookmarks } from '@/lib/bookmarks';
 
 export const prerender = false;
 
-let savedRecipes: CollectionEntry<'recipes'>[] = [];
-const cookieObject = Astro.cookies.get('bookmarks');
+const savedIds = parseBookmarks(Astro.cookies.get(BOOKMARKS_COOKIE)?.value);
 
-const allRecipes: CollectionEntry<'recipes'>[] = await getCollection('recipes');
-
-if (cookieObject) {
-  try {
-    const storedBookmarks = cookieObject.json() as unknown;
-    if (Array.isArray(storedBookmarks)) {
-      const ids = storedBookmarks.filter(
-        (id): id is string => typeof id === 'string'
-      );
-      savedRecipes = allRecipes.filter(recipe => ids.includes(recipe.id));
-    }
-  } catch {
-    savedRecipes = [];
-  }
-}
+const saved = listRecipes(byIds(await getCollection('recipes'), savedIds), {
+  perPage: Number.MAX_SAFE_INTEGER,
+});
 ---
 
 <MainLayout
@@ -46,23 +34,14 @@ if (cookieObject) {
       </div>
     </div>
 
-    <div id="recipeCards" class="mx-auto max-w-(--breakpoint-2xl)">
-      {
-        savedRecipes.length === 0 ? (
-          <EmptyState
-            title="No saved recipes yet"
-            description="Tap the bookmark icon on any recipe to save it here. Bookmarks are stored in a cookie in this browser."
-            primaryHref="/recipes"
-            primaryLabel="Browse recipes"
-          />
-        ) : (
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {savedRecipes.map(recipe => (
-              <RecipeCard recipe={recipe} />
-            ))}
-          </div>
-        )
-      }
-    </div>
+    <RecipeGrid page={saved}>
+      <EmptyState
+        slot="empty"
+        title="No saved recipes yet"
+        description="Tap the bookmark icon on any recipe to save it here. Bookmarks are stored in a cookie in this browser."
+        primaryHref="/recipes"
+        primaryLabel="Browse recipes"
+      />
+    </RecipeGrid>
   </section>
 </MainLayout>

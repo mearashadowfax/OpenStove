@@ -1,5 +1,5 @@
 ---
-import { capitalize } from '../utils';
+import { tagHref, tagLabel } from '@/lib/tag';
 const { tags } = Astro.props;
 
 interface Props {
@@ -12,9 +12,9 @@ interface Props {
     <a
       class="focus-visible:ring-secondary text-on-brand corner-squircle bg-secondary/30 hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-600"
       data-astro-prefetch
-      href={'/recipes/tag/' + encodeURIComponent(tag)}
+      href={tagHref(tag)}
     >
-      {capitalize(tag)}
+      {tagLabel(tag)}
     </a>
   ))
 }

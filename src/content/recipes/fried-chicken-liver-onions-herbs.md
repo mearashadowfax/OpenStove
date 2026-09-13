@@ -28,7 +28,8 @@ steps:
 ingredients:
   - title: ''
     items:
-      - quantity: '125g'
+      - quantity: '125'
+        unit: 'g'
         name: 'chicken liver, cleaned and trimmed'
       - quantity: '1/2'
         name: 'large onion, sliced into rings'

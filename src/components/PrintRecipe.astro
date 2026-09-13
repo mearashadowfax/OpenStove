@@ -26,16 +26,9 @@
 </button>
 
 <script>
-  function bindPrintButtons() {
-    document
-      .querySelectorAll<HTMLButtonElement>('[data-print-recipe]')
-      .forEach(button => {
-        if (button.dataset.printBound === 'true') return;
-        button.dataset.printBound = 'true';
-        button.addEventListener('click', () => window.print());
-      });
-  }
-
-  bindPrintButtons();
-  document.addEventListener('astro:page-load', bindPrintButtons);
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-print-recipe]')
+    .forEach(button => {
+      button.addEventListener('click', () => window.print());
+    });
 </script>

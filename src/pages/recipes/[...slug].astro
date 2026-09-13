@@ -8,8 +8,6 @@ import Bookmark from '@components/Bookmark.astro';
 import Clipboard from '@components/Clipboard.astro';
 import RecipeImage from '@components/RecipeImage.astro';
 import PrintRecipe from '@components/PrintRecipe.astro';
-import { formatDate } from '@utils';
-import { resolveRecipeImage } from '@/lib/recipeImage';
 import { getCollection, getEntry } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 
@@ -39,24 +37,19 @@ const recipeTitle = entry.data.title + ' | OpenStove';
 const recipeDescription =
   entry.data.description ||
   `Learn how to make ${entry.data.title} with this delicious recipe from OpenStove.`;
-const recipeImage = resolveRecipeImage(entry.data.image);
 const recipePath = Astro.url.pathname;
+const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
 ---
 
 <MainLayout
   title={recipeTitle}
   description={recipeDescription}
-  image={recipeImage}
-  type="article"
   url={recipeUrl}
-  recipeData={{
-    author: entry.data.author,
-    pubDate: entry.data.pubDate,
-    cookingTime: entry.data.cookingTime,
-    servings: entry.data.servings,
-    ingredients: entry.data.ingredients,
-    steps: entry.data.steps,
-  }}
+  recipe={entry}
 >
   <section class="recipe-print-root mt-10 pt-6 sm:pt-8 lg:pt-12">
     <div class="recipe-print-brand" aria-hidden="true">
@@ -108,7 +101,7 @@ const recipePath = Astro.url.pathname;
           <li
             class="relative inline-block pe-6 text-xs text-stone-500 before:absolute before:end-2 before:top-1/2 before:h-1 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-stone-400 last:pe-0 last-of-type:before:hidden 2xl:text-sm dark:text-stone-400 dark:before:bg-stone-600"
           >
-            {formatDate(entry.data.pubDate)}
+            {publishedOn}
           </li>
         </ul>
       </div>
@@ -143,7 +136,7 @@ const recipePath = Astro.url.pathname;
 
         <div class="no-print inline-flex items-center gap-x-1">
           <PrintRecipe />
-          <Bookmark />
+          <Bookmark recipeId={entry.id} />
         </div>
       </div>
     </div>
@@ -256,7 +249,7 @@ const recipePath = Astro.url.pathname;
       </div>
       <div class="inline-flex items-center gap-x-1">
         <PrintRecipe />
-        <Bookmark />
+        <Bookmark recipeId={entry.id} />
       </div>
     </div>
     {/* End Bottom Bar Container */}

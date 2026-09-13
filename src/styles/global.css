@@ -74,6 +74,10 @@
 
 @custom-variant search-cancel (&::-webkit-search-cancel-button);
 
+@utility form-control {
+  @apply text-dark corner-squircle focus-visible:border-secondary focus-visible:ring-secondary/50 dark:focus-visible:border-secondary dark:focus-visible:ring-secondary/40 w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 text-base transition-[color,box-shadow,border-color] outline-none placeholder:text-stone-400 focus-visible:ring-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/20;
+}
+
 .recipe-print-brand,
 .recipe-print-source {
   display: none;
@@ -277,7 +281,7 @@
     max-width: none !important;
   }
 
-  .recipe-print-ingredients li.count {
+  .recipe-print-ingredients li[data-ingredient] {
     display: block !important;
     padding: 1.5mm 0 !important;
     border-bottom: 0.5pt solid var(--color-stone-200, #e7e5e4) !important;
