@@ -1,7 +1,16 @@
+---
+interface Props {
+  recipeId: string;
+}
+
+const { recipeId } = Astro.props;
+---
+
 <button
   type="button"
   class="group text-dark focus-visible:ring-secondary corner-squircle inline-flex items-center rounded-4xl p-2.5 hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden dark:text-stone-100 dark:hover:bg-stone-700"
-  data-bookmark-button="bookmark-button"
+  data-bookmark-button
+  data-recipe-id={recipeId}
   aria-label="Save recipe"
   aria-pressed="false"
 >
@@ -21,110 +30,82 @@
     ></path>
   </svg>
 </button>
+<span
+  class="text-xs text-stone-500 dark:text-stone-400"
+  data-bookmark-hint
+  role="status"
+  hidden
+>
+  Saved list is full
+</span>
 
 <script>
-  class Bookmark {
-    bookMarkId: string;
-    bookmarkButtons: NodeListOf<Element>;
-    constructor(dataAttrValue: string) {
-      const match = window.location.pathname.match(/^\/recipes\/(.+)/);
-      this.bookMarkId = match?.[1] ? decodeURIComponent(match[1]) : '';
-      this.bookmarkButtons = document.querySelectorAll(
-        `[data-bookmark-button="${dataAttrValue}"]`
+  import {
+    BOOKMARKS_COOKIE,
+    BOOKMARKS_MAX_AGE_DAYS,
+    parseBookmarks,
+    serializeBookmarks,
+    toggleBookmark,
+  } from '@/lib/bookmarks';
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>(
+    '[data-bookmark-button]'
+  );
+  const hints = document.querySelectorAll<HTMLElement>('[data-bookmark-hint]');
+  const recipeId = buttons[0]?.dataset.recipeId;
+
+  function readCookie(): string | undefined {
+    const prefix = `${BOOKMARKS_COOKIE}=`;
+    return document.cookie
+      .split(';')
+      .map(part => part.trim())
+      .find(part => part.startsWith(prefix))
+      ?.slice(prefix.length);
+  }
+
+  function writeCookie(value: string) {
+    const expires = new Date(
+      Date.now() + BOOKMARKS_MAX_AGE_DAYS * 24 * 60 * 60 * 1000
+    ).toUTCString();
+    const secure = location.protocol === 'https:' ? ';Secure' : '';
+    document.cookie = `${BOOKMARKS_COOKIE}=${value};expires=${expires};path=/${secure};SameSite=Lax`;
+  }
+
+  function render(saved: boolean) {
+    buttons.forEach(button => {
+      button.classList.toggle('bookmarked', saved);
+      button.setAttribute('aria-pressed', String(saved));
+      button.setAttribute(
+        'aria-label',
+        saved ? 'Remove from saved' : 'Save recipe'
       );
-    }
-    init(): void {
-      if (!this.bookMarkId) return;
-      if (this.isStored()) {
-        this.markAsStored();
-      }
-      this.bookmarkButtons.forEach((button: Element) => {
-        button.addEventListener('click', () => this.toggleBookmark());
-      });
-    }
-    isStored(): boolean {
-      let storedBookmarks: string[] = getCookie('bookmarks')
-        ? JSON.parse(getCookie('bookmarks'))
-        : [];
-      return storedBookmarks.includes(this.bookMarkId);
-    }
-    markAsStored(): void {
-      this.bookmarkButtons.forEach((button: Element) => {
-        button.classList.add('bookmarked');
-        button.setAttribute('aria-pressed', 'true');
-        button.setAttribute('aria-label', 'Remove from saved');
-        let svgElement = button.querySelector('svg');
-        if (svgElement) {
-          svgElement.setAttribute(
-            'class',
-            'h-6 w-6 fill-secondary dark:fill-primary'
-          );
-        }
-        let pathElement = svgElement?.querySelector('path');
-        if (pathElement) {
-          pathElement.setAttribute('class', 'text-secondary dark:text-primary');
-        }
-      });
-    }
-    unmarkAsStored(): void {
-      this.bookmarkButtons.forEach((button: Element) => {
-        button.classList.remove('bookmarked');
-        button.setAttribute('aria-pressed', 'false');
-        button.setAttribute('aria-label', 'Save recipe');
-        let svgElement = button.querySelector('svg');
-        if (svgElement) {
-          svgElement.setAttribute('class', 'h-6 w-6 fill-none');
-        }
-        let pathElement = svgElement?.querySelector('path');
-        if (pathElement) {
-          pathElement.setAttribute(
-            'class',
-            'text-dark group-hover:text-secondary dark:text-stone-100 dark:group-hover:text-primary'
-          );
-        }
-      });
-    }
-    toggleBookmark(): void {
-      let storedBookmarks: string[] = getCookie('bookmarks')
-        ? JSON.parse(getCookie('bookmarks'))
-        : [];
-      const index = storedBookmarks.indexOf(this.bookMarkId);
-      if (index !== -1) {
-        storedBookmarks.splice(index, 1);
-        this.unmarkAsStored();
-      } else {
-        storedBookmarks.push(this.bookMarkId);
-        this.markAsStored();
-      }
-      setCookie('bookmarks', JSON.stringify(storedBookmarks), 180);
-    }
+      const svg = button.querySelector('svg');
+      svg?.setAttribute(
+        'class',
+        saved ? 'h-6 w-6 fill-secondary dark:fill-primary' : 'h-6 w-6 fill-none'
+      );
+      svg
+        ?.querySelector('path')
+        ?.setAttribute(
+          'class',
+          saved
+            ? 'text-secondary dark:text-primary'
+            : 'text-dark group-hover:text-secondary dark:text-stone-100 dark:group-hover:text-primary'
+        );
+    });
   }
 
-  let bookmark = new Bookmark('bookmark-button');
-  bookmark.init();
+  if (recipeId) {
+    render(parseBookmarks(readCookie()).includes(recipeId));
 
-  function setCookie(cname: string, cvalue: string, exdays: number = 180) {
-    const d = new Date();
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    const expires = 'expires=' + d.toUTCString();
-    const secureFlag = location.protocol === 'https:' ? ';Secure' : '';
-    const sameSitePolicy = 'SameSite=Lax';
-    document.cookie = `${cname}=${cvalue};${expires};path=/${secureFlag};${sameSitePolicy}`;
-  }
-
-  function getCookie(cname: string) {
-    let name = cname + '=';
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return '';
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const result = toggleBookmark(parseBookmarks(readCookie()), recipeId);
+        hints.forEach(hint => (hint.hidden = result.status !== 'full'));
+        if (result.status === 'full') return;
+        writeCookie(serializeBookmarks(result.ids));
+        render(result.status === 'added');
+      });
+    });
   }
 </script>

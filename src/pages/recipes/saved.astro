@@ -4,24 +4,11 @@ import RecipeGrid from '@components/RecipeGrid.astro';
 import EmptyState from '@components/EmptyState.astro';
 import { getCollection } from 'astro:content';
 import { byIds, listRecipes } from '@/lib/catalogue';
+import { BOOKMARKS_COOKIE, parseBookmarks } from '@/lib/bookmarks';
 
 export const prerender = false;
 
-let savedIds: string[] = [];
-const cookieObject = Astro.cookies.get('bookmarks');
-
-if (cookieObject) {
-  try {
-    const storedBookmarks = cookieObject.json() as unknown;
-    if (Array.isArray(storedBookmarks)) {
-      savedIds = storedBookmarks.filter(
-        (id): id is string => typeof id === 'string'
-      );
-    }
-  } catch {
-    savedIds = [];
-  }
-}
+const savedIds = parseBookmarks(Astro.cookies.get(BOOKMARKS_COOKIE)?.value);
 
 const saved = listRecipes(byIds(await getCollection('recipes'), savedIds), {
   perPage: Number.MAX_SAFE_INTEGER,

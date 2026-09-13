@@ -10,7 +10,7 @@ Application code and recipe text live in this public repository. Recipes are Mar
 ## Features
 
 - Community-maintained Markdown recipes
-- Search, tags, pagination, and browser-local bookmarks
+- Search, tags, pagination, and cookie-based bookmarks (per browser, no account)
 - Ingredient scaling
 - Print-friendly recipe pages and browser PDF export
 - Public recipe contribution form with GitHub Issue review

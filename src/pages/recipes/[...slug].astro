@@ -136,7 +136,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
 
         <div class="no-print inline-flex items-center gap-x-1">
           <PrintRecipe />
-          <Bookmark />
+          <Bookmark recipeId={entry.id} />
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
       </div>
       <div class="inline-flex items-center gap-x-1">
         <PrintRecipe />
-        <Bookmark />
+        <Bookmark recipeId={entry.id} />
       </div>
     </div>
     {/* End Bottom Bar Container */}

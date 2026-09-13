@@ -22,3 +22,15 @@ The portion size a recipe's quantities are written for. A recipe that is scalabl
 **Scaling**:
 Multiplying every quantity on a recipe by the ratio of chosen servings to base servings. Quantities outside the grammar are shown as written and never scaled.
 _Avoid_: adjusting, converting
+
+**Catalogue**:
+The full set of published recipes, and any ordered, paged view of it: the listing, a tag's recipes, search results, or a reader's saved recipes. Newest first unless a view has its own order.
+_Avoid_: collection (that is Astro's storage term), list, feed
+
+**Tag**:
+A lowercase word attached to a recipe that groups it with others (salad, soup). A tag has a page.
+_Avoid_: category, label
+
+**Bookmark**:
+A reader's saved recipe, remembered in this browser only. The set of bookmarks is what the saved page shows.
+_Avoid_: favourite, like, saved item
