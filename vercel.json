@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'self'; form-action 'self' https://github.com; frame-src 'self' https://challenges.cloudflare.com https://github.com; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.public.blob.vercel-storage.com https://*.r2.dev https://*.cloudflarestorage.com https://avatars.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://api.github.com https://github.com; object-src 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; base-uri 'self'; form-action 'self' https://github.com; frame-src 'self' https://challenges.cloudflare.com https://github.com; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.public.blob.vercel-storage.com https://*.r2.dev https://*.cloudflarestorage.com https://avatars.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://api.github.com https://raw.githubusercontent.com https://github.com; object-src 'none'; upgrade-insecure-requests"
         },
         {
           "key": "Permissions-Policy",
