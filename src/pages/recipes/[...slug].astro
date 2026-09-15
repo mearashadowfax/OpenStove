@@ -3,7 +3,7 @@ import MainLayout from '@layouts/MainLayout.astro';
 import Stepper from '@components/Stepper.astro';
 import Tabs from '@components/Tabs.astro';
 import Tags from '@components/Tags.astro';
-import InputNumber from '@components/InputNumber.astro';
+import Ingredients from '@components/Ingredients.astro';
 import Bookmark from '@components/Bookmark.astro';
 import Clipboard from '@components/Clipboard.astro';
 import RecipeImage from '@components/RecipeImage.astro';
@@ -224,7 +224,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
           >
             Ingredients:
           </h2>
-          <InputNumber recipe={entry} />
+          <Ingredients recipe={entry} />
         </section>
       </div>
     </div>

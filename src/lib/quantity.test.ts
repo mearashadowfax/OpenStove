@@ -4,6 +4,7 @@ import {
   formatIngredientLine,
   formatQuantity,
   parseQuantity,
+  recipeMeasurementSystem,
   scaleQuantity,
 } from './quantity';
 
@@ -113,5 +114,342 @@ describe('formatIngredientLine', () => {
     expect(formatIngredientLine({ quantity: 'a pinch', name: 'salt' }, 3)).toBe(
       'a pinch salt'
     );
+  });
+});
+
+describe('formatIngredientLine with a measurement system', () => {
+  it('converts a cup of a known dry ingredient to grams under metric', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '2', unit: 'cup', name: 'all-purpose flour' },
+        1,
+        'metric'
+      )
+    ).toBe('240 g all-purpose flour');
+  });
+
+  it('converts a cup of a liquid to millilitres under metric', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'water' },
+        1,
+        'metric'
+      )
+    ).toBe('240 ml water');
+    expect(
+      formatIngredientLine(
+        { quantity: '1/2', unit: 'cup', name: 'chicken or vegetable broth' },
+        1,
+        'metric'
+      )
+    ).toBe('120 ml chicken or vegetable broth');
+  });
+
+  it('leaves a cup of an unrecognised ingredient as written', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'cherry tomatoes' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup cherry tomatoes');
+  });
+
+  it('converts pounds and ounces to grams regardless of ingredient', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'lb', name: 'chicken' },
+        1,
+        'metric'
+      )
+    ).toBe('450 g chicken');
+    expect(
+      formatIngredientLine(
+        { quantity: '8', unit: 'ounce', name: 'cream cheese' },
+        1,
+        'metric'
+      )
+    ).toBe('220 g cream cheese');
+  });
+
+  it('scales, then converts, then rounds once', () => {
+    // 1/2 cup x 3 = 1.5 cups x 120 g = 180 g; rounding each step would drift.
+    expect(
+      formatIngredientLine(
+        { quantity: '1/2', unit: 'cup', name: 'flour' },
+        3,
+        'metric'
+      )
+    ).toBe('180 g flour');
+    // 1/3 cup x 3 = 1 cup = 240 ml exactly, not 3 x 80.
+    expect(
+      formatIngredientLine(
+        { quantity: '1/3', unit: 'cup', name: 'milk' },
+        3,
+        'metric'
+      )
+    ).toBe('240 ml milk');
+  });
+
+  it('converts grams of a known dry ingredient to cups under us', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '250', unit: 'g', name: 'flour' },
+        1,
+        'us'
+      )
+    ).toBe('2 cups flour');
+    expect(
+      formatIngredientLine(
+        { quantity: '100', unit: 'gram', name: 'flour' },
+        1,
+        'us'
+      )
+    ).toBe('¾ cup flour');
+  });
+
+  it('converts grams of anything else to ounces or pounds under us', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '450', unit: 'g', name: 'chicken' },
+        1,
+        'us'
+      )
+    ).toBe('1 lb chicken');
+    expect(
+      formatIngredientLine(
+        { quantity: '200', unit: 'g', name: 'salmon' },
+        1,
+        'us'
+      )
+    ).toBe('7 oz salmon');
+  });
+
+  it('converts millilitres to cups under us', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '500', unit: 'ml', name: 'broth' },
+        1,
+        'us'
+      )
+    ).toBe('2 cups broth');
+    expect(
+      formatIngredientLine(
+        { quantity: '80', unit: 'ml', name: 'water' },
+        1,
+        'us'
+      )
+    ).toBe('⅓ cup water');
+  });
+
+  it('leaves a line already in the chosen system untouched', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '2', unit: 'cups', name: 'flour' },
+        1,
+        'us'
+      )
+    ).toBe('2 cups flour');
+    expect(
+      formatIngredientLine(
+        { quantity: '250', unit: 'g', name: 'flour' },
+        1,
+        'metric'
+      )
+    ).toBe('250 g flour');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'tsp', name: 'salt' },
+        1,
+        'metric'
+      )
+    ).toBe('1 tsp salt');
+  });
+
+  it('converts both ends of a range', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1/2-3/4', unit: 'cup', name: 'flour' },
+        1,
+        'metric'
+      )
+    ).toBe('60-90 g flour');
+  });
+
+  it('leaves amounts too small to measure in cups as written', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '30', unit: 'ml', name: 'water' },
+        1,
+        'us'
+      )
+    ).toBe('30 ml water');
+    expect(
+      formatIngredientLine(
+        { quantity: '10', unit: 'g', name: 'flour' },
+        1,
+        'us'
+      )
+    ).toBe('10 g flour');
+  });
+
+  it('leaves grams too small to measure in ounces as written', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '5', unit: 'gram', name: 'ground cinnamon' },
+        1,
+        'us'
+      )
+    ).toBe('5 gram ground cinnamon');
+  });
+
+  it('leaves ounces that scale down to nothing in grams as written', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'oz', name: 'cream cheese' },
+        1 / 12,
+        'metric'
+      )
+    ).toBe('0.08 oz cream cheese');
+  });
+
+  it('converts millilitres to cups only for a recognised ingredient', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '250', unit: 'ml', name: 'honey' },
+        1,
+        'us'
+      )
+    ).toBe('1 cup honey');
+    expect(
+      formatIngredientLine(
+        { quantity: '100', unit: 'ml', name: 'tahini' },
+        1,
+        'us'
+      )
+    ).toBe('100 ml tahini');
+  });
+
+  it('does not mistake a keyword inside a longer word or compound name', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'buttermilk' },
+        1,
+        'metric'
+      )
+    ).toBe('240 ml buttermilk');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'butternut squash, cubed' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup butternut squash, cubed');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'watermelon' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup watermelon');
+    expect(
+      formatIngredientLine(
+        { quantity: '2', unit: 'cups', name: 'boiled potatoes' },
+        1,
+        'metric'
+      )
+    ).toBe('2 cups boiled potatoes');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'milk chocolate, chopped' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup milk chocolate, chopped');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'cream cheese' },
+        1,
+        'metric'
+      )
+    ).toBe('230 g cream cheese');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'sugar snap peas' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup sugar snap peas');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'rice noodles' },
+        1,
+        'metric'
+      )
+    ).toBe('1 cup rice noodles');
+  });
+
+  it('recognises common short forms and plurals', () => {
+    expect(
+      formatIngredientLine(
+        { quantity: '1/2', unit: 'cup', name: 'mayo' },
+        1,
+        'metric'
+      )
+    ).toBe('120 ml mayo');
+    expect(
+      formatIngredientLine(
+        { quantity: '1/4', unit: 'cup', name: 'corn syrup' },
+        1,
+        'metric'
+      )
+    ).toBe('85 g corn syrup');
+    expect(
+      formatIngredientLine(
+        { quantity: '1', unit: 'cup', name: 'chopped pecans' },
+        1,
+        'metric'
+      )
+    ).toBe('100 g chopped pecans');
+  });
+});
+
+describe('recipeMeasurementSystem', () => {
+  it('is null when no line can be converted', () => {
+    expect(
+      recipeMeasurementSystem([
+        { quantity: '2', unit: 'clove', name: 'garlic' },
+        { quantity: '1', unit: 'tsp', name: 'salt' },
+        { quantity: '1', unit: 'cup', name: 'cherry tomatoes' },
+        { quantity: '5', unit: 'g', name: 'ground cinnamon' },
+        { name: 'pepper to taste' },
+      ])
+    ).toBeNull();
+  });
+
+  it('is the system most convertible lines are written in', () => {
+    expect(
+      recipeMeasurementSystem([
+        { quantity: '2', unit: 'cups', name: 'flour' },
+        { quantity: '1', unit: 'lb', name: 'butter' },
+        { quantity: '200', unit: 'g', name: 'sugar' },
+        { quantity: '1', unit: 'tsp', name: 'salt' },
+      ])
+    ).toBe('us');
+    expect(
+      recipeMeasurementSystem([
+        { quantity: '250', unit: 'g', name: 'flour' },
+        { quantity: '200', unit: 'ml', name: 'milk' },
+        { quantity: '1', unit: 'cup', name: 'water' },
+      ])
+    ).toBe('metric');
+  });
+
+  it('ignores lines whose quantity is outside the grammar', () => {
+    expect(
+      recipeMeasurementSystem([
+        { quantity: 'a splash', unit: 'ml', name: 'milk' },
+      ])
+    ).toBeNull();
   });
 });

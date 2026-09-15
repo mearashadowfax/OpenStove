@@ -10,12 +10,14 @@
  *   empty        no quantity ("salt to taste")
  */
 
+import { convertQuantity, type MeasurementSystem } from './measurementSystem';
+
 export interface Quantity {
   min: number;
   max: number;
 }
 
-export interface IngredientItem {
+export interface IngredientLine {
   quantity?: string;
   unit?: string;
   name: string;
@@ -134,19 +136,52 @@ export function formatQuantity(quantity: Quantity): string {
 }
 
 /**
- * Render "quantity unit name" for one ingredient, scaled by `factor`.
+ * Render "quantity unit name" for one ingredient, scaled by `factor` and,
+ * when `system` is given, converted to that measurement system.
  * Text outside the grammar is shown as written and never scaled.
  */
 export function formatIngredientLine(
-  item: IngredientItem,
-  factor: number = 1
+  line: IngredientLine,
+  factor: number = 1,
+  system?: MeasurementSystem
 ): string {
-  const raw = (item.quantity ?? '').trim();
+  const raw = (line.quantity ?? '').trim();
   const parsed = parseQuantity(raw);
-  const quantity = parsed ? formatQuantity(scaleQuantity(parsed, factor)) : raw;
+  let unit = line.unit;
+  let quantity = raw;
 
-  return [quantity, item.unit, item.name]
+  if (parsed) {
+    const scaled = scaleQuantity(parsed, factor);
+    const converted = system
+      ? convertQuantity(scaled, unit ?? '', line.name, system)
+      : null;
+    quantity = formatQuantity(converted ? converted.quantity : scaled);
+    if (converted) unit = converted.unit;
+  }
+
+  return [quantity, unit, line.name]
     .map(part => (part ?? '').trim())
     .filter(Boolean)
     .join(' ');
+}
+
+/**
+ * The system a recipe's convertible lines are written in, for pre-selecting
+ * the toggle so the first render shows the recipe as written. `null` when no
+ * line converts either way, so there is nothing to toggle.
+ */
+export function recipeMeasurementSystem(
+  lines: IngredientLine[]
+): MeasurementSystem | null {
+  let us = 0;
+  let metric = 0;
+  for (const line of lines) {
+    const quantity = parseQuantity(line.quantity);
+    if (!quantity) continue;
+    const unit = line.unit ?? '';
+    if (convertQuantity(quantity, unit, line.name, 'metric')) us += 1;
+    else if (convertQuantity(quantity, unit, line.name, 'us')) metric += 1;
+  }
+  if (us === 0 && metric === 0) return null;
+  return metric > us ? 'metric' : 'us';
 }

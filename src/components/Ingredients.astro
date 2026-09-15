@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIngredientLine } from '@/lib/quantity';
+import MeasurementSystemToggle from '@/components/MeasurementSystemToggle.astro';
+import { formatIngredientLine, recipeMeasurementSystem } from '@/lib/quantity';
 
 const { recipe } = Astro.props;
 
@@ -11,6 +12,11 @@ interface Props {
 const isScalable = recipe.data.scalable !== false;
 const baseServings = recipe.data.servings || 1;
 const maxServings = Math.max(baseServings * 6, 12);
+
+// Null means no line converts either way: no toggle.
+const authorSystem = recipeMeasurementSystem(
+  recipe.data.ingredients?.flatMap(group => group.items) ?? []
+);
 ---
 
 <!-- Serving Size Container -->
@@ -111,6 +117,8 @@ const maxServings = Math.max(baseServings * 6, 12);
 </div>
 {/* End Serving Size Container */}
 
+{authorSystem && <MeasurementSystemToggle authorSystem={authorSystem} />}
+
 {/* Ingredients List Container */}
 <div
   class="flex flex-wrap justify-between gap-6 lg:flex-col lg:flex-nowrap lg:justify-normal lg:gap-0 lg:space-y-4"
@@ -140,39 +148,51 @@ const maxServings = Math.max(baseServings * 6, 12);
 </div>
 <script>
   import { formatIngredientLine } from '@/lib/quantity';
+  import {
+    isMeasurementSystem,
+    type MeasurementSystem,
+  } from '@/lib/measurementSystem';
 
-  const control = document.querySelector<HTMLElement>('[data-serving-control]');
+  const lines = document.querySelectorAll<HTMLElement>('[data-ingredient]');
+  const servingControl = document.querySelector<HTMLElement>(
+    '[data-serving-control]'
+  );
+  const measurementControl = document.querySelector<HTMLElement>(
+    '[data-measurement-control]'
+  );
 
-  // Non-scalable recipes render no control; nothing to wire up.
-  if (control) {
-    const servingsInput = control.querySelector<HTMLInputElement>(
+  const baseServings = Number(servingControl?.dataset.baseServings) || 1;
+  const maxServings = Number(servingControl?.dataset.maxServings) || 12;
+  const minServings = 1;
+
+  let currentServings = baseServings;
+  // Undefined renders the recipe as written.
+  let currentSystem: MeasurementSystem | undefined;
+
+  function updateIngredientLines() {
+    const factor = currentServings / baseServings;
+    lines.forEach(line => {
+      const { quantity, unit, name = '' } = line.dataset;
+      line.textContent = formatIngredientLine(
+        { quantity, unit, name },
+        factor,
+        currentSystem
+      );
+    });
+  }
+
+  // Non-scalable recipes render no serving control; nothing to wire up.
+  if (servingControl) {
+    const servingsInput = servingControl.querySelector<HTMLInputElement>(
       '[data-serving-input]'
     );
-    const increment = control.querySelector<HTMLButtonElement>(
+    const increment = servingControl.querySelector<HTMLButtonElement>(
       '[data-serving-increment]'
     );
-    const decrement = control.querySelector<HTMLButtonElement>(
+    const decrement = servingControl.querySelector<HTMLButtonElement>(
       '[data-serving-decrement]'
     );
     const hint = document.querySelector<HTMLElement>('[data-serving-hint]');
-    const lines = document.querySelectorAll<HTMLElement>('[data-ingredient]');
-
-    const baseServings = Number(control.dataset.baseServings) || 1;
-    const maxServings = Number(control.dataset.maxServings) || 12;
-    const minServings = 1;
-
-    let currentServings = baseServings;
-
-    function updateIngredientLines() {
-      const factor = currentServings / baseServings;
-      lines.forEach(line => {
-        const { quantity, unit, name = '' } = line.dataset;
-        line.textContent = formatIngredientLine(
-          { quantity, unit, name },
-          factor
-        );
-      });
-    }
 
     function updateServings(nextServings: number) {
       currentServings = Math.min(
@@ -201,5 +221,21 @@ const maxServings = Math.max(baseServings * 6, 12);
     decrement?.addEventListener('click', () => {
       updateServings(currentServings - 1);
     });
+  }
+
+  // The toggle announces the reader's choice; it may already have applied a
+  // saved preference before this script ran, so read its state too.
+  if (measurementControl) {
+    document.addEventListener('measurement-system', event => {
+      currentSystem =
+        (event as CustomEvent<MeasurementSystem | null>).detail ?? undefined;
+      updateIngredientLines();
+    });
+
+    const { selected, authorSystem } = measurementControl.dataset;
+    if (isMeasurementSystem(selected) && selected !== authorSystem) {
+      currentSystem = selected;
+      updateIngredientLines();
+    }
   }
 </script>

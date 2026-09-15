@@ -1,0 +1,114 @@
+---
+/**
+ * Lets the reader pick the measurement system for a recipe's ingredient
+ * lines. The recipe's own system is pre-selected so the first render is as
+ * written; a preference saved in this browser overrides that.
+ *
+ * Announces the choice as a `measurement-system` event on `document` whose
+ * detail is the system to convert to, or `null` for as written, and mirrors
+ * it in `data-selected` for anyone who wires up after the event fired.
+ */
+import {
+  MEASUREMENT_SYSTEMS,
+  type MeasurementSystem,
+} from '@/lib/measurementSystem';
+
+interface Props {
+  authorSystem: MeasurementSystem;
+}
+
+const { authorSystem } = Astro.props;
+
+const labels: Record<MeasurementSystem, string> = {
+  us: 'US',
+  metric: 'Metric',
+};
+---
+
+<div class="no-print flex flex-col pb-3 sm:pb-6">
+  <p class="mb-1 text-base" id="measurement-system-label">Measurement system</p>
+  <div
+    class="corner-squircle inline-flex w-fit rounded-4xl bg-orange-200 p-1 transition duration-300 hover:bg-orange-100 dark:bg-stone-700/50 dark:hover:bg-stone-700"
+    role="group"
+    aria-labelledby="measurement-system-label"
+    data-measurement-control
+    data-author-system={authorSystem}
+    data-selected={authorSystem}
+  >
+    {
+      MEASUREMENT_SYSTEMS.map(system => (
+        <button
+          type="button"
+          class="focus-visible:ring-secondary corner-squircle aria-pressed:text-secondary dark:aria-pressed:text-primary-accent-dark inline-flex items-center rounded-4xl bg-transparent px-4 py-2 text-sm font-medium text-stone-600 transition duration-300 hover:text-stone-700 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden aria-pressed:bg-orange-50 dark:text-stone-400 dark:hover:text-stone-200 dark:aria-pressed:bg-stone-800"
+          aria-pressed={system === authorSystem}
+          data-measurement-system={system}
+        >
+          {labels[system]}
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  import {
+    isMeasurementSystem,
+    type MeasurementSystem,
+  } from '@/lib/measurementSystem';
+
+  const STORAGE_KEY = 'measurement_system';
+
+  const control = document.querySelector<HTMLElement>(
+    '[data-measurement-control]'
+  );
+
+  if (control) {
+    const { dataset } = control;
+    const authorSystem = dataset.authorSystem;
+    const buttons = control.querySelectorAll<HTMLButtonElement>(
+      '[data-measurement-system]'
+    );
+
+    function readSavedSystem(): MeasurementSystem | undefined {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return isMeasurementSystem(saved) ? saved : undefined;
+      } catch {
+        return undefined;
+      }
+    }
+
+    function select(system: MeasurementSystem, save: boolean) {
+      dataset.selected = system;
+      buttons.forEach(button => {
+        button.setAttribute(
+          'aria-pressed',
+          String(button.dataset.measurementSystem === system)
+        );
+      });
+      if (save) {
+        try {
+          localStorage.setItem(STORAGE_KEY, system);
+        } catch {
+          // Storage is a convenience; the toggle still works without it.
+        }
+      }
+      // The recipe's own system means as written, not a round trip.
+      document.dispatchEvent(
+        new CustomEvent<MeasurementSystem | null>('measurement-system', {
+          detail: system === authorSystem ? null : system,
+        })
+      );
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const system = button.dataset.measurementSystem;
+        if (isMeasurementSystem(system)) select(system, true);
+      });
+    });
+
+    const saved = readSavedSystem();
+    if (saved && saved !== authorSystem) select(saved, false);
+  }
+</script>

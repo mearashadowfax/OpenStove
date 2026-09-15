@@ -23,6 +23,10 @@ The portion size a recipe's quantities are written for. A recipe that is scalabl
 Multiplying every quantity on a recipe by the ratio of chosen servings to base servings. Quantities outside the grammar are shown as written and never scaled.
 _Avoid_: adjusting, converting
 
+**Measurement system**:
+US customary or metric, chosen by the reader on a recipe page and remembered in this browser. A recipe is shown as written until the reader picks the other system; then each ingredient line that has an honest conversion is converted (lb and oz to grams; a cup of a known dry ingredient to grams by its density; a cup of a liquid to millilitres) and every other line stays as written. Converted quantities use kitchen numbers (a cup is 240 ml, a pound is 450 g).
+_Avoid_: units toggle, imperial, localisation
+
 **Catalogue**:
 The full set of published recipes, and any ordered, paged view of it: the listing, a tag's recipes, search results, or a reader's saved recipes. Newest first unless a view has its own order.
 _Avoid_: collection (that is Astro's storage term), list, feed
