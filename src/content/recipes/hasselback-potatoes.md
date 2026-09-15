@@ -12,7 +12,7 @@ cookingTime: 60
 steps:
   - title: 'Prep the Potatoes'
     actions:
-      - 'Preheat your oven to 200C/400F. Scrub the potatoes clean and pat dry. Slice across each potato, creating thin slices, but be careful not to cut all the way through.'
+      - 'Preheat your oven to 200°C (400°F). Scrub the potatoes clean and pat dry. Slice across each potato, creating thin slices, but be careful not to cut all the way through.'
   - title: 'Season the Potatoes'
     actions:
       - 'Place the potatoes on a baking sheet. Drizzle with melted butter, making sure to get in between the slices. Season with salt and pepper.'

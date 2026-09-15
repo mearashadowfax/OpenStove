@@ -12,7 +12,7 @@ cookingTime: 30
 steps:
   - title: 'Prepare the Bread and Tomatoes'
     actions:
-      - 'Preheat your oven to 180C/350F. Toss the breadcrumbs in olive oil and toast in the oven until golden brown. Next, slice the heirloom tomatoes and season with salt and pepper.'
+      - 'Preheat your oven to 180°C (350°F). Toss the breadcrumbs in olive oil and toast in the oven until golden brown. Next, slice the heirloom tomatoes and season with salt and pepper.'
   - title: 'Assemble the Salad'
     actions:
       - 'In a large salad bowl, mix together the green leaves, sliced tomatoes, and toasted breadcrumbs.'

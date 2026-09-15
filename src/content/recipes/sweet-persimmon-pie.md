@@ -14,7 +14,7 @@ scalable: false
 steps:
   - title: 'Prepare the Crust'
     actions:
-      - 'Preheat the oven to 190°C.'
+      - 'Preheat the oven to 190°C (375°F).'
       - 'Line a 9-inch pie dish with your favorite pie crust.'
       - 'Prick the bottom of the crust with a fork and bake it in the preheated oven for about 10 minutes, or until lightly golden. Remove from the oven and set aside.'
   - title: 'Prepare the Filling'

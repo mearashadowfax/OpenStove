@@ -18,7 +18,7 @@ steps:
       - 'Cook the penne pasta according to the package instructions until it is al dente.'
   - title: 'Roast the Vegetables'
     actions:
-      - 'Preheat your oven to 400 degrees F (200 degrees C).'
+      - 'Preheat your oven to 400°F (200°C).'
       - 'Toss the cauliflower florets and carrot slices in olive oil, salt, and pepper, and spread them out on a baking sheet.'
       - 'Roast for about 20-25 minutes or until the vegetables are tender and slightly caramelized.'
   - title: 'Assemble the Dish'

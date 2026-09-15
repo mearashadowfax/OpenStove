@@ -18,7 +18,7 @@ steps:
       - 'Coat the chicken wings with the garlic aioli and marinate for at least 30 minutes.'
   - title: 'Cook the Chicken Wings'
     actions:
-      - 'Bake the chicken wings in a preheated oven at 400 degrees F (200 degrees C) for 40 minutes, or until crispy and golden brown.'
+      - 'Bake the chicken wings in a preheated oven at 400°F (200°C) for 40 minutes, or until crispy and golden brown.'
   - title: 'Prepare the Glazed Yams'
     actions:
       - 'Peel the yams and cut into equal-sized chunks.'

@@ -52,7 +52,7 @@ ingredients:
 recipeNotes:
   [
     'Preparation Tip: To add more flavor to the quinoa, you can cook it in vegetable or chicken broth instead of water.',
-    "Variation: If you'd like, you can grill the asparagus instead of sautéing it for a different flavor. You could also roast it in the oven at 400F (200C) for 12-15 minutes.",
+    "Variation: If you'd like, you can grill the asparagus instead of sautéing it for a different flavor. You could also roast it in the oven at 400°F (200°C) for 12-15 minutes.",
     "Add-In Ideas: You could add more vegetables or some protein to this dish if you want. Grilled chicken, tofu, or even some boiled eggs would work well. If you're adding more vegetables, consider bell peppers, corn, or broccoli.",
     'Storage: This dish can be stored in the refrigerator and enjoyed within 3-4 days. To reheat, place in the microwave or warm in a pan over medium heat.',
   ]
