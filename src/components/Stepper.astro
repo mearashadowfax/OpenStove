@@ -12,68 +12,64 @@ interface Props {
   {/* Stepper Nav */}
 
   <ul class="relative flex flex-row gap-x-2">
-    {
-      recipe.data.steps?.slice(0, -1)?.map((_, index) => (
-        <li
-          class="group flex flex-1 shrink basis-0 items-center gap-x-2"
-          data-hs-stepper-nav-item={`{"index": ${index + 1}}`}
-        >
-          <span class="group inline-flex min-h-[28px] min-w-[28px] items-center align-middle text-xs">
-            <span class="text-dark hs-stepper-active:bg-secondary hs-stepper-active:text-stone-50 hs-stepper-success:bg-secondary hs-stepper-success:text-stone-50 hs-stepper-completed:bg-secondary-accent hs-stepper-completed:group-focus:bg-secondary-accent dark:hs-stepper-active:bg-primary dark:hs-stepper-active:text-dark dark:hs-stepper-success:bg-primary dark:hs-stepper-success:text-dark dark:hs-stepper-completed:bg-primary-accent-dark dark:hs-stepper-completed:group-focus:bg-primary-accent-dark corner-squircle flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-100 font-medium transition duration-300 group-focus:bg-stone-200 dark:bg-stone-700 dark:text-stone-100 dark:group-focus:bg-stone-600">
-              <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
-                {index + 1}
-              </span>
-              <svg
-                class="hs-stepper-success:block hidden h-3 w-3 shrink-0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+    {recipe.data.steps?.slice(0, -1)?.map((_, index) => (
+      <li
+        class="group flex flex-1 shrink basis-0 items-center gap-x-2"
+        data-hs-stepper-nav-item={`{"index": ${index + 1}}`}
+      >
+        <span class="group inline-flex min-h-[28px] min-w-[28px] items-center align-middle text-xs">
+          <span class="text-dark hs-stepper-active:bg-secondary hs-stepper-active:text-stone-50 hs-stepper-success:bg-secondary hs-stepper-success:text-stone-50 hs-stepper-completed:bg-secondary-accent hs-stepper-completed:group-focus:bg-secondary-accent dark:hs-stepper-active:bg-primary dark:hs-stepper-active:text-dark dark:hs-stepper-success:bg-primary dark:hs-stepper-success:text-dark dark:hs-stepper-completed:bg-primary-accent-dark dark:hs-stepper-completed:group-focus:bg-primary-accent-dark corner-squircle flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-100 font-medium transition duration-300 group-focus:bg-stone-200 dark:bg-stone-700 dark:text-stone-100 dark:group-focus:bg-stone-600">
+            <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
+              {index + 1}
             </span>
-            <span class="text-dark ms-2 hidden text-sm font-medium sm:inline-block 2xl:text-base dark:text-stone-100">
-              Step
-            </span>
+            <svg
+              class="hs-stepper-success:block hidden h-3 w-3 shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
           </span>
-          <div class="hs-stepper-success:bg-secondary hs-stepper-completed:bg-secondary-accent dark:hs-stepper-success:bg-primary dark:hs-stepper-completed:bg-primary-accent-dark h-px w-full flex-1 bg-stone-200 transition duration-300 group-last:hidden" />
-        </li>
-      ))
-    }
+          <span class="text-dark ms-2 hidden text-sm font-medium sm:inline-block 2xl:text-base dark:text-stone-100">
+            Step
+          </span>
+        </span>
+        <div class="hs-stepper-success:bg-secondary hs-stepper-completed:bg-secondary-accent dark:hs-stepper-success:bg-primary dark:hs-stepper-completed:bg-primary-accent-dark h-px w-full flex-1 bg-stone-200 transition duration-300 group-last:hidden" />
+      </li>
+    ))}
   </ul>
   {/* End Stepper Nav */}
 
   {/* Stepper Content */}
   <div class="mt-5 sm:mt-8">
-    {
-      recipe.data.steps?.map((step, index) => (
-        <div
-          data-hs-stepper-content-item={`${
-            index === recipe.data.steps.length - 1
-              ? '{"isFinal": true}'
-              : `{"index": ${index + 1}}`
-          }`}
-          style={index === 0 ? '' : 'display: none'}
-        >
-          <div class="corner-squircle flex h-max flex-col items-center justify-center rounded-4xl border border-dashed border-orange-200 p-4 dark:border-stone-600">
-            <p class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200">
-              {step.title}
-            </p>
-            <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 text-lg font-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
-              {step.actions.map(action => (
-                <li>{action}</li>
-              ))}
-            </ul>
-          </div>
+    {recipe.data.steps?.map((step, index) => (
+      <div
+        data-hs-stepper-content-item={`${
+          index === recipe.data.steps.length - 1
+            ? '{"isFinal": true}'
+            : `{"index": ${index + 1}}`
+        }`}
+        style={index === 0 ? '' : 'display: none'}
+      >
+        <div class="corner-squircle flex h-max flex-col items-center justify-center rounded-4xl border border-dashed border-orange-200 p-4 dark:border-stone-600">
+          <p class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200">
+            {step.title}
+          </p>
+          <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 text-lg font-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
+            {step.actions.map(action => (
+              <li>{action}</li>
+            ))}
+          </ul>
         </div>
-      ))
-    }
+      </div>
+    ))}
 
     {/* Button Group */}
     <div class="mt-5 flex items-center justify-between gap-x-2">

@@ -7,14 +7,12 @@ interface Props {
 }
 ---
 
-{
-  tags?.map((tag: string) => (
-    <a
-      class="focus-visible:ring-secondary text-on-brand corner-squircle bg-secondary/30 hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-600"
-      data-astro-prefetch
-      href={tagHref(tag)}
-    >
-      {tagLabel(tag)}
-    </a>
-  ))
-}
+{tags?.map((tag: string) => (
+  <a
+    class="focus-visible:ring-secondary text-on-brand corner-squircle bg-secondary/30 hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-600"
+    data-astro-prefetch
+    href={tagHref(tag)}
+  >
+    {tagLabel(tag)}
+  </a>
+))}

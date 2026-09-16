@@ -1,7 +1,9 @@
 <div
-  class={Astro.props.isActive
-    ? 'hs-accordion active corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'
-    : 'hs-accordion corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'}
+  class={
+    Astro.props.isActive
+      ? 'hs-accordion active corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'
+      : 'hs-accordion corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'
+  }
   id={Astro.props.id}
 >
   <button
@@ -43,9 +45,11 @@
   </button>
   <div
     aria-labelledby={Astro.props.id}
-    class={Astro.props.isActive
-      ? 'hs-accordion-content w-full overflow-hidden transition-[height] duration-300'
-      : 'hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300'}
+    class={
+      Astro.props.isActive
+        ? 'hs-accordion-content w-full overflow-hidden transition-[height] duration-300'
+        : 'hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300'
+    }
     id={Astro.props.collapseId}
   >
     <p class="text-dark 2xl:text-lg dark:text-stone-200">

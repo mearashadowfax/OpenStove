@@ -15,9 +15,7 @@ interface Props {
   href={'/recipes/' + recipe.id}
   data-astro-prefetch
 >
-  <div
-    class="aspect-w-16 aspect-h-11 corner-squircle overflow-clip rounded-[50px]"
-  >
+  <div class="aspect-w-16 aspect-h-11 corner-squircle overflow-clip rounded-[50px]">
     <RecipeImage
       class="corner-squircle aspect-3/2 w-full rounded-[50px] object-cover transition duration-500 group-hover:scale-110"
       image={recipe.data.image}
@@ -26,9 +24,7 @@ interface Props {
     />
   </div>
   <div class="my-6">
-    <h3
-      class="text-dark text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100"
-    >
+    <h3 class="text-dark text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100">
       {recipe.data.title}
     </h3>
     <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
@@ -37,13 +33,11 @@ interface Props {
   </div>
   <div class="mt-auto flex items-center gap-x-3">
     <div class="space-x-2.5">
-      {
-        recipe.data.tags?.map((tag: string) => (
-          <span class="text-on-brand corner-squircle bg-secondary/30 group-hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
-            {tagLabel(tag)}
-          </span>
-        ))
-      }
+      {recipe.data.tags?.map((tag: string) => (
+        <span class="text-on-brand corner-squircle bg-secondary/30 group-hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
+          {tagLabel(tag)}
+        </span>
+      ))}
     </div>
   </div>
 </a>

@@ -21,130 +21,123 @@ const authorSystem = recipeMeasurementSystem(
 
 <!-- Serving Size Container -->
 <div class="recipe-serving-size flex flex-col py-3 sm:py-6 lg:py-6">
-  {
-    isScalable ? (
-      <>
-        <label for="serving-count" class="mb-1 text-base">
-          Servings
-        </label>
-        <div
-          class="corner-squircle max-w-40 rounded-4xl border border-stone-300 bg-stone-50 dark:border-stone-600 dark:bg-stone-700/60 print:max-w-none print:border-0 print:bg-transparent"
-          data-serving-control
-          data-base-servings={baseServings}
-          data-max-servings={maxServings}
-        >
-          <div class="flex w-full items-center justify-between gap-x-1">
-            <div class="grow px-3 py-2 print:p-0">
-              <input
-                id="serving-count"
-                class="text-dark w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                type="number"
-                value={baseServings}
-                min="1"
-                max={maxServings}
-                readonly
-                aria-label="Number of servings"
-                data-serving-input
-              />
-            </div>
-            <div class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700 print:hidden">
-              <button
-                type="button"
-                class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
-                data-serving-decrement
-                aria-label="Decrease servings"
-                disabled={baseServings <= 1}
+  {isScalable ? (
+    <>
+      <label for="serving-count" class="mb-1 text-base">
+        Servings
+      </label>
+      <div
+        class="corner-squircle max-w-40 rounded-4xl border border-stone-300 bg-stone-50 dark:border-stone-600 dark:bg-stone-700/60 print:max-w-none print:border-0 print:bg-transparent"
+        data-serving-control
+        data-base-servings={baseServings}
+        data-max-servings={maxServings}
+      >
+        <div class="flex w-full items-center justify-between gap-x-1">
+          <div class="grow px-3 py-2 print:p-0">
+            <input
+              id="serving-count"
+              class="text-dark w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              type="number"
+              value={baseServings}
+              min="1"
+              max={maxServings}
+              readonly
+              aria-label="Number of servings"
+              data-serving-input
+            />
+          </div>
+          <div class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700 print:hidden">
+            <button
+              type="button"
+              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+              data-serving-decrement
+              aria-label="Decrease servings"
+              disabled={baseServings <= 1}
+            >
+              <svg
+                class="h-3.5 w-3.5 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
               >
-                <svg
-                  class="h-3.5 w-3.5 shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
-                data-serving-increment
-                aria-label="Increase servings"
+                <path d="M5 12h14" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+              data-serving-increment
+              aria-label="Increase servings"
+            >
+              <svg
+                class="h-3.5 w-3.5 shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
               >
-                <svg
-                  class="h-3.5 w-3.5 shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5v14" />
-                </svg>
-              </button>
-            </div>
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+              </svg>
+            </button>
           </div>
         </div>
-        <p
-          class="mt-1 text-sm text-stone-500 dark:text-stone-400"
-          data-serving-hint
-          hidden
-        >
-          Scaled from {baseServings}{' '}
-          {baseServings === 1 ? 'serving' : 'servings'}
-        </p>
-      </>
-    ) : (
-      <div class="flex flex-col">
-        <p class="text-dark text-lg font-semibold dark:text-stone-300">
-          Serves {baseServings} {baseServings === 1 ? 'person' : 'people'}
-        </p>
       </div>
-    )
-  }
+      <p
+        class="mt-1 text-sm text-stone-500 dark:text-stone-400"
+        data-serving-hint
+        hidden
+      >
+        Scaled from {baseServings} {baseServings === 1 ? 'serving' : 'servings'}
+      </p>
+    </>
+  ) : (
+    <div class="flex flex-col">
+      <p class="text-dark text-lg font-semibold dark:text-stone-300">
+        Serves {baseServings} {baseServings === 1 ? 'person' : 'people'}
+      </p>
+    </div>
+  )}
 </div>
 {/* End Serving Size Container */}
 
 {authorSystem && <MeasurementSystemToggle authorSystem={authorSystem} />}
 
 {/* Ingredients List Container */}
-<div
-  class="flex flex-wrap justify-between gap-6 lg:flex-col lg:flex-nowrap lg:justify-normal lg:gap-0 lg:space-y-4"
->
-  {
-    recipe.data.ingredients?.map(ingredient => (
-      <div>
-        <p class="text-dark text-lg font-semibold text-balance 2xl:text-xl dark:text-stone-300">
-          {ingredient.title}
-        </p>
-        <ul class="flex max-w-xs flex-col divide-y divide-stone-200 dark:divide-stone-700">
-          {ingredient.items.map(item => (
-            <li
-              data-ingredient
-              data-quantity={item.quantity}
-              data-unit={item.unit}
-              data-name={item.name}
-              class="inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
-            >
-              {formatIngredientLine(item)}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))
-  }
+<div class="flex flex-wrap justify-between gap-6 lg:flex-col lg:flex-nowrap lg:justify-normal lg:gap-0 lg:space-y-4">
+  {recipe.data.ingredients?.map(ingredient => (
+    <div>
+      <p class="text-dark text-lg font-semibold text-balance 2xl:text-xl dark:text-stone-300">
+        {ingredient.title}
+      </p>
+      <ul class="flex max-w-xs flex-col divide-y divide-stone-200 dark:divide-stone-700">
+        {ingredient.items.map(item => (
+          <li
+            data-ingredient
+            data-quantity={item.quantity}
+            data-unit={item.unit}
+            data-name={item.name}
+            class="inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
+          >
+            {formatIngredientLine(item)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
 </div>
 <script>
   import { formatIngredientLine } from '@/lib/quantity';
