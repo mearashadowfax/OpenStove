@@ -238,12 +238,14 @@ const formConfigured = isContributionConfigured({
   </section>
 </MainLayout>
 
-{turnstileSiteKey && <script
-  is:inline
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer
-></script>}
+{turnstileSiteKey && (
+  <script
+    is:inline
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+)}
 
 <script>
   const form = document.getElementById(
