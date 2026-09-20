@@ -11,7 +11,7 @@ import {
 } from '@/lib/contribution';
 
 const numberButtonClass =
-  'focus-visible:ring-secondary last:corner-squircle text-dark inline-flex h-10 w-10 touch-manipulation items-center justify-center bg-transparent text-sm font-medium transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:text-stone-200 dark:hover:bg-stone-800';
+  'focus-visible:ring-secondary last:corner-squircle text-ink inline-flex h-10 w-10 touch-manipulation items-center justify-center bg-transparent text-sm font-medium transition duration-300 last:rounded-e-4xl hover:bg-sand focus:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:text-stone-200 dark:hover:bg-stone-800';
 
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
 const formConfigured = isContributionConfigured({
@@ -31,14 +31,14 @@ const NOINDEX = 'noindex, follow';
   robots={NOINDEX}
 >
   <section class="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:py-20">
-    <h1 class="text-dark text-3xl font-bold text-balance sm:text-4xl dark:text-stone-100">
+    <h1 class="text-ink text-3xl font-bold text-balance sm:text-4xl dark:text-stone-100">
       Contribute a recipe
     </h1>
-    <p class="mt-4 text-stone-600 2xl:text-lg dark:text-stone-400">
+    <p class="mt-4 text-muted 2xl:text-lg dark:text-stone-400">
       Submit a recipe for review. We'll turn it into Markdown, add a licensed
       photo when needed, and publish it on OpenStove. Prefer Git?{' '}
       <a
-        class="text-dark dark:hover:text-primary underline decoration-2 underline-offset-2 hover:text-orange-600 dark:text-stone-200"
+        class="text-ink dark:hover:text-primary underline decoration-2 underline-offset-2 hover:text-secondary-ink dark:text-stone-200"
         href="https://github.com/mearashadowfax/OpenStove/blob/main/CONTRIBUTING.md"
         target="_blank"
         rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const NOINDEX = 'noindex, follow';
           <div class:list={[field.width === 'half' ? '' : 'sm:col-span-2']}>
             {field.kind === 'checkbox' ? (
               <div class="sm:pt-7">
-                <label class="text-dark flex items-center gap-3 text-sm font-medium dark:text-stone-200">
+                <label class="text-ink flex items-center gap-3 text-sm font-medium dark:text-stone-200">
                   <input
                     id={field.name}
                     name={field.name}
@@ -107,7 +107,7 @@ const NOINDEX = 'noindex, follow';
                   ></textarea>
                 ) : field.kind === 'number' ? (
                   <div
-                    class="corner-squircle max-w-48 rounded-4xl border border-orange-200 bg-white dark:border-stone-600 dark:bg-stone-900"
+                    class="corner-squircle max-w-48 rounded-4xl border border-sand-dark bg-white dark:border-stone-600 dark:bg-stone-900"
                     data-hs-input-number={JSON.stringify({
                       min: field.min,
                       max: field.max,
@@ -116,7 +116,7 @@ const NOINDEX = 'noindex, follow';
                     <div class="flex w-full items-center justify-between gap-x-1">
                       <div class="grow px-3 py-2">
                         <input
-                          class="text-dark w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 disabled:opacity-50 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                          class="text-ink w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 disabled:opacity-50 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                           id={field.name}
                           name={field.name}
                           type="number"
@@ -128,7 +128,7 @@ const NOINDEX = 'noindex, follow';
                           data-hs-input-number-input
                         />
                       </div>
-                      <div class="flex items-center divide-x divide-orange-200 border-s border-orange-200 dark:divide-stone-600 dark:border-stone-600">
+                      <div class="flex items-center divide-x divide-sand-dark border-s border-sand-dark dark:divide-stone-600 dark:border-stone-600">
                         <button
                           type="button"
                           class={numberButtonClass}
@@ -220,7 +220,7 @@ const NOINDEX = 'noindex, follow';
       <div class="flex flex-wrap items-center gap-3">
         <a
           id="form-result-link"
-          class="bg-primary text-dark hover:bg-primary-accent-light focus-visible:ring-primary corner-squircle hidden w-fit items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden"
+          class="bg-primary text-ink hover:bg-primary-accent-light focus-visible:ring-primary corner-squircle hidden w-fit items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden"
           href="#"
           target="_blank"
           rel="noopener noreferrer"
@@ -232,7 +232,7 @@ const NOINDEX = 'noindex, follow';
           type="submit"
           id="contribute-submit"
           disabled={!formConfigured}
-          class="bg-secondary text-dark hover:bg-secondary-accent focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+          class="bg-secondary text-ink hover:bg-secondary-dark focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
         >
           Submit for review
         </button>

@@ -36,7 +36,7 @@ const authorSystem = recipeMeasurementSystem(
           <div class="grow px-3 py-2 print:p-0">
             <input
               id="serving-count"
-              class="text-dark w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              class="text-ink w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               type="number"
               value={baseServings}
               min="1"
@@ -49,7 +49,7 @@ const authorSystem = recipeMeasurementSystem(
           <div class="-gap-y-px flex items-center divide-x divide-stone-200 border-s border-stone-200 dark:divide-stone-700 dark:border-stone-700 print:hidden">
             <button
               type="button"
-              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-sand focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
               data-serving-decrement
               aria-label="Decrease servings"
               disabled={baseServings <= 1}
@@ -72,7 +72,7 @@ const authorSystem = recipeMeasurementSystem(
             </button>
             <button
               type="button"
-              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
+              class="focus-visible:ring-secondary last:corner-squircle inline-flex h-10 w-10 touch-manipulation items-center justify-center gap-x-2 bg-stone-50 text-sm font-medium text-stone-800 transition duration-300 last:rounded-e-4xl hover:bg-sand focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-800/30"
               data-serving-increment
               aria-label="Increase servings"
             >
@@ -106,7 +106,7 @@ const authorSystem = recipeMeasurementSystem(
     </>
   ) : (
     <div class="flex flex-col">
-      <p class="text-dark text-lg font-semibold dark:text-stone-300">
+      <p class="text-ink text-lg font-semibold dark:text-stone-300">
         Serves {baseServings} {baseServings === 1 ? 'person' : 'people'}
       </p>
     </div>
@@ -120,7 +120,7 @@ const authorSystem = recipeMeasurementSystem(
 <div class="flex flex-wrap justify-between gap-6 lg:flex-col lg:flex-nowrap lg:justify-normal lg:gap-0 lg:space-y-4">
   {recipe.data.ingredients?.map(ingredient => (
     <div>
-      <p class="text-dark text-lg font-semibold text-balance 2xl:text-xl dark:text-stone-300">
+      <p class="text-ink text-lg font-semibold text-balance 2xl:text-xl dark:text-stone-300">
         {ingredient.title}
       </p>
       <ul class="flex max-w-xs flex-col divide-y divide-stone-200 dark:divide-stone-700">
@@ -130,7 +130,7 @@ const authorSystem = recipeMeasurementSystem(
             data-quantity={item.quantity}
             data-unit={item.unit}
             data-name={item.name}
-            class="inline-flex items-center gap-x-2 px-4 py-3 text-sm text-stone-600 xl:text-base dark:text-stone-400"
+            class="inline-flex items-center gap-x-2 px-4 py-3 text-sm text-muted xl:text-base dark:text-stone-400"
           >
             {formatIngredientLine(item)}
           </li>

@@ -15,11 +15,11 @@ import { Icon } from 'astro-icon/components';
       <p class="from-eyebrow-from to-eyebrow-to dark:from-eyebrow-from-dark dark:to-eyebrow-to-dark mb-2 bg-linear-to-l bg-clip-text text-center text-sm font-medium text-transparent md:mb-3 lg:text-base">
         Introducing OpenStove
       </p>
-      <h1 class="text-dark mx-auto mb-4 max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:mb-6 md:text-5xl 2xl:max-w-4xl 2xl:text-6xl">
+      <h1 class="text-ink mx-auto mb-4 max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:mb-6 md:text-5xl 2xl:max-w-4xl 2xl:text-6xl">
         A curated collection of community-crafted recipes
       </h1>
 
-      <p class="mx-auto max-w-(--breakpoint-md) text-center text-pretty text-stone-600 md:text-lg">
+      <p class="mx-auto max-w-(--breakpoint-md) text-center text-pretty text-muted md:text-lg">
         Explore a growing repository of culinary delights, meticulously
         organized and shared through GitHub contributions.
       </p>
@@ -35,10 +35,10 @@ import { Icon } from 'astro-icon/components';
         <div class="space-y-6 sm:space-y-8">
           {/* Title */}
           <div class="space-y-2 md:space-y-4">
-            <h2 class="text-dark text-3xl font-bold tracking-tight text-balance lg:text-4xl 2xl:text-5xl dark:text-stone-100">
+            <h2 class="text-ink text-3xl font-bold tracking-tight text-balance lg:text-4xl 2xl:text-5xl dark:text-stone-100">
               Hello to all who love cooking!
             </h2>
-            <p class="text-pretty text-stone-600 sm:text-lg 2xl:text-xl dark:text-stone-400">
+            <p class="text-pretty text-muted sm:text-lg 2xl:text-xl dark:text-stone-400">
               OpenStove is more than just a recipe website; it's a place where
               cooking enthusiasts can come together to share their favorite
               recipes without any annoying ads or fees – completely free.
@@ -70,11 +70,11 @@ import { Icon } from 'astro-icon/components';
   {/* Features Section*/}
   <div class="py-12 sm:py-16 lg:py-24">
     <div class="mx-auto max-w-(--breakpoint-2xl) px-4 md:px-8">
-      <h2 class="text-dark mb-4 text-center text-2xl font-bold text-balance md:mb-6 md:text-3xl 2xl:text-4xl dark:text-stone-100">
+      <h2 class="text-ink mb-4 text-center text-2xl font-bold text-balance md:mb-6 md:text-3xl 2xl:text-4xl dark:text-stone-100">
         Designed for culinary enthusiasts, just like you
       </h2>
 
-      <p class="mx-auto max-w-(--breakpoint-md) text-center text-pretty text-stone-600 md:text-lg 2xl:text-xl dark:text-stone-400">
+      <p class="mx-auto max-w-(--breakpoint-md) text-center text-pretty text-muted md:text-lg 2xl:text-xl dark:text-stone-400">
         At OpenStove, we're committed to enhancing and sharing the joy of home
         cooking. Discover and contribute recipes in a community that celebrates
         culinary passion.
@@ -128,24 +128,24 @@ import { Icon } from 'astro-icon/components';
     {/* Grid */}
     <div id="contribution" class="grid gap-12 md:grid-cols-2">
       <div class="lg:w-3/4">
-        <h2 class="text-dark text-3xl font-bold text-balance lg:text-4xl 2xl:text-5xl dark:text-stone-100">
+        <h2 class="text-ink text-3xl font-bold text-balance lg:text-4xl 2xl:text-5xl dark:text-stone-100">
           Contribution is straightforward:
         </h2>
-        <p class="mt-4 text-pretty text-stone-600 md:mt-8 md:text-lg 2xl:text-xl dark:text-stone-400">
+        <p class="mt-4 text-pretty text-muted md:mt-8 md:text-lg 2xl:text-xl dark:text-stone-400">
           Joining the OpenStove community is a piece of cake. Follow these
           simple steps to add your special recipe to our collection and share
           your culinary flair with the world.
         </p>
         <div class="mt-4 flex flex-wrap gap-3 md:mt-8">
           <a
-            class="border-primary bg-primary text-on-brand corner-squircle dark:hover:text-primary inline-block rounded-4xl border-2 px-8 py-3 text-center text-sm font-medium outline-hidden transition duration-300 hover:-translate-y-1 hover:bg-transparent focus-visible:-translate-y-1 md:text-base 2xl:text-lg"
+            class="border-primary bg-primary text-on-brand corner-squircle hover:border-primary-accent-dark hover:bg-primary-accent-dark inline-block rounded-4xl border-2 px-8 py-3 text-center text-sm font-medium outline-hidden transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 md:text-base 2xl:text-lg"
             href="/contribute"
             data-astro-prefetch
           >
             Contribute online
           </a>
           <a
-            class="bg-secondary-accent text-on-brand hover:bg-secondary hover:shadow-secondary focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center gap-x-3 rounded-4xl border border-transparent px-4 py-3 text-center text-sm font-medium transition duration-300 hover:shadow-2xl focus:outline-hidden focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:outline-hidden 2xl:text-base"
+            class="bg-secondary text-on-brand hover:bg-secondary-dark focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center gap-x-3 rounded-4xl border border-transparent px-4 py-3 text-center text-sm font-medium transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus:outline-hidden focus-visible:ring-2 focus-visible:outline-hidden 2xl:text-base"
             href="https://github.com/mearashadowfax/OpenStove"
             target="_blank"
             rel="noopener noreferrer"
@@ -157,7 +157,7 @@ import { Icon } from 'astro-icon/components';
       </div>
       {/* End Col */}
 
-      <div class="space-y-6 text-pretty text-stone-600 md:text-lg lg:space-y-10 2xl:text-xl dark:text-stone-400">
+      <div class="space-y-6 text-pretty text-muted md:text-lg lg:space-y-10 2xl:text-xl dark:text-stone-400">
         {/* Icon Block */}
         <div class="flex">
           {/* Icon */}
@@ -325,7 +325,7 @@ import { Icon } from 'astro-icon/components';
         <div class="space-y-6 sm:space-y-8">
           {/* Content */}
           <div class="space-y-2 md:space-y-4">
-            <p class="text-lg leading-relaxed text-pretty text-stone-600 sm:text-xl 2xl:text-2xl dark:text-stone-400">
+            <p class="text-lg leading-relaxed text-pretty text-muted sm:text-xl 2xl:text-2xl dark:text-stone-400">
               OpenStove is your kitchen away from the kitchen – a place to
               discover, save, and share what's cooking. So what are you waiting
               for? Come join in, click through our recipes, and let's whip up
