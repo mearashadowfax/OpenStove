@@ -72,5 +72,5 @@ recipeNotes:
     'This salad can be made ahead of time and stored in the refrigerator for up to 2 days.',
   ]
 
-tags: ['chicken', 'potato', 'salad']
+tags: ['chicken', 'potatoes', 'salad']
 ---

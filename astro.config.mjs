@@ -8,12 +8,59 @@ import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
 import vercel from '@astrojs/vercel';
+import { readRecipeTagCounts } from './src/lib/recipeTagCounts';
+import { isIndexedTag } from './src/lib/tagIndexing';
+import { tagHref } from './src/lib/tag';
+
+/** Pages served with a noindex meta tag; they stay crawlable but out of the sitemap. */
+const NOINDEX_PATHS = ['/contribute', '/recipes/saved', '/recipes/search'];
+
+const thinTagPaths = [...readRecipeTagCounts('./src/content/recipes')]
+  .filter(([, count]) => !isIndexedTag(count))
+  .map(([tag]) => tagHref(tag));
+
+const sitemapExcludedPaths = new Set([...NOINDEX_PATHS, ...thinTagPaths]);
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://openstove.org',
   prefetch: true,
   trailingSlash: 'never',
+
+  // Old URLs that search engines still request; each was renamed in place.
+  redirects: {
+    '/recipes/baked-pizza-with-tomatoes-cheese-olives-salami-fried-egg':
+      '/recipes/baked-pizza',
+    '/recipes/baked-potatoes-garlic-herbs-chanterelles':
+      '/recipes/baked-potatoes-garlic-herbs',
+    '/recipes/coconut-chocolate-balls-candy-dessert':
+      '/recipes/coconut-chocolate-balls',
+    '/recipes/fresh-garden-vegetables-salad-mix':
+      '/recipes/fresh-garden-vegetables-salad',
+    '/recipes/garlic-aioli-chicken-wings-with-glazed-yams':
+      '/recipes/garlic-aioli-chicken-wings',
+    '/recipes/homemade-chicken-noodle-soup': '/recipes/chicken-noodle-soup',
+    '/recipes/homemade-creamy-pumpkin-soup': '/recipes/creamy-pumpkin-soup',
+    '/recipes/homemade-pound-cake-with-almonds': '/recipes/pound-cake',
+    '/recipes/italian-bolognese-sauce-with-thyme':
+      '/recipes/italian-bolognese-sauce',
+    '/recipes/juicy-pork-steak-with-rosemary-and-tomatoes':
+      '/recipes/juicy-pork-steak',
+    '/recipes/penne-pasta-with-pesto': '/recipes/pasta-with-pesto',
+    '/recipes/raw-avocado-chocolate-mousse-with-hazelnuts':
+      '/recipes/raw-avocado-chocolate-mousse',
+    '/recipes/russian-olivier-salad-with-salmon-caviar':
+      '/recipes/olivier-salad',
+    '/recipes/tag/Italian': '/recipes/tag/italian',
+    // Tags merged into their plural / broader form.
+    '/recipes/tag/almond': '/recipes/tag/almonds',
+    '/recipes/tag/black%20beans': '/recipes/tag/beans',
+    '/recipes/tag/egg': '/recipes/tag/eggs',
+    '/recipes/tag/mushroom': '/recipes/tag/mushrooms',
+    '/recipes/tag/noodle': '/recipes/tag/noodles',
+    '/recipes/tag/potato': '/recipes/tag/potatoes',
+    '/recipes/tag/tomato': '/recipes/tag/tomatoes',
+  },
 
   fonts: [
     {
@@ -42,19 +89,14 @@ export default defineConfig({
         {
           userAgent: '*',
           allow: '/',
-          disallow: [
-            '/404',
-            '/recipes/saved',
-            '/recipes/search',
-            '/contribute',
-            '/keystatic',
-            '/api',
-          ],
+          disallow: ['/404', '/keystatic', '/api'],
           crawlDelay: 1,
         },
       ],
     }),
-    sitemap(),
+    sitemap({
+      filter: page => !sitemapExcludedPaths.has(new URL(page).pathname),
+    }),
     icon(),
     metaTags(),
     react(),

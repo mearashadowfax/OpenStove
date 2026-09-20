@@ -3,6 +3,7 @@ import MainLayout from '@layouts/MainLayout.astro';
 import RecipeGrid from '@components/RecipeGrid.astro';
 import EmptyState from '@components/EmptyState.astro';
 import { tagHref, tagLabel } from '@/lib/tag';
+import { isIndexedTag } from '@/lib/tagIndexing';
 import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import {
@@ -39,6 +40,9 @@ const tagRecipes = listRecipes(byTag(await getCollection('recipes'), tag), {
 });
 
 const canonicalUrl = tagRecipes.pathFor(tagRecipes.page);
+const robots = isIndexedTag(tagRecipes.totalItems)
+  ? undefined
+  : 'noindex, follow';
 const pageTitle = `${tagLabel(tag)} | OpenStove`;
 const pageDescription = `Browse ${tagRecipes.totalItems} ${tag} recipes on OpenStove. Discover community-crafted recipes for ${tag} dishes.`;
 ---
@@ -47,6 +51,7 @@ const pageDescription = `Browse ${tagRecipes.totalItems} ${tag} recipes on OpenS
   title={pageTitle}
   description={pageDescription}
   canonicalUrl={canonicalUrl}
+  robots={robots}
 >
   <section class="min-h-screen">
     <div class="mt-10 py-6 sm:py-8 lg:py-12">

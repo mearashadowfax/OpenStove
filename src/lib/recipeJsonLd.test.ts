@@ -38,11 +38,38 @@ describe('recipeJsonLd', () => {
           name: 'Prep',
           text: 'Chop the tomatoes. Mince the garlic.',
         },
-        { position: 2, name: 'Step 2', text: 'Simmer until soft.' },
+        {
+          position: 2,
+          name: 'Step 2',
+          text: 'Simmer until soft.',
+          url: `${options.url}#step-2`,
+        },
       ],
     });
     expect(jsonLd).not.toHaveProperty('recipeYield');
     expect(jsonLd).not.toHaveProperty('recipeIngredient');
+    expect(jsonLd).not.toHaveProperty('keywords');
+    expect(jsonLd).not.toHaveProperty('recipeCategory');
+    expect(jsonLd).not.toHaveProperty('recipeCuisine');
+  });
+
+  it('derives keywords, category and cuisine from tags', () => {
+    const jsonLd = recipeJsonLd(
+      { ...base, tags: ['soup', 'tomato', 'italian', 'vegetarian'] },
+      options
+    );
+
+    expect(jsonLd.keywords).toBe('soup, tomato, italian, vegetarian');
+    expect(jsonLd.recipeCategory).toEqual(['Soup']);
+    expect(jsonLd.recipeCuisine).toEqual(['Italian']);
+  });
+
+  it('omits category and cuisine when no tag names one', () => {
+    const jsonLd = recipeJsonLd({ ...base, tags: ['tomato'] }, options);
+
+    expect(jsonLd.keywords).toBe('tomato');
+    expect(jsonLd).not.toHaveProperty('recipeCategory');
+    expect(jsonLd).not.toHaveProperty('recipeCuisine');
   });
 
   it('adds yield and formatted ingredient lines when present', () => {

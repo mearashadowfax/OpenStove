@@ -67,5 +67,5 @@ recipeNotes:
     'Experiment with different extracts such as almond or lemon extract to add a unique twist to the flavor of these cookies.',
   ]
 
-tags: ['cookies', 'almond', 'dessert']
+tags: ['cookies', 'almonds', 'dessert']
 ---

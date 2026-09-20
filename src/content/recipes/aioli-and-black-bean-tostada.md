@@ -63,5 +63,5 @@ recipeNotes:
     'Store any leftovers separately, and assemble the tostadas right before serving to keep them crunchy.',
   ]
 
-tags: ['tostada', 'aioli', 'black beans']
+tags: ['tostada', 'aioli', 'beans']
 ---

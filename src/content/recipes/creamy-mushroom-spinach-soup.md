@@ -88,5 +88,5 @@ recipeNotes:
     'Vegetarian/Vegan Option: Substitute the butter with olive oil and use coconut cream instead of heavy cream for a vegan-friendly version.',
   ]
 
-tags: ['soup', 'mushroom', 'spinach']
+tags: ['soup', 'mushrooms', 'spinach']
 ---

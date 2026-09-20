@@ -76,5 +76,5 @@ recipeNotes:
     'Leftovers: Store leftovers in an airtight container and refrigerate for up to 3 days. Reheat thoroughly before serving again.',
   ]
 
-tags: ['rice', 'egg', 'asian']
+tags: ['rice', 'eggs', 'asian']
 ---

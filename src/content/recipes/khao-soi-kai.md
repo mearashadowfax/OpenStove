@@ -108,5 +108,5 @@ recipeNotes:
     'Frying the noodles adds texture to the dish; however, you can skip this step if desired.',
   ]
 
-tags: ['thai', 'chicken', 'noodle']
+tags: ['thai', 'chicken', 'noodles']
 ---

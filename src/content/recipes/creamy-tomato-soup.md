@@ -81,5 +81,5 @@ recipeNotes:
     'For an extra touch of richness, a dollop of crème fraîche or a sprinkle of grated Parmesan cheese can also be added upon serving.',
   ]
 
-tags: ['soup', 'tomato', 'vegetarian']
+tags: ['soup', 'tomatoes', 'vegetarian']
 ---

@@ -9,6 +9,7 @@ import Clipboard from '@components/Clipboard.astro';
 import RecipeImage from '@components/RecipeImage.astro';
 import PrintRecipe from '@components/PrintRecipe.astro';
 import { getCollection, getEntry } from 'astro:content';
+import { stepAnchorId } from '@/lib/recipeJsonLd';
 import type { GetStaticPaths } from 'astro';
 
 export const prerender = true;
@@ -159,8 +160,11 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
               aria-labelledby="segment-item-2"
             >
               <ol class="max-w-prose list-inside list-decimal space-y-6">
-                {entry.data.steps?.map(step => (
-                  <li class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200">
+                {entry.data.steps?.map((step, index) => (
+                  <li
+                    id={stepAnchorId(index + 1)}
+                    class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200"
+                  >
                     {step.title}
                     <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 leading-normal font-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
                       {step.actions.map(action => (
