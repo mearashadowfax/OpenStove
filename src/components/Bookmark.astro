@@ -8,7 +8,7 @@ const { recipeId } = Astro.props;
 
 <button
   type="button"
-  class="group text-dark focus-visible:ring-secondary corner-squircle inline-flex items-center rounded-4xl p-2.5 hover:bg-orange-100 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden dark:text-stone-100 dark:hover:bg-stone-700"
+  class="group text-ink focus-visible:ring-secondary corner-squircle inline-flex items-center rounded-4xl p-2.5 hover:bg-sand focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden dark:text-stone-100 dark:hover:bg-stone-700"
   data-bookmark-button
   data-recipe-id={recipeId}
   aria-label="Save recipe"
@@ -23,7 +23,7 @@ const { recipeId } = Astro.props;
     aria-hidden="true"
   >
     <path
-      class="text-dark group-hover:text-secondary dark:group-hover:text-primary dark:text-stone-100"
+      class="text-ink group-hover:text-secondary-ink dark:group-hover:text-primary dark:text-stone-100"
       stroke-linecap="round"
       stroke-linejoin="round"
       d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
@@ -89,8 +89,8 @@ const { recipeId } = Astro.props;
         ?.setAttribute(
           'class',
           saved
-            ? 'text-secondary dark:text-primary'
-            : 'text-dark group-hover:text-secondary dark:text-stone-100 dark:group-hover:text-primary'
+            ? 'text-secondary-ink dark:text-primary'
+            : 'text-ink group-hover:text-secondary-ink dark:text-stone-100 dark:group-hover:text-primary'
         );
     });
   }

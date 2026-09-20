@@ -73,12 +73,12 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
     </div>
 
     {/* Title Start */}
-    <h1 class="text-dark mx-auto mt-10 mb-4 max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:mb-6 md:text-6xl 2xl:max-w-4xl 2xl:text-7xl dark:text-stone-100">
+    <h1 class="text-ink mx-auto mt-10 mb-4 max-w-3xl text-center text-3xl font-bold text-balance sm:text-4xl md:mb-6 md:text-6xl 2xl:max-w-4xl 2xl:text-7xl dark:text-stone-100">
       {entry.data.title}
     </h1>
 
     {entry.data.description && (
-      <p class="mx-auto mb-6 max-w-2xl text-center text-pretty text-stone-600 md:mb-8 md:text-lg 2xl:text-xl dark:text-stone-400">
+      <p class="mx-auto mb-6 max-w-2xl text-center text-pretty text-muted md:mb-8 md:text-lg 2xl:text-xl dark:text-stone-400">
         {entry.data.description}
       </p>
     )}
@@ -88,7 +88,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
       {/* Author/Date */}
       <div>
         <ul>
-          <li class="text-dark relative inline-block pe-6 text-base before:absolute before:end-2 before:top-1/2 before:h-1 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-stone-400 last:pe-0 last-of-type:before:hidden dark:text-stone-100 dark:before:bg-stone-600">
+          <li class="text-ink relative inline-block pe-6 text-base before:absolute before:end-2 before:top-1/2 before:h-1 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-stone-400 last:pe-0 last-of-type:before:hidden dark:text-stone-100 dark:before:bg-stone-600">
             {entry.data.author}
           </li>
           <li class="relative inline-block pe-6 text-xs text-stone-500 before:absolute before:end-2 before:top-1/2 before:h-1 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-stone-400 last:pe-0 last-of-type:before:hidden 2xl:text-sm dark:text-stone-400 dark:before:bg-stone-600">
@@ -100,7 +100,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
       {/* Time/Print/Bookmark */}
       <div class="flex items-center justify-end gap-x-1.5">
         <div class="inline-flex max-w-xs gap-x-2">
-          <span class="font-regular group text-dark inline-flex items-center gap-x-2 p-3 text-sm 2xl:text-base dark:text-stone-100">
+          <span class="font-regular group text-ink inline-flex items-center gap-x-2 p-3 text-sm 2xl:text-base dark:text-stone-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -135,7 +135,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
         {/* Instructions Section */}
         <section class="py-6 sm:py-8 lg:py-12">
           <div class="mx-auto max-w-(--breakpoint-lg)">
-            <h2 class="text-dark text-3xl font-semibold lg:text-4xl dark:text-stone-100">
+            <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
               Instructions:
             </h2>
 
@@ -163,10 +163,10 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
                 {entry.data.steps?.map((step, index) => (
                   <li
                     id={stepAnchorId(index + 1)}
-                    class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200"
+                    class="text-ink text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200"
                   >
                     {step.title}
-                    <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 leading-normal font-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
+                    <ul class="marker:text-secondary-ink dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 leading-normal font-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
                       {step.actions.map(action => (
                         <li>{action}</li>
                       ))}
@@ -182,10 +182,10 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
         <section class="py-6 sm:py-8 lg:py-12">
           {entry.data.recipeNotes && entry.data.recipeNotes?.length > 0 ? (
             <div class="mx-auto max-w-(--breakpoint-lg)">
-              <h2 class="text-dark text-3xl font-semibold lg:text-4xl dark:text-stone-100">
+              <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
                 Recipe notes:
               </h2>
-              <ul class="marker:text-secondary dark:marker:text-primary mt-4 max-w-prose list-disc space-y-2 ps-5 text-lg leading-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
+              <ul class="marker:text-secondary-ink dark:marker:text-primary mt-4 max-w-prose list-disc space-y-2 ps-5 text-lg leading-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
                 {entry.data.recipeNotes?.map((note: string) => (
                   <li>{note}</li>
                 ))}
@@ -201,7 +201,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
       <div class="recipe-print-ingredients lg:col-span-1 lg:h-full lg:w-full">
         {/* Ingredients Section */}
         <section class="mx-auto max-w-(--breakpoint-lg) py-6 sm:py-8 lg:py-12">
-          <h2 class="text-dark text-3xl font-semibold lg:text-4xl dark:text-stone-100">
+          <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
             Ingredients:
           </h2>
           <Ingredients recipe={entry} />

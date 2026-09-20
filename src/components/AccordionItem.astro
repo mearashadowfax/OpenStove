@@ -1,8 +1,8 @@
 <div
   class={
     Astro.props.isActive
-      ? 'hs-accordion active corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'
-      : 'hs-accordion corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-orange-200 dark:hs-accordion-active:bg-stone-100/5'
+      ? 'hs-accordion active corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-sand-dark dark:hs-accordion-active:bg-stone-100/5'
+      : 'hs-accordion corner-squircle rounded-4xl p-6 transition-colors duration-300 hs-accordion-active:bg-sand-dark dark:hs-accordion-active:bg-stone-100/5'
   }
   id={Astro.props.id}
 >
@@ -11,11 +11,11 @@
     id={`${Astro.props.id}-trigger`}
     aria-controls={Astro.props.collapseId}
     aria-expanded={Astro.props.isActive ? 'true' : 'false'}
-    class="hs-accordion-toggle group text-dark focus-visible:ring-secondary inline-flex w-full items-center justify-between gap-x-3 rounded-lg pb-3 text-start font-bold transition duration-300 hover:text-stone-600 focus-visible:ring-2 focus-visible:outline-hidden md:text-lg 2xl:text-xl dark:text-stone-100 dark:hover:text-stone-400 dark:focus:outline-hidden"
+    class="hs-accordion-toggle group text-ink focus-visible:ring-secondary inline-flex w-full items-center justify-between gap-x-3 rounded-lg pb-3 text-start font-bold transition duration-300 hover:text-muted focus-visible:ring-2 focus-visible:outline-hidden md:text-lg 2xl:text-xl dark:text-stone-100 dark:hover:text-stone-400 dark:focus:outline-hidden"
   >
     {Astro.props.heading}
     <svg
-      class="hs-accordion-active:hidden block h-5 w-5 shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-stone-600 dark:text-stone-300 dark:group-hover:text-stone-400"
+      class="hs-accordion-active:hidden block h-5 w-5 shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-muted dark:text-stone-300 dark:group-hover:text-stone-400"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -29,7 +29,7 @@
       <path d="m6 9 6 6 6-6"></path>
     </svg>
     <svg
-      class="hs-accordion-active:block hidden h-5 w-5 shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-stone-600 dark:text-stone-300 dark:group-hover:text-stone-400"
+      class="hs-accordion-active:block hidden h-5 w-5 shrink-0 text-stone-800 transition-colors duration-300 group-hover:text-muted dark:text-stone-300 dark:group-hover:text-stone-400"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -52,7 +52,7 @@
     }
     id={Astro.props.collapseId}
   >
-    <p class="text-dark 2xl:text-lg dark:text-stone-200">
+    <p class="text-ink 2xl:text-lg dark:text-stone-200">
       <slot />
     </p>
   </div>

@@ -18,7 +18,7 @@ interface Props {
         data-hs-stepper-nav-item={`{"index": ${index + 1}}`}
       >
         <span class="group inline-flex min-h-[28px] min-w-[28px] items-center align-middle text-xs">
-          <span class="text-dark hs-stepper-active:bg-secondary hs-stepper-active:text-stone-50 hs-stepper-success:bg-secondary hs-stepper-success:text-stone-50 hs-stepper-completed:bg-secondary-accent hs-stepper-completed:group-focus:bg-secondary-accent dark:hs-stepper-active:bg-primary dark:hs-stepper-active:text-dark dark:hs-stepper-success:bg-primary dark:hs-stepper-success:text-dark dark:hs-stepper-completed:bg-primary-accent-dark dark:hs-stepper-completed:group-focus:bg-primary-accent-dark corner-squircle flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-100 font-medium transition duration-300 group-focus:bg-stone-200 dark:bg-stone-700 dark:text-stone-100 dark:group-focus:bg-stone-600">
+          <span class="text-ink hs-stepper-active:bg-secondary hs-stepper-active:text-stone-50 hs-stepper-success:bg-secondary hs-stepper-success:text-stone-50 hs-stepper-completed:bg-secondary hs-stepper-completed:group-focus:bg-secondary dark:hs-stepper-active:bg-primary dark:hs-stepper-active:text-ink dark:hs-stepper-success:bg-primary dark:hs-stepper-success:text-ink dark:hs-stepper-completed:bg-primary-accent-dark dark:hs-stepper-completed:group-focus:bg-primary-accent-dark corner-squircle flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sand font-medium transition duration-300 group-focus:bg-stone-200 dark:bg-stone-700 dark:text-stone-100 dark:group-focus:bg-stone-600">
             <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
               {index + 1}
             </span>
@@ -37,11 +37,11 @@ interface Props {
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </span>
-          <span class="text-dark ms-2 hidden text-sm font-medium sm:inline-block 2xl:text-base dark:text-stone-100">
+          <span class="text-ink ms-2 hidden text-sm font-medium sm:inline-block 2xl:text-base dark:text-stone-100">
             Step
           </span>
         </span>
-        <div class="hs-stepper-success:bg-secondary hs-stepper-completed:bg-secondary-accent dark:hs-stepper-success:bg-primary dark:hs-stepper-completed:bg-primary-accent-dark h-px w-full flex-1 bg-stone-200 transition duration-300 group-last:hidden" />
+        <div class="hs-stepper-success:bg-secondary hs-stepper-completed:bg-secondary dark:hs-stepper-success:bg-primary dark:hs-stepper-completed:bg-primary-accent-dark h-px w-full flex-1 bg-stone-200 transition duration-300 group-last:hidden" />
       </li>
     ))}
   </ul>
@@ -58,11 +58,11 @@ interface Props {
         }`}
         style={index === 0 ? '' : 'display: none'}
       >
-        <div class="corner-squircle flex h-max flex-col items-center justify-center rounded-4xl border border-dashed border-orange-200 p-4 dark:border-stone-600">
-          <p class="text-dark text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200">
+        <div class="corner-squircle flex h-max flex-col items-center justify-center rounded-4xl border border-dashed border-sand-dark p-4 dark:border-stone-600">
+          <p class="text-ink text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200">
             {step.title}
           </p>
-          <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 text-lg font-normal text-pretty text-stone-600 2xl:text-xl dark:text-stone-400">
+          <ul class="marker:text-secondary-ink dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 text-lg font-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
             {step.actions.map(action => (
               <li>{action}</li>
             ))}
@@ -75,7 +75,7 @@ interface Props {
     <div class="mt-5 flex items-center justify-between gap-x-2">
       <button
         type="button"
-        class="group text-on-brand focus-visible:ring-secondary corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-orange-200 bg-orange-100 px-3 py-2 text-sm font-medium shadow-xs transition duration-300 hover:bg-orange-200 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700"
+        class="group text-on-brand focus-visible:ring-secondary corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-sand-dark bg-sand px-3 py-2 text-sm font-medium shadow-xs transition duration-300 hover:bg-sand-dark focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700"
         data-hs-stepper-back-btn
       >
         <svg
@@ -96,7 +96,7 @@ interface Props {
       </button>
       <button
         type="button"
-        class="group bg-secondary-accent text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
+        class="group bg-secondary-soft text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
         data-hs-stepper-next-btn
       >
         Next
@@ -117,7 +117,7 @@ interface Props {
       </button>
       <button
         type="button"
-        class="bg-secondary-accent text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
+        class="bg-secondary-soft text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
         data-hs-stepper-finish-btn
         style="display: none"
       >
@@ -125,7 +125,7 @@ interface Props {
       </button>
       <button
         type="reset"
-        class="bg-secondary-accent text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
+        class="bg-secondary-soft text-on-brand hover:bg-secondary focus-visible:ring-secondary dark:bg-primary dark:hover:bg-primary/95 corner-squircle inline-flex items-center gap-x-1 rounded-4xl border border-transparent px-3 py-2 text-sm font-bold transition duration-300 focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 2xl:text-base"
         data-hs-stepper-reset-btn
         style="display: none"
       >

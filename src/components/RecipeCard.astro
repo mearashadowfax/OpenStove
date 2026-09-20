@@ -11,7 +11,7 @@ interface Props {
 ---
 
 <a
-  class="group focus-visible:ring-secondary corner-squircle flex h-full flex-col rounded-[50px] border border-orange-200 p-5 transition-all duration-300 hover:border-transparent hover:bg-orange-100 hover:shadow-sm focus-visible:ring-2 focus-visible:outline-hidden dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/5 dark:hover:shadow-black/40"
+  class="group focus-visible:ring-secondary corner-squircle flex h-full flex-col rounded-[50px] border border-sand-dark bg-white p-5 dark:bg-transparent transition-all duration-300 hover:border-transparent hover:bg-sand focus-visible:ring-2 focus-visible:outline-hidden dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/5"
   href={'/recipes/' + recipe.id}
   data-astro-prefetch
 >
@@ -24,17 +24,17 @@ interface Props {
     />
   </div>
   <div class="my-6">
-    <h3 class="text-dark text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100">
+    <h3 class="text-ink text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100">
       {recipe.data.title}
     </h3>
-    <p class="mt-5 text-stone-600 2xl:text-xl dark:text-stone-400">
+    <p class="mt-5 text-muted 2xl:text-xl dark:text-stone-400">
       {recipe.data.description}
     </p>
   </div>
   <div class="mt-auto flex items-center gap-x-3">
     <div class="space-x-2.5">
       {recipe.data.tags?.map((tag: string) => (
-        <span class="text-on-brand corner-squircle bg-secondary/30 group-hover:bg-secondary/40 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
+        <span class="text-olive-dark corner-squircle bg-olive/20 group-hover:bg-olive/30 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
           {tagLabel(tag)}
         </span>
       ))}

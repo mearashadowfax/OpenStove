@@ -33,7 +33,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
       <div class="corner-squircle from-brand-gold to-brand-warm rounded-[100px] bg-linear-to-br px-4 py-6">
         <section class="flex items-center justify-center gap-6">
           <div class="flex w-10/12 justify-center text-center sm:py-4 md:py-12 lg:w-6/12 lg:py-0 lg:text-left">
-            <h1 class="text-dark text-2xl font-bold tracking-tight text-balance md:text-3xl lg:text-4xl xl:text-5xl">
+            <h1 class="text-ink dark:text-stone-100 text-2xl font-bold tracking-tight text-balance md:text-3xl lg:text-4xl xl:text-5xl">
               Explore, cook, and cherish recipes co-created by our global
               community of food enthusiasts.
             </h1>
@@ -55,7 +55,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
     class={`flex flex-col ${currentPage === 1 ? '' : 'mt-20'} gap-2.5 sm:flex-row sm:justify-center lg:justify-end`}
   >
     <a
-      class="group bg-secondary-accent text-on-brand hover:bg-secondary corner-squircle inline-flex items-center justify-center gap-x-3 rounded-4xl px-8 py-3 text-center text-base font-medium outline-hidden transition duration-300 focus-visible:-translate-y-1 2xl:text-lg"
+      class="group btn btn-secondary px-8 py-3 text-base 2xl:text-lg"
       href="/contribute"
       data-astro-prefetch
     >
@@ -75,7 +75,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
       </svg>
     </a>
     <a
-      class="group bg-primary text-on-brand hover:shadow-primary corner-squircle inline-flex items-center justify-center gap-x-3 rounded-4xl px-8 py-3 text-center text-base font-medium outline-hidden transition duration-300 hover:shadow-2xl focus-visible:-translate-y-1 2xl:text-lg"
+      class="group btn btn-primary px-8 py-3 text-base 2xl:text-lg"
       href="/recipes/saved"
     >
       Saved recipes
@@ -115,14 +115,14 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
               {/* Title */}
               <div class="mx-auto flex flex-col items-center justify-center px-4 sm:px-6 md:px-0">
                 <div class="mx-auto">
-                  <p class="text-center text-lg leading-relaxed text-pretty text-stone-600 sm:text-xl 2xl:text-2xl dark:text-stone-400">
+                  <p class="text-center text-lg leading-relaxed text-pretty text-muted sm:text-xl 2xl:text-2xl dark:text-stone-400">
                     Passionate about your pesto? Fanatical about your pho?
                     Whatever your specialty, the OpenStove community is hungry
                     for your recipes.
                   </p>
                   <div class="mt-8 text-center">
                     <a
-                      class="bg-secondary-accent text-on-brand hover:bg-secondary hover:shadow-secondary focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center gap-x-3 rounded-4xl border border-transparent px-4 py-3 text-center text-sm font-medium transition duration-300 hover:shadow-2xl focus:outline-hidden focus-visible:-translate-y-1 focus-visible:ring-2 focus-visible:outline-hidden 2xl:text-base"
+                      class="btn btn-secondary px-4 py-3 text-sm 2xl:text-base"
                       href="/contribute"
                       data-astro-prefetch
                     >

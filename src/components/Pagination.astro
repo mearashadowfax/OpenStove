@@ -32,18 +32,18 @@ function pageClass(page: number) {
   const isActive = currentPage === page;
   return `${baseStyle} ${
     isActive
-      ? 'bg-orange-200 focus:bg-orange-200 dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-stone-600'
-      : 'hover:bg-orange-100 focus:bg-orange-100 dark:text-white dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5'
+      ? 'bg-sand-dark focus:bg-sand-dark dark:bg-stone-700 dark:text-stone-100 dark:focus:bg-stone-600'
+      : 'hover:bg-sand focus:bg-sand dark:text-white dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5'
   }`;
 }
 
 const baseStyle =
-  'flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-dark focus:outline-hidden disabled:pointer-events-none disabled:opacity-50';
+  'flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm text-ink focus:outline-hidden disabled:pointer-events-none disabled:opacity-50';
 const navLinkStyle =
-  'inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-dark hover:bg-orange-100 focus:bg-orange-100 focus:outline-hidden dark:text-stone-100 dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5';
+  'inline-flex group min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-ink hover:bg-sand focus:bg-sand focus:outline-hidden dark:text-stone-100 dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5';
 const disabledNavStyle = `${navLinkStyle} pointer-events-none opacity-50`;
 const ellipsisStyle =
-  'hs-tooltip-toggle group hover:text-primary-accent-light dark:hover:text-primary-accent-dark flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg p-2 text-sm text-stone-400 hover:bg-orange-100 focus:bg-orange-100 focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5';
+  'hs-tooltip-toggle group hover:text-primary-accent-light dark:hover:text-primary-accent-dark flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg p-2 text-sm text-stone-500 hover:bg-sand focus:bg-sand focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:hover:bg-stone-100/5 dark:focus:bg-stone-100/5';
 const tooltipStyle =
   'hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible invisible absolute z-10 inline-block rounded-sm bg-stone-900 px-2 py-1 text-xs font-medium text-stone-100 opacity-0 shadow-xs transition-opacity dark:bg-stone-700';
 ---

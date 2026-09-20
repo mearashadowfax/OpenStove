@@ -8,34 +8,45 @@
   --color-inherit: inherit;
   --color-current: currentColor;
   --color-transparent: transparent;
-  --color-black: #000;
-  --color-white: #fff;
+  --color-black: oklch(0 0 0);
+  --color-white: oklch(1 0 0);
 
   /* Neutrals */
-  --color-dark: oklch(26.03% 0 0);
-  --color-footer: oklch(37.15% 0 0);
-  --color-footer-light: oklch(44.23% 0 0);
-  --color-on-brand: oklch(27% 0.06 55);
-  /* deep amber text on gold/orange fills */
+  --color-dark: oklch(0.2603 0 0); /* dark-mode surface, print text */
+  /* slate text – matches illustration linework */
+  --color-ink: oklch(0.3087 0.0195 229.78);
+  --color-muted: oklch(0.4634 0.0188 233.41); /* secondary copy */
+  --color-on-brand: var(--color-ink); /* text on gold / coral */
+  --color-cream: oklch(0.9882 0.0069 88.64); /* page background */
+  --color-sand: oklch(0.9434 0.0181 89.36); /* hover / raised surfaces */
+  --color-sand-dark: oklch(0.8949 0.0266 90.11); /* borders */
+  --color-footer: oklch(0.3715 0 0);
+  --color-footer-light: oklch(0.4423 0 0);
+  --color-footer-bg: oklch(0.8537 0.1572 84.13); /* softer gold than primary */
 
-  /* Brand fills */
-  --color-primary: oklch(85.37% 0.1572 84.13);
-  /* gold */
-  --color-primary-accent-light: oklch(75.7% 0.1772 60.16);
-  --color-primary-accent-dark: oklch(79.27% 0.171 70.67);
-  --color-secondary: oklch(78.14% 0.1357 44.77);
-  /* orange */
-  --color-secondary-accent: oklch(80.68% 0.117 44.56);
+  /* Brand – from the illustration set */
+  --color-primary: oklch(0.8564 0.1673 86.84); /* gold */
+  /* orange – logo flame */
+  --color-primary-accent-light: oklch(0.757 0.1772 60.16);
+  --color-primary-accent-dark: oklch(0.7927 0.171 70.67); /* gold hover */
+  --color-secondary: oklch(0.7186 0.176 30.15); /* coral */
+  --color-secondary-dark: oklch(0.6817 0.184 31.25); /* coral hover */
+  /* softer coral for light-mode button fills – the full coral is the hover */
+  --color-secondary-soft: oklch(0.75 0.15 33);
+  /* coral as text – 5.0:1 on cream, 4.4:1 on sand */
+  --color-secondary-ink: oklch(0.5532 0.1709 31.76);
+  --color-olive: oklch(0.6523 0.1187 129.7); /* tag pills */
+  --color-olive-dark: oklch(0.4463 0.0943 132.86); /* tag text */
 
-  /* Two gradient stops – warm orange → gold (use everywhere) */
-  --color-brand-warm: oklch(72% 0.18 45);
-  --color-brand-gold: oklch(82% 0.15 85);
+  /* Gradient stops – amber → gold */
+  --color-brand-warm: oklch(0.8163 0.1548 72.79);
+  --color-brand-gold: var(--color-primary);
 
   /* Eyebrow text gradient */
-  --color-eyebrow-from: oklch(63.25% 0.1473 59.49);
-  --color-eyebrow-to: oklch(70.31% 0.144 77.8);
+  --color-eyebrow-from: var(--color-secondary-ink);
+  --color-eyebrow-to: oklch(0.6468 0.1854 31.74);
   --color-eyebrow-from-dark: oklch(0.894 0.0714 64.64);
-  --color-eyebrow-to-dark: oklch(92.33% 0.044 50.42);
+  --color-eyebrow-to-dark: oklch(0.9233 0.044 50.42);
 }
 
 @theme inline {
@@ -57,7 +68,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-stone-200, currentColor);
+    border-color: var(--color-sand-dark, currentColor);
   }
 
   button:not(:disabled),
@@ -74,8 +85,21 @@
 
 @custom-variant search-cancel (&::-webkit-search-cancel-button);
 
+/* CTA buttons: one hover rule site-wide – colour deepens a step, 2px lift, no shadow */
+@utility btn {
+  @apply corner-squircle focus-visible:ring-secondary inline-flex items-center justify-center gap-x-3 rounded-4xl text-center font-medium outline-hidden transition duration-300 hover:-translate-y-0.5 focus:outline-hidden focus-visible:-translate-y-0.5 focus-visible:ring-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50;
+}
+
+@utility btn-primary {
+  @apply bg-primary text-on-brand hover:bg-primary-accent-dark;
+}
+
+@utility btn-secondary {
+  @apply bg-secondary-soft text-on-brand hover:bg-secondary dark:bg-secondary dark:hover:bg-secondary-dark;
+}
+
 @utility form-control {
-  @apply text-dark corner-squircle focus-visible:border-secondary focus-visible:ring-secondary/50 dark:focus-visible:border-secondary dark:focus-visible:ring-secondary/40 w-full rounded-4xl border border-orange-200 bg-white px-3 py-2.5 text-base transition-[color,box-shadow,border-color] outline-none placeholder:text-stone-400 focus-visible:ring-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/20;
+  @apply text-ink corner-squircle focus-visible:border-secondary focus-visible:ring-secondary/50 dark:focus-visible:border-secondary dark:focus-visible:ring-secondary/40 border-sand-dark w-full rounded-4xl border bg-white px-3 py-2.5 text-base transition-[color,box-shadow,border-color] outline-none placeholder:text-stone-400 focus-visible:ring-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/20;
 }
 
 .recipe-print-brand,
@@ -96,8 +120,13 @@
   .group:hover .group-hover\:translate-x-1,
   .group:hover .group-hover\:-translate-x-1,
   .group:hover .group-hover\:-translate-y-1,
-  .hover\:-translate-y-1:hover,
+  .group:focus-visible .group-focus-visible\:-translate-y-1,
+  .btn:hover,
+  .btn:focus-visible,
   .hover\:scale-110:hover {
+    /* Tailwind v4 uses the translate / scale properties, not transform */
+    translate: none !important;
+    scale: none !important;
     transform: none !important;
   }
 }
