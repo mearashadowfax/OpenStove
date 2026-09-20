@@ -107,7 +107,7 @@ const NOINDEX = 'noindex, follow';
                   ></textarea>
                 ) : field.kind === 'number' ? (
                   <div
-                    class="corner-squircle max-w-48 rounded-4xl border border-sand-dark bg-white dark:border-stone-600 dark:bg-stone-900"
+                    class="corner-squircle focus-within:border-secondary focus-within:ring-secondary/50 dark:focus-within:border-secondary dark:focus-within:ring-secondary/40 max-w-48 rounded-4xl border border-sand-dark bg-white transition-[box-shadow,border-color] focus-within:ring-3 dark:border-stone-600 dark:bg-stone-900"
                     data-hs-input-number={JSON.stringify({
                       min: field.min,
                       max: field.max,
@@ -116,7 +116,7 @@ const NOINDEX = 'noindex, follow';
                     <div class="flex w-full items-center justify-between gap-x-1">
                       <div class="grow px-3 py-2">
                         <input
-                          class="text-ink w-full [appearance:textfield] border-0 bg-transparent p-0 focus:ring-0 disabled:opacity-50 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                          class="text-ink w-full [appearance:textfield] border-0 bg-transparent p-0 outline-hidden focus:ring-0 disabled:opacity-50 dark:text-stone-100 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                           id={field.name}
                           name={field.name}
                           type="number"

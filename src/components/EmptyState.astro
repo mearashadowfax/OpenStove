@@ -25,7 +25,7 @@ const {
   <p class="mt-3 text-pretty text-muted dark:text-stone-400">{description}</p>
   <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
     <a
-      class="bg-secondary text-on-brand hover:bg-secondary-dark focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center rounded-4xl px-6 py-3 font-medium transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 focus:outline-hidden focus-visible:ring-2"
+      class="btn btn-secondary px-6 py-3"
       href={primaryHref}
       data-astro-prefetch
     >
@@ -33,7 +33,7 @@ const {
     </a>
     {secondaryHref && secondaryLabel && (
       <a
-        class="border-primary bg-primary text-on-brand corner-squircle hover:border-primary-accent-dark hover:bg-primary-accent-dark inline-block rounded-4xl border-2 px-8 py-3 text-center text-sm font-medium outline-hidden transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 md:text-base"
+        class="btn btn-primary px-8 py-3 text-sm md:text-base"
         href={secondaryHref}
         data-astro-prefetch
       >
