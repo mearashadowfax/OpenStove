@@ -13,13 +13,16 @@ const savedIds = parseBookmarks(Astro.cookies.get(BOOKMARKS_COOKIE)?.value);
 const saved = listRecipes(byIds(await getCollection('recipes'), savedIds), {
   perPage: Number.MAX_SAFE_INTEGER,
 });
+
+// Also listed in NOINDEX_PATHS in astro.config.mjs, which keeps this page out of the sitemap.
+const NOINDEX = 'noindex, follow';
 ---
 
 <MainLayout
   title="Saved Recipes | OpenStove"
   description="View your saved recipes on OpenStove. Access your bookmarked recipes anytime."
   canonicalUrl="/recipes/saved"
-  robots="noindex, follow"
+  robots={NOINDEX}
 >
   <section class="min-h-screen">
     <div class="mt-10 py-6 sm:py-8 lg:py-12">

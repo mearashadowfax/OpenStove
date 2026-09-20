@@ -1,5 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { formatIngredientLine } from './quantity';
+import { stepAnchorId } from './recipeSteps';
 
 export type RecipeData = CollectionEntry<'recipes'>['data'];
 
@@ -10,13 +11,8 @@ export interface RecipeJsonLdOptions {
   imageUrl: string;
 }
 
-/** Fragment id of the nth (1-based) step on a recipe page; the JSON-LD step `url` points here. */
-export function stepAnchorId(position: number): string {
-  return `step-${position}`;
-}
-
-/** Tags that name a schema.org recipeCategory (the kind of dish or course). */
-const CATEGORY_TAGS: Record<string, string> = {
+/** schema.org recipeCategory (the kind of dish or course) for the tags that name one. */
+const DISH_KIND_BY_TAG: Record<string, string> = {
   breakfast: 'Breakfast',
   bread: 'Bread',
   dessert: 'Dessert',
@@ -24,13 +20,13 @@ const CATEGORY_TAGS: Record<string, string> = {
   main: 'Main course',
   salad: 'Salad',
   sandwich: 'Sandwich',
-  sidedish: 'Side dish',
+  'side dish': 'Side dish',
   snack: 'Snack',
   soup: 'Soup',
 };
 
-/** Tags that name a schema.org recipeCuisine (a regional or national cooking tradition). */
-const CUISINE_TAGS: Record<string, string> = {
+/** schema.org recipeCuisine (a regional or national cooking tradition) for the tags that name one. */
+const CUISINE_BY_TAG: Record<string, string> = {
   asian: 'Asian',
   australian: 'Australian',
   chinese: 'Chinese',
@@ -52,11 +48,12 @@ const CUISINE_TAGS: Record<string, string> = {
   uyghur: 'Uyghur',
 };
 
-function pickLabels(
+/** The schema.org values named by a recipe's tags, in tag order. */
+function schemaValuesFor(
   tags: readonly string[],
-  labels: Record<string, string>
+  valueByTag: Record<string, string>
 ): string[] {
-  return tags.flatMap(tag => labels[tag] ?? []);
+  return tags.flatMap(tag => valueByTag[tag] ?? []);
 }
 
 /** schema.org/Recipe structured data for one recipe. */
@@ -91,11 +88,11 @@ export function recipeJsonLd(
   if (tags.length > 0) {
     jsonLd.keywords = tags.join(', ');
   }
-  const categories = pickLabels(tags, CATEGORY_TAGS);
-  if (categories.length > 0) {
-    jsonLd.recipeCategory = categories;
+  const dishKinds = schemaValuesFor(tags, DISH_KIND_BY_TAG);
+  if (dishKinds.length > 0) {
+    jsonLd.recipeCategory = dishKinds;
   }
-  const cuisines = pickLabels(tags, CUISINE_TAGS);
+  const cuisines = schemaValuesFor(tags, CUISINE_BY_TAG);
   if (cuisines.length > 0) {
     jsonLd.recipeCuisine = cuisines;
   }

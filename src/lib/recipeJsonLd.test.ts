@@ -55,19 +55,25 @@ describe('recipeJsonLd', () => {
 
   it('derives keywords, category and cuisine from tags', () => {
     const jsonLd = recipeJsonLd(
-      { ...base, tags: ['soup', 'tomato', 'italian', 'vegetarian'] },
+      { ...base, tags: ['soup', 'tomatoes', 'italian', 'vegetarian'] },
       options
     );
 
-    expect(jsonLd.keywords).toBe('soup, tomato, italian, vegetarian');
+    expect(jsonLd.keywords).toBe('soup, tomatoes, italian, vegetarian');
     expect(jsonLd.recipeCategory).toEqual(['Soup']);
     expect(jsonLd.recipeCuisine).toEqual(['Italian']);
   });
 
-  it('omits category and cuisine when no tag names one', () => {
-    const jsonLd = recipeJsonLd({ ...base, tags: ['tomato'] }, options);
+  it('maps a multi-word tag to its category', () => {
+    expect(
+      recipeJsonLd({ ...base, tags: ['side dish'] }, options).recipeCategory
+    ).toEqual(['Side dish']);
+  });
 
-    expect(jsonLd.keywords).toBe('tomato');
+  it('omits category and cuisine when no tag names one', () => {
+    const jsonLd = recipeJsonLd({ ...base, tags: ['tomatoes'] }, options);
+
+    expect(jsonLd.keywords).toBe('tomatoes');
     expect(jsonLd).not.toHaveProperty('recipeCategory');
     expect(jsonLd).not.toHaveProperty('recipeCuisine');
   });

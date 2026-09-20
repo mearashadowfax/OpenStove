@@ -49,6 +49,9 @@ const emptyState = hasQuery
       primaryHref: '/recipes',
       primaryLabel: 'Browse all recipes',
     };
+
+// Also listed in NOINDEX_PATHS in astro.config.mjs, which keeps this page out of the sitemap.
+const NOINDEX = 'noindex, follow';
 ---
 
 <MainLayout
@@ -59,7 +62,7 @@ const emptyState = hasQuery
   }
   description={pageDescription}
   canonicalUrl={canonicalUrl}
-  robots="noindex, follow"
+  robots={NOINDEX}
 >
   <section class="min-h-screen">
     <div class="mt-10 py-6 sm:py-8 lg:py-12">

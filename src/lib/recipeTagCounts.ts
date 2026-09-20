@@ -35,6 +35,7 @@ function tagsOf(markdown: string): string[] {
 export function readRecipeTagCounts(recipesDir: string): Map<string, number> {
   const counts = new Map<string, number>();
   for (const file of fs.readdirSync(recipesDir)) {
+    // Same file rule as the recipes collection in src/content.config.ts.
     if (!/^[^_].*\.mdx?$/.test(file)) continue;
     const markdown = fs.readFileSync(path.join(recipesDir, file), 'utf8');
     for (const tag of tagsOf(markdown)) {

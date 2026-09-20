@@ -20,12 +20,15 @@ const formConfigured = isContributionConfigured({
   TURNSTILE_SECRET_KEY: import.meta.env.TURNSTILE_SECRET_KEY,
   PROD: import.meta.env.PROD,
 });
+
+// Also listed in NOINDEX_PATHS in astro.config.mjs, which keeps this page out of the sitemap.
+const NOINDEX = 'noindex, follow';
 ---
 
 <MainLayout
   title="Contribute a Recipe | OpenStove"
   description="Share your recipe with the OpenStove community via an easy online form."
-  robots="noindex, follow"
+  robots={NOINDEX}
 >
   <section class="mx-auto max-w-2xl px-4 py-16 sm:px-6 lg:py-20">
     <h1 class="text-dark text-3xl font-bold text-balance sm:text-4xl dark:text-stone-100">

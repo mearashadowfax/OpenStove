@@ -55,6 +55,7 @@ export default defineConfig({
     // Tags merged into their plural / broader form.
     '/recipes/tag/almond': '/recipes/tag/almonds',
     '/recipes/tag/black%20beans': '/recipes/tag/beans',
+    '/recipes/tag/black beans': '/recipes/tag/beans',
     '/recipes/tag/egg': '/recipes/tag/eggs',
     '/recipes/tag/mushroom': '/recipes/tag/mushrooms',
     '/recipes/tag/noodle': '/recipes/tag/noodles',
