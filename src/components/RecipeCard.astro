@@ -11,10 +11,11 @@ interface Props {
 ---
 
 <a
-  class="group focus-visible:ring-secondary corner-squircle flex h-full flex-col rounded-[50px] border border-sand-dark bg-white p-5 dark:bg-transparent transition-all duration-300 hover:border-transparent hover:bg-sand focus-visible:ring-2 focus-visible:outline-hidden dark:border-stone-700/40 dark:hover:border-transparent dark:hover:bg-stone-100/5"
+  class="group focus-visible:ring-secondary corner-squircle row-span-4 grid grid-rows-subgrid rounded-[50px] border border-sand-dark bg-white p-5 transition-all duration-300 hover:border-transparent hover:bg-sand focus-visible:ring-2 focus-visible:outline-hidden dark:border-stone-700 dark:bg-stone-700/20 dark:hover:border-stone-600 dark:hover:bg-stone-700/45"
   href={'/recipes/' + recipe.id}
   data-astro-prefetch
 >
+  {/* Four subgrid rows share track heights across the row, so titles and descriptions line up between cards */}
   <div class="aspect-w-16 aspect-h-11 corner-squircle overflow-clip rounded-[50px]">
     <RecipeImage
       class="corner-squircle aspect-3/2 w-full rounded-[50px] object-cover transition duration-500 group-hover:scale-110"
@@ -23,22 +24,20 @@ interface Props {
       draggable="false"
     />
   </div>
-  <div class="my-6">
-    <h3 class="text-ink text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100">
-      {recipe.data.title}
-    </h3>
-    <p class="mt-5 text-muted 2xl:text-xl dark:text-stone-400">
-      {recipe.data.description}
-    </p>
-  </div>
-  <div class="mt-auto flex items-center gap-x-3">
-    <div class="space-x-2.5">
-      {recipe.data.tags?.map((tag: string) => (
-        <span class="text-olive-dark corner-squircle bg-olive/20 group-hover:bg-olive/30 inline-flex items-center gap-x-1.5 rounded-4xl px-3 py-1.5 text-xs font-medium transition-colors duration-300 2xl:text-sm dark:bg-stone-700/60 dark:text-stone-300 dark:group-hover:bg-stone-600">
-          {tagLabel(tag)}
-        </span>
-      ))}
-    </div>
+  <h3 class="text-ink line-clamp-2 text-2xl font-bold transition-colors duration-300 2xl:text-3xl dark:text-stone-300 dark:group-hover:text-stone-100">
+    {recipe.data.cardTitle ?? recipe.data.title}
+  </h3>
+  <p class="line-clamp-3 text-muted 2xl:text-xl dark:text-stone-400">
+    {recipe.data.description}
+  </p>
+  {/* Plain labels, not pills – the card is the link, so tags must not look clickable */}
+  <div class="flex flex-wrap items-center gap-x-2 self-end text-xs font-medium text-muted 2xl:text-sm dark:text-stone-400">
+    {recipe.data.tags?.map((tag: string, i: number) => (
+      <>
+        {i > 0 && <span aria-hidden="true">·</span>}
+        <span>{tagLabel(tag)}</span>
+      </>
+    ))}
   </div>
 </a>
 

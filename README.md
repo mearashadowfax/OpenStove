@@ -94,6 +94,7 @@ Key rules:
 - **Quantities are numbers only.** `'1/2'`, `'1.5'`, `'1 1/2'` and `'3-4'` are valid; `'125g'` is rejected. Put the unit in `unit`.
 - **Scaling.** By default a recipe is written for one serving and readers get a stepper. For a whole dish (cake, pie, loaf) set `servings: 8` and `scalable: false`; readers then see "Serves 8".
 - **Tags.** Lowercase, up to three, each one gets its own page.
+- **Long titles.** Cards clamp titles to two lines. If the full title is long, add an optional `cardTitle` for the card; the recipe page keeps `title`.
 
 A blank copy with no placeholders is in [`Ready-to-go-Template.md`](Ready-to-go-Template.md).
 

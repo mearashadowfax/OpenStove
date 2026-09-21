@@ -115,6 +115,31 @@ describe('formatIngredientLine', () => {
       'a pinch salt'
     );
   });
+
+  it('agrees spelled-out units with the quantity', () => {
+    const line = { quantity: '1', unit: 'cup', name: 'flour' };
+    expect(formatIngredientLine(line, 3)).toBe('3 cups flour');
+    expect(formatIngredientLine(line, 1.5)).toBe('1½ cups flour');
+    expect(formatIngredientLine(line, 0.5)).toBe('½ cup flour');
+    expect(
+      formatIngredientLine({ quantity: '1-2', unit: 'tablespoon', name: 'oil' })
+    ).toBe('1-2 tablespoons oil');
+    expect(
+      formatIngredientLine({ quantity: '2', unit: 'cups', name: 'rice' }, 0.5)
+    ).toBe('1 cup rice');
+    expect(
+      formatIngredientLine({ quantity: '2', unit: 'Pinch', name: 'salt' })
+    ).toBe('2 Pinches salt');
+  });
+
+  it('leaves abbreviations and unknown units as written', () => {
+    expect(
+      formatIngredientLine({ quantity: '2', unit: 'tbsp', name: 'butter' })
+    ).toBe('2 tbsp butter');
+    expect(
+      formatIngredientLine({ quantity: '3', unit: 'rasher', name: 'bacon' })
+    ).toBe('3 rasher bacon');
+  });
 });
 
 describe('formatIngredientLine with a measurement system', () => {
@@ -300,7 +325,7 @@ describe('formatIngredientLine with a measurement system', () => {
         1,
         'us'
       )
-    ).toBe('5 gram ground cinnamon');
+    ).toBe('5 grams ground cinnamon');
   });
 
   it('leaves ounces that scale down to nothing in grams as written', () => {

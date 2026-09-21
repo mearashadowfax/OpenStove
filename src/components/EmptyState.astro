@@ -24,19 +24,11 @@ const {
   </h2>
   <p class="mt-3 text-pretty text-muted dark:text-stone-400">{description}</p>
   <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-    <a
-      class="btn btn-secondary px-6 py-3"
-      href={primaryHref}
-      data-astro-prefetch
-    >
+    <a class="btn btn-secondary" href={primaryHref} data-astro-prefetch>
       {primaryLabel}
     </a>
     {secondaryHref && secondaryLabel && (
-      <a
-        class="btn btn-primary px-8 py-3 text-sm md:text-base"
-        href={secondaryHref}
-        data-astro-prefetch
-      >
+      <a class="btn btn-primary" href={secondaryHref} data-astro-prefetch>
         {secondaryLabel}
       </a>
     )}

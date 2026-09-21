@@ -25,6 +25,7 @@ When you create your recipe, please use the following markdown template, replica
 ```markdown
 ---
 title: 'Name of Your Dish'
+cardTitle: 'Shorter name' # Optional, shown on recipe cards when the full title is long (over ~45 characters). Remove the line otherwise.
 description: 'A short description of the dish. Aim for one or two sentences that evoke taste and appeal.'
 
 author: 'Your Name, GitHub Username or Alias' # Optional, if not provided, remove the block, will be set to default "anonymous".

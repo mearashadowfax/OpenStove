@@ -30,19 +30,11 @@ const latest = listRecipes(await getCollection('recipes'), { perPage: 6 });
 
       {/* Buttons Container Start */}
       <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-        <a
-          class="btn btn-secondary px-8 py-3 text-sm md:text-base 2xl:text-lg"
-          href="/contribute"
-          data-astro-prefetch
-        >
+        <a class="btn btn-secondary" href="/contribute" data-astro-prefetch>
           Contribute a recipe
         </a>
 
-        <a
-          class="btn btn-primary px-8 py-3 text-sm font-bold md:text-base 2xl:text-lg"
-          href="/recipes"
-          data-astro-prefetch
-        >
+        <a class="btn btn-primary" href="/recipes" data-astro-prefetch>
           Explore recipes
         </a>
       </div>
@@ -101,7 +93,7 @@ const latest = listRecipes(await getCollection('recipes'), { perPage: 6 });
           {/* Button Start*/}
           <div class="mt-8 flex justify-center gap-3">
             <a
-              class="btn btn-secondary px-4 py-3 text-sm 2xl:text-base"
+              class="btn btn-secondary"
               href="https://github.com/mearashadowfax/OpenStove"
               target="_blank"
               rel="noopener noreferrer"
@@ -130,7 +122,7 @@ const latest = listRecipes(await getCollection('recipes'), { perPage: 6 });
     {/* Explore More Button */}
     <div class="mt-12 text-center">
       <a
-        class="text-md group btn btn-secondary min-w-64 gap-x-1 px-4 py-3 2xl:text-lg dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700 dark:focus:outline-hidden"
+        class="group btn btn-tertiary gap-x-1"
         href="/recipes"
         data-astro-prefetch
       >
@@ -181,7 +173,7 @@ const latest = listRecipes(await getCollection('recipes'), { perPage: 6 });
                 </p>
                 <div class="mt-6 flex justify-center md:justify-start">
                   <a
-                    class="btn btn-secondary px-6 py-3 text-sm 2xl:text-base"
+                    class="btn btn-secondary"
                     href="/contribute"
                     data-astro-prefetch
                   >

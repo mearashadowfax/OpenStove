@@ -136,6 +136,62 @@ export function formatQuantity(quantity: Quantity): string {
 }
 
 /**
+ * Spelled-out units and their plurals. Abbreviations (tsp, tbsp, g, ml, oz,
+ * lb) are invariant and deliberately absent; unknown words are left as written.
+ */
+const UNIT_PLURALS: Record<string, string> = {
+  bunch: 'bunches',
+  can: 'cans',
+  clove: 'cloves',
+  cup: 'cups',
+  dash: 'dashes',
+  drop: 'drops',
+  fillet: 'fillets',
+  gram: 'grams',
+  handful: 'handfuls',
+  head: 'heads',
+  kilogram: 'kilograms',
+  leaf: 'leaves',
+  liter: 'liters',
+  litre: 'litres',
+  milliliter: 'milliliters',
+  millilitre: 'millilitres',
+  ounce: 'ounces',
+  package: 'packages',
+  packet: 'packets',
+  piece: 'pieces',
+  pinch: 'pinches',
+  pound: 'pounds',
+  sheet: 'sheets',
+  slice: 'slices',
+  sprig: 'sprigs',
+  stalk: 'stalks',
+  stick: 'sticks',
+  tablespoon: 'tablespoons',
+  teaspoon: 'teaspoons',
+};
+
+const UNIT_SINGULARS: Record<string, string> = Object.fromEntries(
+  Object.entries(UNIT_PLURALS).map(([singular, plural]) => [plural, singular])
+);
+
+/**
+ * Agree a spelled-out unit with its quantity: "½ cup" but "1½ cups" and
+ * "1-2 cups". Authors write either form, so both are normalised first.
+ * The author's capitalisation ("Pinch") is kept.
+ */
+export function pluralizeUnit(unit: string, quantity: Quantity): string {
+  const lower = unit.toLowerCase();
+  const singular = UNIT_SINGULARS[lower] ?? lower;
+  const plural = UNIT_PLURALS[singular];
+  if (!plural) return unit;
+  const agreed = quantity.max > 1 ? plural : singular;
+  return unit[0] === unit[0].toUpperCase()
+    ? agreed[0].toUpperCase() + agreed.slice(1)
+    : agreed;
+}
+
+/**
  * Render "quantity unit name" for one ingredient, scaled by `factor` and,
  * when `system` is given, converted to that measurement system.
  * Text outside the grammar is shown as written and never scaled.
@@ -155,8 +211,10 @@ export function formatIngredientLine(
     const converted = system
       ? convertQuantity(scaled, unit ?? '', line.name, system)
       : null;
-    quantity = formatQuantity(converted ? converted.quantity : scaled);
+    const final = converted ? converted.quantity : scaled;
+    quantity = formatQuantity(final);
     if (converted) unit = converted.unit;
+    if (unit) unit = pluralizeUnit(unit.trim(), final);
   }
 
   return [quantity, unit, line.name]

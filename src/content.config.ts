@@ -7,6 +7,16 @@ const recipes = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/recipes' }),
   schema: z.object({
     title: z.string(),
+    // Keystatic writes '' for a blank optional text field; treat that as absent
+    cardTitle: z.preprocess(
+      value => value || undefined,
+      z
+        .string()
+        .optional()
+        .describe(
+          'Shorter title for recipe cards; the full title stays on the recipe page'
+        )
+    ),
     description: z.string(),
     recipeNotes: z.array(z.string()).optional(),
     pubDate: z.date(),

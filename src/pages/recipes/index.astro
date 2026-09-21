@@ -33,7 +33,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
       <div class="corner-squircle from-brand-gold to-brand-warm rounded-[100px] bg-linear-to-br px-4 py-6">
         <section class="flex items-center justify-center gap-6">
           <div class="flex w-10/12 justify-center text-center sm:py-4 md:py-12 lg:w-6/12 lg:py-0 lg:text-left">
-            <h1 class="text-ink dark:text-stone-100 text-2xl font-bold tracking-tight text-balance md:text-3xl lg:text-4xl xl:text-5xl">
+            <h1 class="text-ink text-2xl font-bold tracking-tight text-balance md:text-3xl lg:text-4xl xl:text-5xl">
               Explore, cook, and cherish recipes co-created by our global
               community of food enthusiasts.
             </h1>
@@ -54,11 +54,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
   <div
     class={`flex flex-col ${currentPage === 1 ? '' : 'mt-20'} gap-2.5 sm:flex-row sm:justify-center lg:justify-end`}
   >
-    <a
-      class="group btn btn-secondary px-8 py-3 text-base 2xl:text-lg"
-      href="/contribute"
-      data-astro-prefetch
-    >
+    <a class="group btn btn-secondary" href="/contribute" data-astro-prefetch>
       Add a recipe
       <svg
         class="h-5 w-5 transition duration-300 group-hover:-translate-y-1 group-focus-visible:-translate-y-1"
@@ -74,10 +70,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
         ></path>
       </svg>
     </a>
-    <a
-      class="group btn btn-primary px-8 py-3 text-base 2xl:text-lg"
-      href="/recipes/saved"
-    >
+    <a class="group btn btn-primary" href="/recipes/saved">
       Saved recipes
       <svg
         class="h-6 w-6 transition duration-300 group-hover:-translate-y-1 group-focus-visible:-translate-y-1"
@@ -122,7 +115,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
                   </p>
                   <div class="mt-8 text-center">
                     <a
-                      class="btn btn-secondary px-4 py-3 text-sm 2xl:text-base"
+                      class="btn btn-secondary"
                       href="/contribute"
                       data-astro-prefetch
                     >

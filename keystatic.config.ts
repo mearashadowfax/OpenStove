@@ -20,6 +20,12 @@ export default config({
       format: { contentField: 'body' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
+        cardTitle: fields.text({
+          label: 'Card title',
+          description:
+            'Optional shorter title for recipe cards; leave empty to use the full title.',
+          validation: { isRequired: false },
+        }),
         description: fields.text({ label: 'Description', multiline: true }),
         author: fields.text({ label: 'Author', defaultValue: 'anonymous' }),
         pubDate: fields.date({ label: 'Publication date' }),

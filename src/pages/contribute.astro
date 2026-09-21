@@ -75,7 +75,7 @@ const NOINDEX = 'noindex, follow';
                     id={field.name}
                     name={field.name}
                     type="checkbox"
-                    class="accent-secondary h-4 w-4"
+                    class="accent-secondary h-4 w-4 dark:accent-primary"
                   />
                   {field.label}
                 </label>
@@ -107,7 +107,7 @@ const NOINDEX = 'noindex, follow';
                   ></textarea>
                 ) : field.kind === 'number' ? (
                   <div
-                    class="corner-squircle focus-within:border-secondary focus-within:ring-secondary/50 dark:focus-within:border-secondary dark:focus-within:ring-secondary/40 max-w-48 rounded-4xl border border-sand-dark bg-white transition-[box-shadow,border-color] focus-within:ring-3 dark:border-stone-600 dark:bg-stone-900"
+                    class="corner-squircle focus-within:border-secondary focus-within:ring-secondary/50 dark:focus-within:border-primary dark:focus-within:ring-primary/40 max-w-48 rounded-4xl border border-sand-dark bg-white transition-[box-shadow,border-color] focus-within:ring-3 dark:border-stone-600 dark:bg-stone-900"
                     data-hs-input-number={JSON.stringify({
                       min: field.min,
                       max: field.max,
@@ -232,7 +232,7 @@ const NOINDEX = 'noindex, follow';
           type="submit"
           id="contribute-submit"
           disabled={!formConfigured}
-          class="bg-secondary text-ink hover:bg-secondary-dark focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+          class="bg-secondary text-ink hover:bg-secondary-dark focus-visible:ring-secondary corner-squircle inline-flex items-center justify-center rounded-4xl px-5 py-2.5 font-medium transition-colors focus-visible:ring-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 dark:bg-primary dark:hover:bg-primary-accent-dark dark:focus-visible:ring-primary"
         >
           Submit for review
         </button>

@@ -5,12 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-inherit: inherit;
-  --color-current: currentColor;
-  --color-transparent: transparent;
-  --color-black: oklch(0 0 0);
-  --color-white: oklch(1 0 0);
-
   /* Neutrals */
   --color-dark: oklch(0.2603 0 0); /* dark-mode surface, print text */
   /* slate text – matches illustration linework */
@@ -35,8 +29,6 @@
   --color-secondary-soft: oklch(0.75 0.15 33);
   /* coral as text – 5.0:1 on cream, 4.4:1 on sand */
   --color-secondary-ink: oklch(0.5532 0.1709 31.76);
-  --color-olive: oklch(0.6523 0.1187 129.7); /* tag pills */
-  --color-olive-dark: oklch(0.4463 0.0943 132.86); /* tag text */
 
   /* Gradient stops – amber → gold */
   --color-brand-warm: oklch(0.8163 0.1548 72.79);
@@ -85,9 +77,10 @@
 
 @custom-variant search-cancel (&::-webkit-search-cancel-button);
 
-/* CTA buttons: one hover rule site-wide – colour deepens a step, 2px lift, no shadow */
+/* CTA buttons: one size and one hover rule site-wide – colour deepens a step, 2px lift, no shadow.
+   The transparent border keeps filled and outlined variants the same height. */
 @utility btn {
-  @apply corner-squircle focus-visible:ring-secondary inline-flex items-center justify-center gap-x-3 rounded-4xl text-center font-medium outline-hidden transition duration-300 hover:-translate-y-0.5 focus:outline-hidden focus-visible:-translate-y-0.5 focus-visible:ring-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50;
+  @apply corner-squircle focus-visible:ring-secondary inline-flex items-center justify-center gap-x-3 rounded-4xl border border-transparent px-6 py-3 text-center text-sm font-medium outline-hidden transition duration-300 hover:-translate-y-0.5 focus:outline-hidden focus-visible:-translate-y-0.5 focus-visible:ring-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 md:text-base;
 }
 
 @utility btn-primary {
@@ -98,8 +91,13 @@
   @apply bg-secondary-soft text-on-brand hover:bg-secondary dark:bg-secondary dark:hover:bg-secondary-dark;
 }
 
+/* Sand-filled secondary action – same treatment as the stepper's Back button and the active pagination pill */
+@utility btn-tertiary {
+  @apply text-ink border-sand-dark bg-sand hover:bg-sand-dark border dark:border-stone-700 dark:bg-stone-700/60 dark:text-stone-300 dark:hover:bg-stone-700;
+}
+
 @utility form-control {
-  @apply text-ink corner-squircle focus-visible:border-secondary focus-visible:ring-secondary/50 dark:focus-visible:border-secondary dark:focus-visible:ring-secondary/40 border-sand-dark w-full rounded-4xl border bg-white px-3 py-2.5 text-base transition-[color,box-shadow,border-color] outline-none placeholder:text-stone-400 focus-visible:ring-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/20;
+  @apply text-ink corner-squircle focus-visible:border-secondary focus-visible:ring-secondary/50 dark:focus-visible:border-primary dark:focus-visible:ring-primary/40 border-sand-dark w-full rounded-4xl border bg-white px-3 py-2.5 text-base transition-[color,box-shadow,border-color] outline-none placeholder:text-stone-400 focus-visible:ring-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/20;
 }
 
 .recipe-print-brand,

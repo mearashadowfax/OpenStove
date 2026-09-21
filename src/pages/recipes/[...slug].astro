@@ -136,7 +136,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
         <section class="py-6 sm:py-8 lg:py-12">
           <div class="mx-auto max-w-(--breakpoint-lg)">
             <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
-              Instructions:
+              Instructions
             </h2>
 
             <Tabs />
@@ -166,7 +166,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
                     class="text-ink text-lg font-bold text-balance 2xl:text-xl dark:text-stone-200"
                   >
                     {step.title}
-                    <ul class="marker:text-secondary-ink dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 leading-normal font-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
+                    <ul class="marker:text-secondary dark:marker:text-primary mt-1 list-disc space-y-2 ps-5 leading-normal font-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
                       {step.actions.map(action => (
                         <li>{action}</li>
                       ))}
@@ -183,9 +183,9 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
           {entry.data.recipeNotes && entry.data.recipeNotes?.length > 0 ? (
             <div class="mx-auto max-w-(--breakpoint-lg)">
               <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
-                Recipe notes:
+                Recipe notes
               </h2>
-              <ul class="marker:text-secondary-ink dark:marker:text-primary mt-4 max-w-prose list-disc space-y-2 ps-5 text-lg leading-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
+              <ul class="marker:text-secondary dark:marker:text-primary mt-4 max-w-prose list-disc space-y-2 ps-5 text-lg leading-normal text-pretty text-muted 2xl:text-xl dark:text-stone-400">
                 {entry.data.recipeNotes?.map((note: string) => (
                   <li>{note}</li>
                 ))}
@@ -202,7 +202,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
         {/* Ingredients Section */}
         <section class="mx-auto max-w-(--breakpoint-lg) py-6 sm:py-8 lg:py-12">
           <h2 class="text-ink text-3xl font-semibold lg:text-4xl dark:text-stone-100">
-            Ingredients:
+            Ingredients
           </h2>
           <Ingredients recipe={entry} />
         </section>

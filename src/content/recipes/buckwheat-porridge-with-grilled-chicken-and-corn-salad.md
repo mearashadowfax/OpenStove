@@ -1,5 +1,6 @@
 ---
 title: 'Buckwheat porridge with grilled chicken fillet, corn salad, microgreens, and daikon'
+cardTitle: 'Buckwheat porridge with grilled chicken'
 description: 'Indulge in the wholesome goodness of buckwheat porridge paired with tender grilled chicken fillet, a zesty corn salad, and the crispness of fresh microgreens and daikon radish.'
 
 pubDate: 2024-01-15

@@ -159,7 +159,7 @@ const currentPage = pathname.slice(1);
 
     <div
       id="navbar-alignment"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 xl:order-2 xl:block xl:grow-0 xl:basis-auto"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 xl:order-2 xl:block xl:grow-0 xl:basis-auto xl:overflow-visible"
     >
       <ul class="corner-squircle mt-4 flex flex-col rounded-4xl border border-sand-dark p-4 font-medium transition-colors duration-300 xl:mt-0 xl:flex-row xl:gap-8 xl:border-0 xl:p-0.5 2xl:text-lg rtl:space-x-reverse dark:border-stone-700">
         <li class="my-3 flex items-center justify-center xl:hidden">
@@ -201,10 +201,11 @@ const currentPage = pathname.slice(1);
           <a
             href="/"
             data-astro-prefetch
+            aria-current={currentPage === '' ? 'page' : undefined}
             class={
               currentPage === ''
-                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:bg-transparent xl:p-0 xl:text-secondary-ink 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark xl:dark:bg-transparent'
-                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand hover:text-primary-accent-dark focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:p-0 xl:hover:bg-transparent xl:hover:text-secondary-ink 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark xl:dark:hover:bg-transparent xl:dark:hover:text-primary-accent-dark'
+                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink font-medium transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:bg-transparent xl:p-0 xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-secondary 2xl:text-lg dark:bg-stone-900 dark:text-stone-100 xl:dark:bg-transparent xl:dark:after:bg-primary'
+                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:p-0 xl:hover:bg-transparent xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-transparent xl:after:transition-colors xl:after:duration-300 xl:hover:after:bg-sand-dark 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark xl:dark:hover:bg-transparent xl:dark:hover:after:bg-stone-600'
             }
           >
             Home
@@ -214,10 +215,13 @@ const currentPage = pathname.slice(1);
           <a
             href="/recipes"
             data-astro-prefetch
+            aria-current={
+              currentPage.startsWith('recipes') ? 'page' : undefined
+            }
             class={
               currentPage.startsWith('recipes')
-                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:bg-transparent xl:p-0 xl:text-secondary-ink 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark xl:dark:bg-transparent'
-                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand hover:text-primary-accent-dark focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:p-0 xl:hover:bg-transparent xl:hover:text-secondary-ink 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark xl:dark:hover:bg-transparent xl:dark:hover:text-primary-accent-dark'
+                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink font-medium transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:bg-transparent xl:p-0 xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-secondary 2xl:text-lg dark:bg-stone-900 dark:text-stone-100 xl:dark:bg-transparent xl:dark:after:bg-primary'
+                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:p-0 xl:hover:bg-transparent xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-transparent xl:after:transition-colors xl:after:duration-300 xl:hover:after:bg-sand-dark 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark xl:dark:hover:bg-transparent xl:dark:hover:after:bg-stone-600'
             }
           >
             Recipes
@@ -227,10 +231,13 @@ const currentPage = pathname.slice(1);
           <a
             href="/contribute"
             data-astro-prefetch
+            aria-current={
+              currentPage.startsWith('contribute') ? 'page' : undefined
+            }
             class={
               currentPage.startsWith('contribute')
-                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:bg-transparent xl:p-0 xl:text-secondary-ink 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark xl:dark:bg-transparent'
-                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand hover:text-primary-accent-dark focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:p-0 xl:hover:bg-transparent xl:hover:text-secondary-ink 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark xl:dark:hover:bg-transparent xl:dark:hover:text-primary-accent-dark'
+                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink font-medium transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:bg-transparent xl:p-0 xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-secondary 2xl:text-lg dark:bg-stone-900 dark:text-stone-100 xl:dark:bg-transparent xl:dark:after:bg-primary'
+                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:p-0 xl:hover:bg-transparent xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-transparent xl:after:transition-colors xl:after:duration-300 xl:hover:after:bg-sand-dark 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark xl:dark:hover:bg-transparent xl:dark:hover:after:bg-stone-600'
             }
           >
             Contribute
@@ -240,10 +247,11 @@ const currentPage = pathname.slice(1);
           <a
             href="/about"
             data-astro-prefetch
+            aria-current={currentPage.startsWith('about') ? 'page' : undefined}
             class={
               currentPage.startsWith('about')
-                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:bg-transparent xl:p-0 xl:text-secondary-ink 2xl:text-lg dark:bg-stone-900 dark:text-primary-accent-dark xl:dark:bg-transparent'
-                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand hover:text-primary-accent-dark focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:p-0 xl:hover:bg-transparent xl:hover:text-secondary-ink 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark dark:hover:text-primary-accent-dark xl:dark:hover:bg-transparent xl:dark:hover:text-primary-accent-dark'
+                ? 'block corner-squircle rounded-4xl bg-primary-accent-dark px-3 py-2 text-ink font-medium transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:bg-transparent xl:p-0 xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-secondary 2xl:text-lg dark:bg-stone-900 dark:text-stone-100 xl:dark:bg-transparent xl:dark:after:bg-primary'
+                : 'block corner-squircle rounded-4xl px-3 py-2 text-ink transition-colors duration-300 hover:bg-sand focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-secondary xl:relative xl:p-0 xl:hover:bg-transparent xl:after:absolute xl:after:inset-x-0 xl:after:-bottom-0.5 xl:after:h-0.5 xl:after:rounded-full xl:after:bg-transparent xl:after:transition-colors xl:after:duration-300 xl:hover:after:bg-sand-dark 2xl:text-lg dark:border-stone-700 dark:text-stone-100 dark:hover:bg-dark xl:dark:hover:bg-transparent xl:dark:hover:after:bg-stone-600'
             }
           >
             About
