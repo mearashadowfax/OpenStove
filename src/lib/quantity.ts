@@ -136,37 +136,23 @@ export function formatQuantity(quantity: Quantity): string {
 }
 
 /**
- * Spelled-out units and their plurals. Abbreviations (tsp, tbsp, g, ml, oz,
- * lb) are invariant and deliberately absent; unknown words are left as written.
+ * Spelled-out units recipes use, with their plurals. Abbreviations (tsp, tbsp,
+ * g, ml, oz, lb) are invariant and deliberately absent; unknown words are left
+ * as written. Extend when a new unit shows up in content.
  */
 const UNIT_PLURALS: Record<string, string> = {
   bunch: 'bunches',
   can: 'cans',
   clove: 'cloves',
   cup: 'cups',
-  dash: 'dashes',
-  drop: 'drops',
-  fillet: 'fillets',
   gram: 'grams',
-  handful: 'handfuls',
-  head: 'heads',
-  kilogram: 'kilograms',
-  leaf: 'leaves',
-  liter: 'liters',
-  litre: 'litres',
-  milliliter: 'milliliters',
-  millilitre: 'millilitres',
   ounce: 'ounces',
   package: 'packages',
   packet: 'packets',
-  piece: 'pieces',
   pinch: 'pinches',
   pound: 'pounds',
-  sheet: 'sheets',
   slice: 'slices',
   sprig: 'sprigs',
-  stalk: 'stalks',
-  stick: 'sticks',
   tablespoon: 'tablespoons',
   teaspoon: 'teaspoons',
 };
@@ -178,17 +164,25 @@ const UNIT_SINGULARS: Record<string, string> = Object.fromEntries(
 /**
  * Agree a spelled-out unit with its quantity: "½ cup" but "1½ cups" and
  * "1-2 cups". Authors write either form, so both are normalised first.
- * The author's capitalisation ("Pinch") is kept.
+ * Plurality follows the number the reader sees, so a value that rounds to
+ * "1" stays singular. The author's casing ("Pinch", "CUP") is kept.
  */
 export function pluralizeUnit(unit: string, quantity: Quantity): string {
   const lower = unit.toLowerCase();
   const singular = UNIT_SINGULARS[lower] ?? lower;
   const plural = UNIT_PLURALS[singular];
   if (!plural) return unit;
-  const agreed = quantity.max > 1 ? plural : singular;
+  const agreed = isMoreThanOne(quantity.max) ? plural : singular;
+  if (unit === unit.toUpperCase()) return agreed.toUpperCase();
   return unit[0] === unit[0].toUpperCase()
     ? agreed[0].toUpperCase() + agreed.slice(1)
     : agreed;
+}
+
+/** Whether `formatValue` would show `value` as more than one. */
+function isMoreThanOne(value: number): boolean {
+  const shown = formatValue(value);
+  return shown !== '' && shown !== '1' && value > 1;
 }
 
 /**
@@ -211,10 +205,10 @@ export function formatIngredientLine(
     const converted = system
       ? convertQuantity(scaled, unit ?? '', line.name, system)
       : null;
-    const final = converted ? converted.quantity : scaled;
-    quantity = formatQuantity(final);
+    const shown = converted ? converted.quantity : scaled;
+    quantity = formatQuantity(shown);
     if (converted) unit = converted.unit;
-    if (unit) unit = pluralizeUnit(unit.trim(), final);
+    if (unit) unit = pluralizeUnit(unit.trim(), shown);
   }
 
   return [quantity, unit, line.name]

@@ -130,6 +130,22 @@ describe('formatIngredientLine', () => {
     expect(
       formatIngredientLine({ quantity: '2', unit: 'Pinch', name: 'salt' })
     ).toBe('2 Pinches salt');
+    expect(
+      formatIngredientLine({ quantity: '2', unit: 'CUP', name: 'rice' })
+    ).toBe('2 CUPS rice');
+  });
+
+  it('keeps the unit singular when the quantity rounds to one', () => {
+    // 0.7 x 1.45 = 1.015, shown as "1"
+    expect(
+      formatIngredientLine({ quantity: '0.7', unit: 'cup', name: 'rice' }, 1.45)
+    ).toBe('1 cup rice');
+    expect(
+      formatIngredientLine({ quantity: '1/2', unit: 'cup', name: 'rice' }, 2.02)
+    ).toBe('1 cup rice');
+    expect(
+      formatIngredientLine({ quantity: '1/2', unit: 'cup', name: 'rice' }, 2.1)
+    ).toBe('1 1/16 cups rice');
   });
 
   it('leaves abbreviations and unknown units as written', () => {

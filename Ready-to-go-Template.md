@@ -1,5 +1,6 @@
 ---
 title: ''
+cardTitle: ''
 description: ''
 
 author: ''

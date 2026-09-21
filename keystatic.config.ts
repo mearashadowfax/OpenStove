@@ -24,7 +24,6 @@ export default config({
           label: 'Card title',
           description:
             'Optional shorter title for recipe cards; leave empty to use the full title.',
-          validation: { isRequired: false },
         }),
         description: fields.text({ label: 'Description', multiline: true }),
         author: fields.text({ label: 'Author', defaultValue: 'anonymous' }),
