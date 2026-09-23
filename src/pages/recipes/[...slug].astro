@@ -33,7 +33,6 @@ if (entry === undefined) {
   return Astro.redirect('/404');
 }
 
-const recipeUrl = Astro.url.href;
 const recipeTitle = entry.data.title + ' | OpenStove';
 const recipeDescription =
   entry.data.description ||
@@ -49,7 +48,7 @@ const publishedOn = entry.data.pubDate.toLocaleDateString(undefined, {
 <MainLayout
   title={recipeTitle}
   description={recipeDescription}
-  url={recipeUrl}
+  canonicalUrl={recipePath}
   recipe={entry}
 >
   <section class="recipe-print-root mt-10 pt-6 sm:pt-8 lg:pt-12">
