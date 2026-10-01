@@ -18,21 +18,21 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/react": "^6.0.6",
+    "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/vercel": "^11.0.10",
+    "@astrojs/vercel": "^11.0.11",
     "@keystatic/astro": "^6.0.0",
     "@keystatic/core": "^0.6.9",
     "@tailwindcss/vite": "^4.3.3",
     "@toolwind/corner-shape": "0.0.8-3",
     "@vercel/blob": "^2.8.0",
-    "astro": "^7.3.3",
+    "astro": "^7.3.5",
     "astro-icon": "^1.2.0",
     "astro-meta-tags": "^0.4.1",
     "astro-robots-txt": "^1.0.0",
     "clipboard": "^2.0.11",
     "preline": "^5.0.0",
-    "prettier-plugin-astro": "^1.0.1",
+    "prettier-plugin-astro": "^1.1.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "sharp": "^0.35.4",
@@ -44,6 +44,6 @@
     "@types/react-dom": "^19.3.0",
     "prettier": "^3.9.8",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.2"
   }
 }
