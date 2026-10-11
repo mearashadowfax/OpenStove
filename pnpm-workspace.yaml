@@ -1,3 +1,7 @@
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+overrides:
+  path-to-regexp@6.1.0: 6.3.0
+  source-map-js: ^1.2.2
