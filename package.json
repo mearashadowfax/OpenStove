@@ -33,7 +33,7 @@
     "clipboard": "^2.0.11",
     "preline": "^5.0.0",
     "prettier-plugin-astro": "^1.1.1",
-    "react": "^19.3.0",
+    "react": "^19.3.1",
     "react-dom": "^19.3.0",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
