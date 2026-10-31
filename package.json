@@ -14,7 +14,7 @@
     "test": "vitest run",
     "preview": "astro preview",
     "astro": "astro",
-    "upload:images": "node scripts/upload-recipe-images.mjs"
+    "upload:images": "node --env-file-if-exists=.env.local scripts/upload-recipe-images.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
