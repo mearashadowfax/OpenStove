@@ -1,3 +1,9 @@
+# pnpm >= 11 (local)
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+# pnpm 10 (CI, .github/workflows/ci.yml)
 onlyBuiltDependencies:
   - esbuild
   - sharp
