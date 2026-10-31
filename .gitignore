@@ -27,3 +27,5 @@ pnpm-debug.log*
 # Recipe photos stay out of the public repo (licensing). Upload via scripts/upload-recipe-images.mjs
 public/images/
 src/images/*.avif
+.vercel
+.env*
