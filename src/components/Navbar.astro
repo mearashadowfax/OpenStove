@@ -1,6 +1,7 @@
 ---
 import SearchBar from './SearchBar.astro';
-import { Icon } from 'astro-icon/components';
+import MoonIcon from '../icons/moon.svg';
+import SunIcon from '../icons/sun.svg';
 import Logo from './Logo.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -137,7 +138,7 @@ const linkInactive =
           class="hs-dark-mode group focus-visible:ring-secondary hs-dark-mode-active:hidden corner-squircle inline-flex h-10 min-w-10 items-center justify-center rounded-4xl py-2 whitespace-nowrap transition-colors duration-300 hover:bg-sand focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden xl:h-9 xl:w-9 xl:min-w-0 dark:hover:bg-stone-700"
           data-hs-theme-click-value="dark"
         >
-          <Icon name="moon" class="mx-auto h-[1.2rem] w-[1.2rem]" />
+          <MoonIcon class="mx-auto h-[1.2rem] w-[1.2rem]" />
         </button>
 
         <button
@@ -146,7 +147,7 @@ const linkInactive =
           class="hs-dark-mode group focus-visible:ring-secondary hs-dark-mode-active:inline-flex corner-squircle hidden h-10 min-w-10 items-center justify-center rounded-4xl py-2 whitespace-nowrap transition-colors duration-300 hover:bg-sand focus:outline-hidden focus-visible:ring-1 focus-visible:outline-hidden xl:h-9 xl:w-9 xl:min-w-0 dark:hover:bg-stone-700"
           data-hs-theme-click-value="light"
         >
-          <Icon name="sun" class="mx-auto h-5 w-5" />
+          <SunIcon class="mx-auto h-5 w-5" />
         </button>
       </div>
     </div>

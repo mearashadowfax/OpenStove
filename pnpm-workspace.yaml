@@ -1,3 +1,9 @@
+# pnpm >= 11 (local)
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+# pnpm 10 (CI, .github/workflows/ci.yml)
 onlyBuiltDependencies:
   - esbuild
   - sharp
@@ -5,3 +11,6 @@ onlyBuiltDependencies:
 overrides:
   path-to-regexp@6.1.0: 6.3.0
   source-map-js: ^1.2.2
+  undici@>=4 <6.29.1: ^6.29.1
+  undici@>=8 <8.12.2: ^8.12.2
+  zod@>=4 <4.6.6: ^4.6.7
