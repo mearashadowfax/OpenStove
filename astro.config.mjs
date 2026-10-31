@@ -1,6 +1,5 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import metaTags from 'astro-meta-tags';
@@ -85,16 +84,6 @@ export default defineConfig({
   ],
 
   integrations: [
-    robotsTxt({
-      policy: [
-        {
-          userAgent: '*',
-          allow: '/',
-          disallow: ['/404', '/keystatic', '/api'],
-          crawlDelay: 1,
-        },
-      ],
-    }),
     sitemap({
       filter: page => !sitemapExcludedPaths.has(new URL(page).pathname),
     }),
