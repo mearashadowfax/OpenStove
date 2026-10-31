@@ -1,7 +1,8 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
 import RecipeGrid from '@components/RecipeGrid.astro';
-import { Icon } from 'astro-icon/components';
+import FoodBowlIcon from '../../icons/food-bowl.svg';
+import RecipeBookIcon from '../../icons/recipe-book.svg';
 import { getCollection } from 'astro:content';
 import { listRecipes, parsePage, queryPaging } from '@/lib/catalogue';
 
@@ -42,7 +43,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
 
           {/* image - start */}
           <div class="hidden lg:flex lg:w-3/12">
-            <Icon class="h-full w-full" name="food-bowl" />
+            <FoodBowlIcon class="h-full w-full" />
           </div>
           {/* image - end */}
         </section>
@@ -100,7 +101,7 @@ const pageDescription = `Explore our collection of ${recipes.totalItems} communi
         {/* Flex */}
         <div class="mx-auto flex max-w-(--breakpoint-md) flex-col items-center">
           <div class="flex w-9/12 items-center justify-center 2xl:w-full">
-            <Icon class="h-auto w-full" name="recipe-book" />
+            <RecipeBookIcon class="h-auto w-full" />
           </div>
           {/* image - end */}
           <div class="mx-auto mt-5 sm:mt-10 lg:mt-0">

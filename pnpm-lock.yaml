@@ -45,9 +45,6 @@ importers:
       astro:
         specifier: ^7.4.2
         version: 7.4.2(@types/node@24.13.5)(@vercel/blob@2.8.2)(@vercel/functions@3.9.11)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1)
-      astro-icon:
-        specifier: ^1.2.0
-        version: 1.2.0
       astro-meta-tags:
         specifier: ^0.4.1
         version: 0.4.1(astro@7.4.2(@types/node@24.13.5)(@vercel/blob@2.8.2)(@vercel/functions@3.9.11)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1))
@@ -101,9 +98,6 @@ packages:
     peerDependenciesMeta:
       graphql:
         optional: true
-
-  '@antfu/install-pkg@2.1.0':
-    resolution: {integrity: sha512-sdg9NxU3zR4Mnawfbc/x6GB5Wf17WYud5qOuEuxXjaKpYpMkISSJEjItGebXJ2bQ4DIcly4NYH23mtkGJjvKUw==}
 
   '@astrojs/astro2tsx@0.1.3':
     resolution: {integrity: sha512-GMDC7Eo0myBUA/QLBl0u+OcegJ8LiBhccmNZR34KmprQNP8gQUJlWlOOZWUsxNA2rNS6GuPYcGDyLoPnjmn4/Q==}
@@ -320,9 +314,6 @@ packages:
   '@clack/prompts@1.8.1':
     resolution: {integrity: sha512-dlT1m5e/0yUL0kRNcQn7yGLVThkgbB0Ga/1AmfDDC/8ik6AIiSf2QLQO2zPYvefsHP0aFgxO93cVLCCfDp7kzQ==}
     engines: {node: '>= 20.12.0'}
-
-  '@cyberalien/svg-utils@1.2.21':
-    resolution: {integrity: sha512-exLnXg7+DfTRHD6Qm0SbWLXAICO0L4SdYevvY3irn3bU6zJ+WvIS6ogomE3T7EXE3krJjCpUKmkiRq4Mp/HoTw==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -571,15 +562,6 @@ packages:
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-
-  '@iconify/tools@5.0.14':
-    resolution: {integrity: sha512-wJ4ZE3/HZh2iBqLwG+8FOMHe7CMJAJqwSXZSpPwMdj1gZM3Z4t2hbQMVw4Vm45oQ985qn0g89PUIcDEdKTheBA==}
-
-  '@iconify/types@2.0.0':
-    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-
-  '@iconify/utils@3.1.7':
-    resolution: {integrity: sha512-JZHlwdID+dy+lTgbYC8NEC4zeugqeYsc6jewvzb4c58kHauJn+X7rNwQjxz5p2qSjqaEeQoLkCIQ9v/H4PK0/w==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1584,10 +1566,6 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  astro-icon@1.2.0:
-    resolution: {integrity: sha512-0848V2WZuTPhqGSqLeZimLJZ5wmamMtWYzvA2kvg8s2DrUPZ3/nrTcHJWN0eJHt62jy7uvNxgTNiUJGIr7JNxg==}
-    engines: {node: '>=22.12.0'}
-
   astro-meta-tags@0.4.1:
     resolution: {integrity: sha512-sDwhUstpNnaMROAtMxbD7YoaEQey3Z8YHeAHjgLnbIoVBceC5y+xu67Q0pQxeAbgSE1CQTs6LHzbsENgjkv2lQ==}
     peerDependencies:
@@ -1912,9 +1890,6 @@ packages:
       picomatch:
         optional: true
 
-  fflate@0.8.3:
-    resolution: {integrity: sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==}
-
   file-uri-to-path@1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
 
@@ -2014,9 +1989,6 @@ packages:
 
   immer@9.0.21:
     resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
-
-  import-meta-resolve@4.2.0:
-    resolution: {integrity: sha512-Iqv2fzaTQN28s/FwZAoFq0ZSs/7hMAHJVX+w8PZl3cY19Pxk6jFFalxQoIfW2826i/fDLXv8IiEZRIT0lDuWcg==}
 
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
@@ -2440,10 +2412,6 @@ packages:
     resolution: {integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==}
     engines: {node: '>= 18'}
 
-  modern-tar@0.8.6:
-    resolution: {integrity: sha512-LYSks0tNVqbtez/9OB0YFP6qLRSqkdAxJWOQpVaR67lNTbj2zNLyYpowkRMia5lXLCZKzxwoxkxH2MbbBR2aEg==}
-    engines: {node: '>=18.0.0'}
-
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
     engines: {node: '>=10'}
@@ -2567,9 +2535,6 @@ packages:
 
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
-
-  pathe@2.0.3:
-    resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
 
   piccolore@0.1.3:
     resolution: {integrity: sha512-o8bTeDWjE086iwKrROaDf31K0qC/BENdm15/uH9usSC/uZjJOKb2YGiVHfLY4GhwsERiPI1jmwI2XrA7ACOxVw==}
@@ -3417,11 +3382,6 @@ snapshots:
     optionalDependencies:
       graphql: 16.14.2
 
-  '@antfu/install-pkg@2.1.0':
-    dependencies:
-      package-manager-detector: 1.9.0
-      tinyexec: 1.3.1
-
   '@astrojs/astro2tsx@0.1.3(@emnapi/runtime@1.11.3)':
     dependencies:
       '@emnapi/core': 1.11.3
@@ -3672,10 +3632,6 @@ snapshots:
       fast-wrap-ansi: 0.2.2
       sisteransi: 1.0.5
 
-  '@cyberalien/svg-utils@1.2.21':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@emmetio/abbreviation@2.3.3':
     dependencies:
       '@emmetio/scanner': 1.0.4
@@ -3864,24 +3820,6 @@ snapshots:
   '@graphql-typed-document-node/core@3.2.0(graphql@16.14.2)':
     dependencies:
       graphql: 16.14.2
-
-  '@iconify/tools@5.0.14':
-    dependencies:
-      '@cyberalien/svg-utils': 1.2.21
-      '@iconify/types': 2.0.0
-      '@iconify/utils': 3.1.7
-      fflate: 0.8.3
-      modern-tar: 0.8.6
-      pathe: 2.0.3
-      svgo: 4.1.0
-
-  '@iconify/types@2.0.0': {}
-
-  '@iconify/utils@3.1.7':
-    dependencies:
-      '@antfu/install-pkg': 2.1.0
-      '@iconify/types': 2.0.0
-      import-meta-resolve: 4.2.0
 
   '@img/colour@1.1.0': {}
 
@@ -4779,12 +4717,6 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  astro-icon@1.2.0:
-    dependencies:
-      '@iconify/tools': 5.0.14
-      '@iconify/types': 2.0.0
-      '@iconify/utils': 3.1.7
-
   astro-meta-tags@0.4.1(astro@7.4.2(@types/node@24.13.5)(@vercel/blob@2.8.2)(@vercel/functions@3.9.11)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       astro: 7.4.2(@types/node@24.13.5)(@vercel/blob@2.8.2)(@vercel/functions@3.9.11)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(yaml@2.9.1)
@@ -5163,8 +5095,6 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.7
 
-  fflate@0.8.3: {}
-
   file-uri-to-path@1.0.0: {}
 
   flattie@1.1.1: {}
@@ -5265,8 +5195,6 @@ snapshots:
   ignore@5.3.2: {}
 
   immer@9.0.21: {}
-
-  import-meta-resolve@4.2.0: {}
 
   iron-webcrypto@1.2.1: {}
 
@@ -5835,8 +5763,6 @@ snapshots:
     dependencies:
       minipass: 7.1.3
 
-  modern-tar@0.8.6: {}
-
   mrmime@2.0.1: {}
 
   ms@2.1.3: {}
@@ -5940,8 +5866,6 @@ snapshots:
       minipass: 7.1.3
 
   path-to-regexp@6.3.0: {}
-
-  pathe@2.0.3: {}
 
   piccolore@0.1.3: {}
 

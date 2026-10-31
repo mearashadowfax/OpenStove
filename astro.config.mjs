@@ -1,7 +1,6 @@
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import icon from 'astro-icon';
 import metaTags from 'astro-meta-tags';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
@@ -87,7 +86,6 @@ export default defineConfig({
     sitemap({
       filter: page => !sitemapExcludedPaths.has(new URL(page).pathname),
     }),
-    icon(),
     metaTags(),
     react(),
     keystatic(),
@@ -101,6 +99,7 @@ export default defineConfig({
 
   experimental: {
     clientPrerender: true,
+    svgOptimizer: svgoOptimizer(),
   },
 
   adapter: vercel({
