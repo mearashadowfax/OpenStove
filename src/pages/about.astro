@@ -1,7 +1,9 @@
 ---
 export const prerender = true;
 import MainLayout from '@layouts/MainLayout.astro';
-import { Icon } from 'astro-icon/components';
+import MakingTacoIcon from '../icons/making-taco.svg';
+import GithubBodyIcon from '../icons/github-body.svg';
+import CoupleEatingTacosIcon from '../icons/couple-eating-tacos.svg';
 ---
 
 <MainLayout
@@ -56,10 +58,7 @@ import { Icon } from 'astro-icon/components';
       </div>
       {/* End Col */}
       <div>
-        <Icon
-          class="mx-auto h-auto w-3/4 md:w-10/12 2xl:w-3/4"
-          name="making-taco"
-        />
+        <MakingTacoIcon class="mx-auto h-auto w-3/4 md:w-10/12 2xl:w-3/4" />
       </div>
       {/* End Col */}
     </div>
@@ -146,7 +145,7 @@ import { Icon } from 'astro-icon/components';
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon name="github-body" class="h-4 w-4" />
+            <GithubBodyIcon class="h-4 w-4" />
             Contribute with GitHub
           </a>
         </div>
@@ -311,10 +310,7 @@ import { Icon } from 'astro-icon/components';
     <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
       {/* Icon */}
       <div>
-        <Icon
-          class="mx-auto h-auto w-3/4 md:w-10/12 2xl:w-3/4"
-          name="couple-eating-tacos"
-        />
+        <CoupleEatingTacosIcon class="mx-auto h-auto w-3/4 md:w-10/12 2xl:w-3/4" />
       </div>
       {/* End Icon */}
       <div class="mt-5 sm:mt-10 lg:mt-0">
