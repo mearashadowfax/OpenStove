@@ -111,14 +111,18 @@ imageAlt: 'A bowl of creamy tomato soup'
 
 The site prepends `PUBLIC_IMAGE_BASE_URL` to that filename. Without the variable, or when a photo is missing, the page shows the fallback image from `public/placeholder-recipe.png`.
 
-To upload photos, keep the originals in a private directory and run:
+To upload photos, keep the originals in a private directory (by default `../OpenStoveImages` next to the repo, or set `RECIPE_IMAGES_DIR`), put `BLOB_READ_WRITE_TOKEN` in `.env.local`, and run:
 
 ```bash
-BLOB_READ_WRITE_TOKEN=vercel_blob_... \
-pnpm upload:images --dir /path/to/private-recipe-images
+pnpm upload:images                   # upload photos not yet in the store
+pnpm upload:images tomato-soup.avif  # upload (or replace) specific photos
+pnpm upload:images --all             # re-upload everything
+pnpm upload:images --dry-run         # show what would be uploaded
 ```
 
-The script uploads every `.avif` under the `recipes/` Blob prefix and prints the `PUBLIC_IMAGE_BASE_URL` to set.
+Photos go under the `recipes/` Blob prefix. On the first upload, the script prints the `PUBLIC_IMAGE_BASE_URL` to set.
+
+`vercel env pull` writes sensitive variables as empty strings, so paste the token into `.env.local` yourself.
 
 > **Never commit recipe photos or Blob write tokens to this repository.**
 
